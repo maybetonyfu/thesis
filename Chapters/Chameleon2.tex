@@ -1,0 +1,45 @@
+% Chapter 3
+
+\chapter{Effects of Interactive Type Error Debugging Using Chameleon}
+\label{chap:chameleon:eval} 
+
+\section{Research Questions}
+
+The studies of Chameleon aim to address the following research question:
+
+\begin{itemize}
+	\item Can visual tools help programmers help find bugs?
+	\item Can interactive type error narrowing help programmers help solve type errors?
+\end{itemize}
+
+\section{Experiment Design}
+
+\subsection{\textbf{Recruitment}}
+
+Participants were recruited via the Reddit \textit{r/haskell} and \textit{r/programminglanguages} communities. 
+%Recruiting from social media allowed us to access a more diverse demographic that better represent the true population of Haskell programmers. 
+Participation is fully anonymized; detailed ethical implications of these experiments are reviewed and approved by the IRB of the authors' institution.
+
+\subsection{\textbf{Experiment setting}}
+Experiments were conducted online and unsupervised. 
+%Participants took the study online via a web browser and at the physical venue of their choosing. 
+All user studies use a web-based debugging environment developed by the authors. 
+%Conducting the studies online helped us avoid variation when performing tasks in unfamiliar places and using different setups. 
+
+
+\subsection{\textbf{Training and group assignment}}
+After consent, participants received interactive training on the tool interface and interactive features. Participants were also shown a cheat sheet summarizing the key functionality of the interface, and had access to the cheat sheet at all times during the study. Participants were given 4 trial runs (2 for each setting) before the data collection started. 
+All the studies used a within-subject design to evaluate the effectiveness of different tools or feature sets while counterbalancing the difference in programming proficiency between participants. In each study, participants were required to complete a series of programming tasks (8 for studies 1a and 1b, 9 for study 2). At each task, a participant receives a single Haskell file that contains one or more type errors. They were then asked to correct the code with the help of the given tool.
+
+
+\subsection{\textbf{Data Collection}}
+Time is measured from the start of each task to the first time the program is successfully type-checked and also passes all the functional tests. Participants are able to skip a task if they are stuck. 
+% The data is automatically recorded by the online debugging environment. To not introduce a barrier to completing the study, every task can be skipped if the participant made three failed attempts or is stuck for over 1 minute on the task.
+After completing all tasks, participants are prompted to complete a debriefing survey. The survey questions include their Haskell experience and feedback on the tools.
+
+We used a browser session recording tool~\cite{openreplay_openreplay_2022} to record the study sessions. This allows us to identify usability issues in the study and to recognize general patterns. 
+
+\section{Results}
+
+\section{Discussion}
+\section{Conclusion}

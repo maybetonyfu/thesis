@@ -13,10 +13,6 @@ The current tools and diagnostics for handling type errors in many strongly type
 
 To fully harness the advantages of strongly typed languages, there is a pressing need for tools and systems that enhance the usability of type error handling. These tools should be designed with the developer's experience in mind, offering clear, human-readable error messages, actionable insights, and the ability to guide developers through the process of fixing type issues. User-friendly, informative error messages can help developers learn and understand the language better, improving their overall experience and making strong typing more approachable.
 
-Improvements in the design and practicality of type error handling tools are essential for nurturing a thriving community of developers in strongly typed languages. By addressing the usability challenges associated with type errors, these languages can continue to provide the safety and robustness they are known for while becoming more accessible to a broader range of developers.
-
-
-
 
 
 
@@ -25,23 +21,49 @@ Improvements in the design and practicality of type error handling tools are ess
 
 \subsection{RQ1: How can we make Haskell's type error messages more user-friendly, informative, and easier to understand for developers, especially novice users?}
 
+We identify the challenges of existing tools for presenting type errors: cryptic, lacking explanation, biased. We provide the Chameleon tool, and interactive Haskell type error debugger, and discuss how it address each challenge. First, we show how Chameleon avoid biased error message using a holistic type inference engine. Second, we show how Chameleon explain type errors with interactive narrowing and assertion. Last, we illustrate that Chameleon use explorable UI instead of static texts to avoid speaking to generally or to specifically about type errors.
+
+
+The Chameleon tool was evaluated using a series of experiments. We designed various levels of Haskell tasks. We invite users to try to complete the tasks under different settings (with/without Chameleon, or with certain features on/off). We record the time it tasks to complete the task and the actions taken during the task.
+
 \subsection{RQ2: How can we develop more sophisticated type error diagnosis techniques that provide precise information about the source of type errors and suggest potential fixes?}
+
+We explore a different approach of reporting type error: identify the very source of type errors and suggesting how to fix them. To achieve this, we provide the Goanna tool, a Haskell type error debugging tool that identify all potential causes and suggesting resolutions to type errors. 
+
+To study the effectiveness of cause/solution driven approach, we conducted empirical experiments, comparing Goanna and tradition tools, on a set of defected Haskell programs sourced from online help forums. We measured how often Goanna's top suggestion match which given by a human expert. In addition, we measured how many potential causes in total are identified by Goanna and how effective Goanna is at prioritizing the more likely causes. Lastly, we measured how fast did Goanna complete each diagnosis. 
+
 
 
 \subsection{RQ3: Can visualization help lower the difficulties of reading, understanding and comparing types?}
 
+We identify the challenge in reading, and comparing types in Haskell, especially polymorphic types. We propose a graphic notation - GeckoGrpah - to simplify these tasks. We investigated where challenges are and whether a graphic notation like GeckoGraph would help in type-driven development. We conducted an experiment comparing traditional text-based type signature vs GeckoGraph. 
 
-\subsection{RQ3: Can we combine the debugging paradigms we explored into a integrated debugging framework?}
+\subsection{RQ3: Can we combine the debugging paradigms we explored into a integrated debugging system?}
+
+We explore the debugging paradigms showed in Chameleon, Goanna, and GeckoGraph. We compared their strengths and weakness. We proposed an integrated Haskell type debugging environment - Reptile - combining all aforesaid tools together. We propose a few useful features that combines multiple tools and explain how they address the weaknesses of each single tool. We illustrate how the debugging system as a whole looks like and what kind of debugging techniques can be practiced with it. 
 
 \section{Contributions}  \label{sec:contributions}
 
-\subsection{Chameleon: An MUS-based Type Error Diagnosis Tool}
+\subsection{Chameleon}
+We contribute Chameleon, an interactive Haskell type error debugging tool. The goal of Chameleon is to support better comprehension of type errors comparing to tradition tools.  Programmers can use Chameleon to incrementally narrow down the type error. Chameleon uses MUS as underlying data representation of type errors. Unlike traditional type error slicing tools, Chameleon further break down the MUS by dissecting the MUS in different combinations and showing the intermediate typing conflict at each point.
 
 
-\subsection{Goanna: An MCS-based Type Error Diagnosis Tool}
+Chameleon is open-source and available at \cite{fu_chameleonide_2023}. 
+
+We also contributed a series of study of the effects of interactive type error narrowing in debugging type errors.  Our evaluation is the first human study on the effective of type error slicing tools. The evaluation and results are published at \cite{fu_chameleonide_2023}.
+  
+\subsection{Goanna}
+We contribute Goanna, a tool to identify all potential causes and solutions to Haskell type errors. Goanna aim to identify the correct cause of type errors when tradition tools fail. Moreover, Goanna aim to provide alternative causes where tradition tools only focus on single location. With Goanna, Haskell programmers can resolve type error by exploring a list of potential error root causes. These causes are ordered using our heuristics so that the more likely causes are on top. Goanna uses MCS-enumeration to identify all causes, and is the first to investigate the use of MCS-enumeration in type error identification.
 
 
-\subsection{A Diagrammatic Notation for Haskell Types}
+ Goanna is open source and available at \cite{}. The evaluation of Goanna is published at \cite{}.
 
+\subsection{GeckoGraph: A Diagrammatic Notation for Haskell Types}
+We contribute GeckoGraph, a graphic notation for Haskell types. The aim of GeckoGraph is to support reading, using, and comparing types faster and more intuitively. With GeckoGraph, programmers are able to use colors, symbols, and shapes to map various aspects of Haskell types. Programmers are able to make comparison and which functions are potentially useful without fully understand the type signature itself. 
+
+
+  GeckoGraph is open source and available at \cite{}. The evaluation of GeckoGraph is published at \cite{}.
 
 \section{Thesis Outline}
+
+The thesis begins with an overview of the challenges of type errors. We also outlines the approaches have been studied to address these challenges. We then present our three projects. First, the design of Chameleon tool and its evaluation (Chapeter \ref{chap:chameleon:design}). Second, the Goanna tool and its evaluation (Chapter \ref{chap:goanna}). Third, GeckoGraph and its evaluation. Lastly, we propose a debugging system that combine the strengths of all the tools. We conclude the thesis with a discussion of the techniques of enhancing type errors. We also discussed implications of our contribution in tool designing, programming, and research. 

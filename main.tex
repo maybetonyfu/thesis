@@ -44,9 +44,16 @@ headsepline, % Uncomment to get a line under the header
 
 \usepackage[backend=bibtex,style=authoryear,natbib=true]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
 
-\addbibresource{thesis.bib} % The filename of the bibliography
+\addbibresource{paperpile.bib} % The filename of the bibliography
 
 \usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{tabularx}
+% \usepackage{minted}
+\usepackage{listings}
 
 %----------------------------------------------------------------------------------------
 %	MARGIN SETTINGS
@@ -261,12 +268,11 @@ The Thesis Abstract is written here (and usually kept to just this page). The pa
 % Uncomment the lines as you write the chapters
 
 \include{Chapters/Introduction}
-\include{Chapters/Background} 
-\include{Chapters/Chameleon1}
-\include{Chapters/Chameleon2} 
+\include{Chapters/Background}
+\include{Chapters/HaskellTypeChecking} 
+\include{Chapters/Chameleon}
 \include{Chapters/Goanna} 
-\include{Chapters/GraphicNotation}
-\include{Chapters/FutureWork}
+\include{Chapters/GeckoGraph}
 \include{Chapters/Conclusion}
 
 %----------------------------------------------------------------------------------------

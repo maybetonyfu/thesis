@@ -1,0 +1,2532 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{nyt/global//global/global}
+  \entry{Almeida2022-bv}{inproceedings}{}
+    \name{author}{11}{}{%
+      {{hash=AM}{%
+         family={Almeida},
+         familyi={A\bibinitperiod},
+         given={Marcelo},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=CG}{%
+         family={Cole},
+         familyi={C\bibinitperiod},
+         given={Grant},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=DK}{%
+         family={Du},
+         familyi={D\bibinitperiod},
+         given={Ke},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=LG}{%
+         family={Luo},
+         familyi={L\bibinitperiod},
+         given={Gongming},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=PS}{%
+         family={Pan},
+         familyi={P\bibinitperiod},
+         given={Shulin},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=PY}{%
+         family={Pan},
+         familyi={P\bibinitperiod},
+         given={Yu},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=QK}{%
+         family={Qiu},
+         familyi={Q\bibinitperiod},
+         given={Kai},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=RV}{%
+         family={Reddy},
+         familyi={R\bibinitperiod},
+         given={Vishnu},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=ZH}{%
+         family={Zhang},
+         familyi={Z\bibinitperiod},
+         given={Haochen},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=ZY}{%
+         family={Zhu},
+         familyi={Z\bibinitperiod},
+         given={Yingying},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=OC}{%
+         family={Omar},
+         familyi={O\bibinitperiod},
+         given={Cyrus},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{AM+1}
+    \strng{fullhash}{AMCGDKLGPSPYQKRVZHZYOC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2022}
+    \field{labeldatesource}{}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{booktitle}{2022 {IEEE} Symposium on Visual Languages and {Human-Centric} Computing ({{VL}/{HCC}})}
+    \verb{doi}
+    \verb 10.1109/VL/HCC53370.2022.9833121
+    \endverb
+    \field{isbn}{9781665442145}
+    \field{pages}{1\bibrangedash 10}
+    \field{title}{{{RustViz}}: Interactively Visualizing Ownership and Borrowing}
+    \list{location}{1}{%
+      {Roma, Italy}%
+    }
+    \field{month}{09}
+    \field{year}{2022}
+  \endentry
+
+  \entry{Alshaigy2015-wy}{inproceedings}{}
+    \name{author}{5}{}{%
+      {{hash=AB}{%
+         family={Alshaigy},
+         familyi={A\bibinitperiod},
+         given={Bedour},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=KS}{%
+         family={Kamal},
+         familyi={K\bibinitperiod},
+         given={Samia},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=MF}{%
+         family={Mitchell},
+         familyi={M\bibinitperiod},
+         given={Faye},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=MC}{%
+         family={Martin},
+         familyi={M\bibinitperiod},
+         given={Clare},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=AA}{%
+         family={Aldea},
+         familyi={A\bibinitperiod},
+         given={Arantza},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Association for Computing Machinery}%
+    }
+    \strng{namehash}{AB+1}
+    \strng{fullhash}{ABKSMFMCAA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2015}
+    \field{labeldatesource}{}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{booktitle}{Proceedings of the Workshop in Primary and Secondary Computing Education}
+    \verb{doi}
+    \verb 10.1145/2818314.2818319
+    \endverb
+    \field{isbn}{9781450337533}
+    \field{pages}{76\bibrangedash 79}
+    \field{series}{WiPSCE '15}
+    \field{title}{{PILeT}: an Interactive Learning Tool To Teach Python}
+    \list{location}{1}{%
+      {London, United Kingdom}%
+    }
+    \field{month}{11}
+    \field{year}{2015}
+    \warn{\item Can't use 'location' + 'address'}
+  \endentry
+
+  \entry{Anonymous_undated-ne}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=A}{%
+         family={{Anonymous}},
+         familyi={A\bibinitperiod},
+      }}%
+    }
+    \list{language}{1}{%
+      {en}%
+    }
+    \strng{namehash}{A1}
+    \strng{fullhash}{A1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labeldatesource}{nodate}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{booktitle}{Zero to Hero}
+    \field{howpublished}{\url{https://zerotohero.fly.dev}}
+    \field{note}{Accessed: 2024-2-22}
+    \field{title}{Zero to Hero: A Haskell Puzzle Game}
+  \endentry
+
+  \entry{Anonymous2023-bo}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=A}{%
+         family={{Anonymous}},
+         familyi={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{A1}
+    \strng{fullhash}{A1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2023}
+    \field{extradate}{1}
+    \field{labeldatesource}{}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{howpublished}{\url{https://goanna.fly.dev/demo}}
+    \field{note}{Accessed: 2023-10-8}
+    \field{title}{Goanna Online Demo}
+    \field{month}{10}
+    \field{year}{2023}
+  \endentry
+
+  \entry{Anonymous2023-rp}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=A}{%
+         family={{Anonymous}},
+         familyi={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{A1}
+    \strng{fullhash}{A1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2023}
+    \field{extradate}{2}
+    \field{labeldatesource}{}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{howpublished}{\url{https://goanna.fly.dev/coverage.html}}
+    \field{note}{Accessed: 2023-10-8}
+    \field{title}{Goanna's Haskell Language Coverage}
+    \field{month}{10}
+    \field{year}{2023}
+  \endentry
+
+  \entry{Beck2015-my}{inproceedings}{}
+    \name{author}{5}{}{%
+      {{hash=BF}{%
+         family={Beck},
+         familyi={B\bibinitperiod},
+         given={Fabian},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=DB}{%
+         family={Dit},
+         familyi={D\bibinitperiod},
+         given={Bogdan},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=VMJ}{%
+         family={Velasco-Madden},
+         familyi={V\bibinithyphendelim M\bibinitperiod},
+         given={Jaleo},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=WD}{%
+         family={Weiskopf},
+         familyi={W\bibinitperiod},
+         given={Daniel},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=PD}{%
+         family={Poshyvanyk},
+         familyi={P\bibinitperiod},
+         given={Denys},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{BF+1}
+    \strng{fullhash}{BFDBVMJWDPD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2015}
+    \field{labeldatesource}{}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{booktitle}{2015 {IEEE} 23rd International Conference on Program Comprehension}
+    \verb{doi}
+    \verb 10.1109/ICPC.2015.24
+    \endverb
+    \field{isbn}{9781467381598, 9781467381581}
+    \field{issn}{1092-8138}
+    \field{pages}{151\bibrangedash 162}
+    \field{title}{Rethinking User Interfaces for Feature Location}
+    \field{month}{05}
+    \field{year}{2015}
+  \endentry
+
+  \entry{Bekkouche2015-is}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=BM}{%
+         family={Bekkouche},
+         familyi={B\bibinitperiod},
+         given={Mohammed},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {arXiv}%
+    }
+    \strng{namehash}{BM1}
+    \strng{fullhash}{BM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2015}
+    \field{labeldatesource}{}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \verb{eprint}
+    \verb 1503.05508 [cs]
+    \endverb
+    \field{number}{arXiv:1503.05508}
+    \field{title}{Exploration of the scalability of {LocFaults} approach for error localization with While-loops programs}
+    \field{month}{03}
+    \field{year}{2015}
+  \endentry
+
+  \entry{Ben_Gamari2022-bs}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=B}{%
+         family={{Ben Gamari}},
+         familyi={B\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{B1}
+    \strng{fullhash}{B1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2022}
+    \field{labeldatesource}{}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{title}{Glasgow Haskell Compiler}
+    \field{year}{2022}
+  \endentry
+
+  \entry{Bendik2020-pz}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=BJ}{%
+         family={Bend{\'\i}k},
+         familyi={B\bibinitperiod},
+         given={Jaroslav},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=CI}{%
+         family={{\v C}ern{\'a}},
+         familyi={{\v C}\bibinitperiod},
+         given={Ivana},
+         giveni={I\bibinitperiod},
+      }}%
+    }
+    \name{editor}{2}{}{%
+      {{hash=BA}{%
+         family={Biere},
+         familyi={B\bibinitperiod},
+         given={Armin},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=PD}{%
+         family={Parker},
+         familyi={P\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer International Publishing}%
+    }
+    \strng{namehash}{BJCI1}
+    \strng{fullhash}{BJCI1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2020}
+    \field{labeldatesource}{}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{booktitle}{Tools and Algorithms for the Construction and Analysis of Systems}
+    \verb{doi}
+    \verb 10.1007/978-3-030-45190-5\_8
+    \endverb
+    \field{isbn}{9783030451905}
+    \field{pages}{135\bibrangedash 152}
+    \field{series}{Lecture Notes in Computer Science}
+    \field{title}{{{MUST}}: Minimal Unsatisfiable Subsets Enumeration Tool}
+    \list{location}{1}{%
+      {Cham}%
+    }
+    \field{year}{2020}
+  \endentry
+
+  \entry{Bogner2022-vf}{misc}{}
+    \name{author}{2}{}{%
+      {{hash=BJ}{%
+         family={Bogner},
+         familyi={B\bibinitperiod},
+         given={Justus},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=MM}{%
+         family={Merkel},
+         familyi={M\bibinitperiod},
+         given={Manuel},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {arXiv}%
+    }
+    \strng{namehash}{BJMM1}
+    \strng{fullhash}{BJMM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2022}
+    \field{labeldatesource}{}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \verb{eprint}
+    \verb 2203.11115 [cs]
+    \endverb
+    \field{number}{arXiv:2203.11115}
+    \field{title}{To Type or Not to Type? A Systematic Comparison of the Software Quality of {JavaScript} and {TypeScript} Applications on {GitHub}}
+    \field{month}{03}
+    \field{year}{2022}
+  \endentry
+
+  \entry{Caprara2000-vw}{article}{}
+    \name{author}{3}{}{%
+      {{hash=CA}{%
+         family={Caprara},
+         familyi={C\bibinitperiod},
+         given={Alberto},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=TP}{%
+         family={Toth},
+         familyi={T\bibinitperiod},
+         given={Paolo},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=FM}{%
+         family={Fischetti},
+         familyi={F\bibinitperiod},
+         given={Matteo},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CATPFM1}
+    \strng{fullhash}{CATPFM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2000}
+    \field{labeldatesource}{}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \verb{doi}
+    \verb 10.1023/A:1019225027893
+    \endverb
+    \field{issn}{0254-5330, 1572-9338}
+    \field{number}{1}
+    \field{pages}{353\bibrangedash 371}
+    \field{title}{Algorithms for the Set Covering Problem}
+    \field{volume}{98}
+    \field{journaltitle}{Ann. Oper. Res.}
+    \field{month}{12}
+    \field{year}{2000}
+  \endentry
+
+  \entry{Cardelli1987-fp}{article}{}
+    \name{author}{1}{}{%
+      {{hash=CL}{%
+         family={Cardelli},
+         familyi={C\bibinitperiod},
+         given={Luca},
+         giveni={L\bibinitperiod},
+      }}%
+    }
+    \list{language}{1}{%
+      {en}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier BV}%
+    }
+    \strng{namehash}{CL1}
+    \strng{fullhash}{CL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1987}
+    \field{labeldatesource}{}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \verb{doi}
+    \verb 10.1016/0167-6423(87)90019-0
+    \endverb
+    \field{issn}{0167-6423, 1872-7964}
+    \field{number}{2}
+    \field{pages}{147\bibrangedash 172}
+    \field{title}{Basic polymorphic typechecking}
+    \field{volume}{8}
+    \field{journaltitle}{Sci. Comput. Program.}
+    \field{month}{04}
+    \field{year}{1987}
+  \endentry
+
+  \entry{Chen2014-dz}{article}{}
+    \name{author}{2}{}{%
+      {{hash=CS}{%
+         family={Chen},
+         familyi={C\bibinitperiod},
+         given={Sheng},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=EM}{%
+         family={Erwig},
+         familyi={E\bibinitperiod},
+         given={Martin},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CSEM1}
+    \strng{fullhash}{CSEM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2014}
+    \field{labeldatesource}{}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \verb{doi}
+    \verb 10.1145/2578855.2535863
+    \endverb
+    \field{issn}{0362-1340}
+    \field{number}{1}
+    \field{pages}{583\bibrangedash 594}
+    \field{title}{Counter-factual typing for debugging type errors}
+    \field{volume}{49}
+    \field{journaltitle}{ACM SIGPLAN Notices}
+    \field{month}{01}
+    \field{year}{2014}
+  \endentry
+
+  \entry{Chen2014-ev}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=CS}{%
+         family={Chen},
+         familyi={C\bibinitperiod},
+         given={Sheng},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=EM}{%
+         family={Erwig},
+         familyi={E\bibinitperiod},
+         given={Martin},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=SK}{%
+         family={Smeltzer},
+         familyi={S\bibinitperiod},
+         given={Karl},
+         giveni={K\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{CSEMSK1}
+    \strng{fullhash}{CSEMSK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2014}
+    \field{labeldatesource}{}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{booktitle}{2014 {IEEE} Symposium on Visual Languages and {Human-Centric} Computing ({{VL}/{HCC}})}
+    \verb{doi}
+    \verb 10.1109/VLHCC.2014.6883038
+    \endverb
+    \field{isbn}{9781479940356}
+    \field{pages}{145\bibrangedash 152}
+    \field{title}{Let's hear both sides: On combining type-error reporting tools}
+    \list{location}{1}{%
+      {Melbourne, Australia}%
+    }
+    \field{month}{07}
+    \field{year}{2014}
+  \endentry
+
+  \entry{Chen2020-ad}{article}{}
+    \name{author}{2}{}{%
+      {{hash=CS}{%
+         family={Chen},
+         familyi={C\bibinitperiod},
+         given={Sheng},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=WB}{%
+         family={Wu},
+         familyi={W\bibinitperiod},
+         given={Baijun},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CSWB1}
+    \strng{fullhash}{CSWB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2020}
+    \field{labeldatesource}{}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \verb{doi}
+    \verb 10.1016/j.scico.2020.102544
+    \endverb
+    \field{issn}{0167-6423}
+    \field{pages}{102544}
+    \field{title}{Efficient counter-factual type error debugging}
+    \field{volume}{200}
+    \field{journaltitle}{Science of Computer Programming}
+    \field{month}{12}
+    \field{year}{2020}
+  \endentry
+
+  \entry{Clerici2013-ru}{article}{}
+    \name{author}{3}{}{%
+      {{hash=CS}{%
+         family={Clerici},
+         familyi={C\bibinitperiod},
+         given={Silvia},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=ZC}{%
+         family={Zoltan},
+         familyi={Z\bibinitperiod},
+         given={Cristina},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=PG}{%
+         family={Prestigiacomo},
+         familyi={P\bibinitperiod},
+         given={Guillermo},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \list{language}{1}{%
+      {en}%
+    }
+    \list{publisher}{2}{%
+      {Springer Science}%
+      {Business Media LLC}%
+    }
+    \strng{namehash}{CSZCPG1}
+    \strng{fullhash}{CSZCPG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2013}
+    \field{labeldatesource}{}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \verb{doi}
+    \verb 10.1007/s10990-014-9104-8
+    \endverb
+    \field{issn}{1573-0557}
+    \field{number}{1-4}
+    \field{pages}{29\bibrangedash 62}
+    \field{title}{Graphical and incremental type inference. A graph transformation approach}
+    \field{volume}{26}
+    \field{journaltitle}{High.-order Symb. Comput.}
+    \field{month}{12}
+    \field{year}{2013}
+  \endentry
+
+  \entry{Cliburn2008-jo}{inproceedings}{}
+    \name{author}{1}{}{%
+      {{hash=CDC}{%
+         family={Cliburn},
+         familyi={C\bibinitperiod},
+         given={Daniel\bibnamedelima C},
+         giveni={D\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{CDC1}
+    \strng{fullhash}{CDC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2008}
+    \field{labeldatesource}{}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{booktitle}{2008 38th Annual Frontiers in Education Conference}
+    \verb{doi}
+    \verb 10.1109/FIE.2008.4720254
+    \endverb
+    \field{isbn}{9781424419692, 9781424419708}
+    \field{issn}{0190-5848, 2377-634X}
+    \field{pages}{T3B\bibrangedash 1\bibrangedash T3B\bibrangedash 6}
+    \field{title}{Student opinions of Alice in {CS1}}
+    \field{month}{10}
+    \field{year}{2008}
+  \endentry
+
+  \entry{Daly2011-is}{article}{}
+    \name{author}{1}{}{%
+      {{hash=DT}{%
+         family={Daly},
+         familyi={D\bibinitperiod},
+         given={Tebring},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Consortium for Computing Sciences in Colleges}%
+    }
+    \strng{namehash}{DT1}
+    \strng{fullhash}{DT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2011}
+    \field{labeldatesource}{}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{issn}{1937-4771}
+    \field{number}{5}
+    \field{pages}{23\bibrangedash 30}
+    \field{title}{Minimizing To Maximize: An Initial Attempt At Teaching Introductory Programming Using Alice}
+    \field{volume}{26}
+    \field{journaltitle}{Journal of Computing Sciences in Colleges}
+    \field{month}{01}
+    \field{year}{2011}
+  \endentry
+
+  \entry{Damas1982-sc}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=DL}{%
+         family={Damas},
+         familyi={D\bibinitperiod},
+         given={Luis},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=MR}{%
+         family={Milner},
+         familyi={M\bibinitperiod},
+         given={Robin},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {ACM Press}%
+    }
+    \strng{namehash}{DLMR1}
+    \strng{fullhash}{DLMR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1982}
+    \field{labeldatesource}{}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{booktitle}{Proceedings of the 9th {ACM} {SIGPLAN}-{SIGACT} symposium on Principles of programming languages - {POPL} '82}
+    \verb{doi}
+    \verb 10.1145/582153.582176
+    \endverb
+    \field{isbn}{9780897910651}
+    \field{pages}{207\bibrangedash 212}
+    \field{title}{Principal type-schemes for functional programs}
+    \list{location}{1}{%
+      {Albuquerque, Mexico}%
+    }
+    \field{year}{1982}
+  \endentry
+
+  \entry{Day1970-kb}{article}{}
+    \name{author}{1}{}{%
+      {{hash=DB}{%
+         family={Day},
+         familyi={D\bibinitperiod},
+         given={Brian},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DB1}
+    \strng{fullhash}{DB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1970}
+    \field{labeldatesource}{}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{pages}{1\bibrangedash 38}
+    \field{title}{On Closed Categories of Functors}
+    \field{volume}{137}
+    \field{journaltitle}{Lecture Notes in Mathematics}
+    \field{year}{1970}
+  \endentry
+
+  \entry{Fausak2022-zf}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=FT}{%
+         family={Fausak},
+         familyi={F\bibinitperiod},
+         given={Taylor},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{FT1}
+    \strng{fullhash}{FT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2022}
+    \field{labeldatesource}{}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \field{howpublished}{\url{https://taylor.fausak.me/2022/11/18/haskell-survey-results/}}
+    \field{note}{Accessed: 2023-10-12}
+    \field{title}{2022 State of Haskell Survey Results}
+    \field{month}{11}
+    \field{year}{2022}
+  \endentry
+
+  \entry{Ferdowsi2023-au}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=FK}{%
+         family={Ferdowsi},
+         familyi={F\bibinitperiod},
+         given={Kasra},
+         giveni={K\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {arXiv}%
+    }
+    \strng{namehash}{FK1}
+    \strng{fullhash}{FK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2023}
+    \field{labeldatesource}{}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \verb{eprint}
+    \verb 2301.02308 [cs]
+    \endverb
+    \field{number}{arXiv:2301.02308}
+    \field{title}{The Usability of Advanced Type Systems: Rust as a Case Study}
+    \field{month}{01}
+    \field{year}{2023}
+  \endentry
+
+  \entry{Fu2021-xd}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=FS}{%
+         family={Fu},
+         familyi={F\bibinitperiod},
+         given={Shuai},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=DT}{%
+         family={Dwyer},
+         familyi={D\bibinitperiod},
+         given={Tim},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=SP}{%
+         family={Stuckey},
+         familyi={S\bibinitperiod},
+         given={Peter},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{FSDTSP1}
+    \strng{fullhash}{FSDTSP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2021}
+    \field{labeldatesource}{}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \field{title}{Interactive Haskell Type Inference Exploration (Extended Abstract)}
+    \list{location}{1}{%
+      {Virtual}%
+    }
+    \field{year}{2021}
+  \endentry
+
+  \entry{Google_Developers_undated-ew}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=G}{%
+         family={{Google Developers}},
+         familyi={G\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{G1}
+    \strng{fullhash}{G1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labeldatesource}{nodate}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{title}{{OR-Tools}}
+  \endentry
+
+  \entry{Griesemer_undated-ff}{misc}{}
+    \name{author}{2}{}{%
+      {{hash=GR}{%
+         family={Griesemer},
+         familyi={G\bibinitperiod},
+         given={Robert},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=TIL}{%
+         family={Taylor},
+         familyi={T\bibinitperiod},
+         given={Ian\bibnamedelima Lance},
+         giveni={I\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+    }
+    \list{language}{1}{%
+      {en}%
+    }
+    \strng{namehash}{GRTIL1}
+    \strng{fullhash}{GRTIL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labeldatesource}{nodate}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{howpublished}{\url{https://go.dev/blog/intro-generics}}
+    \field{note}{Accessed: 2024-2-19}
+    \field{title}{An Introduction To Generics - The Go Programming Language}
+  \endentry
+
+  \entry{Haack2004-fr}{article}{}
+    \name{author}{2}{}{%
+      {{hash=HC}{%
+         family={Haack},
+         familyi={H\bibinitperiod},
+         given={Christian},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=WJB}{%
+         family={Wells},
+         familyi={W\bibinitperiod},
+         given={J\bibnamedelima B},
+         giveni={J\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HCWJB1}
+    \strng{fullhash}{HCWJB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2004}
+    \field{labeldatesource}{}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \verb{doi}
+    \verb 10.1016/j.scico.2004.01.004
+    \endverb
+    \field{issn}{0167-6423}
+    \field{number}{1}
+    \field{pages}{189\bibrangedash 224}
+    \field{series}{12th European Symposium on Programming (ESOP 2003)}
+    \field{title}{Type error slicing in implicitly typed higher-order languages}
+    \field{volume}{50}
+    \field{journaltitle}{Science of Computer Programming}
+    \field{month}{03}
+    \field{year}{2004}
+  \endentry
+
+  \entry{Hage2020-hg}{article}{}
+    \name{author}{1}{}{%
+      {{hash=HJ}{%
+         family={Hage},
+         familyi={H\bibinitperiod},
+         given={Jurriaan},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{language}{1}{%
+      {en}%
+    }
+    \list{publisher}{1}{%
+      {CEUR-WS}%
+    }
+    \strng{namehash}{HJ1}
+    \strng{fullhash}{HJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2020}
+    \field{labeldatesource}{}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{issn}{1613-0073}
+    \field{pages}{62\bibrangedash 74}
+    \field{title}{Solved and open problems in type error diagnosis?}
+    \field{volume}{2707}
+    \field{journaltitle}{CEUR Workshop Proc.}
+    \field{month}{10}
+    \field{year}{2020}
+  \endentry
+
+  \entry{Hamari2014-mc}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=HJ}{%
+         family={Hamari},
+         familyi={H\bibinitperiod},
+         given={Juho},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=KJ}{%
+         family={Koivisto},
+         familyi={K\bibinitperiod},
+         given={Jonna},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=SH}{%
+         family={Sarsa},
+         familyi={S\bibinitperiod},
+         given={Harri},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{HJKJSH1}
+    \strng{fullhash}{HJKJSH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2014}
+    \field{labeldatesource}{}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{booktitle}{2014 47th Hawaii International Conference on System Sciences}
+    \verb{doi}
+    \verb 10.1109/HICSS.2014.377
+    \endverb
+    \field{isbn}{9781479925049}
+    \field{issn}{1530-1605}
+    \field{pages}{3025\bibrangedash 3034}
+    \field{title}{Does Gamification Work? -- A Literature Review of Empirical Studies on Gamification}
+    \field{month}{01}
+    \field{year}{2014}
+  \endentry
+
+  \entry{noauthor_2023-ot}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2023}
+    \field{labeldatesource}{}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{title}{Haskell Language Server}
+    \field{year}{2023}
+  \endentry
+
+  \entry{He2014-vp}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=HJ}{%
+         family={He},
+         familyi={H\bibinitperiod},
+         given={Jiyin},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=BM}{%
+         family={Bron},
+         familyi={B\bibinitperiod},
+         given={Marc},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=AL}{%
+         family={Azzopardi},
+         familyi={A\bibinitperiod},
+         given={Leif},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=dVA}{%
+         prefix={de},
+         prefixi={d\bibinitperiod},
+         family={Vries},
+         familyi={V\bibinitperiod},
+         given={Arjen},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Association for Computing Machinery}%
+    }
+    \strng{namehash}{HJ+1}
+    \strng{fullhash}{HJBMALVAd1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2014}
+    \field{labeldatesource}{}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{booktitle}{Proceedings of the First International Workshop on Gamification for Information Retrieval}
+    \verb{doi}
+    \verb 10.1145/2594776.2594787
+    \endverb
+    \field{isbn}{9781450328920}
+    \field{pages}{49\bibrangedash 52}
+    \field{series}{GamifIR '14}
+    \field{title}{Studying user browsing behavior through gamified search tasks}
+    \list{location}{1}{%
+      {Amsterdam, The Netherlands}%
+    }
+    \field{month}{04}
+    \field{year}{2014}
+    \warn{\item Can't use 'location' + 'address'}
+  \endentry
+
+  \entry{Heeren2003-kd}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=HB}{%
+         family={Heeren},
+         familyi={H\bibinitperiod},
+         given={Bastiaan},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=LD}{%
+         family={Leijen},
+         familyi={L\bibinitperiod},
+         given={Daan},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=VIA}{%
+         family={Van\bibnamedelima IJzendoorn},
+         familyi={V\bibinitperiod\bibinitdelim I\bibinitperiod},
+         given={Arjan},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {ACM}%
+    }
+    \strng{namehash}{HBLDVIA1}
+    \strng{fullhash}{HBLDVIA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2003}
+    \field{labeldatesource}{}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{booktitle}{Proceedings of the 2003 {ACM} {SIGPLAN} workshop on Haskell}
+    \verb{doi}
+    \verb 10.1145/871895.871902
+    \endverb
+    \field{isbn}{9781581137583}
+    \field{pages}{62\bibrangedash 71}
+    \field{title}{Helium, for learning Haskell}
+    \list{location}{1}{%
+      {Uppsala Sweden}%
+    }
+    \field{month}{08}
+    \field{year}{2003}
+  \endentry
+
+  \entry{Helium4Haskell2023-kk}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=H}{%
+         family={{Helium4Haskell}},
+         familyi={H\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Helium4Haskell}%
+    }
+    \strng{namehash}{H1}
+    \strng{fullhash}{H1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2023}
+    \field{labeldatesource}{}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{title}{Haskell Helium}
+    \field{month}{05}
+    \field{year}{2023}
+  \endentry
+
+  \entry{Hudak2007-kn}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=HP}{%
+         family={Hudak},
+         familyi={H\bibinitperiod},
+         given={Paul},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=HJ}{%
+         family={Hughes},
+         familyi={H\bibinitperiod},
+         given={John},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=PJS}{%
+         family={Peyton\bibnamedelima Jones},
+         familyi={P\bibinitperiod\bibinitdelim J\bibinitperiod},
+         given={Simon},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=WP}{%
+         family={Wadler},
+         familyi={W\bibinitperiod},
+         given={Philip},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Association for Computing Machinery}%
+    }
+    \strng{namehash}{HP+1}
+    \strng{fullhash}{HPHJPJSWP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2007}
+    \field{labeldatesource}{}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{booktitle}{Proceedings of the third {ACM} {SIGPLAN} conference on History of programming languages}
+    \verb{doi}
+    \verb 10.1145/1238844.1238856
+    \endverb
+    \field{isbn}{9781595937667}
+    \field{pages}{12\bibrangedash 1\bibrangedash 12\bibrangedash 55}
+    \field{series}{HOPL III}
+    \field{title}{A history of Haskell: being lazy with class}
+    \list{location}{1}{%
+      {New York, NY, USA}%
+    }
+    \field{month}{06}
+    \field{year}{2007}
+  \endentry
+
+  \entry{Jun2000-yu}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=JY}{%
+         family={Jun},
+         familyi={J\bibinitperiod},
+         given={Yang},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=MG}{%
+         family={Michaelson},
+         familyi={M\bibinitperiod},
+         given={Greg},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=TP}{%
+         family={Trinder},
+         familyi={T\bibinitperiod},
+         given={Phil},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{JYMGTP1}
+    \strng{fullhash}{JYMGTP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2000}
+    \field{extradate}{1}
+    \field{labeldatesource}{}
+    \field{sortinit}{J}
+    \field{sortinithash}{J}
+    \field{booktitle}{8th Annual Conference on the Teaching of Computing}
+    \field{title}{Helping students understand polymorphic type errors}
+    \field{year}{2000}
+  \endentry
+
+  \entry{Jun2000-ec}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=JY}{%
+         family={Jun},
+         familyi={J\bibinitperiod},
+         given={Yang},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=MG}{%
+         family={Michaelson},
+         familyi={M\bibinitperiod},
+         given={Greg},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=TP}{%
+         family={Trinder},
+         familyi={T\bibinitperiod},
+         given={Phil},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {academia.edu}%
+    }
+    \strng{namehash}{JYMGTP1}
+    \strng{fullhash}{JYMGTP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2000}
+    \field{extradate}{2}
+    \field{labeldatesource}{}
+    \field{sortinit}{J}
+    \field{sortinithash}{J}
+    \field{booktitle}{{PPIG}}
+    \field{pages}{6}
+    \field{title}{How do people check polymorphic types?}
+    \list{location}{1}{%
+      {Cozenza Italy}%
+    }
+    \field{year}{2000}
+  \endentry
+
+  \entry{Jung2000-oc}{article}{}
+    \name{author}{2}{}{%
+      {{hash=JY}{%
+         family={Jung},
+         familyi={J\bibinitperiod},
+         given={Yang},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=MG}{%
+         family={Michaelson},
+         familyi={M\bibinitperiod},
+         given={Greg},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{JYMG1}
+    \strng{fullhash}{JYMG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2000}
+    \field{labeldatesource}{}
+    \field{sortinit}{J}
+    \field{sortinithash}{J}
+    \verb{doi}
+    \verb 10.1017/S0956796899003597
+    \endverb
+    \field{issn}{0956-7968, 1469-7653}
+    \field{number}{1}
+    \field{pages}{57\bibrangedash 75}
+    \field{title}{A visualisation of polymorphic type checking}
+    \field{volume}{10}
+    \field{journaltitle}{J. Funct. Programming}
+    \field{month}{01}
+    \field{year}{2000}
+  \endentry
+
+  \entry{Justin_Lubin2021-yy}{incollection}{}
+    \name{author}{1}{}{%
+      {{hash=J}{%
+         family={{Justin Lubin}},
+         familyi={J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Association for Computing Machinery}%
+    }
+    \strng{namehash}{J1}
+    \strng{fullhash}{J1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2021}
+    \field{labeldatesource}{}
+    \field{sortinit}{J}
+    \field{sortinithash}{J}
+    \field{booktitle}{Extended Abstracts of the 2021 {CHI} Conference on Human Factors in Computing Systems}
+    \verb{doi}
+    \verb 10.1145/3411763.3451515
+    \endverb
+    \field{isbn}{9781450380959}
+    \field{pages}{1\bibrangedash 6}
+    \field{title}{How {Statically-Typed} Functional Programmers Author Code}
+    \list{location}{1}{%
+      {New York, NY, USA}%
+    }
+    \field{month}{05}
+    \field{year}{2021}
+  \endentry
+
+  \entry{Klabnik_undated-wx}{misc}{}
+    \name{author}{2}{}{%
+      {{hash=KS}{%
+         family={Klabnik},
+         familyi={K\bibinitperiod},
+         given={Steve},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=NC}{%
+         family={Nichols},
+         familyi={N\bibinitperiod},
+         given={Carol},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \list{language}{1}{%
+      {en}%
+    }
+    \strng{namehash}{KSNC1}
+    \strng{fullhash}{KSNC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{extradate}{1}
+    \field{labeldatesource}{nodate}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{booktitle}{The Rust Programming Language}
+    \field{howpublished}{\url{https://doc.rust-lang.org/book/ch10-01-syntax.html}}
+    \field{note}{Accessed: 2024-2-20}
+    \field{title}{Generic Data Types}
+  \endentry
+
+  \entry{Klabnik_undated-mp}{misc}{}
+    \name{author}{2}{}{%
+      {{hash=KS}{%
+         family={Klabnik},
+         familyi={K\bibinitperiod},
+         given={Steve},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=NC}{%
+         family={Nichols},
+         familyi={N\bibinitperiod},
+         given={Carol},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \list{language}{1}{%
+      {en}%
+    }
+    \strng{namehash}{KSNC1}
+    \strng{fullhash}{KSNC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{extradate}{2}
+    \field{labeldatesource}{nodate}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{booktitle}{The Rust Programming Language}
+    \field{howpublished}{\url{https://doc.rust-lang.org/book/ch06-01-defining-an-enum.html}}
+    \field{note}{Accessed: 2024-2-19}
+    \field{title}{The Rust Programming Language}
+  \endentry
+
+  \entry{Kleinschmager2012-bg}{inproceedings}{}
+    \name{author}{5}{}{%
+      {{hash=KS}{%
+         family={Kleinschmager},
+         familyi={K\bibinitperiod},
+         given={Sebastian},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=RR}{%
+         family={Robbes},
+         familyi={R\bibinitperiod},
+         given={Romain},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=SA}{%
+         family={Stefik},
+         familyi={S\bibinitperiod},
+         given={Andreas},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=HS}{%
+         family={Hanenberg},
+         familyi={H\bibinitperiod},
+         given={Stefan},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=TE}{%
+         family={Tanter},
+         familyi={T\bibinitperiod},
+         given={Eric},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{KS+1}
+    \strng{fullhash}{KSRRSAHSTE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2012}
+    \field{labeldatesource}{}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{booktitle}{2012 20th {IEEE} International Conference on Program Comprehension ({{ICPC}})}
+    \verb{doi}
+    \verb 10.1109/ICPC.2012.6240483
+    \endverb
+    \field{pages}{153\bibrangedash 162}
+    \field{title}{Do static type systems improve the maintainability of software systems? An empirical study}
+    \field{month}{06}
+    \field{year}{2012}
+  \endentry
+
+  \entry{Lamraoui2016-wr}{article}{}
+    \name{author}{2}{}{%
+      {{hash=LSM}{%
+         family={Lamraoui},
+         familyi={L\bibinitperiod},
+         given={Si-Mohamed},
+         giveni={S\bibinithyphendelim M\bibinitperiod},
+      }}%
+      {{hash=NS}{%
+         family={Nakajima},
+         familyi={N\bibinitperiod},
+         given={Shin},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{LSMNS1}
+    \strng{fullhash}{LSMNS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2016}
+    \field{labeldatesource}{}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \verb{doi}
+    \verb 10.2197/ipsjjip.24.88
+    \endverb
+    \field{issn}{1882-6652}
+    \field{number}{1}
+    \field{pages}{88\bibrangedash 98}
+    \field{title}{A Formula-based Approach for Automatic Fault Localization of Multi-fault Programs}
+    \field{volume}{24}
+    \field{journaltitle}{Journal of Information Processing}
+    \field{year}{2016}
+  \endentry
+
+  \entry{Lerner2007-mu}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=LBS}{%
+         family={Lerner},
+         familyi={L\bibinitperiod},
+         given={Benjamin\bibnamedelima S},
+         giveni={B\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+      {{hash=FM}{%
+         family={Flower},
+         familyi={F\bibinitperiod},
+         given={Matthew},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=GD}{%
+         family={Grossman},
+         familyi={G\bibinitperiod},
+         given={Dan},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=CC}{%
+         family={Chambers},
+         familyi={C\bibinitperiod},
+         given={Craig},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Association for Computing Machinery}%
+    }
+    \strng{namehash}{LBS+1}
+    \strng{fullhash}{LBSFMGDCC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2007}
+    \field{labeldatesource}{}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{booktitle}{Proceedings of the 28th {ACM} {SIGPLAN} Conference on Programming Language Design and Implementation}
+    \verb{doi}
+    \verb 10.1145/1250734.1250783
+    \endverb
+    \field{isbn}{9781595936332}
+    \field{pages}{425\bibrangedash 434}
+    \field{series}{PLDI '07}
+    \field{title}{Searching for type-error messages}
+    \list{location}{1}{%
+      {New York, NY, USA}%
+    }
+    \field{month}{06}
+    \field{year}{2007}
+  \endentry
+
+  \entry{Liffiton2016-xi}{article}{}
+    \name{author}{4}{}{%
+      {{hash=LMH}{%
+         family={Liffiton},
+         familyi={L\bibinitperiod},
+         given={Mark\bibnamedelima H},
+         giveni={M\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+      {{hash=PA}{%
+         family={Previti},
+         familyi={P\bibinitperiod},
+         given={Alessandro},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=MA}{%
+         family={Malik},
+         familyi={M\bibinitperiod},
+         given={Ammar},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=MSJ}{%
+         family={Marques-Silva},
+         familyi={M\bibinithyphendelim S\bibinitperiod},
+         given={Joao},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{LMH+1}
+    \strng{fullhash}{LMHPAMAMSJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2016}
+    \field{labeldatesource}{}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \verb{doi}
+    \verb 10.1007/s10601-015-9183-0
+    \endverb
+    \field{issn}{1383-7133, 1572-9354}
+    \field{number}{2}
+    \field{pages}{223\bibrangedash 250}
+    \field{title}{Fast, flexible {MUS} enumeration}
+    \field{volume}{21}
+    \field{journaltitle}{Constraints}
+    \field{month}{04}
+    \field{year}{2016}
+  \endentry
+
+  \entry{Mayer2012-lg}{inproceedings}{}
+    \name{author}{5}{}{%
+      {{hash=MC}{%
+         family={Mayer},
+         familyi={M\bibinitperiod},
+         given={Clemens},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=HS}{%
+         family={Hanenberg},
+         familyi={H\bibinitperiod},
+         given={Stefan},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=RR}{%
+         family={Robbes},
+         familyi={R\bibinitperiod},
+         given={Romain},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=TE}{%
+         family={Tanter},
+         familyi={T\bibinitperiod},
+         given={{\'E}ric},
+         giveni={{\'E}\bibinitperiod},
+      }}%
+      {{hash=SA}{%
+         family={Stefik},
+         familyi={S\bibinitperiod},
+         given={Andreas},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Association for Computing Machinery}%
+    }
+    \strng{namehash}{MC+1}
+    \strng{fullhash}{MCHSRRTESA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2012}
+    \field{labeldatesource}{}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{booktitle}{Proceedings of the {ACM} international conference on Object oriented programming systems languages and applications}
+    \verb{doi}
+    \verb 10.1145/2384616.2384666
+    \endverb
+    \field{isbn}{9781450315616}
+    \field{pages}{683\bibrangedash 702}
+    \field{series}{OOPSLA '12}
+    \field{title}{An empirical study of the influence of static type systems on the usability of undocumented software}
+    \list{location}{1}{%
+      {New York, NY, USA}%
+    }
+    \field{month}{10}
+    \field{year}{2012}
+  \endentry
+
+  \entry{Mitchell_undated-fb}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=MN}{%
+         family={Mitchell},
+         familyi={M\bibinitperiod},
+         given={Neil},
+         giveni={N\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MN1}
+    \strng{fullhash}{MN1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labeldatesource}{nodate}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{booktitle}{Hoogle}
+    \field{howpublished}{\url{https://hoogle.haskell.org/}}
+    \field{note}{Accessed: 2024-2-19}
+    \field{title}{Hoogle}
+  \endentry
+
+  \entry{Montero2010-uh}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=MS}{%
+         family={Montero},
+         familyi={M\bibinitperiod},
+         given={Susana},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=DP}{%
+         family={D{\'\i}az},
+         familyi={D\bibinitperiod},
+         given={Paloma},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=DD}{%
+         family={D{\'\i}ez},
+         familyi={D\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=AI}{%
+         family={Aedo},
+         familyi={A\bibinitperiod},
+         given={Ignacio},
+         giveni={I\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{MS+1}
+    \strng{fullhash}{MSDPDDAI1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2010}
+    \field{labeldatesource}{}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{booktitle}{{IEEE} {EDUCON} 2010 Conference}
+    \verb{doi}
+    \verb 10.1109/EDUCON.2010.5492438
+    \endverb
+    \field{isbn}{9781424465712, 9781424465682}
+    \field{issn}{2165-9559, 2165-9567}
+    \field{pages}{1929\bibrangedash 1934}
+    \field{title}{Dual instructional support materials for introductory object-oriented programming: Classes vs. objects}
+    \field{month}{04}
+    \field{year}{2010}
+  \endentry
+
+  \entry{Noone2018-wl}{article}{}
+    \name{author}{2}{}{%
+      {{hash=NM}{%
+         family={Noone},
+         familyi={N\bibinitperiod},
+         given={Mark},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=MA}{%
+         family={Mooney},
+         familyi={M\bibinitperiod},
+         given={Aidan},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{NMMA1}
+    \strng{fullhash}{NMMA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2018}
+    \field{labeldatesource}{}
+    \field{sortinit}{N}
+    \field{sortinithash}{N}
+    \verb{doi}
+    \verb 10.1007/s40692-018-0101-5
+    \endverb
+    \field{issn}{2197-9995}
+    \field{number}{2}
+    \field{pages}{149\bibrangedash 174}
+    \field{title}{Visual and textual programming languages: a systematic review of the literature}
+    \field{volume}{5}
+    \field{journaltitle}{Journal of Computers in Education}
+    \field{month}{06}
+    \field{year}{2018}
+  \endentry
+
+  \entry{Ou2015-vr}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=OJ}{%
+         family={Ou},
+         familyi={O\bibinitperiod},
+         given={Jibin},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=VM}{%
+         family={Vechev},
+         familyi={V\bibinitperiod},
+         given={Martin},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=HO}{%
+         family={Hilliges},
+         familyi={H\bibinitperiod},
+         given={Otmar},
+         giveni={O\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Association for Computing Machinery}%
+    }
+    \strng{namehash}{OJVMHO1}
+    \strng{fullhash}{OJVMHO1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2015}
+    \field{labeldatesource}{}
+    \field{sortinit}{O}
+    \field{sortinithash}{O}
+    \field{booktitle}{Proceedings of the 33rd Annual {ACM} Conference on Human Factors in Computing Systems}
+    \verb{doi}
+    \verb 10.1145/2702123.2702319
+    \endverb
+    \field{isbn}{9781450331456}
+    \field{pages}{3053\bibrangedash 3062}
+    \field{series}{CHI '15}
+    \field{title}{An Interactive System for Data Structure Development}
+    \list{location}{1}{%
+      {Seoul, Republic of Korea}%
+    }
+    \field{month}{04}
+    \field{year}{2015}
+    \warn{\item Can't use 'location' + 'address'}
+  \endentry
+
+  \entry{Previti2013-mr}{article}{}
+    \name{author}{2}{}{%
+      {{hash=PA}{%
+         family={Previti},
+         familyi={P\bibinitperiod},
+         given={Alessandro},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=MSJ}{%
+         family={Marques-Silva},
+         familyi={M\bibinithyphendelim S\bibinitperiod},
+         given={Joao},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PAMSJ1}
+    \strng{fullhash}{PAMSJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2013}
+    \field{labeldatesource}{}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \verb{doi}
+    \verb 10.1609/aaai.v27i1.8657
+    \endverb
+    \field{issn}{2159-5399, 2374-3468}
+    \field{number}{1}
+    \field{pages}{818\bibrangedash 825}
+    \field{title}{Partial {MUS} Enumeration}
+    \field{volume}{27}
+    \field{journaltitle}{Proc. Conf. AAAI Artif. Intell.}
+    \field{month}{06}
+    \field{year}{2013}
+  \endentry
+
+  \entry{Seidel2017-uf}{article}{}
+    \name{author}{5}{}{%
+      {{hash=SEL}{%
+         family={Seidel},
+         familyi={S\bibinitperiod},
+         given={Eric\bibnamedelima L},
+         giveni={E\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+      {{hash=SH}{%
+         family={Sibghat},
+         familyi={S\bibinitperiod},
+         given={Huma},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=CK}{%
+         family={Chaudhuri},
+         familyi={C\bibinitperiod},
+         given={Kamalika},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=WW}{%
+         family={Weimer},
+         familyi={W\bibinitperiod},
+         given={Westley},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=JR}{%
+         family={Jhala},
+         familyi={J\bibinitperiod},
+         given={Ranjit},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SEL+1}
+    \strng{fullhash}{SELSHCKWWJR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2017}
+    \field{labeldatesource}{}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \verb{doi}
+    \verb 10.1145/3138818
+    \endverb
+    \field{issn}{2475-1421}
+    \field{pages}{1\bibrangedash 27}
+    \field{title}{Learning to blame: localizing novice type errors with data-driven diagnosis}
+    \field{volume}{1}
+    \field{journaltitle}{Proceedings of the ACM on Programming Languages}
+    \field{month}{10}
+    \field{year}{2017}
+  \endentry
+
+  \entry{Shaphiro1965-dx}{article}{}
+    \name{author}{2}{}{%
+      {{hash=SS}{%
+         family={Shaphiro},
+         familyi={S\bibinitperiod},
+         given={S},
+         giveni={S},
+      }}%
+      {{hash=WM}{%
+         family={Wilk},
+         familyi={W\bibinitperiod},
+         given={M},
+         giveni={M},
+      }}%
+    }
+    \strng{namehash}{SSWM1}
+    \strng{fullhash}{SSWM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1965}
+    \field{labeldatesource}{}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{issn}{0006-3444, 1464-3510}
+    \field{title}{An analysis of variance test for normality}
+    \field{journaltitle}{Biometrika}
+    \field{year}{1965}
+  \endentry
+
+  \entry{Da_Silva_Ribeiro2014-tm}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=dSRR}{%
+         prefix={da},
+         prefixi={d\bibinitperiod},
+         family={Silva\bibnamedelima Ribeiro},
+         familyi={S\bibinitperiod\bibinitdelim R\bibinitperiod},
+         given={Romenig},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=dOBL}{%
+         prefix={de},
+         prefixi={d\bibinitperiod},
+         family={Oliveira\bibnamedelima Brand{\~a}o},
+         familyi={O\bibinitperiod\bibinitdelim B\bibinitperiod},
+         given={Le{\^o}nidas},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=FTVM}{%
+         family={Faria},
+         familyi={F\bibinitperiod},
+         given={Tulio Vitor\bibnamedelima Machado},
+         giveni={T\bibinitperiod\bibinitdelim V\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+      {{hash=BAAF}{%
+         family={Brandao},
+         familyi={B\bibinitperiod},
+         given={Anarosa Alves\bibnamedelima Franco},
+         giveni={A\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim F\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{SRRd+1}
+    \strng{fullhash}{SRRdOBLdFTVMBAAF1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2014}
+    \field{labeldatesource}{}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{booktitle}{2014 {IEEE} Frontiers in Education Conference ({FIE}) Proceedings}
+    \verb{doi}
+    \verb 10.1109/FIE.2014.7044140
+    \endverb
+    \field{isbn}{9781479939220}
+    \field{issn}{0190-5848, 2377-634X}
+    \field{pages}{1\bibrangedash 8}
+    \field{title}{Programming web-course analysis: How to introduce computer programming?}
+    \field{month}{10}
+    \field{year}{2014}
+  \endentry
+
+  \entry{Simon_Marlow2010-lg}{report}{}
+    \name{author}{1}{}{%
+      {{hash=S}{%
+         family={{Simon Marlow}},
+         familyi={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{S1}
+    \strng{fullhash}{S1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2010}
+    \field{labeldatesource}{}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{title}{Haskell 2010 Language Report}
+    \field{type}{techreport}
+    \field{year}{2010}
+  \endentry
+
+  \entry{StackOverflow2022-aw}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=S}{%
+         family={{StackOverflow}},
+         familyi={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{S2}
+    \strng{fullhash}{S2}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2022}
+    \field{labeldatesource}{}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{howpublished}{\url{https://survey.stackoverflow.co/2022/}}
+    \field{note}{Accessed: 2022-11-30}
+    \field{title}{Stack Overflow Developer Survey 2022}
+    \field{year}{2022}
+  \endentry
+
+  \entry{Stuckey2003-pz}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=SPJ}{%
+         family={Stuckey},
+         familyi={S\bibinitperiod},
+         given={Peter\bibnamedelima J},
+         giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=SM}{%
+         family={Sulzmann},
+         familyi={S\bibinitperiod},
+         given={Martin},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=WJ}{%
+         family={Wazny},
+         familyi={W\bibinitperiod},
+         given={Jeremy},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {ACM Press}%
+    }
+    \strng{namehash}{SPJSMWJ1}
+    \strng{fullhash}{SPJSMWJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2003}
+    \field{labeldatesource}{}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{booktitle}{Proceedings of the {ACM} {SIGPLAN} workshop on Haskell - Haskell '03}
+    \verb{doi}
+    \verb 10.1145/871895.871903
+    \endverb
+    \field{isbn}{9781581137583}
+    \field{pages}{72\bibrangedash 83}
+    \field{title}{Interactive type debugging in Haskell}
+    \list{location}{1}{%
+      {Uppsala, Sweden}%
+    }
+    \field{year}{2003}
+  \endentry
+
+  \entry{Tip2001-qn}{article}{}
+    \name{author}{2}{}{%
+      {{hash=TF}{%
+         family={Tip},
+         familyi={T\bibinitperiod},
+         given={F},
+         giveni={F},
+      }}%
+      {{hash=DTB}{%
+         family={Dinesh},
+         familyi={D\bibinitperiod},
+         given={T\bibnamedelima B},
+         giveni={T\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Association for Computing Machinery}%
+    }
+    \strng{namehash}{TFDTB1}
+    \strng{fullhash}{TFDTB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2001}
+    \field{labeldatesource}{}
+    \field{sortinit}{T}
+    \field{sortinithash}{T}
+    \verb{doi}
+    \verb 10.1145/366378.366379
+    \endverb
+    \field{issn}{1049-331X}
+    \field{number}{1}
+    \field{pages}{5\bibrangedash 55}
+    \field{title}{A slicing-based approach for locating type errors}
+    \field{volume}{10}
+    \list{location}{1}{%
+      {New York, NY, USA}%
+    }
+    \field{journaltitle}{ACM Trans. Softw. Eng. Methodol.}
+    \field{month}{01}
+    \field{year}{2001}
+  \endentry
+
+  \entry{Tirronen2015-nr}{article}{}
+    \name{author}{3}{}{%
+      {{hash=TV}{%
+         family={Tirronen},
+         familyi={T\bibinitperiod},
+         given={Ville},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=UMS}{%
+         family={Uusi-M{\"a}kel{\"a}},
+         familyi={U\bibinithyphendelim M\bibinitperiod},
+         given={Samuel},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=IV}{%
+         family={Isom{\"o}tt{\"o}nen},
+         familyi={I\bibinitperiod},
+         given={Ville},
+         giveni={V\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{TVUMSIV1}
+    \strng{fullhash}{TVUMSIV1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2015}
+    \field{labeldatesource}{}
+    \field{sortinit}{T}
+    \field{sortinithash}{T}
+    \verb{doi}
+    \verb 10.1017/S0956796815000179
+    \endverb
+    \field{issn}{0956-7968, 1469-7653}
+    \field{pages}{e11}
+    \field{title}{Understanding beginners' mistakes with Haskell}
+    \field{volume}{25}
+    \field{journaltitle}{J. Funct. Programming}
+    \field{year}{2015}
+  \endentry
+
+  \entry{TypeScriptTeam_undated-qk}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=T}{%
+         family={{TypeScriptTeam}},
+         familyi={T\bibinitperiod},
+      }}%
+    }
+    \list{language}{1}{%
+      {en}%
+    }
+    \strng{namehash}{T1}
+    \strng{fullhash}{T1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labeldatesource}{nodate}
+    \field{sortinit}{T}
+    \field{sortinithash}{T}
+    \field{booktitle}{The {TypeScript} Handbook}
+    \field{howpublished}{\url{https://www.typescriptlang.org/docs/handbook/type-inference.html}}
+    \field{note}{Accessed: 2024-2-19}
+    \field{title}{Type Inference}
+  \endentry
+
+  \entry{Waldmann2018-hu}{article}{}
+    \name{author}{1}{}{%
+      {{hash=WJ}{%
+         family={Waldmann},
+         familyi={W\bibinitperiod},
+         given={Johannes},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{WJ1}
+    \strng{fullhash}{WJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2018}
+    \field{labeldatesource}{}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \verb{eprint}
+    \verb 1808.08329
+    \endverb
+    \field{title}{When You Should Use Lists in Haskell (Mostly, You Should Not)}
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{cs.PL}
+    \field{month}{08}
+    \field{year}{2018}
+  \endentry
+
+  \entry{Wielemaker2011-sr}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=WJ}{%
+         family={Wielemaker},
+         familyi={W\bibinitperiod},
+         given={Jan},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=CVS}{%
+         family={Costa},
+         familyi={C\bibinitperiod},
+         given={V{\'\i}tor\bibnamedelima Santos},
+         giveni={V\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer Berlin Heidelberg}%
+    }
+    \strng{namehash}{WJCVS1}
+    \strng{fullhash}{WJCVS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2011}
+    \field{labeldatesource}{}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \field{booktitle}{Practical Aspects of Declarative Languages}
+    \verb{doi}
+    \verb 10.1007/978-3-642-18378-2\_8
+    \endverb
+    \field{pages}{69\bibrangedash 83}
+    \field{title}{On the Portability of Prolog Applications}
+    \field{year}{2011}
+  \endentry
+
+  \entry{Wu2017-eb}{article}{}
+    \name{author}{2}{}{%
+      {{hash=WB}{%
+         family={Wu},
+         familyi={W\bibinitperiod},
+         given={Baijun},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=CS}{%
+         family={Chen},
+         familyi={C\bibinitperiod},
+         given={Sheng},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{WBCS1}
+    \strng{fullhash}{WBCS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2017}
+    \field{labeldatesource}{}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \verb{doi}
+    \verb 10.1145/3133929
+    \endverb
+    \field{pages}{105:1\bibrangedash 105:27}
+    \field{title}{How type errors were fixed and what students did?}
+    \field{volume}{1}
+    \field{journaltitle}{Proceedings of the ACM on Programming Languages}
+    \field{month}{10}
+    \field{year}{2017}
+  \endentry
+
+  \entry{Zeng2019-ou}{misc}{}
+    \name{author}{2}{}{%
+      {{hash=ZA}{%
+         family={Zeng},
+         familyi={Z\bibinitperiod},
+         given={Anna},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=CW}{%
+         family={Crichton},
+         familyi={C\bibinitperiod},
+         given={Will},
+         giveni={W\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {arXiv}%
+    }
+    \strng{namehash}{ZACW1}
+    \strng{fullhash}{ZACW1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2019}
+    \field{labeldatesource}{}
+    \field{sortinit}{Z}
+    \field{sortinithash}{Z}
+    \verb{eprint}
+    \verb 1901.01001 [cs]
+    \endverb
+    \field{number}{arXiv:1901.01001}
+    \field{title}{Identifying Barriers to Adoption for Rust through Online Discourse}
+    \field{month}{01}
+    \field{year}{2019}
+  \endentry
+
+  \entry{Zeng2023-jz}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=ZZ}{%
+         family={Zeng},
+         familyi={Z\bibinitperiod},
+         given={Zehua},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=BL}{%
+         family={Battle},
+         familyi={B\bibinitperiod},
+         given={Leilani},
+         giveni={L\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Association for Computing Machinery}%
+    }
+    \strng{namehash}{ZZBL1}
+    \strng{fullhash}{ZZBL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2023}
+    \field{labeldatesource}{}
+    \field{sortinit}{Z}
+    \field{sortinithash}{Z}
+    \field{booktitle}{Proceedings of the 2023 {CHI} Conference on Human Factors in Computing Systems}
+    \verb{doi}
+    \verb 10.1145/3544548.3581349
+    \endverb
+    \field{isbn}{9781450394215}
+    \field{number}{Article 820}
+    \field{pages}{1\bibrangedash 16}
+    \field{series}{CHI '23}
+    \field{title}{A Review and Collation of Graphical Perception Knowledge for Visualization Recommendation}
+    \list{location}{1}{%
+      {<conf-loc>, <city>Hamburg</city>, <country>Germany</country>, </conf-loc>}%
+    }
+    \field{month}{04}
+    \field{year}{2023}
+    \warn{\item Can't use 'location' + 'address'}
+  \endentry
+
+  \entry{Zhang2015-xy}{article}{}
+    \name{author}{4}{}{%
+      {{hash=ZD}{%
+         family={Zhang},
+         familyi={Z\bibinitperiod},
+         given={Danfeng},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=MAC}{%
+         family={Myers},
+         familyi={M\bibinitperiod},
+         given={Andrew\bibnamedelima C},
+         giveni={A\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=VD}{%
+         family={Vytiniotis},
+         familyi={V\bibinitperiod},
+         given={Dimitrios},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=PJS}{%
+         family={Peyton-Jones},
+         familyi={P\bibinithyphendelim J\bibinitperiod},
+         given={Simon},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \list{language}{1}{%
+      {en}%
+    }
+    \list{publisher}{1}{%
+      {Association for Computing Machinery (ACM)}%
+    }
+    \strng{namehash}{ZD+1}
+    \strng{fullhash}{ZDMACVDPJS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2015}
+    \field{labeldatesource}{}
+    \field{sortinit}{Z}
+    \field{sortinithash}{Z}
+    \verb{doi}
+    \verb 10.1145/2813885.2738009
+    \endverb
+    \field{issn}{1558-1160}
+    \field{number}{6}
+    \field{pages}{12\bibrangedash 21}
+    \field{title}{Diagnosing type errors with class}
+    \field{volume}{50}
+    \field{journaltitle}{SIGPLAN Not.}
+    \field{month}{08}
+    \field{year}{2015}
+  \endentry
+
+  \entry{Zhang2017-tj}{article}{}
+    \name{author}{4}{}{%
+      {{hash=ZD}{%
+         family={Zhang},
+         familyi={Z\bibinitperiod},
+         given={Danfeng},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=MAC}{%
+         family={Myers},
+         familyi={M\bibinitperiod},
+         given={Andrew\bibnamedelima C},
+         giveni={A\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=VD}{%
+         family={Vytiniotis},
+         familyi={V\bibinitperiod},
+         given={Dimitrios},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=PJS}{%
+         family={Peyton-Jones},
+         familyi={P\bibinithyphendelim J\bibinitperiod},
+         given={Simon},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{ZD+1}
+    \strng{fullhash}{ZDMACVDPJS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2017}
+    \field{labeldatesource}{}
+    \field{sortinit}{Z}
+    \field{sortinithash}{Z}
+    \verb{doi}
+    \verb 10.1145/3121137
+    \endverb
+    \field{issn}{0164-0925, 1558-4593}
+    \field{number}{4}
+    \field{pages}{1\bibrangedash 47}
+    \field{title}{{{SHErrLoc}}: A Static Holistic Error Locator}
+    \field{volume}{39}
+    \field{journaltitle}{ACM Trans. Program. Lang. Syst.}
+    \field{month}{12}
+    \field{year}{2017}
+  \endentry
+
+  \entry{Zhao2016-bu}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=ZW}{%
+         family={Zhao},
+         familyi={Z\bibinitperiod},
+         given={Wenting},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=LMH}{%
+         family={Liffiton},
+         familyi={L\bibinitperiod},
+         given={Mark\bibnamedelima H},
+         giveni={M\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{ZWLMH1}
+    \strng{fullhash}{ZWLMH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2016}
+    \field{labeldatesource}{}
+    \field{sortinit}{Z}
+    \field{sortinithash}{Z}
+    \field{booktitle}{2016 {IEEE} 28th International Conference on Tools with Artificial Intelligence ({{ICTAI}})}
+    \verb{doi}
+    \verb 10.1109/ICTAI.2016.0077
+    \endverb
+    \field{isbn}{9781509044597}
+    \field{pages}{464\bibrangedash 471}
+    \field{title}{Parallelizing Partial {MUS} Enumeration}
+    \list{location}{1}{%
+      {San Jose, CA, USA}%
+    }
+    \field{month}{11}
+    \field{year}{2016}
+  \endentry
+\enddatalist
+\endinput

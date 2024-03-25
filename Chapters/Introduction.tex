@@ -48,9 +48,9 @@ We explore the debugging paradigms showed in Chameleon, Goanna, and GeckoGraph. 
 We contribute Chameleon, an interactive Haskell type error debugging tool. The goal of Chameleon is to support better comprehension of type errors comparing to tradition tools.  Programmers can use Chameleon to incrementally narrow down the type error. Chameleon uses MUS as underlying data representation of type errors. Unlike traditional type error slicing tools, Chameleon further break down the MUS by dissecting the MUS in different combinations and showing the intermediate typing conflict at each point.
 
 
-Chameleon is open-source and available at \cite{fu_chameleonide_2023}. 
+Chameleon is open-source and available at \cite{Anonymous2022-xp}. 
 
-We also contributed a series of study of the effects of interactive type error narrowing in debugging type errors.  Our evaluation is the first human study on the effective of type error slicing tools. The evaluation and results are published at \cite{fu_chameleonide_2023}.
+We also contributed a series of study of the effects of interactive type error narrowing in debugging type errors.  Our evaluation is the first human study on the effective of type error slicing tools. The evaluation and results are published at \cite{Anonymous2022-xp}.
   
 \subsection{Goanna}
 We contribute Goanna, a tool to identify all potential causes and solutions to Haskell type errors. Goanna aim to identify the correct cause of type errors when tradition tools fail. Moreover, Goanna aim to provide alternative causes where tradition tools only focus on single location. With Goanna, Haskell programmers can resolve type error by exploring a list of potential error root causes. These causes are ordered using our heuristics so that the more likely causes are on top. Goanna uses MCS-enumeration to identify all causes, and is the first to investigate the use of MCS-enumeration in type error identification.

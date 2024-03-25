@@ -194,6 +194,27 @@
     \field{title}{Zero to Hero: A Haskell Puzzle Game}
   \endentry
 
+  \entry{Anonymous2022-xp}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=A}{%
+         family={{Anonymous}},
+         familyi={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{A1}
+    \strng{fullhash}{A1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2022}
+    \field{labeldatesource}{}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{howpublished}{\url{https://chameleon.typecheck.me/}}
+    \field{note}{Accessed: 2022-12-1}
+    \field{title}{Chameleon Type Debugger}
+    \field{year}{2022}
+  \endentry
+
   \entry{Anonymous2023-bo}{misc}{}
     \name{author}{1}{}{%
       {{hash=A}{%
@@ -238,6 +259,118 @@
     \field{title}{Goanna's Haskell Language Coverage}
     \field{month}{10}
     \field{year}{2023}
+  \endentry
+
+  \entry{Barik2017-gy}{inproceedings}{}
+    \name{author}{7}{}{%
+      {{hash=BT}{%
+         family={Barik},
+         familyi={B\bibinitperiod},
+         given={Titus},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=SJ}{%
+         family={Smith},
+         familyi={S\bibinitperiod},
+         given={Justin},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=LK}{%
+         family={Lubick},
+         familyi={L\bibinitperiod},
+         given={Kevin},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=HE}{%
+         family={Holmes},
+         familyi={H\bibinitperiod},
+         given={Elisabeth},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=FJ}{%
+         family={Feng},
+         familyi={F\bibinitperiod},
+         given={Jing},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=MHE}{%
+         family={Murphy-Hill},
+         familyi={M\bibinithyphendelim H\bibinitperiod},
+         given={Emerson},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=PC}{%
+         family={Parnin},
+         familyi={P\bibinitperiod},
+         given={Chris},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IEEE Press}%
+    }
+    \strng{namehash}{BT+1}
+    \strng{fullhash}{BTSJLKHEFJMHEPC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2017}
+    \field{labeldatesource}{}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{booktitle}{2017 {IEEE}/{ACM} 39th International Conference on Software Engineering ({{ICSE}})}
+    \verb{doi}
+    \verb 10.1109/ICSE.2017.59
+    \endverb
+    \field{isbn}{9781538638682}
+    \field{pages}{575\bibrangedash 585}
+    \field{series}{ICSE '17}
+    \field{title}{Do Developers Read Compiler Error Messages?}
+    \list{location}{1}{%
+      {Buenos Aires, Argentina}%
+    }
+    \field{month}{05}
+    \field{year}{2017}
+  \endentry
+
+  \entry{Barik2018-xs}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=BT}{%
+         family={Barik},
+         familyi={B\bibinitperiod},
+         given={Titus},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=FD}{%
+         family={Ford},
+         familyi={F\bibinitperiod},
+         given={Denae},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=MHE}{%
+         family={Murphy-Hill},
+         familyi={M\bibinithyphendelim H\bibinitperiod},
+         given={Emerson},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=PC}{%
+         family={Parnin},
+         familyi={P\bibinitperiod},
+         given={Chris},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BT+1}
+    \strng{fullhash}{BTFDMHEPC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2018}
+    \field{labeldatesource}{}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{booktitle}{Proceedings of the 2018 26th {ACM} Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering}
+    \field{pages}{633\bibrangedash 643}
+    \field{title}{How should compilers explain problems to developers?}
+    \field{year}{2018}
   \endentry
 
   \entry{Beck2015-my}{inproceedings}{}
@@ -296,6 +429,40 @@
     \field{year}{2015}
   \endentry
 
+  \entry{Becker2016-kc}{inproceedings}{}
+    \name{author}{1}{}{%
+      {{hash=BBA}{%
+         family={Becker},
+         familyi={B\bibinitperiod},
+         given={Brett\bibnamedelima A},
+         giveni={B\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {ACM}%
+    }
+    \strng{namehash}{BBA1}
+    \strng{fullhash}{BBA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2016}
+    \field{labeldatesource}{}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{booktitle}{Proceedings of the 47th {ACM} Technical Symposium on Computing Science Education}
+    \verb{doi}
+    \verb 10.1145/2839509.2844584
+    \endverb
+    \field{isbn}{9781450336857}
+    \field{pages}{126\bibrangedash 131}
+    \field{title}{An Effective Approach to Enhancing Compiler Error Messages}
+    \list{location}{1}{%
+      {Memphis Tennessee USA}%
+    }
+    \field{month}{02}
+    \field{year}{2016}
+  \endentry
+
   \entry{Bekkouche2015-is}{misc}{}
     \name{author}{1}{}{%
       {{hash=BM}{%
@@ -323,25 +490,6 @@
     \field{title}{Exploration of the scalability of {LocFaults} approach for error localization with While-loops programs}
     \field{month}{03}
     \field{year}{2015}
-  \endentry
-
-  \entry{Ben_Gamari2022-bs}{misc}{}
-    \name{author}{1}{}{%
-      {{hash=B}{%
-         family={{Ben Gamari}},
-         familyi={B\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{B1}
-    \strng{fullhash}{B1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{labelyear}{2022}
-    \field{labeldatesource}{}
-    \field{sortinit}{B}
-    \field{sortinithash}{B}
-    \field{title}{Glasgow Haskell Compiler}
-    \field{year}{2022}
   \endentry
 
   \entry{Bendik2020-pz}{inproceedings}{}
@@ -396,6 +544,27 @@
       {Cham}%
     }
     \field{year}{2020}
+  \endentry
+
+  \entry{Bill_Wagner2022-sq}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=B}{%
+         family={{Bill Wagner}},
+         familyi={B\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{B1}
+    \strng{fullhash}{B1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2022}
+    \field{labeldatesource}{}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{howpublished}{\url{https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/generics/constraints-on-type-parameters}}
+    \field{note}{Accessed: 2022-12-1}
+    \field{title}{Constraints on type parameters - C\# Programming Guide}
+    \field{year}{2022}
   \endentry
 
   \entry{Bogner2022-vf}{misc}{}
@@ -509,6 +678,66 @@
     \field{journaltitle}{Sci. Comput. Program.}
     \field{month}{04}
     \field{year}{1987}
+  \endentry
+
+  \entry{Chatley2019-uq}{incollection}{}
+    \name{author}{3}{}{%
+      {{hash=CR}{%
+         family={Chatley},
+         familyi={C\bibinitperiod},
+         given={Robert},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=DA}{%
+         family={Donaldson},
+         familyi={D\bibinitperiod},
+         given={Alastair},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=MA}{%
+         family={Mycroft},
+         familyi={M\bibinitperiod},
+         given={Alan},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \name{editor}{2}{}{%
+      {{hash=SB}{%
+         family={Steffen},
+         familyi={S\bibinitperiod},
+         given={Bernhard},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=WG}{%
+         family={Woeginger},
+         familyi={W\bibinitperiod},
+         given={Gerhard},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer International Publishing}%
+    }
+    \strng{namehash}{CRDAMA1}
+    \strng{fullhash}{CRDAMA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2019}
+    \field{labeldatesource}{}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{booktitle}{Computing and Software Science: State of the Art and Perspectives}
+    \verb{doi}
+    \verb 10.1007/978-3-319-91908-9\_15
+    \endverb
+    \field{isbn}{9783319919089}
+    \field{pages}{250\bibrangedash 282}
+    \field{series}{Lecture Notes in Computer Science}
+    \field{title}{The Next 7000 Programming Languages}
+    \list{location}{1}{%
+      {Cham}%
+    }
+    \field{year}{2019}
   \endentry
 
   \entry{Chen2014-dz}{article}{}
@@ -628,6 +857,71 @@
     \field{year}{2020}
   \endentry
 
+  \entry{Chen2020-nq}{inproceedings}{}
+    \name{author}{6}{}{%
+      {{hash=CZ}{%
+         family={Chen},
+         familyi={C\bibinitperiod},
+         given={Zhifei},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=LY}{%
+         family={Li},
+         familyi={L\bibinitperiod},
+         given={Yanhui},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=CB}{%
+         family={Chen},
+         familyi={C\bibinitperiod},
+         given={Bihuan},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=MW}{%
+         family={Ma},
+         familyi={M\bibinitperiod},
+         given={Wanwangying},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=CL}{%
+         family={Chen},
+         familyi={C\bibinitperiod},
+         given={Lin},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=XB}{%
+         family={Xu},
+         familyi={X\bibinitperiod},
+         given={Baowen},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Association for Computing Machinery}%
+    }
+    \strng{namehash}{CZ+1}
+    \strng{fullhash}{CZLYCBMWCLXB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2020}
+    \field{labeldatesource}{}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{booktitle}{Proceedings of the 28th International Conference on Program Comprehension}
+    \verb{doi}
+    \verb 10.1145/3387904.3389253
+    \endverb
+    \field{isbn}{9781450379588}
+    \field{pages}{83\bibrangedash 93}
+    \field{series}{ICPC '20}
+    \field{title}{An Empirical Study on Dynamic Typing Related Practices in Python Systems}
+    \list{location}{1}{%
+      {New York, NY, USA}%
+    }
+    \field{month}{09}
+    \field{year}{2020}
+  \endentry
+
   \entry{Clerici2013-ru}{article}{}
     \name{author}{3}{}{%
       {{hash=CS}{%
@@ -707,6 +1001,55 @@
     \field{title}{Student opinions of Alice in {CS1}}
     \field{month}{10}
     \field{year}{2008}
+  \endentry
+
+  \entry{Crichton2021-ru}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=CW}{%
+         family={Crichton},
+         familyi={C\bibinitperiod},
+         given={Will},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=AM}{%
+         family={Agrawala},
+         familyi={A\bibinitperiod},
+         given={Maneesh},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=HP}{%
+         family={Hanrahan},
+         familyi={H\bibinitperiod},
+         given={Pat},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Association for Computing Machinery}%
+    }
+    \strng{namehash}{CWAMHP1}
+    \strng{fullhash}{CWAMHP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2021}
+    \field{labeldatesource}{}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{booktitle}{Proceedings of the 2021 {CHI} Conference on Human Factors in Computing Systems}
+    \verb{doi}
+    \verb 10.1145/3411764.3445257
+    \endverb
+    \field{isbn}{9781450380966}
+    \field{number}{Article 56}
+    \field{pages}{1\bibrangedash 13}
+    \field{series}{CHI '21}
+    \field{title}{The Role of Working Memory in Program Tracing}
+    \list{location}{1}{%
+      {Yokohama, Japan}%
+    }
+    \field{month}{05}
+    \field{year}{2021}
+    \warn{\item Can't use 'location' + 'address'}
   \endentry
 
   \entry{Daly2011-is}{article}{}
@@ -891,6 +1234,87 @@
     \field{year}{2021}
   \endentry
 
+  \entry{Gamari_undated-zu}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=GB}{%
+         family={Gamari},
+         familyi={G\bibinitperiod},
+         given={Ben},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GB1}
+    \strng{fullhash}{GB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labeldatesource}{nodate}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{howpublished}{\url{https://www.haskell.org/ghc/}}
+    \field{note}{Accessed: 2023-6-1}
+    \field{title}{The Glasgow Haskell Compiler}
+  \endentry
+
+  \entry{Gao2017-xn}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=GZ}{%
+         family={Gao},
+         familyi={G\bibinitperiod},
+         given={Zheng},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=BC}{%
+         family={Bird},
+         familyi={B\bibinitperiod},
+         given={Christian},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=BET}{%
+         family={Barr},
+         familyi={B\bibinitperiod},
+         given={Earl\bibnamedelima T},
+         giveni={E\bibinitperiod\bibinitdelim T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GZBCBET1}
+    \strng{fullhash}{GZBCBET1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2017}
+    \field{labeldatesource}{}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{booktitle}{2017 {IEEE}/{ACM} 39th International Conference on Software Engineering ({{ICSE}})}
+    \verb{doi}
+    \verb 10.1109/ICSE.2017.75
+    \endverb
+    \field{pages}{758\bibrangedash 769}
+    \field{title}{To Type or Not to Type: Quantifying Detectable Bugs in {JavaScript}}
+    \field{month}{05}
+    \field{year}{2017}
+  \endentry
+
+  \entry{Github2022-nm}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=G}{%
+         family={{Github}},
+         familyi={G\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{G1}
+    \strng{fullhash}{G1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2022}
+    \field{labeldatesource}{}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{howpublished}{\url{https://github.com/topics/haskell}}
+    \field{note}{Accessed: 2022-12-1}
+    \field{title}{{GitHub} Topic: Haskell}
+    \field{year}{2022}
+  \endentry
+
   \entry{Google_Developers_undated-ew}{misc}{}
     \name{author}{1}{}{%
       {{hash=G}{%
@@ -898,8 +1322,8 @@
          familyi={G\bibinitperiod},
       }}%
     }
-    \strng{namehash}{G1}
-    \strng{fullhash}{G1}
+    \strng{namehash}{G2}
+    \strng{fullhash}{G2}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{labeldatesource}{nodate}
@@ -1239,6 +1663,61 @@
     \field{year}{2007}
   \endentry
 
+  \entry{Jakob_Nielsen1994-gd}{book}{}
+    \name{author}{1}{}{%
+      {{hash=J}{%
+         family={{Jakob Nielsen}},
+         familyi={J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Morgan Kaufmann}%
+    }
+    \strng{namehash}{J1}
+    \strng{fullhash}{J1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1994}
+    \field{labeldatesource}{}
+    \field{sortinit}{J}
+    \field{sortinithash}{J}
+    \field{title}{Usability Engineering}
+    \field{year}{1994}
+  \endentry
+
+  \entry{Jbara2015-gr}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=JA}{%
+         family={Jbara},
+         familyi={J\bibinitperiod},
+         given={Ahmad},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=FDG}{%
+         family={Feitelson},
+         familyi={F\bibinitperiod},
+         given={Dror\bibnamedelima G},
+         giveni={D\bibinitperiod\bibinitdelim G\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{JAFDG1}
+    \strng{fullhash}{JAFDG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2015}
+    \field{labeldatesource}{}
+    \field{sortinit}{J}
+    \field{sortinithash}{J}
+    \field{booktitle}{2015 {IEEE} 23rd International Conference on Program Comprehension}
+    \verb{doi}
+    \verb 10.1109/ICPC.2015.35
+    \endverb
+    \field{pages}{244\bibrangedash 254}
+    \field{title}{How Programmers Read Regular Code: A Controlled Experiment Using Eye Tracking}
+    \field{month}{05}
+    \field{year}{2015}
+  \endentry
+
   \entry{Jun2000-yu}{inproceedings}{}
     \name{author}{3}{}{%
       {{hash=JY}{%
@@ -1316,6 +1795,48 @@
     \field{year}{2000}
   \endentry
 
+  \entry{Jun2002-xp}{article}{}
+    \name{author}{3}{}{%
+      {{hash=JY}{%
+         family={Jun},
+         familyi={J\bibinitperiod},
+         given={Yang},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=MG}{%
+         family={Michaelson},
+         familyi={M\bibinitperiod},
+         given={Greg},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=TP}{%
+         family={Trinder},
+         familyi={T\bibinitperiod},
+         given={Phil},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{JYMGTP1}
+    \strng{fullhash}{JYMGTP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2002}
+    \field{labeldatesource}{}
+    \field{sortinit}{J}
+    \field{sortinithash}{J}
+    \verb{doi}
+    \verb 10.1093/comjnl/45.4.436
+    \endverb
+    \field{issn}{0010-4620, 1460-2067}
+    \field{number}{4}
+    \field{pages}{436\bibrangedash 452}
+    \field{title}{Explaining Polymorphic Types}
+    \field{volume}{45}
+    \field{journaltitle}{Comput. J.}
+    \field{month}{04}
+    \field{year}{2002}
+  \endentry
+
   \entry{Jung2000-oc}{article}{}
     \name{author}{2}{}{%
       {{hash=JY}{%
@@ -1362,8 +1883,8 @@
     \list{publisher}{1}{%
       {Association for Computing Machinery}%
     }
-    \strng{namehash}{J1}
-    \strng{fullhash}{J1}
+    \strng{namehash}{J2}
+    \strng{fullhash}{J2}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{labelyear}{2021}
@@ -1497,6 +2018,47 @@
     \field{title}{Do static type systems improve the maintainability of software systems? An empirical study}
     \field{month}{06}
     \field{year}{2012}
+  \endentry
+
+  \entry{Ko2009-uf}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=KAJ}{%
+         family={Ko},
+         familyi={K\bibinitperiod},
+         given={Amy\bibnamedelima J},
+         giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=MBA}{%
+         family={Myers},
+         familyi={M\bibinitperiod},
+         given={Brad\bibnamedelima A},
+         giveni={B\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Association for Computing Machinery}%
+    }
+    \strng{namehash}{KAJMBA1}
+    \strng{fullhash}{KAJMBA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2009}
+    \field{labeldatesource}{}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{booktitle}{Proceedings of the {SIGCHI} Conference on Human Factors in Computing Systems}
+    \verb{doi}
+    \verb 10.1145/1518701.1518942
+    \endverb
+    \field{isbn}{9781605582467}
+    \field{pages}{1569\bibrangedash 1578}
+    \field{series}{CHI '09}
+    \field{title}{Finding causes of program output with the Java Whyline}
+    \list{location}{1}{%
+      {New York, NY, USA}%
+    }
+    \field{month}{04}
+    \field{year}{2009}
   \endentry
 
   \entry{Lamraoui2016-wr}{article}{}
@@ -1694,6 +2256,67 @@
     \field{year}{2012}
   \endentry
 
+  \entry{Meyerovich2013-pn}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=MLA}{%
+         family={Meyerovich},
+         familyi={M\bibinitperiod},
+         given={Leo\bibnamedelima A},
+         giveni={L\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=RAS}{%
+         family={Rabkin},
+         familyi={R\bibinitperiod},
+         given={Ariel\bibnamedelima S},
+         giveni={A\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Association for Computing Machinery}%
+    }
+    \strng{namehash}{MLARAS1}
+    \strng{fullhash}{MLARAS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2013}
+    \field{labeldatesource}{}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{booktitle}{Proceedings of the 2013 {ACM} {SIGPLAN} international conference on Object oriented programming systems languages \& applications}
+    \verb{doi}
+    \verb 10.1145/2509136.2509515
+    \endverb
+    \field{isbn}{9781450323741}
+    \field{pages}{1\bibrangedash 18}
+    \field{series}{OOPSLA '13}
+    \field{title}{Empirical analysis of programming language adoption}
+    \list{location}{1}{%
+      {New York, NY, USA}%
+    }
+    \field{month}{10}
+    \field{year}{2013}
+  \endentry
+
+  \entry{Microsoft_undated-ts}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=M}{%
+         family={{Microsoft}},
+         familyi={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{M1}
+    \strng{fullhash}{M1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{extradate}{1}
+    \field{labeldatesource}{nodate}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{howpublished}{\url{https://www.typescriptlang.org/}}
+    \field{note}{Accessed: 2022-12-12}
+    \field{title}{{JavaScript} With Syntax For Types}
+  \endentry
+
   \entry{Microsoft_undated-hs}{misc}{}
     \name{author}{1}{}{%
       {{hash=M}{%
@@ -1705,12 +2328,34 @@
     \strng{fullhash}{M1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
+    \field{extradate}{2}
     \field{labeldatesource}{nodate}
     \field{sortinit}{M}
     \field{sortinithash}{M}
     \field{howpublished}{\url{https://code.visualstudio.com/}}
     \field{note}{Accessed: 2022-12-12}
     \field{title}{Visual Studio Code - Code Editing. Redefined}
+  \endentry
+
+  \entry{Microsoft2022-tl}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=M}{%
+         family={{Microsoft}},
+         familyi={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{M1}
+    \strng{fullhash}{M1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2022}
+    \field{labeldatesource}{}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{howpublished}{\url{https://www.typescriptlang.org/docs/handbook/2/generics.html}}
+    \field{note}{Accessed: 2022-12-1}
+    \field{title}{Documentation - Generics}
+    \field{year}{2022}
   \endentry
 
   \entry{Mitchell_undated-fb}{misc}{}
@@ -1785,6 +2430,25 @@
     \field{year}{2010}
   \endentry
 
+  \entry{Mypy_undated-oe}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=m}{%
+         family={{mypy}},
+         familyi={m\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{m1}
+    \strng{fullhash}{m1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labeldatesource}{nodate}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{howpublished}{\url{http://mypy-lang.org/}}
+    \field{note}{Accessed: 2022-12-7}
+    \field{title}{mypy - Optional Static Typing for Python}
+  \endentry
+
   \entry{Noone2018-wl}{article}{}
     \name{author}{2}{}{%
       {{hash=NM}{%
@@ -1819,6 +2483,48 @@
     \field{journaltitle}{Journal of Computers in Education}
     \field{month}{06}
     \field{year}{2018}
+  \endentry
+
+  \entry{OpenReplay2022-nw}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=O}{%
+         family={{OpenReplay}},
+         familyi={O\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{O1}
+    \strng{fullhash}{O1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2022}
+    \field{labeldatesource}{}
+    \field{sortinit}{O}
+    \field{sortinithash}{O}
+    \field{howpublished}{\url{https://openreplay.com/}}
+    \field{note}{Accessed: 2022-12-1}
+    \field{title}{{{OpenReplay}}: {Open-Source} Session Replay}
+    \field{year}{2022}
+  \endentry
+
+  \entry{Oracle2022-lc}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=O}{%
+         family={{Oracle}},
+         familyi={O\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{O2}
+    \strng{fullhash}{O2}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2022}
+    \field{labeldatesource}{}
+    \field{sortinit}{O}
+    \field{sortinithash}{O}
+    \field{howpublished}{\url{https://docs.oracle.com/javase/tutorial/java/generics/boundedTypeParams.html}}
+    \field{note}{Accessed: 2022-12-1}
+    \field{title}{Generic Methods and Bounded Type Parameters (The Java™ Tutorials - Learning the Java Language - Generics (Updated))}
+    \field{year}{2022}
   \endentry
 
   \entry{Ou2015-vr}{inproceedings}{}
@@ -1869,6 +2575,198 @@
     \warn{\item Can't use 'location' + 'address'}
   \endentry
 
+  \entry{Pavlinovic2015-ke}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=PZ}{%
+         family={Pavlinovic},
+         familyi={P\bibinitperiod},
+         given={Zvonimir},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=KT}{%
+         family={King},
+         familyi={K\bibinitperiod},
+         given={Tim},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=WT}{%
+         family={Wies},
+         familyi={W\bibinitperiod},
+         given={Thomas},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Association for Computing Machinery}%
+    }
+    \strng{namehash}{PZKTWT1}
+    \strng{fullhash}{PZKTWT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2015}
+    \field{labeldatesource}{}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{booktitle}{Proceedings of the 20th {ACM} {SIGPLAN} International Conference on Functional Programming}
+    \verb{doi}
+    \verb 10.1145/2784731.2784765
+    \endverb
+    \field{isbn}{9781450336697}
+    \field{pages}{412\bibrangedash 423}
+    \field{series}{ICFP 2015}
+    \field{title}{Practical {{SMT}-based} type error localization}
+    \list{location}{1}{%
+      {New York, NY, USA}%
+    }
+    \field{month}{08}
+    \field{year}{2015}
+  \endentry
+
+  \entry{Peitek2020-nb}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=PN}{%
+         family={Peitek},
+         familyi={P\bibinitperiod},
+         given={Norman},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=SJ}{%
+         family={Siegmund},
+         familyi={S\bibinitperiod},
+         given={Janet},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=AS}{%
+         family={Apel},
+         familyi={A\bibinitperiod},
+         given={Sven},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {ACM}%
+    }
+    \strng{namehash}{PNSJAS1}
+    \strng{fullhash}{PNSJAS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2020}
+    \field{labeldatesource}{}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{booktitle}{Proceedings of the 28th International Conference on Program Comprehension}
+    \verb{doi}
+    \verb 10.1145/3387904.3389279
+    \endverb
+    \field{isbn}{9781450379588}
+    \field{pages}{342\bibrangedash 353}
+    \field{title}{What Drives the Reading Order of Programmers?: An Eye Tracking Study}
+    \list{location}{1}{%
+      {Seoul Republic of Korea}%
+    }
+    \field{month}{07}
+    \field{year}{2020}
+  \endentry
+
+  \entry{Potter2020-tv}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=PH}{%
+         family={Potter},
+         familyi={P\bibinitperiod},
+         given={Hannah},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=OC}{%
+         family={Omar},
+         familyi={O\bibinitperiod},
+         given={Cyrus},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PHOC1}
+    \strng{fullhash}{PHOC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2020}
+    \field{labeldatesource}{}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{pages}{10}
+    \field{title}{Hazel Tutor: Guiding Novices Through {Type-Driven} Development Strategies}
+    \field{year}{2020}
+  \endentry
+
+  \entry{Prather2017-dg}{inproceedings}{}
+    \name{author}{7}{}{%
+      {{hash=PJ}{%
+         family={Prather},
+         familyi={P\bibinitperiod},
+         given={James},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=PR}{%
+         family={Pettit},
+         familyi={P\bibinitperiod},
+         given={Raymond},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=MKH}{%
+         family={McMurry},
+         familyi={M\bibinitperiod},
+         given={Kayla\bibnamedelima Holcomb},
+         giveni={K\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+      {{hash=PA}{%
+         family={Peters},
+         familyi={P\bibinitperiod},
+         given={Alani},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=HJ}{%
+         family={Homer},
+         familyi={H\bibinitperiod},
+         given={John},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=SN}{%
+         family={Simone},
+         familyi={S\bibinitperiod},
+         given={Nevan},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=CM}{%
+         family={Cohen},
+         familyi={C\bibinitperiod},
+         given={Maxine},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Association for Computing Machinery}%
+    }
+    \strng{namehash}{PJ+1}
+    \strng{fullhash}{PJPRMKHPAHJSNCM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2017}
+    \field{labeldatesource}{}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{booktitle}{Proceedings of the 2017 {ACM} Conference on International Computing Education Research}
+    \verb{doi}
+    \verb 10.1145/3105726.3106169
+    \endverb
+    \field{isbn}{9781450349680}
+    \field{pages}{74\bibrangedash 82}
+    \field{series}{ICER '17}
+    \field{title}{On Novices' Interaction with Compiler Error Messages: A Human Factors Approach}
+    \list{location}{1}{%
+      {New York, NY, USA}%
+    }
+    \field{month}{08}
+    \field{year}{2017}
+  \endentry
+
   \entry{Previti2013-mr}{article}{}
     \name{author}{2}{}{%
       {{hash=PA}{%
@@ -1903,6 +2801,102 @@
     \field{journaltitle}{Proc. Conf. AAAI Artif. Intell.}
     \field{month}{06}
     \field{year}{2013}
+  \endentry
+
+  \entry{Ray2017-gq}{article}{}
+    \name{author}{4}{}{%
+      {{hash=RB}{%
+         family={Ray},
+         familyi={R\bibinitperiod},
+         given={Baishakhi},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=PD}{%
+         family={Posnett},
+         familyi={P\bibinitperiod},
+         given={Daryl},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=DP}{%
+         family={Devanbu},
+         familyi={D\bibinitperiod},
+         given={Premkumar},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=FV}{%
+         family={Filkov},
+         familyi={F\bibinitperiod},
+         given={Vladimir},
+         giveni={V\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{RB+1}
+    \strng{fullhash}{RBPDDPFV1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2017}
+    \field{labeldatesource}{}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \verb{doi}
+    \verb 10.1145/3126905
+    \endverb
+    \field{issn}{0001-0782}
+    \field{number}{10}
+    \field{pages}{91\bibrangedash 100}
+    \field{title}{A large-scale study of programming languages and code quality in {GitHub}}
+    \field{volume}{60}
+    \field{journaltitle}{Commun. ACM}
+    \field{month}{09}
+    \field{year}{2017}
+  \endentry
+
+  \entry{Schilling2012-iq}{inproceedings}{}
+    \name{author}{1}{}{%
+      {{hash=ST}{%
+         family={Schilling},
+         familyi={S\bibinitperiod},
+         given={Thomas},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \name{editor}{2}{}{%
+      {{hash=PR}{%
+         family={Pe{\~n}a},
+         familyi={P\bibinitperiod},
+         given={Ricardo},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=PR}{%
+         family={Page},
+         familyi={P\bibinitperiod},
+         given={Rex},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{ST1}
+    \strng{fullhash}{ST1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2012}
+    \field{labeldatesource}{}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{booktitle}{Trends in Functional Programming}
+    \verb{doi}
+    \verb 10.1007/978-3-642-32037-8\_1
+    \endverb
+    \field{isbn}{9783642320378}
+    \field{pages}{1\bibrangedash 16}
+    \field{series}{Lecture Notes in Computer Science}
+    \field{title}{{Constraint-Free} Type Error Slicing}
+    \list{location}{1}{%
+      {Berlin, Heidelberg}%
+    }
+    \field{year}{2012}
   \endentry
 
   \entry{Seidel2017-uf}{article}{}
@@ -2259,6 +3253,56 @@
     \field{year}{2018}
   \endentry
 
+  \entry{Wang2015-rs}{inproceedings}{}
+    \name{author}{5}{}{%
+      {{hash=WB}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Beibei},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=CL}{%
+         family={Chen},
+         familyi={C\bibinitperiod},
+         given={Lin},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=MW}{%
+         family={Ma},
+         familyi={M\bibinitperiod},
+         given={Wanwangying},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=CZ}{%
+         family={Chen},
+         familyi={C\bibinitperiod},
+         given={Zhifei},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=XB}{%
+         family={Xu},
+         familyi={X\bibinitperiod},
+         given={Baowen},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{WB+1}
+    \strng{fullhash}{WBCLMWCZXB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2015}
+    \field{labeldatesource}{}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \verb{doi}
+    \verb 10.18293/SEKE2015-097
+    \endverb
+    \field{pages}{134\bibrangedash 139}
+    \field{title}{An empirical study on the impact of Python dynamic features on change-proneness}
+    \field{month}{07}
+    \field{year}{2015}
+  \endentry
+
   \entry{Wielemaker2011-sr}{inproceedings}{}
     \name{author}{2}{}{%
       {{hash=WJ}{%
@@ -2326,6 +3370,59 @@
     \field{journaltitle}{Proceedings of the ACM on Programming Languages}
     \field{month}{10}
     \field{year}{2017}
+  \endentry
+
+  \entry{Xu2016-za}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=XZ}{%
+         family={Xu},
+         familyi={X\bibinitperiod},
+         given={Zhaogui},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=LP}{%
+         family={Liu},
+         familyi={L\bibinitperiod},
+         given={Peng},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=ZX}{%
+         family={Zhang},
+         familyi={Z\bibinitperiod},
+         given={Xiangyu},
+         giveni={X\bibinitperiod},
+      }}%
+      {{hash=XB}{%
+         family={Xu},
+         familyi={X\bibinitperiod},
+         given={Baowen},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Association for Computing Machinery}%
+    }
+    \strng{namehash}{XZ+1}
+    \strng{fullhash}{XZLPZXXB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2016}
+    \field{labeldatesource}{}
+    \field{sortinit}{X}
+    \field{sortinithash}{X}
+    \field{booktitle}{Proceedings of the 2016 24th {ACM} {SIGSOFT} International Symposium on Foundations of Software Engineering}
+    \verb{doi}
+    \verb 10.1145/2950290.2950357
+    \endverb
+    \field{isbn}{9781450342186}
+    \field{pages}{121\bibrangedash 132}
+    \field{series}{FSE 2016}
+    \field{title}{Python predictive analysis for bug detection}
+    \list{location}{1}{%
+      {New York, NY, USA}%
+    }
+    \field{month}{11}
+    \field{year}{2016}
   \endentry
 
   \entry{Yang2000-wn}{inproceedings}{}

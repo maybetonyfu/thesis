@@ -1694,6 +1694,25 @@
     \field{year}{2012}
   \endentry
 
+  \entry{Microsoft_undated-hs}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=M}{%
+         family={{Microsoft}},
+         familyi={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{M1}
+    \strng{fullhash}{M1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labeldatesource}{nodate}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{howpublished}{\url{https://code.visualstudio.com/}}
+    \field{note}{Accessed: 2022-12-12}
+    \field{title}{Visual Studio Code - Code Editing. Redefined}
+  \endentry
+
   \entry{Mitchell_undated-fb}{misc}{}
     \name{author}{1}{}{%
       {{hash=MN}{%
@@ -2309,6 +2328,49 @@
     \field{year}{2017}
   \endentry
 
+  \entry{Yang2000-wn}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=YJ}{%
+         family={Yang},
+         familyi={Y\bibinitperiod},
+         given={Jun},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=MG}{%
+         family={Michaelson},
+         familyi={M\bibinitperiod},
+         given={Greg},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=TP}{%
+         family={Trinder},
+         familyi={T\bibinitperiod},
+         given={Phil},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=WJB}{%
+         family={Wells},
+         familyi={W\bibinitperiod},
+         given={Joseph\bibnamedelima Brian},
+         giveni={J\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Citeseer}%
+    }
+    \strng{namehash}{YJ+1}
+    \strng{fullhash}{YJMGTPWJB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2000}
+    \field{labeldatesource}{}
+    \field{sortinit}{Y}
+    \field{sortinithash}{Y}
+    \field{booktitle}{In Proceedings of 12th International Workshop on Implementation of Functional Languages}
+    \field{title}{Improved type error reporting}
+    \field{year}{2000}
+  \endentry
+
   \entry{Zeng2019-ou}{misc}{}
     \name{author}{2}{}{%
       {{hash=ZA}{%
@@ -2380,7 +2442,7 @@
     \field{series}{CHI '23}
     \field{title}{A Review and Collation of Graphical Perception Knowledge for Visualization Recommendation}
     \list{location}{1}{%
-      {<conf-loc>, <city>Hamburg</city>, <country>Germany</country>, </conf-loc>}%
+      {Hamburg, Germany}%
     }
     \field{month}{04}
     \field{year}{2023}

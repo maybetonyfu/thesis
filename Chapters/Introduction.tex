@@ -1,69 +1,94 @@
 % Chapter 1
 
 \chapter{Introduction}
-\label{chapter1} 
 
-\section{Statically Typed Languages and Type Errors}
+\label{intro} 
 
-Strongly typed programming languages play a crucial role in modern software development by ensuring a higher level of safety, reliability, and maintainability in code. They offer a fundamental advantage in catching errors at compile time, thus preventing many runtime issues that can lead to system failures or vulnerabilities. However, the usability of these languages can be significantly hindered by confusing type errors, which continue to pose a challenge in programming with strong type systems.
+\graphicspath{{Figures/Introduction}}
 
-Confusing type errors are an enduring usability issue in strongly typed languages. While the type system is designed to provide clarity and prevent errors, it can sometimes introduce its own set of challenges. When a type error occurs, developers are presented with cryptic error messages and often struggle to understand the underlying issue. These messages can be overwhelming, especially for newcomers to the language, leading to frustration and impeding productivity.
+Static typing is a typing discipline where types of expressions are checked at compile time. In practice, statically type programming languages offer many advantages:
 
-The current tools and diagnostics for handling type errors in many strongly typed languages leave much to be desired in terms of usability, design, and practicality. Error messages are often overly technical and lack user-friendly explanations. This can discourage developers from embracing strong typing, or even lead to workarounds that undermine the benefits of the type system. Furthermore, the tools provided for type error diagnosis often lack the sophistication needed to pinpoint the root cause of complex type issues and to offer actionable suggestions for resolution.
+It allows early error detection, enhances code readability, and promotes maintainability, especially in large collaborative projects. The explicit type information often improves tooling and IDE (interactive development environment) support. Additionally, static typing enhances the library documentation by providing clear contracts between library authors and uses.
 
-To fully harness the advantages of strongly typed languages, there is a pressing need for tools and systems that enhance the usability of type error handling. These tools should be designed with the developer's experience in mind, offering clear, human-readable error messages, actionable insights, and the ability to guide developers through the process of fixing type issues. User-friendly, informative error messages can help developers learn and understand the language better, improving their overall experience and making strong typing more approachable.
+Similarly, functional language is a programming language category where functional programming principles are enforced. These include immutable values and referential transparency. Like statical typing, functional language also helps avoid certain undesired behaviours of programs, such as misaligned pointers and race conditions, by removing or carefully separating the effectful computation from the pure one. In addition, functional programming promotes the idea of using functions as the fundamental building blocks of programming and developing abstractions by composing functions. For these reasons, functional programming languages are often taught to beginners. Lastly, functional language's strict immutability provides distinct advantages in concurrency and parallelism.
 
+Combining the two disciplines, statically typed functional languages employ both static typing and functional paradigm. These languages, such as Haskell and ML, provide the strongest level of programming safety. It is often advertised that programs in these languages will be error-free if the source code passes the compiling stage, indicating that compilers are able to weed out many different classes of errors. With these safety properties, statically typed functional languages are often used as proof assistance and formal verifications where rigorous type-checking is paramount. Despite the safety benefits, these languages failed to gain significant popularity in mainstream programming. This lack of popularity is often attributed to higher barriers to entry, unfamiliarity, and unforgiving type errors.
 
+Type errors are one of the most blamed factors for posing hard barriers to learning and using statically typed functional language. Programmers often find type errors hard to read and understand when high-level abstractions are in play such as monads, type classes, and polymorphic types. Besides, type errors often use unfamiliar languages with liberal uses of jargon. Most importantly, the type error locations and explanations provided by traditional compiler tools are often misleading or wrong. All these factors make debugging type errors notoriously difficult.
 
+Programming tools and environments, built with modern graphical interfaces, play a very important role in learning and using the language. Historically, the infamous Object-Oriented language Smalltalk benefited greatly from its flexible and powerful IDE. Other examples include DrScheme for teaching and supporting the Lisp language. However, efforts to improve type errors with modern technology have been lacking. In fact, in most statically typed functional languages, our tooling hasn’t changed for the last few decades and still remains in text format displayed in the terminal interface. 
 
-\section{Research Questions} \label{sec:research-questions}
-
-
-\subsection{RQ1: How can we make Haskell's type error messages more user-friendly, informative, and easier to understand for developers, especially novice users?}
-
-We identify the challenges of existing tools for presenting type errors: cryptic, lacking explanation, biased. We provide the Chameleon tool, and interactive Haskell type error debugger, and discuss how it address each challenge. First, we show how Chameleon avoid biased error message using a holistic type inference engine. Second, we show how Chameleon explain type errors with interactive narrowing and assertion. Last, we illustrate that Chameleon use explorable UI instead of static texts to avoid speaking to generally or to specifically about type errors.
-
-
-The Chameleon tool was evaluated using a series of experiments. We designed various levels of Haskell tasks. We invite users to try to complete the tasks under different settings (with/without Chameleon, or with certain features on/off). We record the time it tasks to complete the task and the actions taken during the task.
-
-\subsection{RQ2: How can we develop more sophisticated type error diagnosis techniques that provide precise information about the source of type errors and suggest potential fixes?}
-
-We explore a different approach of reporting type error: identify the very source of type errors and suggesting how to fix them. To achieve this, we provide the Goanna tool, a Haskell type error debugging tool that identify all potential causes and suggesting resolutions to type errors. 
-
-To study the effectiveness of cause/solution driven approach, we conducted empirical experiments, comparing Goanna and tradition tools, on a set of defected Haskell programs sourced from online help forums. We measured how often Goanna's top suggestion match which given by a human expert. In addition, we measured how many potential causes in total are identified by Goanna and how effective Goanna is at prioritizing the more likely causes. Lastly, we measured how fast did Goanna complete each diagnosis. 
+\begin{figure}[hbt]
+  \includegraphics[width=\linewidth]{Smalltalk}
+  \caption{
+    An screenshot of smalltack IDE - Squeak
+    }
+\end{figure}
 
 
+\begin{figure}[hbt]
+  \includegraphics[width=\linewidth]{DrScheme}
+  \caption{
+    Dr Scheme, an Scheme IDE, highlighting a runtime error
+    }
+\end{figure}
 
-\subsection{RQ3: Can visualization help lower the difficulties of reading, understanding and comparing types?}
+My research is motivated by the inherent difficulties in debugging type errors and the dormant development of improving type errors with modern graphical interfaces and HCI techniques.
 
-We identify the challenge in reading, and comparing types in Haskell, especially polymorphic types. We propose a graphic notation - GeckoGrpah - to simplify these tasks. We investigated where challenges are and whether a graphic notation like GeckoGraph would help in type-driven development. We conducted an experiment comparing traditional text-based type signature vs GeckoGraph. 
+\section{Research Aim}
 
-\subsection{RQ3: Can we combine the debugging paradigms we explored into a integrated debugging system?}
+\subsection{Aim 1. To create rich type error data representations that can support interactive explanation, exploration and resolution of type errors.}
 
-We explore the debugging paradigms showed in Chameleon, Goanna, and GeckoGraph. We compared their strengths and weakness. We proposed an integrated Haskell type debugging environment - Reptile - combining all aforesaid tools together. We propose a few useful features that combines multiple tools and explain how they address the weaknesses of each single tool. We illustrate how the debugging system as a whole looks like and what kind of debugging techniques can be practiced with it. 
+To date, there is no unified representation of type errors. But most contemporary compiler tools represent type error as the combination of three objects: a location where the failed type checking failed, an expected input, and the actually encountered input. [Give example here]
 
-\section{Contributions}  \label{sec:contributions}
+\subsubsection{Objective 1.1 Reflect that a type error may be caused by multiple locations.}
+
+Traditional tools are limited to reporting a single location for the type error. This has been addressed by many researchers as an unhelpful limitation. Programmers are often unable to find resolution at the reported location and are forced to expand their search without guidance. We want to improve this by reporting accurate locations that are relevant to the type error.
+
+\subsubsection{Objective 1.2 Reflect that there may be more than one explanation for a type error}
+
+Erroneous programs can often be explained in multiple ways. When two pieces of evidence contradict each other, traditional tools choose the first one they encounter as the truth and the second one the culprit. When a contradiction consists of more than two pieces of evidence, traditional tools will generally ignore everything after the infeasibility is encountered. To improve this, first, we want to preserve the multiple explanations of type errors without picking sides. Second, we want to take into account all evidence.
+
+\subsubsection{Objective 1.3 Reflect that there may be different causes of a type error.}
+
+Type error does not end with a location in the source code. Programmers can still struggle to resolve a type error even after reaching the exact location of the culprits, failing to understand the logical explanation of the type error. Internally type error can be caused by mismatched types, unfulfilled type class constraints, or trying to construct infinite types. Externally, type error can be caused by typos, outdated type annotation, incomplete implementation, too few or too many arguments in a function application, etc.. Helping programmers find the cause or provide an accurate inference of what is the cause of the type error.
+
+\subsection{Aim 2. Improve the understanding and resolving of type errors using modern programming environment and workflow}
+
+To integrate rich type error data into a modern, visual programming environment and workflow that allows people to work more efficiently with strongly typed languages.
+
+
+When humans are put in the middle, more information does not equal better comprehension. With enriched data representation, we want to deliver type errors to better support programmers’ comprehension and the chance for a successful resolution.
+
+\subsubsection{Objective 2.1 Communicate the key concepts of type errors effectively using modern programming tools}
+
+The concepts of type errors are traditionally displayed as text. These concepts include error locations, alternative explanations, causes and intermediate type signatures. We explore more intuitive techniques and media to communicate these concepts to better facilitate comprehension.
+
+\subsubsection{Objective 2.2 Support programmers to interactively investigate and explore the type errors}
+
+To avoid presenting overwhelming information, we explore different techniques of interactively exploring the type errors. These techniques include dividing the type error into small chunks that follow a linear line of reasoning, or bisecting the error one step at a time into smaller concepts.
+
+\section{Contributions}
 
 \subsection{Chameleon}
-We contribute Chameleon, an interactive Haskell type error debugging tool. The goal of Chameleon is to support better comprehension of type errors comparing to tradition tools.  Programmers can use Chameleon to incrementally narrow down the type error. Chameleon uses MUS as underlying data representation of type errors. Unlike traditional type error slicing tools, Chameleon further break down the MUS by dissecting the MUS in different combinations and showing the intermediate typing conflict at each point.
+
+We contribute Chameleon, an interactive Haskell type error debugging tool. Internally, Chameleon computes all relevant locations that contribute to the type of error (1.2). Via a set of iteratively designed interface, Chameleon preserves the two alternatives of the type error and the supporting evidence for each (Objective 1.2).
 
 
-Chameleon is open-source and available at \cite{Anonymous2022-xp}. 
+We also contributed a series of studies of the effects of debugging with visual representation of types (Objective 2.1) and interactively explored type errors (Objective 2.2). We show that there is a difference between using traditional tools and enhanced type error debugging tools like Chameleon. And we show that this difference is more significant when debugging complex type errors.
 
-We also contributed a series of study of the effects of interactive type error narrowing in debugging type errors.  Our evaluation is the first human study on the effective of type error slicing tools. The evaluation and results are published at \cite{Anonymous2022-xp}.
-  
 \subsection{Goanna}
-We contribute Goanna, a tool to identify all potential causes and solutions to Haskell type errors. Goanna aim to identify the correct cause of type errors when tradition tools fail. Moreover, Goanna aim to provide alternative causes where tradition tools only focus on single location. With Goanna, Haskell programmers can resolve type error by exploring a list of potential error root causes. These causes are ordered using our heuristics so that the more likely causes are on top. Goanna uses MCS-enumeration to identify all causes, and is the first to investigate the use of MCS-enumeration in type error identification.
+We contribute Goanna, a Haskell type error debugging tool. Like Chameleon, Goanna iterates relevant locations (Objective 1.1) that contribute to the type error and presents alternatives to the type error (Objective 1.2). Different from Chameleon, Goanna will exhaust all possible alternative explanations of the type error. Also, Goanna presents a type error by dividing it into a list of potential causes and their respective fixes (2.2). With Goanna, Haskell programmers can resolve type errors by exploring a list of potential error root causes. These causes are ordered using our heuristics so that the more likely causes are on top. We show that via our empirical evaluation that Goanna outperforms existing Haskell compilers when explaining the type error, with the slight disadvantage of an increased computation time.
+
+\subsection{GeckoGraph}
+
+We contribute GeckoGraph, a graphic notation for Haskell types. GeckoGraph describes the same information as a type signature does, but uses colours, shapes, and symbols to make certain structures easy to identify at a glance. GeckoGraph is designed to use visual elements to improve the understanding of type-level concepts (Objective 2.1). This includes type classes, parametric type variables, and high-rank types. When used to compare two types, GeckoGraph helps clarify differences visually. It makes errors like too few or too many arguments in applications, unmet type class constraints obvious.
 
 
- Goanna is open source and available at \cite{}. The evaluation of Goanna is published at \cite{}.
-
-\subsection{GeckoGraph: A Diagrammatic Notation for Haskell Types}
-We contribute GeckoGraph, a graphic notation for Haskell types. The aim of GeckoGraph is to support reading, using, and comparing types faster and more intuitively. With GeckoGraph, programmers are able to use colors, symbols, and shapes to map various aspects of Haskell types. Programmers are able to make comparison and which functions are potentially useful without fully understand the type signature itself. 
+We conducted a large-scale study on the effectiveness of using GeckoGraph to perform a series of Haskell tasks. We concluded that with GeckoGraph, programmers are able to succeed in harder tasks.
 
 
-  GeckoGraph is open source and available at \cite{}. The evaluation of GeckoGraph is published at \cite{}.
+\section{Thesis outline}
 
-\section{Thesis Outline}
+The thesis begins with an overview of the challenges of type errors. We also outline the approaches that have been studied in the type theoretical direction and in the human-centred interaction direction. We then present our three projects, Chameleon, Goanna and GeckoGraph. Then, we propose a debugging system that combines the strengths of all the tools. We conclude the thesis with a discussion of the implications of our contribution to the understanding of type errors, tool designing, and programming language research. We then outline a few future directions of this work.
 
-The thesis begins with an overview of the challenges of type errors. We also outlines the approaches have been studied to address these challenges. We then present our three projects. First, the design of Chameleon tool and its evaluation (Chapeter \ref{chap:chameleon:design}). Second, the Goanna tool and its evaluation (Chapter \ref{chap:goanna}). Third, GeckoGraph and its evaluation. Lastly, we propose a debugging system that combine the strengths of all the tools. We conclude the thesis with a discussion of the techniques of enhancing type errors. We also discussed implications of our contribution in tool designing, programming, and research. 

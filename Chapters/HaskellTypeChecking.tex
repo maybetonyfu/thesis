@@ -28,7 +28,7 @@ The real world Haskell includes more features. However, this is done by a series
 The Hindley-Milner Type System (HM) and Algorithm W are foundational parts of type inference in many functional programming languages, including ML, Haskell, and Elm. The Hindley-Milner Type System, named after its inventors Roger Hindley and Robin Milner, is a type system that can automatically infer the types of expressions in a language with no annotations required. The system provides polymorphic typing, meaning that a variable can be assigned multiple different types automatically based on its usage context, making it easier to write flexible, reusable code without compromising type safety.
 
 \begin{figure}[hbt]
-    \includegraphics[width=\linewidth]{HindleyMilner}
+    \includegraphics[width=0.5\linewidth]{HindleyMilner}
     \caption{
         The declarative typing rules of the Hindley-Milner type system.}
 \end{figure}
@@ -55,7 +55,7 @@ Constraints programming is a programming paradigm where programmers describe the
 \subsubsection{Satisfiability modulo theories}
 
 
-\begin{figure}
+\begin{figure}[hbt]
   \includegraphics[width=\linewidth]{MaxSMT}
   \caption{An Type Relation Encoding based on MaxSMT}
 \end{figure}
@@ -72,7 +72,7 @@ Prolog is a logic programming language. Although not a constraint language by de
 We provide an encoding of Haskell typing in prolog language. In this encoding. [More details of the encoding]
 
 
-\begin{figure}
+\begin{figure}[hbt]
   \includegraphics[width=\linewidth]{Prolog}
   \caption{An Type inference defined in prolog predictes}
 \end{figure}
@@ -104,13 +104,13 @@ One observation we can make about the  Minimal Unsatisfiable Subsets is that it 
 However, the problem of MUS enumeration is that it is very computationally expensive. In the most naive approach, it requires exploring the powerset of all constraints in the constraint system. In fact, most of the effective enumeration algorithms today rely on heuristics, and they provide performance improvements on a case-by-case basis. MARCO~\cite{} and MUST~\cite{} are examples of such an approach. They use heuristics to avoid traversing a large chunk of the subsets each representing a permutation of which constraints to be relaxed and which not.
 
 
-\begin{figure}
+\begin{figure}[hbt]
   \includegraphics[width=\linewidth]{MarcoAlgo}
   \caption{An simple implementation of the MARCO algorithm}
 \end{figure}
 
 
-\begin{figure}
+\begin{figure}[hbt]
   \includegraphics[width=\linewidth]{MarcoViz}
   \caption{An illustration of how MARCO finds all MUSes}
 \end{figure}
@@ -121,29 +121,29 @@ However, the problem of MUS enumeration is that it is very computationally expen
 I propose an useful categorization of type errors. This categorization allow a formal study of the tools that is necessary to cover the information of a given type error.  Because we have covered MUS and MUS enumeration, it is now possible to discuss 3 categories of type error based on the feasibility of representing them in a single MUS.
 
 \subsection{Multi-step Type Error}
-\begin{figure}
-  \includegraphics[width=\linewidth]{Multi-step}
+\begin{figure}[hbt]
+  \includegraphics[width=0.5\linewidth]{Multi-step}
   \caption{}
 \end{figure}
 
 Multiple-step type errors contain a chain of reasoning steps, or a series of attempts to unify two logical terms. There is no possible way to successfully complete all the unifications. However, removing any one of the unification steps will make all other steps feasible. In the error presented in the above figure, the error can be represented in a single MUS {A, B, C, D}.
 
 \subsection{Multi-witness Type Error}
-\begin{figure}
-  \includegraphics[width=\linewidth]{Multi-witness}
+\begin{figure}[hbt]
+  \includegraphics[width=0.5\linewidth]{Multi-witness}
   \caption{}
 \end{figure}
 A Multiple-witness type error occurs when one side of the conflict contains multiple locations (witnesses) suggesting the same typing assignment. Removing one such location, the type error will remain. In the example, there are three MUSes: {A, D}, {B, D}, {C, D}. Therefore, this type of error cannot be succinctly represented by a single MUS.
 
 \subsection{Multi-party Type Error}
-\begin{figure}
-  \includegraphics[width=\linewidth]{Multi-party}
+\begin{figure}[hbt]
+  \includegraphics[width=0.5\linewidth]{Multi-party}
   \caption{}
 \end{figure}
 
 A Multiple-party type error is an error where multiple type irreconcilable assignments can be obtained from locations of the source code. In the provided example, there are 3 MUS: {A, B}, {A,C}, {B,C}. Therefore, this type of error cannot be succinctly represented by a single MUS.
 
-\begin{figure}
+\begin{figure}[hbt]
   \includegraphics[width=\linewidth]{Compare}
   \caption{}
 \end{figure}

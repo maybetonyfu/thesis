@@ -87,8 +87,25 @@ We contribute GeckoGraph, a graphic notation for Haskell types. GeckoGraph descr
 
 We conducted a large-scale study on the effectiveness of using GeckoGraph to perform a series of Haskell tasks. We concluded that with GeckoGraph, programmers are able to succeed in harder tasks.
 
+\section{Research Method}
+
+\subsection{Human-centered programming language studies}
+
+One important decision that shape a lot of my work is employing human-centered research methods with our novel programming language systems. The adopting of human-centered methods happens at every stage of the projects: prototyping, development and evaluation. Although the using of these methods are not new at all, but they certainly are not the most polular choices in programming language studies.
+
+The motive of such decision is that it is impossible to understand what are the good qualities of type errors without observing how human use type errors to gain understanding. 
+
+
+The downside of study programming language is iterative design is very hard. programming tasks involves complex inputs and outputs, and it is very hard to study an incomplete system without a fully working systems. For instance, if we are to study the effect of type errors, it is most effective to have a system that can recognize type-correct program from ill-typed one. It is hard to evaluate with a mock-up or wizard of oz style fake outputs to study users' interaction.  To address this limitations, we have a few ideas implemented in our research:
+
+A minimal but practical set of language 
+Design for human from start
+
+
+
+
 
 \section{Thesis outline}
 
-The thesis begins with an overview of the challenges of type errors. We also outline the approaches that have been studied in the type theoretical direction and in the human-centred interaction direction. We then present our three projects, Chameleon, Goanna and GeckoGraph. Then, we propose a debugging system that combines the strengths of all the tools. We conclude the thesis with a discussion of the implications of our contribution to the understanding of type errors, tool designing, and programming language research. We then outline a few future directions of this work.
+The thesis begins with an overview of the challenges of type errors. We also outline the approaches that have been studied in the type theoretical direction and in the human-centered interaction direction. We then present our three projects, Chameleon, Goanna and GeckoGraph. Then, we propose a debugging system that combines the strengths of all the tools. We conclude the thesis with a discussion of the implications of our contribution to the understanding of type errors, tool designing, and programming language research. We then outline a few future directions of this work.
 

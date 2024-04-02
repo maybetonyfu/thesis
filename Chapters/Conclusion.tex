@@ -2,11 +2,13 @@
 
 % Chapter 6
 
-\chapter{Conclusion and Future Work}
+\chapter{Conclusion}
 
-\label{chap:conclustion} 
+\label{chap:conclusion} 
+\graphicspath{{Figures/Conclusion}}
 
-\section{Conclusion}
+\section{Summary of the work}
+
 
 We contribute Chameleon, an interactive Haskell type error debugging tool. Internally, Chameleon computes all relevant locations that contribute to the type of error. Via a set of iteratively designed interface, Chameleon preserves the two alternatives of the type error and the supporting evidence for each.
 
@@ -23,4 +25,64 @@ We contribute GeckoGraph, a graphic notation for Haskell types. GeckoGraph descr
 
 We conducted a large-scale study on the effectiveness of using GeckoGraph to perform a series of Haskell tasks. We concluded that with GeckoGraph, programmers are able to succeed in harder tasks.
 
+\section{Conclusion}
+
+This research was centered around two key questions: what are the specific tasks when dealing with type errors, and how can we improve interaction with them? From this work, we have proposed a novel classification of type errors, revealing that each category comes with its unique set of challenges. This has resulted in three distinct fields of exploration. 
+
+This research, grounded in a human-centered approach, demonstrates promising methods to improve the way we interact with static type systems within contemporary programming environments. It provides a basis for future research in the field of type error debugging and paves the way for the development of new programming tools centered on simplifying the challenges of debugging type errors. 
+
 \section{Future Work}
+
+From the work presented in this thesis, we generalize
+the tasks of debugging type errors and our proposed debugging techniques in a few idiomatic interations.  I have also envisioned a programming system that integrate these interations to provide a basis for future programming tool designs.
+
+
+
+\subsection{Solution-based approach with chain-of-thought explaination}
+
+This iteraction provide a  solution-driven debugging experience similar to Goana. Unlike Goanna, type error is iteractively explained by the locations that contribute to this type conflict.
+
+\begin{figure}[hbt]
+    \includegraphics[width=\linewidth]{Debugging-1}
+    \caption{
+        Displaying a type error in level 1 explanation
+      }
+  \end{figure}
+  
+  \begin{figure}[hbt]
+    \includegraphics[width=\linewidth]{Debugging-2}
+    \caption{
+        Displaying a type error in level 2 explanation
+      }
+  \end{figure}
+  
+  \begin{figure}[hbt]
+    \includegraphics[width=\linewidth]{Debugging-3}
+    \caption{
+        Displaying a type error in level 3 explanation
+      }
+  \end{figure}
+  
+
+\subsection{Using Graphic Representation of Types in Type Debugging}
+
+In this example, graphic notation (GeckoGraph) is used to display the intermediate types that appears in the iterative explanation. 
+
+\begin{figure}[hbt]
+    \includegraphics[width=\linewidth]{Debugging-3-Gecko}
+    \caption{
+        Displaying a type error in level 3 explanation with GeckoGraph
+      }
+  \end{figure}
+
+
+\subsection{Support for type classes}
+
+  In this example, we use inline decoration elements in addtition to GeckoGraph to provide additional help for tracing errors involving type classes.  
+
+  \begin{figure}[hbt]
+    \includegraphics[width=\linewidth]{TypeClass}
+    \caption{
+        Displaying a type error in level 3 explanation
+      }
+  \end{figure}

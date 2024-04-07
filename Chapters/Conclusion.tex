@@ -8,38 +8,48 @@
 \graphicspath{{Figures/Conclusion}}
 
 \section{Summary of the work}
+In this thesis, I propsed a classification of type error. In this classfication:
+
+\textbf{a multi-step type error} is a type error that involve multiple inference steps between the two endpoints. An important challenges with multi-step type error is to convey the logical relation of every location while presenting the infeasibility. 
+
+A \textbf{multi-witness type error} is a type error that involve multiple endpoints supporting the same typing possibility. With multi-witness type error, it is harder to focus on the logical relation of every locations as the complexity grows exponentially as the number of witness increases. Rather, it is more helpful to identify the two typing possibilities and the endpoint locations that supporting them.
+
+A \textbf{multi-party type error} is a type error that involve more than two typing possibility. The multi-party type error is thought to be less intuitive and harder to comprehend. The most prominent task is to seperate the type error into simpler type errors. 
+
+With this classification, I contributed two systems -- Chameleon and Goanna -- to conquer the categories seperately.
 
 
+\subsection{Chameleon}
 We contribute Chameleon, an interactive Haskell type error debugging tool. Internally, Chameleon computes all relevant locations that contribute to the type of error. Via a set of iteratively designed interface, Chameleon preserves the two alternatives of the type error and the supporting evidence for each.
-
 
 We also contributed a series of studies of the effects of debugging with visual representation of types and interactively explored type errors. We show that there is a difference between using traditional tools and enhanced type error debugging tools like Chameleon. And we show that this difference is more significant when debugging complex type errors.
 
  
-
+\subsection{Goanna}
 We contribute Goanna, a Haskell type error debugging tool. Like Chameleon, Goanna iterates relevant locations that contribute to the type error and presents alternatives to the type error. Different from Chameleon, Goanna will exhaust all possible alternative explanations of the type error. Also, Goanna presents a type error by dividing it into a list of potential causes and their respective fixes. With Goanna, Haskell programmers can resolve type errors by exploring a list of potential error root causes. These causes are ordered using our heuristics so that the more likely causes are on top. We show that via our empirical evaluation that Goanna outperforms existing Haskell compilers when explaining the type error, with the slight disadvantage of an increased computation time.
 
 
-We contribute GeckoGraph, a graphic notation for Haskell types. GeckoGraph describes the same information as a type signature does, but uses colours, shapes, and symbols to make certain structures easy to identify at a glance. GeckoGraph is designed to use visual elements to improve the understanding of type-level concepts. This includes type classes, parametric type variables, and high-rank types. When used to compare two types, GeckoGraph helps clarify differences visually. It makes errors like too few or too many arguments in applications, unmet type class constraints obvious.
+In addition to the two systems, I also contribute GeckoGraph, a graphic notation for Haskell types. GeckoGraph describes the same information as a type signature does, but uses colours, shapes, and symbols to make certain structures easy to identify at a glance. GeckoGraph is designed to use visual elements to improve the understanding of type-level concepts. This includes type classes, parametric type variables, and high-rank types. When used to compare two types, GeckoGraph helps clarify differences visually. It makes errors like too few or too many arguments in applications, unmet type class constraints obvious.
 
 
 We conducted a large-scale study on the effectiveness of using GeckoGraph to perform a series of Haskell tasks. We concluded that with GeckoGraph, programmers are able to succeed in harder tasks.
 
-\section{Conclusion}
 
-This research was centered around two key questions: what are the specific tasks when dealing with type errors, and how can we improve interaction with them? From this work, we have proposed a novel classification of type errors, revealing that each category comes with its unique set of challenges. This has resulted in three distinct fields of exploration. 
-
-This research, grounded in a human-centered approach, demonstrates promising methods to improve the way we interact with static type systems within contemporary programming environments. It provides a basis for future research in the field of type error debugging and paves the way for the development of new programming tools centered on simplifying the challenges of debugging type errors. 
 
 \section{Future Work}
 
-From the work presented in this thesis, we generalize
-the tasks of debugging type errors and our proposed debugging techniques in a few idiomatic interations.  I have also envisioned a programming system that integrate these interations to provide a basis for future programming tool designs.
+From the work presented in this thesis, we generalize the tasks of debugging type errors and our proposed debugging techniques in a few idiomatic interations.  I have also envisioned a programming system that integrate these interations to provide a basis for future programming tool designs.
+
+\subsection{Directions of Type Debugging Tool}
+
+I devised a Type-Driven Debugging Extension that compatible with underlying type checking tools such as Chameleon and Goanna.  It integrate the, it adaptively show a minimal diagonisis of the type error and allow users to interactively query part of the reasoning behind this type judgement.  
 
 
+\subsubsection{Locate: Reduce the number of initial clues}
 
-\subsection{Solution-based approach with chain-of-thought explaination}
+One limitation from Chameleon is all locations from an MUS are highlighted all at once. This limitation is also found in almost every system based on type error slicing.   As a result, it can be generally distracting with these many decorations in the programming environment. 
 
+Goanna's solve this by  showing only locations from MCS, in other words, showing only locations from one potential cause. 
 This iteraction provide a  solution-driven debugging experience similar to Goana. Unlike Goanna, type error is iteractively explained by the locations that contribute to this type conflict.
 
 \begin{figure}[hbt]
@@ -48,7 +58,10 @@ This iteraction provide a  solution-driven debugging experience similar to Goana
         Displaying a type error in level 1 explanation
       }
   \end{figure}
-  
+
+
+\subsubsection{Understand: Interactively Inspect the Proof Tree}
+
   \begin{figure}[hbt]
     \includegraphics[width=\linewidth]{Debugging-2}
     \caption{
@@ -64,7 +77,7 @@ This iteraction provide a  solution-driven debugging experience similar to Goana
   \end{figure}
   
 
-\subsection{Using Graphic Representation of Types in Type Debugging}
+\subsubsection{Understand: Using Graphic Notation}
 
 In this example, graphic notation (GeckoGraph) is used to display the intermediate types that appears in the iterative explanation. 
 
@@ -76,7 +89,7 @@ In this example, graphic notation (GeckoGraph) is used to display the intermedia
   \end{figure}
 
 
-\subsection{Support for type classes}
+\subsubsection{Understand: Using Graphic Notation}
 
   In this example, we use inline decoration elements in addtition to GeckoGraph to provide additional help for tracing errors involving type classes.  
 
@@ -86,3 +99,32 @@ In this example, graphic notation (GeckoGraph) is used to display the intermedia
         Displaying a type error in level 3 explanation
       }
   \end{figure}
+
+
+  \subsubsection{Fix: Suggest Sensible}
+
+  In this example, we use inline decoration elements in addtition to GeckoGraph to provide additional help for tracing errors involving type classes.  
+
+  \begin{figure}[hbt]
+    \includegraphics[width=\linewidth]{TypeClass}
+    \caption{
+        Displaying a type error in level 3 explanation
+      }
+  \end{figure}
+
+\subsection{Support for Other Languages}
+\subsubsection{Motivation}
+Haskell is a very good platform for studying programming languages and type systems. This has been the case for a few decades. However, it strikes true in many programming languages community that a language suffers in usability in the pursuit for advanced and strict type checking. Mnay programmers find the TypeScript and Rust equally confusing with the amount of type level programming facilited in the language and the lack of proper tools to interpret them. Therefore, it will be an exiting next step to migrate the techniques and concepts in this work to other statically typed programming languages. 
+
+\subsubsection{Feasibility}
+
+
+
+\subsubsection{Challenges}
+
+
+\section{Final words}
+
+This research was centered around two key questions: what are the specific tasks when dealing with type errors, and how can we improve interaction with them? From this work, we have proposed a novel classification of type errors, revealing that each category comes with its unique set of challenges. This has resulted in three distinct fields of exploration. 
+
+This research, grounded in a human-centered approach, demonstrates promising methods to improve the way we interact with static type systems within contemporary programming environments. It provides a basis for future research in the field of type error debugging and paves the way for the development of new programming tools centered on simplifying the challenges of debugging type errors. 

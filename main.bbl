@@ -261,6 +261,42 @@
     \field{year}{2023}
   \endentry
 
+  \entry{Backus1978-xt}{article}{}
+    \name{author}{1}{}{%
+      {{hash=BJ}{%
+         family={Backus},
+         familyi={B\bibinitperiod},
+         given={John},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{language}{1}{%
+      {en}%
+    }
+    \list{publisher}{1}{%
+      {Association for Computing Machinery (ACM)}%
+    }
+    \strng{namehash}{BJ1}
+    \strng{fullhash}{BJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1978}
+    \field{labeldatesource}{}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \verb{doi}
+    \verb 10.1145/960118.808380
+    \endverb
+    \field{issn}{1558-1160}
+    \field{number}{8}
+    \field{pages}{165\bibrangedash 180}
+    \field{title}{The history of {FORTRAN} I, {II}, and {III}}
+    \field{volume}{13}
+    \field{journaltitle}{SIGPLAN Not.}
+    \field{month}{08}
+    \field{year}{1978}
+  \endentry
+
   \entry{Barik2017-gy}{inproceedings}{}
     \name{author}{7}{}{%
       {{hash=BT}{%
@@ -2851,6 +2887,58 @@
     \field{year}{2017}
   \endentry
 
+  \entry{Ritchie1978-pa}{article}{}
+    \name{author}{4}{}{%
+      {{hash=RDM}{%
+         family={Ritchie},
+         familyi={R\bibinitperiod},
+         given={D\bibnamedelima M},
+         giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+      {{hash=JSC}{%
+         family={Johnson},
+         familyi={J\bibinitperiod},
+         given={S\bibnamedelima C},
+         giveni={S\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=LME}{%
+         family={Lesk},
+         familyi={L\bibinitperiod},
+         given={M\bibnamedelima E},
+         giveni={M\bibinitperiod\bibinitdelim E\bibinitperiod},
+      }}%
+      {{hash=KBW}{%
+         family={Kernighan},
+         familyi={K\bibinitperiod},
+         given={B\bibnamedelima W},
+         giveni={B\bibinitperiod\bibinitdelim W\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{2}{%
+      {Institute of Electrical}%
+      {Electronics Engineers (IEEE)}%
+    }
+    \strng{namehash}{RDM+1}
+    \strng{fullhash}{RDMJSCLMEKBW1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1978}
+    \field{labeldatesource}{}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \verb{doi}
+    \verb 10.1002/j.1538-7305.1978.tb02140.x
+    \endverb
+    \field{issn}{0005-8580}
+    \field{number}{6}
+    \field{pages}{1991\bibrangedash 2019}
+    \field{title}{{UNIX} time-sharing system: The {C} programming language}
+    \field{volume}{57}
+    \field{journaltitle}{Bell Syst. Tech. J.}
+    \field{month}{07}
+    \field{year}{1978}
+  \endentry
+
   \entry{Schilling2012-iq}{inproceedings}{}
     \name{author}{1}{}{%
       {{hash=ST}{%
@@ -3301,6 +3389,36 @@
     \field{title}{An empirical study on the impact of Python dynamic features on change-proneness}
     \field{month}{07}
     \field{year}{2015}
+  \endentry
+
+  \entry{Wells1999-ob}{article}{}
+    \name{author}{1}{}{%
+      {{hash=WJB}{%
+         family={Wells},
+         familyi={W\bibinitperiod},
+         given={J\bibnamedelima B},
+         giveni={J\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{WJB1}
+    \strng{fullhash}{WJB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1999}
+    \field{labeldatesource}{}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \verb{doi}
+    \verb 10.1016/S0168-0072(98)00047-5
+    \endverb
+    \field{issn}{0168-0072}
+    \field{number}{1}
+    \field{pages}{111\bibrangedash 156}
+    \field{title}{Typability and type checking in System {F} are equivalent and undecidable}
+    \field{volume}{98}
+    \field{journaltitle}{Ann. Pure Appl. Logic}
+    \field{month}{06}
+    \field{year}{1999}
   \endentry
 
   \entry{Wielemaker2011-sr}{inproceedings}{}

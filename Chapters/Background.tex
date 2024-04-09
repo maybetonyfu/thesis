@@ -10,8 +10,6 @@ Programming in strongly typed languages has many advantages. It helps programmer
 \graphicspath{{Figures/Background}}
 
 
-
-
 \section{Functional Programming}
 
 Functional programming is a programming paradigm that treats computation as the evaluation of mathematical functions and avoids changing state and mutable data. The roots of functional programming are deeply embedded in mathematics, stemming from the lambda calculus - a mathematical system built around function abstraction and application - developed by Alonzo Church in the 1930s.
@@ -69,7 +67,6 @@ The lisp programming languages, such as common lisp and scheme, were designed to
 
 \section{The Mission To Improving Type Errors}
 
-
 Type errors can be notoriously difficult to understand and use, particularly for newcomers to programming or when using a language that is more strict about types. Type errors are often believed to be a major contributor to static typing's popularity. Type errors can happen in dynamic languages as well, however, they are not as difficult as their counterparts in static languages.
 
 Comparing to other programming errors (parsing errors, runtime errors), type errors have some distinct characteristics that render them particularly challenging. 
@@ -80,16 +77,13 @@ Types are computed at compile time, and just like the evualting programming sema
 \textbf{Clues for Type Checking are Implicit}
 Understanding type assigments of the program become more challenging when the programming language uses implicit typing. Implicit typing, also called type inference, is a technique that allow programmers to omit the ritual of writing type annotations all together and the type checker will infer the most general types (principal types) for each expression. Even for languages that don't employ implicit typing, some typing rules are hidden from programmers.
 For example the \texttt{if} expression in many programming languages. The semantics is very clear, but the typing rules are hidden.
-\todo{Insert typing rule and eval rule of if}
+
 
 \textbf{Lack of tool support}
 Lastly, few tools are dedicated on supporting type erros. Runtime programming errors have been studied thouroughly as a research subject and numerous industry tools are focus on understanding and solve runtime errors(GDB, breakpoints, time travel debugger..)  However, in comparason, tool support type error  remain the same depth and capability as they were many decades ago. Most the programming environments render type errors verbatem to the terminal.   
-\todo{Insert type error in terminmal}
 
 
-To start, the languages used in deceiving type errors are unhelpful to programmers. On one side, type errors often involve terminology and concepts that can be difficult to understand, particularly for less experienced programmers. The concepts might include objects, instances, classes, functions, variables, or aspects of data types that haven't been encountered before or fully understood. This is exemplified to extremes in Haskell, where programmers are often perplexed by errors like “No instance for (Num Char) arising from the literal '1'”. One another side,  the error messages returned for type errors are either vague or misleading. They might indicate the line of code where the error was detected but the actual mistake might be somewhere else.
-
-
+To start, the languages used in type errors are often unhelpful to programmers. On one side, type errors often involve terminology and concepts that can be difficult to understand, particularly for less experienced programmers. The concepts might include objects, instances, classes, functions, variables, or aspects of data types that haven't been encountered before or fully understood. This is exemplified to extremes in Haskell, where programmers are often perplexed by errors like “No instance for (Num Char) arising from the literal '1'”. One another side,  the error messages returned for type errors are either vague or misleading. They might indicate the line of code where the error was detected but the actual mistake might be somewhere else.
 
 
 Another factor of the difficulty of type errors is the lack of supporting information. Programmers can get stuck in a type error for hours and concede that dynamic languages are easier. When type errors are at runtime, programmers can at least run the program and insert printing statements to observe the dataflow of the program. None of these debugging techniques work on type errors as they are reported without actually running the program.  This is  comparable to debugging parse errors, which also happen at compile time. But generally parse errors are often local, meaning that a parse error has a sensible range of locations,  indentation errors can be searched in the parent indentation block, unmatched brackets can be searched in the outermost brackets. On the other hand, type errors are more global, a type conflict can happen between two different files, or code from different sources. This added to the difficulties of solving type errors.

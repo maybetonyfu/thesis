@@ -1,0 +1,1 @@
+{"rule":"EN_COMPOUNDS","sentence":"^\\Qa multi-step type error is a type error that involve multiple inference steps between the two endpoints.\\E$"}

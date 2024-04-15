@@ -5,27 +5,61 @@
 \label{chap:haskell-type-checking}
 
 \graphicspath{{Figures/HaskellTypeChecking}}
+In this chapter we delve into the technical aspects of type checking Haskell programs. Haskell uses static types, meaning that type checking algorithms are run at time user compiles the code. More specifically, this happens after the parsing is complete (as the complete syntax tree is necessary for type checking), and before any low level code is generated. In a most simplistic sense, type checking returns a binary result: the program is type correct, or it is ill-typed.
 
-In this chapter we delve into the more technical aspects of type checking Haskell programs. We first define a small subset of the Haskell language, and take a look at the typing rules that govern what constitutes a well typed program and what not using the Hindey-Milner type system. In the second half we explore the notion of constraint based type checking, and how it compares to the Hindley-Milner based type checking.
+\section{Why Haskell}
+
+The main contributions of my thesis are all in the theme of developing systems to improving the programming in Haskell. 
+
+\subsection{Haskell In Education}
+
+\subsection{Haskell In Formal Logic}
+
+
+\subsection{Haskell's relatively small language specification}
+
+Although Haskell hugely favored in programming language research, the full language semantics is never able to be formally defined \cite{Hudak2007-kn}. The lack of formal definition does not stop the potency of the language, nor does it stop researchers making meaningful contributions using this language as platform. Many efforts have made to formalize subsets of Haskell language \cite{FaxEn2002-nd}. The absolute coverage is beyond the focus of this thesis. 
+
+
+
+
 
 \section{The language and syntax}
-We start our discussion by defining a subset of the Haskell language. This language H is  an expression based functional language, which includes features like type annotation, polymorphic types, let expressions and a few ground types. The syntax of the language is shown below. The formal semantics of this language is  out of our concerns, because our scope is the type-checking phase which occurs before the program being executed.
 
+A bit decent part of Haskell Language has been formalized  \cite{FaxEn2002-nd}. However, the focus of this text is about type checking. We will select a subsut of the full language specification showing below \ref{fig:language-specs-minimal}.
+
+
+
+For clarity of this text, we introduce a subset of the Haskell language to illustrate the ideas behind the topics in this chapter. This language H is  an expression based functional language, which includes features like type annotation, polymorphic types, let expressions and a few ground types. The syntax of the language is shown below. The formal semantics of this language is  out of our concerns, because our scope is the type-checking phase which occurs before the program being executed.
 
 \begin{figure}[hbt]
     \includegraphics[width=\linewidth]{LanguageSyntax}
     \caption{
-      The syntax of a small functional language that we will be using to discuss the type-checking approaches
+      \label{fig:language-specs-minimal}
+      The syntax of a subset of Haskell language that we will be using to discuss the type-checking approaches
       }
   \end{figure}
 
 
-The real world Haskell includes more features. However, this is done by a series of transformations whereby the semantics of the core language is quite minimal.
+
+\section{Type Inference and Algorithm W}
 
 
-\section{Haskell Type Inference and Algorithm W}
+Type inference, also known implicit typing is a technique to reduce the number of occurance of manually ascribing types. Almost all language employ certain level of type inference. For instance in Java before 10, a common pattern is a user decalre a variable with the type, often class name, and then initialize the vaiable, again using the same class name \ref{fig:example-java}. This has been addressed in later version (Java 10) where the type of the variable can be guessed at compile time based on the right-hand-side of the assigment.  
 
-The Hindley-Milner Type System (HM) and Algorithm W are foundational parts of type inference in many functional programming languages, including ML, Haskell, and Elm. The Hindley-Milner Type System, named after its inventors Roger Hindley and Robin Milner, is a type system that can automatically infer the types of expressions in a language with no annotations required. The system provides polymorphic typing, meaning that a variable can be assigned multiple different types automatically based on its usage context, making it easier to write flexible, reusable code without compromising type safety.
+\begin{figure}[hbt]
+  \includegraphics[width=\linewidth]{ExampleJava}
+  \caption{
+    \label{fig:example-java}
+    The syntax of a subset of Haskell language that we will be using to discuss the type-checking approaches
+    }
+\end{figure}
+
+In language like Haskell and ML, not only type inference is applied, its potency is hugely amplified by the use of a Hindley-Milner type inference. Unlike the example in  \ref{fig:example-java} where type inference happens locally, meaning that the compiler will complain if it cannot infer enough information about the type\
+
+The Hindley-Milner Type System (HM) and Algorithm W are foundational parts of type inference in many functional programming languages, including ML, Haskell, and Elm. The Hindley-Milner Type System, named after its inventors Roger Hindley and Robin Milner, is a type system that can automatically infer the types of expressions in a language with no annotations required.The system provides polymorphic typing, meaning that a variable can be assigned multiple different types automatically based on its usage context, making it easier to write flexible, reusable code without compromising type safety. In many langauges that uses HM, it is proven that every expression will be assigned a most general type based on its usage. 
+
+
 
 \begin{figure}[hbt]
     \includegraphics[width=0.5\linewidth]{HindleyMilner}

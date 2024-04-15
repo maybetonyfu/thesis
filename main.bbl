@@ -1205,6 +1205,42 @@
     \field{year}{2022}
   \endentry
 
+  \entry{FaxEn2002-nd}{article}{}
+    \name{author}{1}{}{%
+      {{hash=FKF}{%
+         family={Fax{\'E}n},
+         familyi={F\bibinitperiod},
+         given={Karl-Filip},
+         giveni={K\bibinithyphendelim F\bibinitperiod},
+      }}%
+    }
+    \list{language}{1}{%
+      {en}%
+    }
+    \list{publisher}{1}{%
+      {Cambridge University Press}%
+    }
+    \strng{namehash}{FKF1}
+    \strng{fullhash}{FKF1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2002}
+    \field{labeldatesource}{}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \field{issn}{0956-7968}
+    \field{number}{4-5}
+    \field{pages}{295\bibrangedash 357}
+    \field{title}{A static semantics for Haskell}
+    \field{volume}{12}
+    \list{location}{1}{%
+      {Cambridge, United Kingdom, Cambridge}%
+    }
+    \field{journaltitle}{Journal of Functional Programming; Cambridge}
+    \field{month}{07}
+    \field{year}{2002}
+  \endentry
+
   \entry{Ferdowsi2023-au}{misc}{}
     \name{author}{1}{}{%
       {{hash=FK}{%

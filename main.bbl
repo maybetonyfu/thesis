@@ -582,6 +582,78 @@
     \field{year}{2020}
   \endentry
 
+  \entry{Bhargavan2021-no}{inproceedings}{}
+    \name{author}{7}{}{%
+      {{hash=BK}{%
+         family={Bhargavan},
+         familyi={B\bibinitperiod},
+         given={Karthikeyan},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=BA}{%
+         family={Bichhawat},
+         familyi={B\bibinitperiod},
+         given={Abhishek},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=DQH}{%
+         family={Do},
+         familyi={D\bibinitperiod},
+         given={Quoc\bibnamedelima Huy},
+         giveni={Q\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+      {{hash=HP}{%
+         family={Hosseyni},
+         familyi={H\bibinitperiod},
+         given={Pedram},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=KR}{%
+         family={K{\"u}sters},
+         familyi={K\bibinitperiod},
+         given={Ralf},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=SG}{%
+         family={Schmitz},
+         familyi={S\bibinitperiod},
+         given={Guido},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=WT}{%
+         family={W{\"u}rtele},
+         familyi={W\bibinitperiod},
+         given={Tim},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Association for Computing Machinery}%
+    }
+    \strng{namehash}{BK+1}
+    \strng{fullhash}{BKBADQHHPKRSGWT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2021}
+    \field{labeldatesource}{}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{booktitle}{Proceedings of the 2021 {ACM} {SIGSAC} Conference on Computer and Communications Security}
+    \verb{doi}
+    \verb 10.1145/3460120.3484588
+    \endverb
+    \field{isbn}{9781450384544}
+    \field{pages}{2601\bibrangedash 2617}
+    \field{series}{CCS '21}
+    \field{title}{An {In-Depth} Symbolic Security Analysis of the {ACME} Standard}
+    \list{location}{1}{%
+      {Virtual Event, Republic of Korea}%
+    }
+    \field{month}{11}
+    \field{year}{2021}
+    \warn{\item Can't use 'location' + 'address'}
+  \endentry
+
   \entry{Bill_Wagner2022-sq}{misc}{}
     \name{author}{1}{}{%
       {{hash=B}{%
@@ -2741,6 +2813,54 @@
     \field{howpublished}{\url{https://hoogle.haskell.org/}}
     \field{note}{Accessed: 2024-2-19}
     \field{title}{Hoogle}
+  \endentry
+
+  \entry{Mokhov2019-zj}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=MA}{%
+         family={Mokhov},
+         familyi={M\bibinitperiod},
+         given={Andrey},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=LG}{%
+         family={Lukyanov},
+         familyi={L\bibinitperiod},
+         given={Georgy},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=LJ}{%
+         family={Lechner},
+         familyi={L\bibinitperiod},
+         given={Jakob},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Association for Computing Machinery}%
+    }
+    \strng{namehash}{MALGLJ1}
+    \strng{fullhash}{MALGLJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2019}
+    \field{labeldatesource}{}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{booktitle}{Proceedings of the 12th {ACM} {SIGPLAN} International Symposium on Haskell}
+    \verb{doi}
+    \verb 10.1145/3331545.3342593
+    \endverb
+    \field{isbn}{9781450368131}
+    \field{pages}{139\bibrangedash 145}
+    \field{series}{Haskell 2019}
+    \field{title}{Formal verification of spacecraft control programs (experience report)}
+    \list{location}{1}{%
+      {Berlin, Germany}%
+    }
+    \field{month}{08}
+    \field{year}{2019}
+    \warn{\item Can't use 'location' + 'address'}
   \endentry
 
   \entry{Montero2010-uh}{inproceedings}{}

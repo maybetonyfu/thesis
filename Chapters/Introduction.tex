@@ -159,27 +159,27 @@ We conducted a large-scale study on the effectiveness of using GeckoGraph to per
 The thesis can be divided into two parts. The first part (Chapters 1, 2 and 3) survey the vivid panorama of type systems and programming languages. The purpose of these chapters is: 1. to situate the work I will illustrate in later chapters, 2 to introduce the proper definitions and terminilogies I use in this thesis.  The second part (Chapters 4, 5, 6, and 7) delve into three individual pieces of work, each targeting a specific problem in type error debugging.
 
 
+% \subsection{Chapter 2}
+
+% Chapter 2 introduce the development of two programming features: functional programming and static typing. We started by introducing the evolutions functional programming and static typing. We discuss their counterparts and the arguments against them. We then discuss the important milestones in improving compiler type error messgaes. We discuss the emerging demmand of these tools of programming robust code, as the way we program altered by the seismic impact of large language models.  
+
+
 \subsection{Chapter 2}
-
-Chapter 2 introduce the development of two programming features: functional programming and static typing. We started by introducing the evolutions functional programming and static typing. We discuss their counterparts and the arguments against them. We then discuss the important milestones in improving compiler type error messgaes. We discuss the emerging demmand of these tools of programming robust code, as the way we program altered by the seismic impact of large language models.  
-
-
-\subsection{Chapter 3}
 We provide some technial background in Chapter 3. This include the tradiional methods of Haskell type checking and constraint based type inference. Follow this thread, we continue to discuss the tools and techniques in constraint satisfiability analyasis that we use to improve type error reprotiong in later chapters. Last, we give the categorization of type errors and their examples. 
 
-\subsection{Chapter 4}
+\subsection{Chapter 3}
 This chapter introduce the work related to our implementation of Chameleon and our study on its effect on debugging type error. This chapter starts by an introduction of our motivation, succinctly summarised in three characteristics of bad type error messages. We then introduce Chamaleon by imagining oursevles as a hypothetical programmer combating with Haskell type errors, luckily with the help of Chameleon. We go on to introduce the system design and iterative prototyping methods used to develop Chameleon. Lastly, we our series of experiments on Chameleon's effect on sovling type errors comparing to traditional compiler tools. 
 
 
-\subsection{Chapter 5}
+\subsection{Chapter 4}
 
 The work we discuss in Chapter 5 is about Goanna. Goanna is a Haskell type error debugger we developed. In this chapter, we first report some common limitations of traditional compiler error messages. We then go on to showcase how Goanna fix type errors is able to address these limitations, in a few examples of realistic type errors.  Next, we discuss the implementation of Goanna and our heuritics for ranking potential causes and identifying unhelpful suggestions. Last, we show our empirical study of the accuracy, conciseness and performance of Goanna using a colllection of real world Haskll type errors. 
 
-\subsection{Chapter 6}
+\subsection{Chapter 5}
 
 In this chapter, we discuss our work on visualizing type annotations. In this, we showed our work in GeckoGraph and our empirical study on its effect. We start by present some usability challenges in using polymorphic types. We then descibe the design goal of GeckoGraph and how it can be constructed from a textual type annotation using a few construction rules. We then show our large-scale study on the effect of using visual type annoations in programming and solving type errors. 
 
 
-\subsection{Chapter 7}
+\subsection{Chapter 6}
 
 The last chapter, we recount our contribitions with more remarks on their contexts. We discuss a few directions of future work. This include the direction in future tool development, as well as future research opportunities. Lastly, in the closing words, we return to the map field of programming language and vast uncharted area that is the future of programming. 

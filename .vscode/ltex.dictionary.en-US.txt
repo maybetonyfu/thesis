@@ -3,3 +3,11 @@ infeasibility
 Goanna
 GeckoGraph
 multi-wintness
+hindley-milner
+unsatisfiability
+unsatisfiable
+Unsatisfiable
+satisfiable
+MUSes
+MCSes
+QuickCheck

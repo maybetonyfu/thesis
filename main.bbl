@@ -603,6 +603,88 @@
     \field{year}{2022}
   \endentry
 
+  \entry{Bird1998-kv}{book}{}
+    \name{author}{1}{}{%
+      {{hash=BR}{%
+         family={Bird},
+         familyi={B\bibinitperiod},
+         given={Richard},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \list{language}{1}{%
+      {es}%
+    }
+    \list{publisher}{1}{%
+      {Pearson Educaci{\'o}n}%
+    }
+    \strng{namehash}{BR1}
+    \strng{fullhash}{BR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1998}
+    \field{labeldatesource}{}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{isbn}{9788483221761}
+    \field{title}{Introduction to Functional Programming Using Haskell}
+    \field{year}{1998}
+  \endentry
+
+  \entry{Bjesse1998-lh}{article}{}
+    \name{author}{4}{}{%
+      {{hash=BP}{%
+         family={Bjesse},
+         familyi={B\bibinitperiod},
+         given={Per},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=CK}{%
+         family={Claessen},
+         familyi={C\bibinitperiod},
+         given={Koen},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=SM}{%
+         family={Sheeran},
+         familyi={S\bibinitperiod},
+         given={Mary},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=SS}{%
+         family={Singh},
+         familyi={S\bibinitperiod},
+         given={Satnam},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Association for Computing Machinery}%
+    }
+    \strng{namehash}{BP+1}
+    \strng{fullhash}{BPCKSMSS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1998}
+    \field{labeldatesource}{}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \verb{doi}
+    \verb 10.1145/291251.289440
+    \endverb
+    \field{issn}{0362-1340}
+    \field{number}{1}
+    \field{pages}{174\bibrangedash 184}
+    \field{title}{Lava: hardware design in Haskell}
+    \field{volume}{34}
+    \list{location}{1}{%
+      {New York, NY, USA}%
+    }
+    \field{journaltitle}{SIGPLAN Not.}
+    \field{month}{09}
+    \field{year}{1998}
+  \endentry
+
   \entry{Bogner2022-vf}{misc}{}
     \name{author}{2}{}{%
       {{hash=BJ}{%
@@ -958,6 +1040,47 @@
     \field{year}{2020}
   \endentry
 
+  \entry{Claessen2000-rl}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=CK}{%
+         family={Claessen},
+         familyi={C\bibinitperiod},
+         given={Koen},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=HJ}{%
+         family={Hughes},
+         familyi={H\bibinitperiod},
+         given={John},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Association for Computing Machinery}%
+    }
+    \strng{namehash}{CKHJ1}
+    \strng{fullhash}{CKHJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2000}
+    \field{labeldatesource}{}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{booktitle}{Proceedings of the fifth {ACM} {SIGPLAN} international conference on Functional programming}
+    \verb{doi}
+    \verb 10.1145/351240.351266
+    \endverb
+    \field{isbn}{9781581132021}
+    \field{pages}{268\bibrangedash 279}
+    \field{series}{ICFP '00}
+    \field{title}{{QuickCheck}: a lightweight tool for random testing of Haskell programs}
+    \list{location}{1}{%
+      {New York, NY, USA}%
+    }
+    \field{month}{09}
+    \field{year}{2000}
+  \endentry
+
   \entry{Clerici2013-ru}{article}{}
     \name{author}{3}{}{%
       {{hash=CS}{%
@@ -1141,6 +1264,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{labelyear}{1982}
+    \field{extradate}{1}
     \field{labeldatesource}{}
     \field{sortinit}{D}
     \field{sortinithash}{D}
@@ -1155,6 +1279,78 @@
       {Albuquerque, Mexico}%
     }
     \field{year}{1982}
+  \endentry
+
+  \entry{Damas1982-zw}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=DL}{%
+         family={Damas},
+         familyi={D\bibinitperiod},
+         given={Luis},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=MR}{%
+         family={Milner},
+         familyi={M\bibinitperiod},
+         given={Robin},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Association for Computing Machinery}%
+    }
+    \strng{namehash}{DLMR1}
+    \strng{fullhash}{DLMR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1982}
+    \field{extradate}{2}
+    \field{labeldatesource}{}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{booktitle}{Proceedings of the 9th {ACM} {SIGPLAN-SIGACT} symposium on Principles of programming languages}
+    \verb{doi}
+    \verb 10.1145/582153.582176
+    \endverb
+    \field{isbn}{9780897910651}
+    \field{pages}{207\bibrangedash 212}
+    \field{series}{POPL '82}
+    \field{title}{Principal type-schemes for functional programs}
+    \list{location}{1}{%
+      {Albuquerque, New Mexico}%
+    }
+    \field{month}{01}
+    \field{year}{1982}
+    \warn{\item Can't use 'location' + 'address'}
+  \endentry
+
+  \entry{Davie1992-xv}{book}{}
+    \name{author}{1}{}{%
+      {{hash=DAJT}{%
+         family={Davie},
+         familyi={D\bibinitperiod},
+         given={Antony J\bibnamedelima T},
+         giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim T\bibinitperiod},
+      }}%
+    }
+    \list{language}{1}{%
+      {en}%
+    }
+    \list{publisher}{1}{%
+      {Cambridge University Press}%
+    }
+    \strng{namehash}{DAJT1}
+    \strng{fullhash}{DAJT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1992}
+    \field{labeldatesource}{}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{isbn}{9780521277242}
+    \field{title}{Introduction to Functional Programming Systems Using Haskell}
+    \field{month}{06}
+    \field{year}{1992}
   \endentry
 
   \entry{Day1970-kb}{article}{}
@@ -1611,6 +1807,45 @@
     \field{month}{04}
     \field{year}{2014}
     \warn{\item Can't use 'location' + 'address'}
+  \endentry
+
+  \entry{Heeren2003-mz}{article}{}
+    \name{author}{3}{}{%
+      {{hash=HB}{%
+         family={Heeren},
+         familyi={H\bibinitperiod},
+         given={B},
+         giveni={B},
+      }}%
+      {{hash=LD}{%
+         family={Leijen},
+         familyi={L\bibinitperiod},
+         given={D},
+         giveni={D},
+      }}%
+      {{hash=vIA}{%
+         prefix={van},
+         prefixi={v\bibinitperiod},
+         family={IJzendoorn},
+         familyi={I\bibinitperiod},
+         given={A},
+         giveni={A},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {dl.acm.org}%
+    }
+    \strng{namehash}{HBLDIAv1}
+    \strng{fullhash}{HBLDIAv1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2003}
+    \field{labeldatesource}{}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{title}{Helium, for learning Haskell}
+    \field{journaltitle}{SIGPLAN workshop on Haskell}
+    \field{year}{2003}
   \endentry
 
   \entry{Heeren2003-kd}{inproceedings}{}
@@ -2168,6 +2403,48 @@
     \field{year}{2016}
   \endentry
 
+  \entry{Lee1998-fx}{article}{}
+    \name{author}{2}{}{%
+      {{hash=LO}{%
+         family={Lee},
+         familyi={L\bibinitperiod},
+         given={Oukseh},
+         giveni={O\bibinitperiod},
+      }}%
+      {{hash=YK}{%
+         family={Yi},
+         familyi={Y\bibinitperiod},
+         given={Kwangkeun},
+         giveni={K\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Association for Computing Machinery}%
+    }
+    \strng{namehash}{LOYK1}
+    \strng{fullhash}{LOYK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1998}
+    \field{labeldatesource}{}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \verb{doi}
+    \verb 10.1145/291891.291892
+    \endverb
+    \field{issn}{0164-0925}
+    \field{number}{4}
+    \field{pages}{707\bibrangedash 723}
+    \field{title}{Proofs about a folklore let-polymorphic type inference algorithm}
+    \field{volume}{20}
+    \list{location}{1}{%
+      {New York, NY, USA}%
+    }
+    \field{journaltitle}{ACM Trans. Program. Lang. Syst.}
+    \field{month}{07}
+    \field{year}{1998}
+  \endentry
+
   \entry{Lerner2007-mu}{inproceedings}{}
     \name{author}{4}{}{%
       {{hash=LBS}{%
@@ -2267,6 +2544,20 @@
     \field{journaltitle}{Constraints}
     \field{month}{04}
     \field{year}{2016}
+  \endentry
+
+  \entry{noauthor_undated-an}{article}{}
+    \list{language}{1}{%
+      {en}%
+    }
+    \list{publisher}{1}{%
+      {March2024}%
+    }
+    \field{labeltitlesource}{title}
+    \field{labeldatesource}{nodate}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{title}{Local Variable Type Inference}
   \endentry
 
   \entry{Mayer2012-lg}{inproceedings}{}

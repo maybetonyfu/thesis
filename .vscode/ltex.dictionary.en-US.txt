@@ -11,3 +11,4 @@ satisfiable
 MUSes
 MCSes
 QuickCheck
+Agda

@@ -792,6 +792,38 @@
     \field{year}{2022}
   \endentry
 
+  \entry{Campbell-Kelly1992-rn}{article}{}
+    \name{author}{1}{}{%
+      {{hash=CKM}{%
+         family={Campbell-Kelly},
+         familyi={C\bibinithyphendelim K\bibinitperiod},
+         given={M},
+         giveni={M},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{CKM1}
+    \strng{fullhash}{CKM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1992}
+    \field{labeldatesource}{}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \verb{doi}
+    \verb 10.1109/85.194051
+    \endverb
+    \field{issn}{1058-6180, 1934-1547}
+    \field{number}{4}
+    \field{pages}{16\bibrangedash 26}
+    \field{title}{The Airy tape: an early chapter in the history of debugging}
+    \field{volume}{14}
+    \field{journaltitle}{IEEE Ann. Hist. Comput.}
+    \field{year}{1992}
+  \endentry
+
   \entry{Caprara2000-vw}{article}{}
     \name{author}{3}{}{%
       {{hash=CA}{%
@@ -2284,6 +2316,31 @@
     \field{year}{2021}
   \endentry
 
+  \entry{Kernighan1978-xs}{book}{}
+    \name{author}{1}{}{%
+      {{hash=KBW}{%
+         family={Kernighan},
+         familyi={K\bibinitperiod},
+         given={Brian\bibnamedelima W},
+         giveni={B\bibinitperiod\bibinitdelim W\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Bell Laboratories MURRAY Hill, NJ}%
+    }
+    \strng{namehash}{KBW1}
+    \strng{fullhash}{KBW1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1978}
+    \field{labeldatesource}{}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{title}{{UNIX} for Beginners}
+    \field{volume}{1}
+    \field{year}{1978}
+  \endentry
+
   \entry{Klabnik_undated-wx}{misc}{}
     \name{author}{2}{}{%
       {{hash=KS}{%
@@ -2568,6 +2625,48 @@
     }
     \field{month}{06}
     \field{year}{2007}
+  \endentry
+
+  \entry{Lieberman1995-lg}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=LH}{%
+         family={Lieberman},
+         familyi={L\bibinitperiod},
+         given={Henry},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=FC}{%
+         family={Fry},
+         familyi={F\bibinitperiod},
+         given={Christopher},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {ACM Press/Addison-Wesley Publishing Co.}%
+    }
+    \strng{namehash}{LHFC1}
+    \strng{fullhash}{LHFC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1995}
+    \field{labeldatesource}{}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{booktitle}{Proceedings of the {SIGCHI} Conference on Human Factors in Computing Systems}
+    \verb{doi}
+    \verb 10.1145/223904.223969
+    \endverb
+    \field{isbn}{9780201847055}
+    \field{pages}{480\bibrangedash 486}
+    \field{series}{CHI '95}
+    \field{title}{Bridging the gulf between code and behavior in programming}
+    \list{location}{1}{%
+      {Denver, Colorado, USA}%
+    }
+    \field{month}{05}
+    \field{year}{1995}
+    \warn{\item Can't use 'location' + 'address'}
   \endentry
 
   \entry{Liffiton2016-xi}{article}{}
@@ -2911,6 +3010,54 @@
     \field{title}{Dual instructional support materials for introductory object-oriented programming: Classes vs. objects}
     \field{month}{04}
     \field{year}{2010}
+  \endentry
+
+  \entry{Myers2004-fy}{article}{}
+    \name{author}{3}{}{%
+      {{hash=MBA}{%
+         family={Myers},
+         familyi={M\bibinitperiod},
+         given={Brad\bibnamedelima A},
+         giveni={B\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=PJF}{%
+         family={Pane},
+         familyi={P\bibinitperiod},
+         given={John\bibnamedelima F},
+         giveni={J\bibinitperiod\bibinitdelim F\bibinitperiod},
+      }}%
+      {{hash=KAJ}{%
+         family={Ko},
+         familyi={K\bibinitperiod},
+         given={Amy\bibnamedelima J},
+         giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Association for Computing Machinery}%
+    }
+    \strng{namehash}{MBAPJFKAJ1}
+    \strng{fullhash}{MBAPJFKAJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2004}
+    \field{labeldatesource}{}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \verb{doi}
+    \verb 10.1145/1015864.1015888
+    \endverb
+    \field{issn}{0001-0782}
+    \field{number}{9}
+    \field{pages}{47\bibrangedash 52}
+    \field{title}{Natural programming languages and environments}
+    \field{volume}{47}
+    \list{location}{1}{%
+      {New York, NY, USA}%
+    }
+    \field{journaltitle}{Commun. ACM}
+    \field{month}{09}
+    \field{year}{2004}
   \endentry
 
   \entry{Mypy_undated-oe}{misc}{}

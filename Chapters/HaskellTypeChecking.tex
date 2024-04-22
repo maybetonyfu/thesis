@@ -115,7 +115,6 @@ Over the years, type error slicing has become the go-to approach for optimizing 
 
 In conventional program slicing approaches, a Minimal Unsatisfiable Subset (MUS) is typically used to represent a single type error, thereby providing locations for the type error report. However, we have identified two significant limitations inherent in MUS-based localization and diagnosis:
 
-
 \begin{figure}[hbt]
   \includegraphics[width=0.5\linewidth]{SlicingCounterExample}
   \caption{
@@ -138,69 +137,95 @@ for the Haskell programming language. Similar to other type-error slicing approa
 
 \section{The Analysis Of An Unsatisfiable System}
 
-One advantage of using a constraint-based type of system is that it offers many tools to understand the unsatisfiability of a system. In terms of programming language, the most useful tool we use is the Minimal Unsatisfiable Subset (MUS).  MUS detection aims to find the smallest subset of constraints that still renders the system infeasible. For an ill-typed program, this means finding a minimal set of locations that contain a type error. Although finding such a subset can be computationally expensive, it is useful because it represents the type error in more than one location and contains two sides of the conflict. This is often necessary knowledge in understanding any kind of conflict.
+One advantage using a holistic consstraint solving appraoch is that many tools are available from the study of constraint satisfiability. In this, the most useful tool we use are the Minimal Unsatisfiable Subset (MUS), Minimal Correction Subset (MCS) and Maximal Satisfiable Subset (MSS).  
+
+\subsection{Minimal Unsatisfiable Subset}
+
+MUS is the most commonly used appraoch. Most program slicing based tools \cite{Haack2004-fr, Pavlinovic2015-ke, Stuckey2003-pz} use MUS one way or another. Intuitive, MUS is the smallest subset of constraints syetm that still remains infeasible. Infeasibility simpliy means there are no ways to assign value to the logical variables. For an ill-typed program, this means finding a minimal set of locations that contain a type error. 
+
+Formally,  a minimal unsatisfiable subset (MUS) $M$ of a constraint system $C$ is a subset $M \subseteq C$ such that $M$ is unsatisfiable and $ \forall{c} \in M : M \setminus \{c\}$ is satisfiable. An MUS can be seen as a minimal explanation of the infeasibility of the constraint system. MUSes have been used extensively, mostly in combination with programming slicing, as a means to explain type errors. A MUS of type system constraints encodes a path of reasoning connecting all evidence from one location of the conflict to another.
 
 
-Other than MUS, minimal correction set (MCS) and  maximal satisfiable subset (MSS) are useful subsets of the constraint system as well. We give the formal definition of these subsets and their type theoretic interpretation.
+It need to be made clear that, for a constraint system, there may exist multiple MUSes. In the example in Fig \ref{fig:mus-example}, the consitraint system contains 5 propositional constraints. Clearly the whole system is infeasible. However, there are 3 possible MUSes in this system. We know that each MUS is minimal, because removing any single consitraint from a MUS will make it satisfilbe. Conventionally, we use a shrink based algorithm to find the set of MUS. The basic idea is removing one constraint a time from the constraint set, until the remaining subset is satisfilbe. In this case, the last removed item must be a subset of MUS. ANd thus repeating the process until an MUS is dereived. Although finding such a subset can be computationally expensive, it is useful because it represents the type error with comprehensive reasoning of how the error is inferred.
 
 
+\begin{figure}[hbt]
+  \includegraphics[width=0.8\linewidth]{MUS}
+  \caption{
+    \label{fig:mus-example}
+      An example possible MUSes of a constraint system in propositional logic}
+\end{figure}
 
-– A minimal unsatisfiable subset (MUS) $M$ of a constraint system $C$ is a subset $M \subseteq C$ such that $M$ is unsatisfiable and $ \forall{c} \in M : M \setminus \{c\}$ is satisfiable. An MUS can be seen as a minimal explanation of the infeasibility of the constraint system. MUSes have been used extensively, mostly in combination with programming slicing, as a means to explain type errors. A MUS of type system constraints encodes a path of reasoning connecting all evidence from one location of the conflict to another.
+\subsection{Minimal Correction Subset and Maximally Satisfiable Subset}
+
+Despite the common usage in type inference, MUS is not the only useful subset to representing type error. Minimal correction subset (MCS) can be understood as the smallest subset that needs to be removed to make the rest of the system satisfiable. Formally, a minimal correction set (MCS) $M$ of a constraint system $C$ is a subset $M \subseteq C$ such that $C \setminus M$ is satisfiable and $\forall{S} \subset M : C \setminus S$ is unsatisfiable. MCSes are so named because their removal from $C$ can be seen to “correct” the infeasibility. Because of the property that ``Removing MCS will repair the rest of the system", MCS is effective in representing the cause of error. In an ill-typed program, an MCS can be seen as the smallest set of locations that needs to be modified to fully resolve the type error.  Like a constraint system can have multiple MUSes, MCSes are not unique either. In the example (Fig. \ref{fig:mcs-example}), 4 MCSes can be found. Removing each of these will result in an satisifiable set of constraints. 
+
+\begin{figure}[hbt]
+  \includegraphics[width=0.8\linewidth]{MCS}
+  \caption{
+    \label{fig:mcs-example}
+      An example possible MCSes of a constraint system in propositional logic}
+\end{figure}
+
+The Maximal Satisfiable Subset is the complement of MCS. Formally, a maximal satisfiable subset (MSS) $M$ of a constraint system $C$ is a subset $M \subseteq C$ such that M is satisfiable and $\forall{c}\ in\ C \setminus M:M\cup\{c\}$ is unsatisfiable. The definition of an MSS is symmetric to that of a MUS, with `satisfiable' and `unsatisfiable' swapped along with maximal for minimal. In an ill-typed program, an MSS can be seen as the resulting typing environment if a type error is fixed by relaxing the MCS. An example of MSSes in a constraint system can be seen in Fig \ref{fig:mss-example}.
 
 
-– A minimal correction set (MCS) $M$ of a constraint system $C$ is a subset $M \subseteq C$ such that $C \setminus M$ is satisfiable and $\forall{S} \subset M : C \setminus S$ is unsatisfiable. MCSes are so named because their removal from $C$ can be seen to “correct” the infeasibility. In an ill-typed program, an MCS can be seen as the ``cause" of a type error; removing any MCS will result in the system being well-typed. Goanna uses an MCS to represent potential causes of a type error. Each MCS contains the set of locations that need to be changed to fully resolve the type error.
-
-  
-
-– A maximal satisfiable subset (MSS) $M$ of a constraint system $C$ is a subset $M \subseteq C$ such that M is satisfiable and $\forall{c}\ in\ C \setminus M:M\cup\{c\}$ is unsatisfiable. The definition of an MSS is symmetric to that of a MUS, with `satisfiable' and `unsatisfiable' swapped along with maximal for minimal. MCS and MSS are complement-sets of each other. In an ill-typed program, an MSS can be seen as the resulting typing environment if a type error is fixed by relaxing the MCS.
+\begin{figure}[hbt]
+  \includegraphics[width=0.8\linewidth]{MSS}
+  \caption{
+    \label{fig:mss-example}
+      An example possible MSSes of a constraint system in propositional logic}
+\end{figure}1
 
 \subsection{MUS Enumeration}
-One observation we can make about the  Minimal Unsatisfiable Subsets is that they are often not unique. It is possible for an unfeasible system to contain a finite number of MUSs. In practice, the existence of multiple MUSes indicates that there are multiple sources of conflict. Enumerating multiple MUS/MCS in this case may provide better insights into the root cause and how to address them properly
+ Minimal Unsatisfiable Subsets are often not unique, tt is possible for an unfeasible system to contain a finite number of MUSs. In practice, the existence of multiple MUSes itself is a valuable piece of information. In type checking, it indicates that there are multiple sources of conflict. Enumerating multiple MUS/MCS in this case may provide better insights into the root cause and how to address them properly. We will present an application of enumerating MUS/MCS in Chapter \ref{chap:goanna}.
+
+The problem with MUS enumeration is that it is very computationally expensive. In the most naive approach, it requires exploring the power set of all constraints in the constraint system. In fact, most of the effective enumeration algorithms today rely on heuristics, and they provide performance improvements on a case-by-case basis. MARCO~\cite{Liffiton2016-xi} and MUST~\cite{Bendik2020-pz} are examples of such an approach. They use heuristics to avoid traversing a large chunk of the subsets, each representing a permutation of which constraints need to be relaxed and which do not.
 
 
-However, the problem with MUS enumeration is that it is very computationally expensive. In the most naive approach, it requires exploring the power set of all constraints in the constraint system. In fact, most of the effective enumeration algorithms today rely on heuristics, and they provide performance improvements on a case-by-case basis. MARCO~\cite{Liffiton2016-xi} and MUST~\cite{Bendik2020-pz} are examples of such an approach. They use heuristics to avoid traversing a large chunk of the subsets, each representing a permutation of which constraints need to be relaxed and which do not.
-
-
-\begin{figure}[hbt]
-  \includegraphics[width=\linewidth]{MarcoAlgo}
-  \caption{A simple implementation of the MARCO algorithm}
-\end{figure}
-
-
-\begin{figure}[hbt]
-  \includegraphics[width=\linewidth]{MarcoViz}
-  \caption{An illustration of how MARCO finds all MUSes}
-\end{figure}
-  
+% \begin{figure}[hbt]
+%   \includegraphics[width=\linewidth]{Subsets}
+%   \caption{An example of generating constraints from Haskell program, and all the possible MUSes, MCSes, and MSSes can be acquired.}
+% \end{figure}
 
 \section{Three Classes of Type Error}
-
-I propose a useful categorization of type errors. This categorization allows a formal study of the tools that is necessary to cover the information of a given type error.  Because we have covered MUS and MUS enumeration, it is now possible to discuss 3 categories of type error based on the feasibility of representing them in a single MUS.
+With the introduction of MUS, we can revisit the idea of three categories of type error we proposed in Chapter \ref{chap:introduction}. This categorization allows a formal study of the tools that is necessary to cover the information of a given type error. 
 
 \subsection{Multi-step Type Error}
 \begin{figure}[hbt]
-  \includegraphics[width=0.5\linewidth]{Multi-step}
-  \caption{}
-\end{figure}
 
-Multiple-step type errors contain a chain of reasoning steps or a series of attempts to unify two logical terms. There is no possible way to successfully complete all the unification. However, removing any one of the unification steps will make all other steps feasible. In the error presented in the above figure, the error can be represented in a single MUS {A, B, C, D}.
+  \includegraphics[width=0.5\linewidth]{Multi-Step-2}
+  \caption{
+    \label{fig:multi-step-2}
+    A multi-step type error
+  }
+\end{figure}
+Multiple-step type errors contain a chain of reasoning steps or a series of attempts to unify two logical terms. Multiple step type error contains a single MUS. And each element of the MUS form a singleton MCS. In the example of Fig \ref{fig:multi-step-2}, the MUS is the set of {A, B, C}. The MCSes are {A}, {B}, {C}. Removing any one of the MCS will result in the program type check.
 
 \subsection{Multi-witness Type Error}
 \begin{figure}[hbt]
-  \includegraphics[width=0.5\linewidth]{Multi-witness}
-  \caption{}
+  \includegraphics[width=0.5\linewidth]{Multi-Witness-2}
+  \caption{
+    \label{fig:multi-witness-2}
+    A multi-witness type error
+  }
 \end{figure}
-A Multiple-witness type error occurs when one side of the conflict contains multiple locations (witnesses) suggesting the same typing assignment. If one such location is removed, the type error will remain. In the example, there are three MUSes: {A, D}, {B, D}, {C, D}. Therefore, this type of error cannot be succinctly represented by a single MUS.
+
+A Multiple-witness type error occurs when one side of the conflict contains multiple locations (witnesses) suggesting the same typing assignment. If one such location is removed, the type error will remain. In the example (\ref{fig:multi-witness-2}), there are three MUSes: {A, B}, {A, C}, {A, D}. Therefore, this type of error cannot be succinctly represented by a single MUS. 
 
 \subsection{Multi-party Type Error}
 \begin{figure}[hbt]
-  \includegraphics[width=0.5\linewidth]{Multi-party}
-  \caption{}
+  \includegraphics[width=0.5\linewidth]{Multi-Party-2}
+  \caption{
+    \label{fig:multi-party-2}
+    A multi-party type error
+  }
 \end{figure}
 
-A multiple-party type error is an error where multiple types of irreconcilable assignments can be obtained from locations in the source code. In the provided example, there are 3 MUS: {A, B}, {A,C}, {B,C}. Therefore, this type of error cannot be succinctly represented by a single MUS.
+A multiple-party type error is an error where multiple types of irreconcilable assignments can be obtained from locations in the source code. In the provided example  (\ref{fig:multi-party-2}), there are 3 MUS: {A, B}, {A,C}, {B,C}. Therefore, this type of error cannot be succinctly represented by a single MUS.
 
 \begin{figure}[hbt]
+  
   \includegraphics[width=\linewidth]{Compare}
   \caption{}
 \end{figure}

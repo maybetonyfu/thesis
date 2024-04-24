@@ -548,6 +548,106 @@
     \field{year}{2016}
   \endentry
 
+  \entry{Becker2019-cs}{inproceedings}{}
+    \name{author}{12}{}{%
+      {{hash=BBA}{%
+         family={Becker},
+         familyi={B\bibinitperiod},
+         given={Brett\bibnamedelima A},
+         giveni={B\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=DP}{%
+         family={Denny},
+         familyi={D\bibinitperiod},
+         given={Paul},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=PR}{%
+         family={Pettit},
+         familyi={P\bibinitperiod},
+         given={Raymond},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=BD}{%
+         family={Bouchard},
+         familyi={B\bibinitperiod},
+         given={Durell},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=BDJ}{%
+         family={Bouvier},
+         familyi={B\bibinitperiod},
+         given={Dennis\bibnamedelima J},
+         giveni={D\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=HB}{%
+         family={Harrington},
+         familyi={H\bibinitperiod},
+         given={Brian},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=KA}{%
+         family={Kamil},
+         familyi={K\bibinitperiod},
+         given={Amir},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=KA}{%
+         family={Karkare},
+         familyi={K\bibinitperiod},
+         given={Amey},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=MC}{%
+         family={McDonald},
+         familyi={M\bibinitperiod},
+         given={Chris},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=OPM}{%
+         family={Osera},
+         familyi={O\bibinitperiod},
+         given={Peter-Michael},
+         giveni={P\bibinithyphendelim M\bibinitperiod},
+      }}%
+      {{hash=PJL}{%
+         family={Pearce},
+         familyi={P\bibinitperiod},
+         given={Janice\bibnamedelima L},
+         giveni={J\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+      {{hash=PJ}{%
+         family={Prather},
+         familyi={P\bibinitperiod},
+         given={James},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {ACM}%
+    }
+    \strng{namehash}{BBA+1}
+    \strng{fullhash}{BBADPPRBDBDJHBKAKAMCOPMPJLPJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2019}
+    \field{labeldatesource}{}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{booktitle}{Proceedings of the Working Group Reports on Innovation and Technology in Computer Science Education}
+    \verb{doi}
+    \verb 10.1145/3344429.3372508
+    \endverb
+    \field{isbn}{9781450375672}
+    \field{pages}{177\bibrangedash 210}
+    \field{title}{Compiler Error Messages Considered Unhelpful: The Landscape of {Text-Based} Programming Error Message Research}
+    \list{location}{1}{%
+      {Aberdeen Scotland Uk}%
+    }
+    \field{month}{12}
+    \field{year}{2019}
+  \endentry
+
   \entry{Bekkouche2015-is}{misc}{}
     \name{author}{1}{}{%
       {{hash=BM}{%
@@ -749,60 +849,6 @@
     \field{sortinithash}{B}
     \field{isbn}{9788483221761}
     \field{title}{Introduction to Functional Programming Using Haskell}
-    \field{year}{1998}
-  \endentry
-
-  \entry{Bjesse1998-lh}{article}{}
-    \name{author}{4}{}{%
-      {{hash=BP}{%
-         family={Bjesse},
-         familyi={B\bibinitperiod},
-         given={Per},
-         giveni={P\bibinitperiod},
-      }}%
-      {{hash=CK}{%
-         family={Claessen},
-         familyi={C\bibinitperiod},
-         given={Koen},
-         giveni={K\bibinitperiod},
-      }}%
-      {{hash=SM}{%
-         family={Sheeran},
-         familyi={S\bibinitperiod},
-         given={Mary},
-         giveni={M\bibinitperiod},
-      }}%
-      {{hash=SS}{%
-         family={Singh},
-         familyi={S\bibinitperiod},
-         given={Satnam},
-         giveni={S\bibinitperiod},
-      }}%
-    }
-    \list{publisher}{1}{%
-      {Association for Computing Machinery}%
-    }
-    \strng{namehash}{BP+1}
-    \strng{fullhash}{BPCKSMSS1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{labelyear}{1998}
-    \field{labeldatesource}{}
-    \field{sortinit}{B}
-    \field{sortinithash}{B}
-    \verb{doi}
-    \verb 10.1145/291251.289440
-    \endverb
-    \field{issn}{0362-1340}
-    \field{number}{1}
-    \field{pages}{174\bibrangedash 184}
-    \field{title}{Lava: hardware design in Haskell}
-    \field{volume}{34}
-    \list{location}{1}{%
-      {New York, NY, USA}%
-    }
-    \field{journaltitle}{SIGPLAN Not.}
-    \field{month}{09}
     \field{year}{1998}
   \endentry
 
@@ -1193,45 +1239,33 @@
     \field{year}{2020}
   \endentry
 
-  \entry{Claessen2000-rl}{inproceedings}{}
-    \name{author}{2}{}{%
-      {{hash=CK}{%
-         family={Claessen},
+  \entry{Church1985-bx}{book}{}
+    \name{author}{1}{}{%
+      {{hash=CA}{%
+         family={Church},
          familyi={C\bibinitperiod},
-         given={Koen},
-         giveni={K\bibinitperiod},
+         given={Alonzo},
+         giveni={A\bibinitperiod},
       }}%
-      {{hash=HJ}{%
-         family={Hughes},
-         familyi={H\bibinitperiod},
-         given={John},
-         giveni={J\bibinitperiod},
-      }}%
+    }
+    \list{language}{1}{%
+      {en}%
     }
     \list{publisher}{1}{%
-      {Association for Computing Machinery}%
+      {Princeton University Press}%
     }
-    \strng{namehash}{CKHJ1}
-    \strng{fullhash}{CKHJ1}
+    \strng{namehash}{CA1}
+    \strng{fullhash}{CA1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2000}
+    \field{labelyear}{1985}
     \field{labeldatesource}{}
     \field{sortinit}{C}
     \field{sortinithash}{C}
-    \field{booktitle}{Proceedings of the fifth {ACM} {SIGPLAN} international conference on Functional programming}
-    \verb{doi}
-    \verb 10.1145/351240.351266
-    \endverb
-    \field{isbn}{9781581132021}
-    \field{pages}{268\bibrangedash 279}
-    \field{series}{ICFP '00}
-    \field{title}{{QuickCheck}: a lightweight tool for random testing of Haskell programs}
-    \list{location}{1}{%
-      {New York, NY, USA}%
-    }
-    \field{month}{09}
-    \field{year}{2000}
+    \field{isbn}{9780691083940}
+    \field{title}{The Calculi of Lambda-conversion}
+    \field{month}{01}
+    \field{year}{1985}
   \endentry
 
   \entry{Clerici2013-ru}{article}{}
@@ -2837,6 +2871,28 @@
     }
     \field{month}{10}
     \field{year}{2012}
+  \endentry
+
+  \entry{McAdam2002-vb}{article}{}
+    \name{author}{1}{}{%
+      {{hash=MB}{%
+         family={McAdam},
+         familyi={M\bibinitperiod},
+         given={B},
+         giveni={B},
+      }}%
+    }
+    \strng{namehash}{MB1}
+    \strng{fullhash}{MB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2002}
+    \field{labeldatesource}{}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{title}{Repairing type errors in functional programs}
+    \field{month}{07}
+    \field{year}{2002}
   \endentry
 
   \entry{Meyerovich2013-pn}{inproceedings}{}

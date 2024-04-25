@@ -6,8 +6,7 @@
 
 \graphicspath{{Figures/Introduction}}
 
-Programming languages are the media through which we communicate our ideas with machines, be it mathematical formulae or video games. Like human language, programming languages consist of words, grammar, and meaning. Unlike conversing with humans, machines tolerate very little ambiguity and are not skillful at navigating confusion. Furthermore, sometimes inconsistencies glossed over by humans can be indicative of bigger oversights - for example, mismatched types can be indicative of an ill-defined mapping. In this chapter, we inspect two spectrums of programming language design: their typing disciplines and the paradigms in which they reside. Through this, we hope to illustrate a common patern in programming: the more certainty we get knowing our program runs correctly, the more we are bothered with conforming to rules and checks. And when these rules and checks are violated, we meet the anguish of the compiler in arcane jargon, sometimes all in uppercase letters. My interventions aim to replace the terse and static error messages with a clear diagnosis system, assisted by the interactive user interface, to provide programmers with clarity, intuitiveness, and resolution.   \todo{Expand clarity, intuitiveness and resolution}
-
+Programming languages are the media through which we communicate our ideas with machines, be it mathematical formulae or video games. Like human language, programming languages consist of words, grammar, and meaning. Unlike conversing with humans, machines tolerate very little ambiguity and are not skillful at navigating confusion. Furthermore, sometimes inconsistencies glossed over by humans can be indicative of bigger oversights - for example, mismatched types can be indicative of an ill-defined mapping. In this chapter, we inspect two spectrums of programming language design: their typing disciplines and the paradigms in which they reside. Through this, we hope to illustrate a common patern in programming: the more certainty we get knowing our program runs correctly, the more we are bothered with conforming to rules and checks. And when these rules and checks are violated, we meet the anguish of the compiler in arcane jargon, sometimes all in uppercase letters. My interventions -- most notebly, Chameleon, Goanna, and GeckoGraph -- aim to replace the terse and static error messages with a clear diagnosis system, assisted by the interactive user interface, to provide programmers with clarity, intuitiveness, and resolution. Clarity means providing succinct and accurate explanation of errors. Intuitiveness measn presenting the error diagnosis in interfaces that are easy to learn, understand, and use. These systems aim to  expose all internal required to make informed decisions, give programmers better changes at solving erros as well as further their understanding of the languages they are using.
 
 
 \section{From types to program correctness}
@@ -25,8 +24,8 @@ In comparison, dynamic typing provides many appealing benefits and has an equal,
     }
 \end{figure}
 
-It comes as no surprise that large amounts of work were dedicated to deciding which one of the two typing disciplines is superior. Unfortunately, not only did these works fail to agree on which is better, they also do not agree on how to define what is good. Nevertheless, the lessons from this work should not be discounted.  \todo{citations}
-
+It comes as no surprise that large amounts of work were dedicated to deciding which one of the two typing disciplines is superior.   Unfortunately, no universal agreements can be drawn from these studies.  Some studeis support the \cite{Ray2017-gq, Kleinschmager2012-bg, Mayer2012-qc, Gao2017-xn}.  Software qualities \cite{Ray2017-gq, Gao2017-xn}, ease of maintainability \cite{Kleinschmager2012-bg}, speed of fixing errors \cite{Prechelt1998-pd}, speed of implementing features \cite{Prechelt2000-bf, Mayer2012-qc}, ease to understand \cite{Endrikat2014-uz}. Very rarely, study \cite{Hudak1994-ex} showed significant result, indicating `` Haskell prototype took signiﬁcantly less time to develop and was
+considerably more concise and easier to understand ".  However, this study needs to be taken with a grain of salt, as the author is one of the  original creater of Haskell language and wrote the Haskell prototpye in the study. Nevertheless, the conventional wisdom on this issue is that dynamically type languages are often more beginner-friendly, better fit for rapid-prototyping; statically type languages show more stengths in larger progjects, easier on onging change requets, producing more solid and robust code base thanks to its soundness features. 
 
 \section{Functional Programming}
 Of course, static typing is not the only technique that embraces rigor and formalism. \textbf{Functional languages}, inspired by Alonzo Church's lambda calculus \cite{Church1985-bx} in the 1930s, promotes the idea of using functions as the fundamental building blocks of programming and developing abstractions by composing functions. 
@@ -205,8 +204,7 @@ A \textbf{multi-step type error} is a type error that involves a chain of logica
   \includegraphics[width=\linewidth]{Multi-Step}
   \caption{
     \label{fig:multi-step-example}
-    An example of a multi-step type error.
-    }
+    Illustration of a multi-step type error in Haskell.  The potential issues in the definition of \texttt{a}, \texttt{b}, or the conditional expression of variable \texttt{b}. It can be clearly see a ``chain'' of reasoning formed in order to explain the type error. }
 \end{figure}
 
 A \textbf{multi-witness type error} is a type error that involves multiple pieces of evidence supporting the same potential type assignments.  A typical multi-step type error is shown in the example (Fig \ref{fig:multi-witness-example}). In the example, multiple evidence (lines 3,4,5) support that a has the type \texttt{Int -> String}. On the other hand, a single piece of evidence (line 2) shows that a has the type \texttt{Int -> Char}. The challenge of presenting multi-witness type errors is to clearly show the opposing sides and the number of witnesses of each side. 
@@ -215,7 +213,7 @@ A \textbf{multi-witness type error} is a type error that involves multiple piece
   \includegraphics[width=\linewidth]{Multi-Witness}
   \caption{
     \label{fig:multi-witness-example}
-    An example of a multi-witness type error.
+    Analysis of a multi-witness type error, where the \texttt{case} expression could be interpreted as type \texttt{Char} or \texttt{String}. This scenario showcases a type disagreement with  witnesses (in color pink) against one witness (in color blue). It is not hard to see that the difference in number play an important role here as the char literal \texttt{'I'} on line 2 is more likely be a typo.
     }
 \end{figure}
 
@@ -227,8 +225,7 @@ A \textbf{multi-party type error} is a type error that involves more than two ty
   \includegraphics[width=\linewidth]{Multi-Party}
   \caption{
     \label{fig:multi-party-example}
-    An example of a multi-party type error.
-    }
+    Analysis of a multi-party type error regarding the list \texttt{d}, which could alternately be typed as \texttt{[Int]}, \texttt{[String]}, or \texttt{[Char]}. The conflict is depicted as a disagreement among three parties (Right). Unlike the previous two examples, this error cannot be fixed by a single location. }
 \end{figure}
 
 With this classification, we contributed three systems—Chameleon, Goanna, and GeckoGraph—each focusing on one or two unique challenges of type error debugging.

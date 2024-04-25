@@ -1634,6 +1634,60 @@
     \field{year}{1970}
   \endentry
 
+  \entry{Endrikat2014-uz}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=ES}{%
+         family={Endrikat},
+         familyi={E\bibinitperiod},
+         given={Stefan},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=HS}{%
+         family={Hanenberg},
+         familyi={H\bibinitperiod},
+         given={Stefan},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=RR}{%
+         family={Robbes},
+         familyi={R\bibinitperiod},
+         given={Romain},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=SA}{%
+         family={Stefik},
+         familyi={S\bibinitperiod},
+         given={Andreas},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Association for Computing Machinery}%
+    }
+    \strng{namehash}{ES+1}
+    \strng{fullhash}{ESHSRRSA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2014}
+    \field{labeldatesource}{}
+    \field{sortinit}{E}
+    \field{sortinithash}{E}
+    \field{booktitle}{Proceedings of the 36th International Conference on Software Engineering}
+    \verb{doi}
+    \verb 10.1145/2568225.2568299
+    \endverb
+    \field{isbn}{9781450327565}
+    \field{pages}{632\bibrangedash 642}
+    \field{series}{ICSE 2014}
+    \field{title}{How do {API} documentation and static typing affect {API} usability?}
+    \list{location}{1}{%
+      {Hyderabad, India}%
+    }
+    \field{month}{05}
+    \field{year}{2014}
+    \warn{\item Can't use 'location' + 'address'}
+  \endentry
+
   \entry{Fausak2022-zf}{misc}{}
     \name{author}{1}{}{%
       {{hash=FT}{%
@@ -2229,6 +2283,41 @@
     \field{title}{Haskell Helium}
     \field{month}{05}
     \field{year}{2023}
+  \endentry
+
+  \entry{Hudak1994-ex}{article}{}
+    \name{author}{2}{}{%
+      {{hash=HP}{%
+         family={Hudak},
+         familyi={H\bibinitperiod},
+         given={Paul},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=JMP}{%
+         family={Jones},
+         familyi={J\bibinitperiod},
+         given={Mark\bibnamedelima P},
+         giveni={M\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {cvc.yale.edu}%
+    }
+    \strng{namehash}{HPJMP1}
+    \strng{fullhash}{HPJMP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1994}
+    \field{labeldatesource}{}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{issn}{0010-7832}
+    \field{number}{92-C}
+    \field{pages}{0153}
+    \field{title}{Haskell vs. Ada vs. C++ vs. awk vs.... an experiment in software prototyping productivity}
+    \field{volume}{14}
+    \field{journaltitle}{Contract}
+    \field{year}{1994}
   \endentry
 
   \entry{Hudak2007-kn}{inproceedings}{}
@@ -3113,6 +3202,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{labelyear}{2012}
+    \field{extradate}{1}
     \field{labeldatesource}{}
     \field{sortinit}{M}
     \field{sortinithash}{M}
@@ -3128,6 +3218,57 @@
       {New York, NY, USA}%
     }
     \field{month}{10}
+    \field{year}{2012}
+  \endentry
+
+  \entry{Mayer2012-qc}{report}{}
+    \name{author}{5}{}{%
+      {{hash=MC}{%
+         family={Mayer},
+         familyi={M\bibinitperiod},
+         given={Clemens},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=HS}{%
+         family={Hanenberg},
+         familyi={H\bibinitperiod},
+         given={Stefan},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=RR}{%
+         family={Robbes},
+         familyi={R\bibinitperiod},
+         given={Romain},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=TE}{%
+         family={Tanter},
+         familyi={T\bibinitperiod},
+         given={{\'E}ric},
+         giveni={{\'E}\bibinitperiod},
+      }}%
+      {{hash=SA}{%
+         family={Stefik},
+         familyi={S\bibinitperiod},
+         given={Andreas},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MC+1}
+    \strng{fullhash}{MCHSRRTESA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2012}
+    \field{extradate}{2}
+    \field{labeldatesource}{}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{pages}{20}
+    \field{title}{Static type systems (sometimes) have a positive impact on the usability of undocumented software: An empirical evaluation}
+    \list{institution}{1}{%
+      {Citeseer}%
+    }
+    \field{type}{techreport}
     \field{year}{2012}
   \endentry
 
@@ -3810,6 +3951,73 @@
     }
     \field{month}{08}
     \field{year}{2017}
+  \endentry
+
+  \entry{Prechelt1998-pd}{article}{}
+    \name{author}{2}{}{%
+      {{hash=PL}{%
+         family={Prechelt},
+         familyi={P\bibinitperiod},
+         given={L},
+         giveni={L},
+      }}%
+      {{hash=TWF}{%
+         family={Tichy},
+         familyi={T\bibinitperiod},
+         given={W\bibnamedelima F},
+         giveni={W\bibinitperiod\bibinitdelim F\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{PLTWF1}
+    \strng{fullhash}{PLTWF1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1998}
+    \field{labeldatesource}{}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \verb{doi}
+    \verb 10.1109/32.677186
+    \endverb
+    \field{issn}{0098-5589, 1939-3520}
+    \field{number}{4}
+    \field{pages}{302\bibrangedash 312}
+    \field{title}{A controlled experiment to assess the benefits of procedure argument type checking}
+    \field{volume}{24}
+    \field{journaltitle}{IEEE Trans. Software Eng.}
+    \field{month}{04}
+    \field{year}{1998}
+  \endentry
+
+  \entry{Prechelt2000-bf}{article}{}
+    \name{author}{1}{}{%
+      {{hash=PL}{%
+         family={Prechelt},
+         familyi={P\bibinitperiod},
+         given={Lutz},
+         giveni={L\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {nsl.com}%
+    }
+    \strng{namehash}{PL1}
+    \strng{fullhash}{PL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2000}
+    \field{labeldatesource}{}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{number}{10}
+    \field{pages}{23\bibrangedash 29}
+    \field{title}{An empirical comparison of c, c++, java, perl, python, rexx and tcl}
+    \field{volume}{33}
+    \field{journaltitle}{IEEE Computer}
+    \field{year}{2000}
   \endentry
 
   \entry{Previti2013-mr}{article}{}

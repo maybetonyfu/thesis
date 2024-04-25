@@ -261,6 +261,41 @@
     \field{year}{2023}
   \endentry
 
+  \entry{Bacchus2015-of}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=BF}{%
+         family={Bacchus},
+         familyi={B\bibinitperiod},
+         given={Fahiem},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=KG}{%
+         family={Katsirelos},
+         familyi={K\bibinitperiod},
+         given={George},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer International Publishing}%
+    }
+    \strng{namehash}{BFKG1}
+    \strng{fullhash}{BFKG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2015}
+    \field{labeldatesource}{}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{booktitle}{Computer Aided Verification}
+    \verb{doi}
+    \verb 10.1007/978-3-319-21668-3\_5
+    \endverb
+    \field{pages}{70\bibrangedash 86}
+    \field{title}{Using Minimal Correction Sets to More Efficiently Compute Minimal Unsatisfiable Sets}
+    \field{year}{2015}
+  \endentry
+
   \entry{Backus1978-xt}{article}{}
     \name{author}{1}{}{%
       {{hash=BJ}{%
@@ -295,6 +330,41 @@
     \field{journaltitle}{SIGPLAN Not.}
     \field{month}{08}
     \field{year}{1978}
+  \endentry
+
+  \entry{Bailey2005-hi}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=BJ}{%
+         family={Bailey},
+         familyi={B\bibinitperiod},
+         given={James},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=SPJ}{%
+         family={Stuckey},
+         familyi={S\bibinitperiod},
+         given={Peter\bibnamedelima J},
+         giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer Berlin Heidelberg}%
+    }
+    \strng{namehash}{BJSPJ1}
+    \strng{fullhash}{BJSPJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2005}
+    \field{labeldatesource}{}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{booktitle}{Practical Aspects of Declarative Languages}
+    \verb{doi}
+    \verb 10.1007/978-3-540-30557-6\_14
+    \endverb
+    \field{pages}{174\bibrangedash 186}
+    \field{title}{Discovery of Minimal Unsatisfiable Subsets of Constraints Using Hitting Set Dualization}
+    \field{year}{2005}
   \endentry
 
   \entry{Barik2014-ib}{inproceedings}{}
@@ -1689,6 +1759,63 @@
     \field{year}{2021}
   \endentry
 
+  \entry{Gaber2022-te}{article}{}
+    \name{author}{5}{}{%
+      {{hash=GL}{%
+         family={Gaber},
+         familyi={G\bibinitperiod},
+         given={Lamya},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=HAI}{%
+         family={Hussein},
+         familyi={H\bibinitperiod},
+         given={Aziza\bibnamedelima I},
+         giveni={A\bibinitperiod\bibinitdelim I\bibinitperiod},
+      }}%
+      {{hash=MH}{%
+         family={Mahmoud},
+         familyi={M\bibinitperiod},
+         given={Hanafy},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=MMM}{%
+         family={Mabrook},
+         familyi={M\bibinitperiod},
+         given={M\bibnamedelima Mourad},
+         giveni={M\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+      {{hash=MM}{%
+         family={Moness},
+         familyi={M\bibinitperiod},
+         given={Mohammed},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{GL+1}
+    \strng{fullhash}{GLHAIMHMMMMM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2022}
+    \field{labeldatesource}{}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \verb{doi}
+    \verb 10.1007/s12652-020-02247-w
+    \endverb
+    \field{issn}{1868-5137, 1868-5145}
+    \field{number}{7}
+    \field{pages}{3693\bibrangedash 3711}
+    \field{title}{Computation of minimal unsatisfiable subformulas for {SAT-based} digital circuit error diagnosis}
+    \field{volume}{13}
+    \field{journaltitle}{J. Ambient Intell. Humaniz. Comput.}
+    \field{month}{07}
+    \field{year}{2022}
+  \endentry
+
   \entry{Gamari_undated-zu}{misc}{}
     \name{author}{1}{}{%
       {{hash=GB}{%
@@ -2155,6 +2282,51 @@
     }
     \field{month}{06}
     \field{year}{2007}
+  \endentry
+
+  \entry{Ignatiev2020-xu}{article}{}
+    \name{author}{4}{}{%
+      {{hash=IA}{%
+         family={Ignatiev},
+         familyi={I\bibinitperiod},
+         given={Alexey},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=NN}{%
+         family={Narodytska},
+         familyi={N\bibinitperiod},
+         given={Nina},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=AN}{%
+         family={Asher},
+         familyi={A\bibinitperiod},
+         given={Nicholas},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=MSJ}{%
+         family={Marques-Silva},
+         familyi={M\bibinithyphendelim S\bibinitperiod},
+         given={Joao},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{IA+1}
+    \strng{fullhash}{IANNANMSJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2020}
+    \field{labeldatesource}{}
+    \field{sortinit}{I}
+    \field{sortinithash}{I}
+    \verb{eprint}
+    \verb 2012.11067
+    \endverb
+    \field{title}{On relating 'Why?' and 'Why Not?' explanations}
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{cs.LG}
+    \field{month}{12}
+    \field{year}{2020}
   \endentry
 
   \entry{Jakob_Nielsen1994-gd}{book}{}
@@ -2752,6 +2924,45 @@
     \warn{\item Can't use 'location' + 'address'}
   \endentry
 
+  \entry{Liffiton2008-mx}{article}{}
+    \name{author}{2}{}{%
+      {{hash=LMH}{%
+         family={Liffiton},
+         familyi={L\bibinitperiod},
+         given={Mark\bibnamedelima H},
+         giveni={M\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+      {{hash=SKA}{%
+         family={Sakallah},
+         familyi={S\bibinitperiod},
+         given={Karem\bibnamedelima A},
+         giveni={K\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{LMHSKA1}
+    \strng{fullhash}{LMHSKA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2008}
+    \field{labeldatesource}{}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \verb{doi}
+    \verb 10.1007/s10817-007-9084-z
+    \endverb
+    \field{issn}{0168-7433, 1573-0670}
+    \field{number}{1}
+    \field{pages}{1\bibrangedash 33}
+    \field{title}{Algorithms for Computing Minimal Unsatisfiable Subsets of Constraints}
+    \field{volume}{40}
+    \field{journaltitle}{J. Automat. Reason.}
+    \field{month}{01}
+    \field{year}{2008}
+  \endentry
+
   \entry{Liffiton2016-xi}{article}{}
     \name{author}{4}{}{%
       {{hash=LMH}{%
@@ -2812,6 +3023,53 @@
     \field{sortinit}{L}
     \field{sortinithash}{L}
     \field{title}{Local Variable Type Inference}
+  \endentry
+
+  \entry{Marques-Silva2023-nk}{incollection}{}
+    \name{author}{1}{}{%
+      {{hash=MSJ}{%
+         family={Marques-Silva},
+         familyi={M\bibinithyphendelim S\bibinitperiod},
+         given={Joao},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \name{editor}{2}{}{%
+      {{hash=BL}{%
+         family={Bertossi},
+         familyi={B\bibinitperiod},
+         given={Leopoldo},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=XG}{%
+         family={Xiao},
+         familyi={X\bibinitperiod},
+         given={Guohui},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer Nature Switzerland}%
+    }
+    \strng{namehash}{MSJ1}
+    \strng{fullhash}{MSJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2023}
+    \field{labeldatesource}{}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{booktitle}{Reasoning Web. Causality, Explanations and Declarative Knowledge: 18th International Summer School 2022, Berlin, Germany, September 27--30, 2022, Tutorial Lectures}
+    \verb{doi}
+    \verb 10.1007/978-3-031-31414-8\_2
+    \endverb
+    \field{isbn}{9783031314148}
+    \field{pages}{24\bibrangedash 104}
+    \field{title}{{Logic-Based} Explainability in Machine Learning}
+    \list{location}{1}{%
+      {Cham}%
+    }
+    \field{year}{2023}
   \endentry
 
   \entry{Mayer2012-lg}{inproceedings}{}
@@ -3182,6 +3440,58 @@
     \field{howpublished}{\url{http://mypy-lang.org/}}
     \field{note}{Accessed: 2022-12-7}
     \field{title}{mypy - Optional Static Typing for Python}
+  \endentry
+
+  \entry{Nelson2017-ar}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=NT}{%
+         family={Nelson},
+         familyi={N\bibinitperiod},
+         given={Tim},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=DN}{%
+         family={Danas},
+         familyi={D\bibinitperiod},
+         given={Natasha},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=DDJ}{%
+         family={Dougherty},
+         familyi={D\bibinitperiod},
+         given={Daniel\bibnamedelima J},
+         giveni={D\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=KS}{%
+         family={Krishnamurthi},
+         familyi={K\bibinitperiod},
+         given={Shriram},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {ACM}%
+    }
+    \strng{namehash}{NT+1}
+    \strng{fullhash}{NTDNDDJKS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2017}
+    \field{labeldatesource}{}
+    \field{sortinit}{N}
+    \field{sortinithash}{N}
+    \field{booktitle}{Proceedings of the 2017 11th Joint Meeting on Foundations of Software Engineering}
+    \verb{doi}
+    \verb 10.1145/3106237.3106272
+    \endverb
+    \field{isbn}{9781450351058}
+    \field{title}{The power of ``why'' and ``why not'': enriching scenario exploration with provenance}
+    \list{location}{1}{%
+      {Paderborn Germany}%
+    }
+    \field{month}{08}
+    \field{year}{2017}
+    \warn{\item Can't use 'location' + 'address'}
   \endentry
 
   \entry{Noone2018-wl}{article}{}

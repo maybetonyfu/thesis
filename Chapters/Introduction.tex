@@ -8,28 +8,32 @@
 
 Programming languages are the media through which we communicate our ideas with machines, be it mathematical formulae or video games. Like human language, programming languages consist of words, grammar, and meaning. Unlike conversing with humans, machines tolerate very little ambiguity and are not skillful at navigating confusion. Furthermore, sometimes inconsistencies glossed over by humans can be indicative of bigger oversights - for example, mismatched types can be indicative of an ill-defined mapping. 
 
-We will devle into two critical aspects of programming language design: their typing disciplines and the paradigms in which they reside. Through this, we hope to illustrate a common patern in programming: the more certainty we get knowing our program runs correctly, the more we are bothered with conforming to rules and checks. And when these rules and checks are violated, we meet the anguish of the compiler in arcane jargon, sometimes all in uppercase letters. My interventions -- most notebly, Chameleon, Goanna, and GeckoGraph -- aim to transform the traditional, often terse, error feedback into a dynamic and clear diagnostic system, enhanced by interactive user interfaces. Our goals are to provide programmers with clarity and Intuitiveness and confidence. In this:
+We will delve into two critical aspects of programming language design: their typing disciplines and the paradigms in which they reside. Through this, we hope to illustrate a common pattern in programming: the more certainty we get knowing our program runs correctly, the more we are bothered with conforming to rules and checks. And when these rules and checks are violated, we meet the anguish of the machine in arcane jargon, sometimes all in uppercase letters. My interventions -- most notably, Chameleon (Chapter \ref{chap:chameleon}), Goanna (Chapter~\ref{chap:goanna}), and GeckoGraph (Chapter~\ref{chap:gecko-graph}) -- aim to transform the traditional, often terse, error feedback into a dynamic and clear diagnostic system enhanced by interactive user interfaces. Our goals are to provide programmers with clarity, intuition, and confidence. In this:
 
 \begin{itemize}
-  \item Clarity: We aim to provide succinct and precise explanations of errors, cutting through the complexity to deliver straightforward answers.
-  \item Intuitiveness: Our systems are designed with user-friendly interfaces that are easy to learn, comprehend, and use, ensuring that programmers of all skill levels can efficiently navigate and rectify errors.
-  \item Confidence: Our systems are all deeply rooted in programming language theories and constraint satisfiability research, providng the same programming safety as the traditional compliers.  
+  \item \textbf{Clarity}: We aim to provide succinct and accurate explanations of errors, cutting through unfamiliar terminologies, awkwardly phrased sentences, and excessive amounts of unhelpful information that often obscure the underlying issues.
+  \item \textbf{Intuitiveness}: Our systems are designed with user-friendly interfaces that are easy to learn, comprehend, and use, ensuring that programmers of all skill levels can efficiently navigate and rectify errors.
+  \item \textbf{Confidence}: Building on solid foundations in programming language theory and constraint satisfiability research, our tools maintain the rigorous program safety features expected from traditional compilers, while enhancing the user experience.
 \end{itemize}
 
-Through these innovative systems, we strive to demystify error messages and equip programmers to better tools to write correct programs. 
+Through these innovative systems, we strive to demystify error messages and equip programmers with better tools to write correct programs. 
 
 \section{From types to program correctness}
 
-In programming language theory and practice, typing is a widely adopted program validation method where types of expressions are checked against their usage. In the early history of programming, types were used to inform the compiler how much memory needs to be allocated for each value. Now, type systems are much more powerful; programmers can express complex ideas, like communication protocols and concurrency characteristics. Conventionally, the discipline of typing is identified by the existence of a compile-time checking stage. A programming language is said to be statically typed if checks are performed before a program is executed.  On the other hand, dynamically typed languages (colloquially called dynamic languages) will not complain about type mismatch prior to the program being run, and they do not facilitate describing the types (Fig. \ref{fig:typed-vs-untyped}). In dynamic languages, expressions like \texttt{4 + "2"} will result in a runtime error; some languages try to perform unexpected coercion of data types, producing answer ``42''. Statically-typed languages have a long history and are extremely popular, with examples among both the earliest of programming languages (such as FORTRAN and ALGOL, \cite{Backus1978-xt}) and the most widely-used languages across all platforms  (such as C and its derivatives, including Java and C\#, \cite{Ritchie1978-pa}). Static typing is also a core feature of the most advanced and renowned academic languages (such as ML, Haskell, and their derivatives, such as OCaML and Agda, respectively, \cite{Hudak2007-kn}). In practice, statically typed programming languages offer many advantages. Type declarations and annotations add important contextual information about the expected use of variables and expressions. This additional context allows early error detection but also enhances code readability and promotes maintainability, especially in large collaborative projects. The explicit encapsulation of type information in code also creates opportunities for improved tooling through intelligent compiler services and IDE (interactive development environment) support. Additionally, static typing enhances code documentation by providing clear contracts between library authors and users and, more generally, enhancing code reusability.
+In programming language theory and practice, typing is a widely adopted program validation method where types of expressions are checked against their usage. In the early history of programming, types were used to inform the compiler how much memory needed to be allocated for each value. Now, type systems are much more powerful; programmers can express complex ideas, like communication protocols and concurrency characteristics. Conventionally, the discipline of typing is identified by the existence of a compile-time checking stage. A programming language is said to be statically typed if checks are performed before a program is executed.  On the other hand, dynamically typed languages (colloquially called dynamic languages) will not complain about type mismatch prior to the program being run, and they do not facilitate describing the types (Fig. \ref{fig:typed-vs-untyped}). In dynamic languages, expressions like \texttt{4 + "2"} will result in a runtime error; some languages try to perform unexpected coercion of data types, producing the answer ``42''. 
+
+Statically-typed languages have a long history and are extremely popular, with examples among both the earliest of programming languages (such as FORTRAN and ALGOL, \cite{Backus1978-xt}) and the most widely-used languages across all platforms  (such as C and its derivatives, including Java and C\#, \cite{Ritchie1978-pa}). Static typing is also a core feature of the most advanced and renowned academic languages (such as ML, Haskell, and their derivatives, such as OCaML and Agda, respectively, \cite{Hudak2007-kn}). In practice, statically typed programming languages offer many advantages. Type declarations and annotations add important contextual information about the expected use of variables and expressions. This additional context allows early error detection but also enhances code readability and promotes maintainability \cite{Kleinschmager2012-bg}, especially in large collaborative projects. The explicit encapsulation of type information in code also creates opportunities for improved tooling through intelligent compiler services and IDE (interactive development environment) support. Additionally, static typing enhances code documentation by providing clear contracts between library authors and users and, more generally, enhancing code reusability \cite{Endrikat2014-uz}.
 
 
-In comparison, dynamic typing provides many appealing benefits and has an equal, if not stronger, influence in the computing world. In dynamically-typed languages, a variable can hold different types of values because the type is checked during runtime. This provides more flexibility than static typing since a function can be used to process different types of input values without any special semantics. However, it also means that errors such as trying to subtract a string from a number can be detected only when the code has been run, leading to potentially dire consequences. Programming languages in the Lisp family, such as Common Lisp and Scheme, were designed to benefit from the flexibility of dynamic typing. In Lisp languages, a common design pattern is that functions take dynamic input that can assume various forms (atom, lists, s-expressions), and different code is executed based on inspecting the input value at runtime. Another benefit of dynamic languages is that they are easier to learn. Programmers need not worry about declaring and conforming to types at all, and they can jump directly into computation. In modern-day computing, prolific languages like JavasScript and Python are dynamic, which is believed to contribute to their immense popularity thanks to the lower barrier of entry.
+In comparison, dynamic typing too provides many appealing benefits and has an equal, if not stronger, influence in the computing world. In dynamically-typed languages, a variable can hold different types of values because the type is checked during runtime. This provides more flexibility than static typing since a function can be used to process different types of input values without any special semantics. However, this flexibility also carries risk: expressions like \texttt{4 + "2"} will not be identified before executing the program; some languages try to perform unexpected coercion of data types to avoid errors, producing the answer ``42''. 
+
+Languages within the Lisp family, such as Common Lisp and Scheme, epitomize the advantages of dynamic typing. In these languages, a prevalent design pattern involves functions accepting dynamically typed inputs that can be atoms, lists, or s-expressions. The function's behavior changes based on the runtime inspection of these inputs. Additionally, dynamic languages often have a lower learning curve. Programmers are not burdened with declaring and adhering to strict type constraints, allowing them to focus more on immediate computational tasks. In the modern computing landscape, the popularity of dynamic languages like JavaScript and Python can be attributed to their flexibility and ease of use, which significantly lowers the barrier to entry for new programmers \cite{Chatley2019-uq}.
 
 
+It comes as no surprise that large amounts of work were dedicated to deciding which one of the two typing disciplines is superior. Over the years, numerous studies have attempted to compare these typing disciplines and their impact on various aspects of software development, including software quality (\cite{Ray2017-gq, Gao2017-xn}), maintainability (\cite{Kleinschmager2012-bg}), error resolution (\cite{Prechelt1998-pd}), development speed for new features (\cite{Prechelt2000-bf, Mayer2012-qc}), and comprehensibility (\cite{Endrikat2014-uz}). Unfortunately, these studies have not led to a consensus, as the impacts of the typing disciplines can be overshadowed by more dominating factors such as the style of the programming languages used and the skill levels of the programmers involved.
 
-It comes as no surprise that large amounts of work were dedicated to deciding which one of the two typing disciplines is superior. Over the years many studies tried to compare static typing and dynamic typing, and their effect on software quality (\cite{Ray2017-gq, Gao2017-xn}), maintainability (\cite{Kleinschmager2012-bg}), error resolution (\cite{Prechelt1998-pd}), feature development speed (\cite{Prechelt2000-bf, Mayer2012-qc}), and comprehensibility (\cite{Endrikat2014-uz}).  Unfortunately, no universal agreements can be drawn from these studies. One study \cite{Hudak1994-ex} compring many popular programming languages showed significant result, indicating ``Haskell prototype took signiﬁcantly less time to develop and was considerably more concise and easier to understand".  However, this study needs to be taken with a grain of salt, as the author is one of the original creater of the Haskell language and wrote the Haskell prototpye in the study.
+Despite the lack of universal agreement, a general consensus suggests that dynamically typed languages are often more suited for beginners and rapid prototyping, thanks to their flexibility and ease of use. Conversely, statically typed languages are typically favored in larger projects or environments where ongoing feature development and team collaboration are prevalent. This preference is due to the inherent type safety features, which help manage complexity and reduce certain errors as projects scale \cite{Chatley2019-uq}.
 
-Despite these uncertainties, the prevailing view is that dynamically typed languages are preferable for beginners and rapid prototyping, while statically typed languages excel in larger projects and ongoing feature changes, leading to a more secure and robust codebase due to their inherent type safety features.
 
 \begin{figure}[hbt]
   \includegraphics[width=\linewidth]{TypedVsUntyped.pdf}
@@ -47,7 +51,7 @@ Alongside static typing, \textbf{functional programming} represents another rigo
 
 Pure functional programming languages, characterized by immutable values and referential transparency, promote mathematical rigor. Immutable values ensure that once a value is declared, it cannot be altered. Referential transparency guarantees that functions will always produce the same output for identical inputs, providing predictable and testable code.
 
-One of the significant advantages of functional programming is the elimination of mutable state and shared memory. This approach sidesteps common issues such as misaligned pointers and race conditions, enhancing the safety and reliability of programs. Functional programs can be tested and reasoned about more confidently, insulated from disruptions caused by external factors like network variability or even time changes.
+ A specific subset of functional programming languages, known as `pure' functional programming languages, incorporates additional mathematical rigor through concepts such as immutable values and referential transparency. Immutable values are those that, once declared, cannot be altered. Referential transparency ensures that functions consistently produce the same output for the same input. These properties help mitigate undesirable programming behaviors similar to the way static typing does. For example, the absence of mutable pointers and shared memory in pure functional languages eliminates common concurrency issues like misaligned pointers and race conditions. Consequently, programs developed using these languages are more predictable and can be robustly tested and reasoned about. This significantly reduces the risks that external factors such as network fluctuations or time variations could unpredictably affect program behavior.
 
 Functional programming is often advocated as an excellent choice for introductory programming courses due to its emphasis on mathematical reasoning and strict programming discipline. This discipline includes the clear separation of data from its transformations, fostering a structured approach to problem-solving.
 
@@ -61,7 +65,7 @@ Functional programming is often advocated as an excellent choice for introductor
 \end{figure}
 
 
-Functional programming contrasts with other mainstream paradigms like object-oriented programming, which structures programs around objects combining data and behavior, and procedural programming, which focuses on a sequence of procedural steps. Despite the strengths of functional programming, object-oriented and procedural paradigms, exemplified by Java and C respectively, remain more prevalent in commercial environments. These paradigms benefit from extensive legacy codebases, broad third-party library support, and robust tooling, and familiarity. Lastly, the strictness in functional programming languages may raise the barrier to entry for beginners. For example, in many pure function languages, printing to the terminal window, generally considered a basic technique to observe the execution of the program, requires programmers to understand deep and slightly off-putting concepts like monad and side effects.  
+Functional programming contrasts with other mainstream paradigms like object-oriented programming, which structures programs around objects combining data and behavior, and procedural programming, which focuses on a sequence of procedural steps. Despite the strengths of functional programming, object-oriented and procedural paradigms, exemplified by Java and C, respectively, remain more prevalent in commercial environments. These paradigms benefit from extensive legacy codebases, broad third-party library support, and robust tooling, and familiarity. Lastly, the strictness in functional programming languages may raise the barrier to entry for beginners. For example, in many pure function languages, printing to the terminal window, generally considered a basic technique to observe the execution of the program, requires programmers to understand deep and slightly off-putting concepts like monad and side effects.  
 
 
 \section{Statically-Typed Functional Languages, The Best Of Both Worlds}
@@ -69,24 +73,24 @@ Combining the disciplines described above, \textbf{statically-typed functional l
 Of these, Haskell is the only ``pure'' functional language - with all variables being immutable by default.
 Descendents of Haskell, like Idris and Agda, include more advanced type-level features like dependent type and session type, allowing programmers to express extremely granular checks of potential software behavior before running the program. These languages often provide the strongest level of programming safety. It is often advertised that programs in these languages will be error-free if the source code passes the compiling stage, indicating that compilers are able to weed out a large number of programming errors. These safety properties allow statically-typed functional languages to be used as proof assistants or formal verification tools. They prove the correctness (or incorrectness) of many systems, from web public key infrastructure \cite{Bhargavan2021-no} to microcontrollers used in space programs \cite{Mokhov2019-zj}. 
 
-Despite these safety benefits, these languages' presence in the mainstream programming world remains underwhelming. This modest popularity are often attributed to high entry barriers, unfamiliarity with the paradigms, and strict type systems that can be daunting for newcomers.
+Despite these safety benefits, these languages' presence in the mainstream programming world remains underwhelming. This modest popularity is often attributed to high entry barriers, unfamiliarity with the paradigms, and strict type systems that can be daunting for newcomers.
 
 \section{Symptoms of Bad Type Errors}
 
 \ref{sec:symptoms}
- The compiler is the medium through which programmers transform human intention into machine instructions. When encountering errors, compilers often act like ancient oracles, revealing to programmers obscure messages that often lead to huge confusion and a wrong course of action. Many studies have investigated the ineffectiveness of compiler error messages \cite{Barik2017-gy, Becker2019-cs, Becker2016-kc}.  To illustrate the point, we use the Haskell language and its most popular compiler, the Glasgow Haskell Compiler (GHC), as our development testbed and focus our attention on improving upon the state of GHC's type error communications. However, it needs to be clarified that the issues with compilation errors underpinning the examples we consider are typical of statically-typed programming language compilers. We now detail a variety of symptoms of bad type error messages.
-
+ The compiler is the medium through which programmers transform human intention into machine instructions. When encountering errors, compilers often act like Oracles in ancient history, revealing to programmers obscure messages that often lead to huge confusion and a wrong course of action. Many studies have investigated the ineffectiveness of compiler error messages \cite{Barik2017-gy, Becker2019-cs, Becker2016-kc}.  Our exploration is centered around the Haskell programming language and its leading compiler, Glasgow Haskell Compiler (GHC), with the aim of enhancing its handling of type error notifications. It is vital to mention that the challenges discussed here, concerning error messages, are common across compilers for various statically-typed languages. Below, we delve into specific issues often observed in type error messages.
 
 
  \subsection{Bias in Type Errors} 
  \label{subsec:bias}
- Bias in type error is when a type error can be caused by any one of multiple sources, but the type error only reports one of them. This limitation, known as left-to-right bias, has often been criticized \cite{McAdam2002-vb, Lee1998-fx, Chen2014-ev} as a drawback of compiler error messages. Left-to-right bias is a fundamental limitation of the traditional type-checking algorithm, which we will revisit in greater detail in Chapter \ref{chap:haskell-type-checking}. In the example in Fig. \ref{fig:type-error-example}, it is more likely that the programmer intends to compute the sum of the two input numbers using the addition function \texttt{+} rather than concatenating the two inputs using the concatenation function \texttt{++}. However, the type error shows only one error, suggesting that the function \texttt{addTwoNumbers} is given the wrong type of argument. 
+ 
+A significant issue in type error messages is their inherent bias. Often, type errors can arise from multiple causes, but the error message might only highlight one. This issue is known as left-to-right bias in traditional type-checking algorithms—a notable shortcoming that limits the usability of error messages \cite{McAdam2002-vb, Lee1998-fx, Chen2014-ev}. We will explore this further in Chapter \ref{chap:haskell-type-checking}. For instance, as shown in Figure \ref{fig:type-error-example}, a programmer likely intended to add two numbers using the \texttt{+} operator instead of mistakenly using the concatenation operator \texttt{++}. However, the type error issued by the compiler mistakenly points to the application of the integer literal \texttt{3}, failing to suggest the probable misuse of operators.
 
  \begin{figure}[hbt]
   \includegraphics[width=\linewidth]{TypeErrorExample}
   \caption{
     \label{fig:type-error-example}
-  In this example, the programmer likely misused the concatenation function \texttt{++} rather than addition \texttt{+} on line 1. However, the compiler will report that the error is the application of the integer literal \texttt{3}.
+    Misuse of the concatenation operator \texttt{++} instead of the addition operator \texttt{+} on line 1 is indicated. However, the compiler incorrectly suggests an error due to the use of the integer \texttt{3}.
     }
 \end{figure}
 
@@ -94,73 +98,81 @@ Despite these safety benefits, these languages' presence in the mainstream progr
 \subsection{Type Error Suggests Incomplete Cause}
 \label{subsec:imcomplete}
 
-Type error messages often show an incomplete cause, meaning that fixing the highlighted location alone is not sufficient to resolve the type error. In the example in \ref{fig:type-error-example-2}, similar to the previous example with the only change being the name of the function, suppose that the programmer intended to write the function to concatenate two lists but apply the function with 2 integer values. However, in the type error, only the first argument is reported as an offending code; the second argument is spared. The programmer changing the literal \texttt{3} to \texttt{[3]} is not enough to make the type error go away; it only updates to a slightly different error message. 
+Often, type error messages do not fully present all the locations relevant to the type error. Addressing the error at the highlighted location might not suffice to resolve the underlying problem. Consider the scenario in Figure \ref{fig:type-error-example-2}, where a function intended for list concatenation is erroneously applied to integer values. Here, the error message only reports the first argument, neglecting the second. This partial reporting leads to a situation where correcting the first integer to a list format, \texttt{[3]}, doesn't rectify the error; rather, it only updates to a slightly different error message. 
+
 
 
 \begin{figure}[hbt]
   \includegraphics[width=\linewidth]{TypeErrorExample2}
   \caption{
     \label{fig:type-error-example-2}
-  In this example, similar to the previous example, with the only change being the function's name, the programmer intended to write the function to concatenate two lists but apply the function with 2 integer values. However, in the type error, only the first argument is reported as an offending code; the second argument is spared. This means changing the literal \texttt{3} to \texttt{[3]} is not enough to resolve the type error; it only updates to a slightly different error message.
+    A programmer’s attempt to use a concatenation function on integers results in an incomplete error message that only flags the first offending argument. Modifying one argument alone is insufficient to clear the error.
     }
 \end{figure}
 
 \subsection{Missing Links In Type Errors}
 \label{subsec:missing-link}
 
-One of the most frustrating aspects of type errors is that they do not show the complete steps of how to arrive at the conclusion. In the example in Fig \ref{fig:type-error-example-3}  programmer may intend to compare to a char literal \texttt{' '} instead of string literal \texttt{" "}. However, there are multiple clues that contribute to the logic of this conclusion: the definition of the function \texttt{trimWhiteSpace}, the application of \texttt{filter isSpace a}, the definition of \texttt{isSpace}, and even the type signature of \texttt{filter} are all needed to understand how the error happens. In addition, these clauses need to be read in logical order (not necessarily ordered by their appearance in the source) to support natural comprehension. 
+One of the most frustrating aspects of type errors is that they do not show the complete pathway of how the compiler decided on the type error. In the example in Fig \ref{fig:type-error-example-3}, the programmer may intend to compare to a char literal \texttt{' '} instead of string literal \texttt{" "}. However, there are multiple clues that contribute to this conclusion: the definition of the function \texttt{trimWhiteSpace}, the application of \texttt{filter isSpace a}, the definition of \texttt{isSpace}, and even the type signature of \texttt{filter} are all needed to understand the logical reasoning. However, none of these are included in the actual error message.
 
 
 \begin{figure}[hbt]
   \includegraphics[width=\linewidth]{TypeErrorExample3}
   \caption{
     \label{fig:type-error-example-3}
-  In this example, the programmer may intend to compare to a char literal \texttt{' '} instead of a string literal \texttt{" "}. However, the type error ignores all the important clues of how this error is inferred. 
+  This example illustrates how the programmer may intend to compare to a char literal \texttt{' '} instead of a string literal \texttt{" "}; however, the type error ignores all the important clues of how this error is inferred. 
     }
 \end{figure}
 
 
 \subsection{The Use of Obscure Language}
 
-One that often upsets beginners is that type errors are often full of technical jargon or awkwardly phrased sentences. We have seen the common error such as \texttt{No instance for (Num a) arising from the literal `3'} which is a terrible way to convey that a char-typed value is used at a place where a number type is required. "Error messages appear to take the form of natural language, yet are as difficult to read as source code". This bad design of type error messages is not unique to Haskell. In fact, this is often the common behavior in all programming languages and has been shown in many studies \cite{Barik2017-gy, Tirronen2015-nr, Prather2017-dg}. Many studies have sought to improve programmers' ability to solve errors by rephrasing the error message in a way that supports understanding \cite{Becker2016-kc, Barik2014-ib} all show positive results.
+Error messages are frequently plagued by technical jargon and convoluted phrasing, which can be particularly daunting for novices. An example is the error message, \texttt{No instance for (Num a) arising from the literal `3'}, which is an inept way of suggesting a type mismatch involving character and numeric types. In fact, this is often the common behavior across many programming languages and has been shown in many studies \cite{Barik2017-gy, Tirronen2015-nr, Prather2017-dg}. Thus, concerted efforts \cite{Becker2016-kc, Barik2014-ib}  show that rephrasing the error message to be clearer and more structured positively affects programmers' ability to solve these errors.
 
 
-\section{The Open Challenges Of Making Good Type Errors}
+\section{The Challenges Of Making Good Type Errors}
 
-One major issue stemming from the promises of statically typed languages is the complexity of the systems and tools that safeguard the type-checking process. Ordinarily, this complexity is hidden away from the users. However, most compiler tools fail in usability when encountering incorrectly typed programs. Type errors can be notoriously difficult to understand and use, particularly for newcomers to programming or when using a language that is particularly strict about types. Type errors are often believed to be a major contributor to static typing's reputation of being a high barrier to entry. I believe it is important to understand the root of the challenges of using type errors in order to address them. To achieve that, I believe it is useful to put type errors in proper context, more specifically, comparing them with other classes of programming errors (parsing errors, runtime errors). 
+After introducing some typical symptoms of bad type error messages, we will now explore some fundamental challenges that underpin these symptoms.
 
-\subsection{Types Are As Complex As Runtime Values}
-A major issue that many programming language designers often overlook (or neglect) is that the types are very complex. In languages that implement dependent types, types share the same capability as programs despite the fact that types are only computed at compile time. Even in programming languages that are not as featureful as dependently typed ones, type checking is shown to be non-terminating and Turing complete~\cite{Wells1999-ob}. For instance, in TypeScript, the feature `conditional type' allows programmers to write fully working computations \cite{fig:ts-conditional}. This gives rise to the challenge of explaining the complex reasoning when this type-level computation misbehaves, as we will see, with an unfair lack of debugging facilities.
+\subsection{Types Are Complex}
+
+The advantages of statically typed languages derive from their robust type-checking systems, which, ironically, also introduce significant complexities. Language and tool designers frequently overlook the intrinsic complexity of type systems. In languages that support dependent types, types have the same computing capabilities as runtime programs. This complexity is not limited to dependently typed languages; for instance, type checking in common languages can exhibit Turing-complete characteristics, which might lead to non-terminating processes~\cite{Wells1999-ob}. TypeScript introduces `conditional types', a feature that allows sophisticated computations at the type level \cite{fig:ts-conditional}, posing challenges in explaining errors when these type-level computations fail due to a lack of adequate debugging tools.
+
 
 
 \begin{figure}[hbt]
   \includegraphics[width=\linewidth]{Conditional}
   \caption{
     \label{fig:ts-conditional}
-   TypeScript introduced a feature called conditional types, allowing programmers to write complex logic at the type level. This will allow type annotation to be as complex as the program it describes.
+  TypeScript's feature of conditional types, allows for complex logical conditions at the type level, which can be as complex as the program it annotates.
     }
 \end{figure}
 
 \subsection{Clues For Type Checking May Be Implicit}
-Understanding how types are assigned in a program becomes more challenging when the programming language uses type inference. Type inference \cite{Damas1982-sc},  also known as implicit typing, is a technique that allows programmers to omit the ritual of writing type annotations altogether, and the type checker will infer the most general types (principal types) for each expression. Even for languages that don't employ implicit typing, some typing rules are hidden from programmers.
 
-For example, different programming language has their own rules of what can be compared in an equality check, typically by using a \texttt{==} operator. In programming languages that have a record data type, programmers are burdened with considering adding an extra field or removing a filed still type correct or not \ref{fig:row-polymophism}, often taking into account the language-specific rules such as covariance, contravariance, and subsumption.
+The task of understanding how types are assigned in a program grows notably more complex when the programming language employs type inference. Type inference \cite{Damas1982-sc} is a technique that allows programmers to forgo the task of writing type annotations. Instead, the type checker automatically deduces the appropriate types for each expression based on the context. Although it succeeded in providing rigorous type checking without the hassle of manually writing type annotations, type inference has been shown to bring many usability issues \cite{Jun2002-xp, Wand1986-lu} for its implicitness.  
+
+Even in programming languages that do not utilize implicit typing, certain typing rules remain opaque to programmers. For instance, rules on permissible values for equality check using the \texttt{==} operator vary across programming languages; some languages disallow comparison of lists, and others are fine with lists but disallow comparison of floating-point numbers. In languages that support a record data type, programmers must navigate additional complexities, such as whether adding or removing a field from a record maintains type correctness \cite{fig:row-polymophism}. This often involves an understanding of nuanced language-specific rules, including concepts like covariance, contravariance, and subsumption.
+
 
 \begin{figure}[hbt]
   \includegraphics[width=\linewidth]{RowPolymorphism.pdf}
   \caption{
     \label{fig:row-polymophism}
-   In many languages support row-polymophism, programmers enjoy more freedom in the fields of a data collection,  depending on situation,  extra fields or missing fields are allowed. However, the rule of subsumptions (which type can substitute another type) is also obscured.
+Row polymorphism enhances flexibility in structuring data collections but also introduces complexity in understanding type substitutions and variance.
     }
 \end{figure}
 
+These challenges amplify the difficulty in designing intuitive type error messages. The complexity of type systems demands that designers have a profound understanding of both theoretical and practical aspects of language implementation—knowledge often possessed only by the core language developers. Moreover, the implicit nature of modern programming languages requires that type errors be designed on a case-by-case basis, a daunting task given the limited number of contributors who possess the necessary expertise.
 
-\subsection{Lack of tool support}
-Debugging programming errors has been an essential part of programming since the beginning of computing, dating back as early as 1949 \cite{Campbell-Kelly1992-rn}. However, support for debugging type errors is unfairly lacking compared to runtime error debugging tools. 
+\section{The Lack of Type Debugging Tools}
 
-To begin with, the simplest and most reliable approach is to insert \texttt{print} statement. "The most effective debugging tool is careful thought coupled with judiciously placed print statements", as put by computing pioneer Brian W. Kernighan \cite{Kernighan1978-xs}.  In addition, breakpoint debugging is a very common debugging method that has been integrated into almost all programming IDEs \ref{fig:breakpoint}. Moreover, research in supporting error debugging has been very active. ZStep94 \cite{Lieberman1995-lg} extends the idea of breakpoint debugging without the need to add any breakpoint, allowing programmers to see all the historical values assumed by an expression. It also allows programmers to incrementally navigate forward and backward in execution history. WhyLine \cite{Ko2009-uf} is a Java program IDE that embraces the idea of a natural programming environment \cite{Myers2004-fy}. It allows programmers to ask questions in the program about why certain behavior happens or does not happen. 
+Debugging programming errors has been an unpleasant but crucial part of programming since the inception of computing, tracing back to as early as 1949 \cite{Campbell-Kelly1992-rn}. However, the tools and support for debugging type errors have not evolved significantly and do not match the advancement of those available for runtime errors.
 
-However the develoment type debugging has frozen in time, as most programming languages and develoment environments present type error the same manner as FORTAN and ALGO. Recent years, a few languages, such as Elm and Rust, have taking actions to improve type errors. Unfortunately, the changes they have made are superficial.
+One of the simplest and most dependable debugging techniques is to insert \texttt{print} statements. As computing pioneer Brian W. Kernighan once noted, ``The most effective debugging tool is careful thought, coupled with judiciously placed print statements'' \cite{Kernighan1978-xs}. Furthermore, breakpoint debugging has become a staple in nearly all programming Integrated Development Environments (IDEs), allowing for intermittent code execution and inspection \cite{fig:breakpoint}. Research in error debugging tools continues to be dynamic. For instance, ZStep94 \cite{Lieberman1995-lg} enhances traditional breakpoint debugging by eliminating the need to set breakpoints, thus enabling programmers to view and navigate through the historical values that expressions take throughout execution (Figure \ref{fig:zstep94}). Another innovative tool, WhyLine \cite{Ko2009-uf}, aligns with the principles of a natural programming environment \cite{Myers2004-fy} by allowing programmers to ask ``why'' questions and ``why not'' questions about certain program behavior.
+
+Despite these advancements in runtime debugging tools, the development of type debugging seems to have stagnated. Most programming languages and development environments still handle type errors in ways reminiscent of early languages like FORTRAN and ALGOL. In recent years, some modern programming languages like Elm and Rust have made efforts to improve type error reporting, but these enhancements are often superficial and do not fundamentally change the debugging experience.
+
 
 \begin{figure}[hbt]
   \includegraphics[width=\linewidth]{BreakPoint}
@@ -170,78 +182,76 @@ However the develoment type debugging has frozen in time, as most programming la
     }
 \end{figure}
 
-% \begin{figure}[hbt]
-%   \includegraphics[width=\linewidth]{FreePascal.jpg}
-%   \caption{
-%     Run time debugging using break point in the Free Pascal interactive development environment in a command line window
-%     }
-% \end{figure}
 
-% \begin{figure}[hbt]
-%   \includegraphics[width=\linewidth]{DrScheme}
-%   \caption{
-%     Dr Scheme, an interactive development environment for the Scheme language, highlights a runtime error
-%     }
-% \end{figure}
+\begin{figure}[hbt]
+  \includegraphics[width=\linewidth]{ZStep94}
+  \caption{
+    \label{fig:zstep94}
+    Debugging a Lisp program by inspecting all the historical values of an expression, navigating through execution history, and reviewing live visualization replay.  All these features are provided in ZStep94.
+    }
+\end{figure}
 
-My research is motivated by the inherent difficulties in debugging type errors and the dormant development of improving type errors using modern graphical capabilities and HCI techniques.
+My research is driven by the acknowledged difficulties in debugging type errors and the lack of significant advancement in the interfaces and techniques used for presenting and resolving these errors through modern graphical user interfaces and human-computer interaction techniques. This area holds considerable potential for improving both the usability and accessibility of statically typed languages, making them more approachable for developers at all levels of expertise.
 
 \section{Research Aim}
 
 \subsection{Aim 1. Provide Programmers With The Comprehensive Knowledge Needed to Understand and Resolve Type Errors.}
+\label{subsec:aim1}
 
-To date, there is no unified representation of type errors. Most contemporary compiler tools represent type error by providing three pieces of information: a location where the type checking failed, an expected type, and the actually encountered type. As we showed in the previous section, this formulation is far from being helpful and practical. Thus, we question what is needed to explain a type error comprehensively. We try to address this question by carefully examining the limitations of existing systems (\ref{sec:symptoms}) and the thought process of how programmers solve type errors in real life.
+Current representations of type errors in most compiler tools are often insufficient, typically providing only the location of the type check failure, the expected type, and the actual type encountered. This conventional approach, as discussed in the previous sections (\ref{sec:symptoms}), lacks practicality and clarity. This aim addresses the need for a richer, more informative explanation of type errors by evaluating the limitations of existing systems and analyzing how programmers tackle type errors in practice.
 
 \subsubsection{Objective 1.1 To Encompass Multiple Potential Causes Of A Type Error}
-One important focus of my work is to address the bias in traditional type errors (Section \ref{subsec:bias}). In this, we need to inform programmers that there exist more than one possible cause of a type error, just as there are multiple ways to resolve such error. To achieve this, the dimension of potential causes is the key information that needs to be clearly communicated. In addition, each potential cause comprises a few key questions: What is the offending code, and what are the resulting type assignments for each expression after the offending code is fixed?
+An essential aspect of this research is to challenge and expand beyond the bias found in traditional type error reporting (Section \ref{subsec:bias}). It's crucial to inform programmers of multiple potential causes and resolutions. A key goal is to communicate these multiple dimensions effectively. In addition, for each potential cause, programmers need a clear explanation of where the offending code is, which typing rules are violated, and how the type might change after the error is resolved.
+
 
 \subsubsection{Objective 1.2 To Accurately Report Relevant Locations Contributing to Type Errors.}
-Traditional tools are limited to reporting a single location for type errors, which many researchers have criticized. This leads to programmers often not being able to find a resolution at the reported location and are forced to expand their search without further guidance. We aim to improve this by reporting accurate locations relevant to the type of error.
+Current tools often pinpoint a single location for a type error, a method that has attracted considerable criticism for its inefficiency. Programmers frequently need to scan beyond the initially reported location. This research aims to enhance type error reporting by identifying and detailing all relevant error-contributing locations across the codebase.
 
 \subsubsection{Objective 1.3 To Give Reasons And Support Human Understanding}
-Type error does not end with a location in the source code. Programmers can still struggle to resolve a type error even after reaching the exact location of the culprits. Failing to understand the logical explanation is equally frustrating than erroneous locations. Internally, type errors can be caused by mismatched types, unfulfilled type class constraints, or trying to construct infinite types. Externally, type errors can be caused by typos, outdated type annotation, incomplete implementation, too few or too many arguments in a function application, etc. Helping programmers find the cause or provide an accurate inference of what is the cause of the type error.
+Understanding type errors goes beyond pinpointing the location in the code. Internally, type errors can be caused by mismatched types, unmatched type class constraints, or trying to construct infinite types. Externally, type errors can be caused by typos, outdated type annotation, incomplete implementation, etc. Our goal is to not only find these errors but to explain them in a way that logically supports the programmer's understanding and troubleshooting process, covering both internal causes and external causes.
+
 
 
 \subsection{Aim 2. Support Programmers To Type Errors Through Interactive Modern Programming Environments.}
 
-We aim to integrate rich type error data into a modern, visual programming environment and workflow that allows programmers to work more efficiently with strongly typed languages. When humans are put in the middle, more information does not equal better comprehension. With enriched data representation, we want to deliver type errors to better support programmers’ comprehension and the chance for a successful resolution.
+This aim focuses on integrating comprehensive type error encoding (Section \ref{subsec:aim1}) within an interactive programming environment to streamline workflows in statically typed languages. It acknowledges that an increase in information does not necessarily correlate with enhanced understanding and aims to present type error details in a way that optimally supports comprehension and resolution.
 
-\subsubsection{Objective 2.1 Communicate The Key Concepts Of Type Errors Effectively Using Modern Programming Tools}
+\subsubsection{Objective 2.1 Visualize The Key Concepts Of Type Errors Effectively}
 
-The concepts of type errors are traditionally displayed as text. These concepts include error locations, explanations of causes, and type signatures. We explore more intuitive techniques and media to communicate these concepts and facilitate better comprehension. For instance, using inline highlit to mark the locations directly in the source code provides better usability than printing the lines of interest in the terminal window.
+Traditional text-based error reports can be difficult to navigate and understand. This objective explores innovative methods to present what used to be displayed as plain text (type signatures, locations in source code, call stacks, dependency graphs) in a novel and intuitive way. Examples include in-line highlighting within the code editor and graph-based reasoning steps.  
 
 \subsubsection{Objective 2.2 Use Interactive Tools for Investigating and Resolving Type Errors.}
 
-To avoid presenting overwhelming information, we explore different techniques of interactively exploring the type errors. These techniques aim to divide the type error into smaller units that can still be assigned meaning and provide a means for programmers to incrementally triangulate the potential root cause in the source code. This objective also involves providing situation-aware debugging information, meaning that the error message should provide varying levels of detail in the debugging information based on the context of the type of error and the programmer's personal preference.
+This research will explore interactive techniques to dissect and explore type errors in a manageable and meaningful way. By breaking down errors into smaller, understandable units, programmers can methodically trace and address the root causes. This includes providing context-sensitive debugging aids that adjust the level of detail presented based on the error type and individual user preferences, ensuring a tailored and effective debugging experience.
 
 
 \section{Contributions}
 
 \subsection{A categorization of type errors based on the structure of the evidence of a type error}
 
-In order to illustrate the challenges of providing a comprehensive explanation of type errors, we divide the type errors into 3 categories. This categorization is based on how it is normally understood from a human debugging perspective. We will give more formal definitions of these categories in Chapter \ref{chap:haskell-type-checking}. It should be made clear that these categories are not mutually exclusive, a multi-witness type error can also be a multi-step type error at the same time.  
+To address the complexities in explaining type errors comprehensively, we have classified type errors into three complexity categories based on a human perspective. Formal definitions and a detailed discussion of these categories appear in Chapter \ref{chap:haskell-type-checking}. It is crucial to understand that these categories are not mutually exclusive; for example, a multi-witness type error may also be a multi-step type error.
 
-A \textbf{multi-step type error} is a type error that involves a chain of logical inferences based on the evidence of the type error. A typical multi-step type error is shown in the example (Fig \ref{fig:multi-step-example}). In the example, the chains of inference are the assignment of a (Line 1), the equivalence of a (Line 1 and Line 2), the assignment of b (Line 2), and the equivalence of b (Line 2 and Line 3). Removing any one of the chains will resolve the conflict. An important challenge with multi-step type errors is to convey this chain of inference relation to the relevant location. 
+
+A \textbf{multi-step type error} occurs through a chain of logical inferences steps based on the available evidence of the error. Figure \ref{fig:multi-step-example}) illustrates the chains of inference in the assignment of a (Line 1), the equivalence of a (Line 1 and Line 2), the assignment of b (Line 2), and the equivalence of b (Line 2 and Line 3). Removing any one of the chains will resolve the conflict. Understanding and communicating the interconnections within these chains is crucial to resolving multi-step type errors effectively.
 
 \begin{figure}[hbt]
   \includegraphics[width=\linewidth]{Multi-Step}
   \caption{
     \label{fig:multi-step-example}
-    Illustration of a multi-step type error in Haskell.  The potential issues in the definition of \texttt{a}, \texttt{b}, or the conditional expression of variable \texttt{b}. It can be clearly see a ``chain'' of reasoning formed in order to explain the type error. }
+    Illustration of a multi-step type error in Haskell.  The potential issues in the definition of \texttt{a}, \texttt{b}, or the conditional expression of variable \texttt{b}. It can be clearly seen a ``chain'' of reasoning formed in order to explain the type error. }
 \end{figure}
 
-A \textbf{multi-witness type error} is a type error that involves multiple pieces of evidence supporting the same potential type assignments.  A typical multi-step type error is shown in the example (Fig \ref{fig:multi-witness-example}). In the example, multiple evidence (lines 3,4,5) support that a has the type \texttt{Int -> String}. On the other hand, a single piece of evidence (line 2) shows that a has the type \texttt{Int -> Char}. The challenge of presenting multi-witness type errors is to clearly show the opposing sides and the number of witnesses of each side. 
+A \textbf{multi-witness type error} entails multiple pieces of evidence supporting the same potential type assignments. For instance, as shown in Figure \ref{fig:multi-witness-example}, multiple evidence (lines 3,4,5) support that a has the type \texttt{Int -> String}. On the other hand, a single piece of evidence (line 2) shows that a has the type \texttt{Int -> Char}.  Clarifying and juxtaposing this discrepancy in witnesses is key to supporting understanding this type of error.
 
 \begin{figure}[hbt]
   \includegraphics[width=\linewidth]{Multi-Witness}
   \caption{
     \label{fig:multi-witness-example}
-    Analysis of a multi-witness type error, where the \texttt{case} expression could be interpreted as type \texttt{Char} or \texttt{String}. This scenario showcases a type disagreement with  witnesses (in color pink) against one witness (in color blue). It is not hard to see that the difference in number play an important role here as the char literal \texttt{'I'} on line 2 is more likely be a typo.
+    Analysis of a multi-witness type error, where the \texttt{case} expression could be interpreted as type \texttt{Char} or \texttt{String}. This scenario showcases a type disagreement with witnesses (in color pink) against one witness (in color blue). It is not hard to see that the difference in number play an important role here as the char literal \texttt{'I'} on line 2 is more likely be a typo.
     }
 \end{figure}
 
-A \textbf{multi-party type error} is a type error that involves more than two typing possibilities.  A typical multi-step type error is shown in the example (Fig \ref{fig:multi-party-example}). In the example, the expression \texttt{d} can not be assigned a type because 3 pieces of evidence on line 1 suggest 3 potential types for \texttt{d}. In practice, a multi-party type error is considered less intuitive and harder to explain properly. The most prominent task is to break down the type error into multiple simpler forms of type errors. 
-
+A \textbf{multi-party type error} involves several potential type assignments, each supported by distinct evidence.  Figure \ref{fig:multi-party-example} presents a typical multi-step type error: the expression \texttt{d} can not be assigned a type because 3 pieces of evidence on line 1 suggest 3 potential types for \texttt{d}. In practice, addressing such errors requires decomposing them into multiple type errors of simpler forms.
 
 
 \begin{figure}[hbt]
@@ -251,36 +261,36 @@ A \textbf{multi-party type error} is a type error that involves more than two ty
     Analysis of a multi-party type error regarding the list \texttt{d}, which could alternately be typed as \texttt{[Int]}, \texttt{[String]}, or \texttt{[Char]}. The conflict is depicted as a disagreement among three parties (Right). Unlike the previous two examples, this error cannot be fixed by a single location. }
 \end{figure}
 
-With this classification, we contributed three systems—Chameleon, Goanna, and GeckoGraph—each focusing on one or two unique challenges of type error debugging.
+These classifications have led to the development of three distinct systems—Chameleon, Goanna, and GeckoGraph—each designed to tackle unique challenges within the domain of type error debugging.
 
 \subsection{Explaining Multi-Step Type Errors Through Chain-Of-Thought Visualization}
 
 \subsubsection{Technical Contribution - Chameleon}
-We contribute Chameleon, an interactive type error debugging tool for Haskell. Internally, Chameleon computes all relevant locations that contribute to the type of error. Via a set of iteratively designed interfaces, Chameleon preserves the two alternatives of the type error and the supporting evidence for each. Chameleon provides a unique debugging interface that allows interactive explore the chain of reasoning in a multiple-step type error. In this interace, programmers see a pair of locations at a time, they are also shown how the two locations are logically related. This allows programmers to develop a panorama view of the type error interactively. 
 
-\subsubsection{An evaluation on the effect of error slicing and chain of thought visualizations}
-We contributed a series of studies on the effects of debugging with visual representation of types and interactive exploration of type errors. Our inquiry is whether there is a difference between using traditional tools and enhanced type error debugging tools like Chameleon. 
+
+We contribute Chameleon, an interactive Haskell debugging tool that not only identifies all relevant error-contributing locations but also illustrates the logical relationships between these locations. Chameleon provides a novel debugging interface to interactively explore the chain of reasoning in a multiple-step type error, allowing programmers to develop a panorama view of the type error interactively. In addition, Chameleon uses an adaptive interface design; programmers can switch between different granularity of information based on their personal preferences. 
+
+\subsubsection{The evaluation on the effect of error slicing and chain of thought visualizations}
+We evaluate the efficacy of interactive visual debugging tools in contrast to conventional type error debugging methods. We have conducted studies that assess how programmers resolve type errors using various interfaces ranging from basic type error slicing techniques to Chameleon's step-wise interactive debugging tools. These evaluations aim to measure how enhancements in the debugging process can influence error resolution tasks' efficiency and intuitiveness.
 
 \subsection{Iterate potential causes of multi-witness and multi-party errors}
 
 \subsubsection{Technical Contribution -- Goanna}
-We contribute Goanna, a type error debugging tool for Haskell. 
-Similar to Chameleon, Goanna provides a comprehensive set of relevant locations that contribute to the type error and provides alternatives to the type error. More importantly,  Goanna presents a type error by dividing it into a list of potential causes and their respective fixes. With Goanna, Haskell programmers can resolve type errors by exploring a list of potential root causes of errors. We also contribute a set of heuristics that rank potential causes and eliminate unhelpful ones. 
+Goanna enhances type error debugging in Haskell by not only identifying all relevant error-contributing locations but also dividing the type error into possible causes and their respective resolutions. It ranks these potential causes based on their likelihood, helping programmers systematically approach error resolution.
 
 \subsubsection{An evaluation on accuracy, conciseness, and performance of MCS-based type debugging and our heuristics}
-
-We evaluated Goanna's effectiveness using 86 diverse Haskell programs from online discourse, demonstrating its ability to accurately identify and resolve type errors. We are interested in finding out through a few empirical analyses how Goanna compares existing Haskell compilers in explaining the type error correctly, succinctly, and efficiently.
+We evaluated Goanna's performance across a diverse set of Haskell programs, analyzing its accuracy and performance in error identification against traditional tools. We evaluate Goanna's conciseness in narrowing down potential causes into a shortlist. 
 
 
 \subsection{Visualizing Types}
 
 \subsubsection{Technical Contribution -- GeckoGraph}
 
-We contribute GeckoGraph, a graphic notation for Haskell types. GeckoGraph describes the same information as type signatures but uses colors, shapes, and symbols to make certain structures easy to identify at a glance. GeckoGraph is designed to use visual elements to improve the understanding of type-level concepts, such as type classes, parametric type variables, and high-rank types. When used to compare two types, GeckoGraph helps clarify differences visually. It makes errors like too few or too many arguments in applications and unmet type class constraints obvious.
+We contribute GeckoGraph, a graphic notation for Haskell types. GeckoGraph encodes the same information as type signatures but uses colors, shapes, and symbols to make certain structures easy to identify at a glance. GeckoGraph uses visual elements to improve the understanding of complex type concepts, such as type classes and qualified constraints. GeckoGraph offers clarity when reading dense type signatures and comparing multiple types.
 
 \subsubsection{An evaluation on how programmers use graphic type notation}
 
-We conducted a large-scale study on the effectiveness of using GeckoGraph to perform a series of Haskell tasks. We concluded that with GeckoGraph, programmers are more likely to succeed in programming tasks involving polymorphic types. The difference is more significant among programmers with less experience.
+We contribute a large-scale empirical study exploring the effectiveness of graphical type representations like GeckoGraph in enhancing programmers' abilities to tackle type-related tasks.
 
 % \section{Research Method}
 
@@ -300,26 +310,23 @@ We conducted a large-scale study on the effectiveness of using GeckoGraph to per
 
 \section{Thesis outline}
 
-The thesis can be divided into two parts. The first part (Chapters 1 and 2) surveys the vivid panorama of type systems and programming languages. The purpose of these chapters is to situate the body of work in later chapters and to introduce the proper definitions and terminologies used in this thesis.  The second part (Chapters 4, 5, 6, and 7) delves into three pieces of work, each targeting a unique problem in type error debugging.
+ This thesis is structured into two main parts. The initial chapters build a comprehensive foundation on type systems and programming languages, setting the stage for my research contribution in subsequent chapters. The latter chapters focus on distinct contributions that tackle various challenges in type error debugging.
 
+\subsection{Chapter 1}
+Chapter 1 sets the stage by discussing the fundamental concepts of programming languages and type systems. It explores the trade-off between enhancing program safety and optimizing usability, a central dilemma in programming language research and software engineering practice. The chapter highlights common issues and technical challenges associated with type errors, establishing the motivation for this research. It also outlines the specific aims and contributions of the study, providing a clear roadmap for the thesis.
 
 \subsection{Chapter 2}
-This chapter provides some technical background, including the traditional methods of Haskell type checking, error slicing, and interactive debugging. Following this direction, we continue to discuss the tools and techniques in constraint satisfiability analysis that we use in later chapters to improve type error reporting. Last, we revisit the categorization of type errors and provide a new way to define their meanings with the help of definitions we explored in Chapter 2.
-
-
+This chapter delves into the fundamental concepts underlying type systems and programming languages. It outlines traditional methods employed in Haskell type checking, error slicing, and interactive debugging. Additionally, this chapter discusses tools and techniques used in constraint satisfiability analysis that are integral to later developments in the thesis. The categorization of type errors is revisited and redefined, building on the definitions introduced in this chapter.
+    
 \subsection{Chapter 3}
-This chapter introduces the work related to Chameleon and our study on its effect on debugging type errors. This chapter starts with an introduction of our motivation, succinctly summarised in three characteristics of bad-type error messages. We then introduce the key features of Chamaleon, using the example of hypothetical programmers combating Haskell-type errors, luckily with the help of Chameleon. We introduce the system design and iterative prototyping methods used to develop Chameleon. Lastly, we present our experiments on Chameleon's effect on solving type errors compared to traditional compiler tools. 
-
-
+Chapter 3 presents Chameleon, a system designed to enhance the debugging of type errors through interactive visualizations. It begins with a discussion on the typical pitfalls of existing error messages and outlines the motivation behind Chameleon. We then detail the system's design, features, and development process, including iterative prototyping. A series of empirical studies were conducted to assess Chameleon's effectiveness compared to traditional compiler tools.
+    
 \subsection{Chapter 4}
+Chapter 4 introduces Goanna, a Haskell type error debugging tool that incorporates novel features such as suggesting fixes for type errors and cross-module debugging capabilities. It starts with highlighting the limitations of conventional compiler error messages and progresses to describe Goanna's capabilities in identifying all causes and ranking potential causes by their likelihood. The implementation tactics and heuristic methods used in Goanna are discussed, followed by an empirical evaluation of the system's accuracy, conciseness, and performance based on real-world Haskell code examples.
+    
+\subsection{Chapter 5: GeckoGraph — Visualizing Haskell Types}
+The final chapter synthesizes the thesis's contributions and situates them within the broader research context. It discusses potential avenues for future tool development and research opportunities, forecasting the future landscape of research in type error improvement. The chapter concludes with reflections on the expansive and still largely unexplored territories in programming languages, encouraging ongoing investigation and innovation.
 
-In Chapter 5 we discuss our work: the Goanna type debugger and our evalution on its key aspects (accuracy, conciseness and performance). We first report some common limitations of traditional compiler error messages. We then go on to showcase some novel features of Goanna, including suggesting fixes, ranking causes by their likelihood, type error isolation, and cross-module type error debugging.  Next, we discuss the implementation of Goanna and our heuristics for ranking potential causes and removing unhelpful suggestions. Last, we show our empirical study of Goanna's accuracy, conciseness, and performance using a collection of real-world type errors in Haskell code. 
-
-\subsection{Chapter 5}
-
-In this chapter, we discuss our work on visualizing type annotations. In this, we showed GeckoGraph, a visual notation for Haskell type. We also present our empirical study on how programmers use polymorphic types and the effect of GeckoGraph. We start by presenting some usability challenges in using polymorphic types. We then describe the design goal of GeckoGraph and how it can be constructed from a textual type annotation using a few construction rules. We then show our large-scale study on the effect of using visual type annotations in programming and solving type errors. 
-
-
-\subsection{Chapter 6}
-
-In the last chapter, we reiterate our contributions with more remarks on their contexts. We discuss a few directions for future work. This includes the direction in future tool development, as well as future research opportunities. Lastly, in closing words, we return to the map field of programming language and the vast uncharted area of the future of programming. 
+    
+\subsection{Chapter 6: Conclusion}
+The final chapter synthesizes the thesis's contributions and situates them within the broader research context. It discusses potential avenues for future tool development and research opportunities, forecasting the future landscape of programming language research. The chapter concludes with reflections on the expansive and still largely unexplored territories in programming languages, encouraging ongoing investigation and innovation.

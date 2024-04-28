@@ -2285,41 +2285,6 @@
     \field{year}{2023}
   \endentry
 
-  \entry{Hudak1994-ex}{article}{}
-    \name{author}{2}{}{%
-      {{hash=HP}{%
-         family={Hudak},
-         familyi={H\bibinitperiod},
-         given={Paul},
-         giveni={P\bibinitperiod},
-      }}%
-      {{hash=JMP}{%
-         family={Jones},
-         familyi={J\bibinitperiod},
-         given={Mark\bibnamedelima P},
-         giveni={M\bibinitperiod\bibinitdelim P\bibinitperiod},
-      }}%
-    }
-    \list{publisher}{1}{%
-      {cvc.yale.edu}%
-    }
-    \strng{namehash}{HPJMP1}
-    \strng{fullhash}{HPJMP1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{labelyear}{1994}
-    \field{labeldatesource}{}
-    \field{sortinit}{H}
-    \field{sortinithash}{H}
-    \field{issn}{0010-7832}
-    \field{number}{92-C}
-    \field{pages}{0153}
-    \field{title}{Haskell vs. Ada vs. C++ vs. awk vs.... an experiment in software prototyping productivity}
-    \field{volume}{14}
-    \field{journaltitle}{Contract}
-    \field{year}{1994}
-  \endentry
-
   \entry{Hudak2007-kn}{inproceedings}{}
     \name{author}{4}{}{%
       {{hash=HP}{%
@@ -4556,6 +4521,42 @@
     \field{eprintclass}{cs.PL}
     \field{month}{08}
     \field{year}{2018}
+  \endentry
+
+  \entry{Wand1986-lu}{inproceedings}{}
+    \name{author}{1}{}{%
+      {{hash=WM}{%
+         family={Wand},
+         familyi={W\bibinitperiod},
+         given={Mitchell},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Association for Computing Machinery}%
+    }
+    \strng{namehash}{WM1}
+    \strng{fullhash}{WM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1986}
+    \field{labeldatesource}{}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \field{booktitle}{Proceedings of the 13th {ACM} {SIGACT-SIGPLAN} symposium on Principles of programming languages}
+    \verb{doi}
+    \verb 10.1145/512644.512648
+    \endverb
+    \field{isbn}{9781450373470}
+    \field{pages}{38\bibrangedash 43}
+    \field{series}{POPL '86}
+    \field{title}{Finding the source of type errors}
+    \list{location}{1}{%
+      {St. Petersburg Beach, Florida}%
+    }
+    \field{month}{01}
+    \field{year}{1986}
+    \warn{\item Can't use 'location' + 'address'}
   \endentry
 
   \entry{Wang2015-rs}{inproceedings}{}

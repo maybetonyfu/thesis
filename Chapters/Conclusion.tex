@@ -16,14 +16,10 @@ In this thesis, we started by establishing the context of our work in the field 
 
 \subsection{A categorization of type errors based on the structure of the evidence of a type error}
 
-\textbf{a multi-step type error} is a type error that involve multiple inference steps between the two endpoints. An important challenge with multi-step type error is to convey the logical relation of every location while presenting the infeasibility. 
-
-A \textbf{multi-witness type error} is a type error that involve multiple endpoints supporting the same typing possibility. With multi-witness type error, it is harder to focus on the logical relation of every location as the complexity grows exponentially as the number of witness increases. Rather, it is more helpful to identify the two typing possibilities and the endpoint locations that supporting them.
-
-A \textbf{multi-party type error} is a type error that involve more than two typing possibility. The multi-party type error is thought to be less intuitive and harder to comprehend. The most prominent task is to seperate the type error into simpler type errors. 
+Based on how type errors are perceived by human programmers and the theories in constraint satisfiability research, we put forward a categorization of type errors. This categorization aims to charactorize 3 important features of type errors that help deciding how to best report them. 
 
 
-With this classification, I contributed two systems -- Chameleon and Goanna -- to address the challenges of type error debugging in different error categories.
+With this classification, we explored the three main systems we developed --  Chameleon (Chapter \ref{chap:chameleon}), Goanna (Chapter~\ref{chap:goanna}), and GeckoGraph (Chapter~\ref{chap:gecko-graph}) -- to address the challenges of type error debugging in different error categories.
 
 \subsection{Explaining Multi-step type erros and the chain of thought visualization}
 
@@ -60,7 +56,7 @@ We conducted a large-scale study on the effectiveness of using GeckoGraph to per
 
 \section{Future Work}
 
-From the work presented in this thesis, we generalize the tasks of debugging type errors and our proposed debugging techniques in a few idiomatic interations.  I have also envisioned a programming system that integrate these interations to provide a basis for future programming tool designs.
+From the work presented in this thesis, we generalize the tasks of debugging type errors and our proposed debugging techniques in a few idiomatic interations.  Such as the interactive debugging steps in Chameleon, and error cause exploration in Goanna. Although resides in different system, these user interaction idioms work together to complement each other. Therefore, we envision that an useful future work direction is to re-imagine the debugging workflow and leverage on all the proven useful techniques from Chameleon, Goanna and GeckoGraph.
 
 \subsection{Future Directions of Type Debugging Tool}
 

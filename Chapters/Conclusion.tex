@@ -3,6 +3,7 @@
 \chapter{Conclusion}
 
 \label{chap:conclusion} 
+\newcommand{\toolname}{TypeTutor}
 
 
 
@@ -62,74 +63,33 @@ From the work presented in this thesis, we generalize the tasks of debugging typ
 
 I devised a Type-Driven Debugging Extension that compatible with underlying type checking tools such as Chameleon and Goanna.  It integrate the, it adaptively show a minimal diagonisis of the type error and allow users to interactively query part of the reasoning behind this type judgement.  
 
+\subsection{Question-based Type Debugging}
+Many research show positive impact from natual debugging interface, that is,  framing the debugging tasks into questions that align with programmers objective. However, most experimentation in this direction are all focusing on debugging runtime errors. The narrowed focus on runtime error can be attributed to the fact that type level debugging often cannot provide enough meaning anlaysis. This has changed in the last decade or so. With the improvement in our debugging information, I have envisioned a form of quation-based type debugging interface that answers to common debugging motif. 
 
-\subsubsection{Locate: Reduce the number of initial clues}
+\subsection{Why questions}
+In The tool
+\begin{figure}[hbt]
+  \includegraphics[width=\linewidth]{ExplainError1.pdf}
+  \caption{
+      Displaying a type error in level 1 explanation
+    }
+\end{figure}
 
-One limitation from Chameleon is all locations from an MUS are highlighted all at once. This limitation is also found in almost every system based on type error slicing.   As a result, it can be generally distracting with these many decorations in the programming environment. 
-
-Goanna's solve this by  showing only locations from MCS, in other words, showing only locations from one potential cause. 
-This iteraction provide a  solution-driven debugging experience similar to Goana. Unlike Goanna, type error is iteractively explained by the locations that contribute to this type conflict.
 
 \begin{figure}[hbt]
-    \includegraphics[width=\linewidth]{Debugging-1}
-    \caption{
-        Displaying a type error in level 1 explanation
-      }
-  \end{figure}
+  \includegraphics[width=\linewidth]{ExplainError2.pdf}
+  \caption{
+      Displaying a type error in level 1 explanation
+    }
+\end{figure}
 
-
-\subsubsection{Understand: Interactively Inspect the Proof Tree}
-
-  \begin{figure}[hbt]
-    \includegraphics[width=\linewidth]{Debugging-2}
-    \caption{
-        Displaying a type error in level 2 explanation
-      }
-  \end{figure}
-  
-  \begin{figure}[hbt]
-    \includegraphics[width=\linewidth]{Debugging-3}
-    \caption{
-        Displaying a type error in level 3 explanation
-      }
-  \end{figure}
-  
-
-\subsubsection{Understand: Using Graphic Notation}
-
-In this example, graphic notation (GeckoGraph) is used to display the intermediate types that appears in the iterative explanation. 
 
 \begin{figure}[hbt]
-    \includegraphics[width=\linewidth]{Debugging-3-Gecko}
-    \caption{
-        Displaying a type error in level 3 explanation with GeckoGraph
-      }
-  \end{figure}
-
-
-\subsubsection{Understand: Using Graphic Notation}
-
-  In this example, we use inline decoration elements in addtition to GeckoGraph to provide additional help for tracing errors involving type classes.  
-
-  \begin{figure}[hbt]
-    \includegraphics[width=\linewidth]{TypeClass}
-    \caption{
-        Displaying a type error in level 3 explanation
-      }
-  \end{figure}
-
-
-  \subsubsection{Fix: Suggest Sensible}
-
-  In this example, we use inline decoration elements in addtition to GeckoGraph to provide additional help for tracing errors involving type classes.  
-
-  \begin{figure}[hbt]
-    \includegraphics[width=\linewidth]{TypeClass}
-    \caption{
-        Displaying a type error in level 3 explanation
-      }
-  \end{figure}
-
+  \includegraphics[width=\linewidth]{ExplainError2.pdf}
+  \caption{
+      Displaying a type error in level 1 explanation
+    }
+\end{figure}
 \subsection{Support for Other Languages}
 \subsubsection{Motivation}
 While Haskell is useful platform for studying programming languages and type systems, it is not the only one that benefit from static type systems. It is in fact very common for programming languages to suffers from usability issues in the pursuit for advanced and strict type checking. In practice, many programmers find the TypeScript and Rust equally confusing with the amount of type level programming facilited in the language and the lack of proper tools to interpret them. Therefore, it will be an exiting next step to migrate the techniques and concepts in this work to other statically typed programming languages. 

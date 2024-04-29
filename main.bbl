@@ -4391,6 +4391,50 @@
     \field{year}{2003}
   \endentry
 
+  \entry{Suzuki2019-bi}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=SK}{%
+         family={Suzuki},
+         familyi={S\bibinitperiod},
+         given={Keita},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=KT}{%
+         family={Kubota},
+         familyi={K\bibinitperiod},
+         given={Takafumi},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=KK}{%
+         family={Kono},
+         familyi={K\bibinitperiod},
+         given={Kenji},
+         giveni={K\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{SKKTKK1}
+    \strng{fullhash}{SKKTKK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2019}
+    \field{labeldatesource}{}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{booktitle}{2019 {IEEE} 24th Pacific Rim International Symposium on Dependable Computing ({PRDC})}
+    \verb{doi}
+    \verb 10.1109/PRDC47002.2019.00028
+    \endverb
+    \field{isbn}{9781728149615, 9781728149622}
+    \field{issn}{2473-3105, 1555-094X}
+    \field{pages}{65\bibrangedash 6509}
+    \field{title}{Detecting and Analyzing Year 2038 Problem Bugs in {User-Level} Applications}
+    \field{month}{12}
+    \field{year}{2019}
+  \endentry
+
   \entry{Tip2001-qn}{article}{}
     \name{author}{2}{}{%
       {{hash=TF}{%

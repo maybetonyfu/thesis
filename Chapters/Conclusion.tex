@@ -67,7 +67,8 @@ I devised a Type-Driven Debugging Extension that compatible with underlying type
 Many research show positive impact from natual debugging interface, that is,  framing the debugging tasks into questions that align with programmers objective. However, most experimentation in this direction are all focusing on debugging runtime errors. The narrowed focus on runtime error can be attributed to the fact that type level debugging often cannot provide enough meaning anlaysis. This has changed in the last decade or so. With the improvement in our debugging information, I have envisioned a form of quation-based type debugging interface that answers to common debugging motif. 
 
 \subsection{Why questions}
-In The tool
+When debugging type errors, it is often for confused programmers to ask questions such as "Why does the type error happen?", "Why is the expected type \texttt{X}?" and "Why is the actual type of this expression \texttt{X}?".  In \toolname{}, these questions are answered comprehensively at the point of conflict. 
+
 \begin{figure}[hbt]
   \includegraphics[width=\linewidth]{ExplainError1.pdf}
   \caption{
@@ -83,13 +84,16 @@ In The tool
     }
 \end{figure}
 
+\subsection{Follow-up questions}
+In debugging type errors, especially in multi-step type errors, it is extremely useful to allow programmers incrementally discover the inference logic by ask follow up questions. The subjects of these questions are often the answers from previous question. \toolname{} has the same chain-of-thought visualization as Chameleon, only that \toolname{} grants more freedom to programmers: they can choose to ask about any expression of interest at any time.
 
-\begin{figure}[hbt]
-  \includegraphics[width=\linewidth]{ExplainError2.pdf}
-  \caption{
-      Displaying a type error in level 1 explanation
-    }
-\end{figure}
+\subsection{How questions}
+`How' questions are about prescriptive instructions regarding a program behavior. These questions require not logical soundness but deep understanding of programmers' intention and the natual of the program. \toolname support programmers to ask how to fix a certain type error. In Goanna, the analysis of MSS is able to provide concrete type to change to for each potential fix. There exists research \cite{Lerner2007-mu} on suggesting candidate expressions to replace the defective text.  \toolname{} combined both approaches, providing  
+example expressions that can inspire a more intelligent fix and what the intended type for the candidate fix. 
+
+\subsection{What-if questions}
+Finally, as we have established in this thesis, type errors often involve multiple mutually exclusive potential causes and explanations. When translated in the question-and-answer interface, this means allowing programmers to ask conterfactual questions such as "What are other ways that can cause this type error". Providing a natural interface for exploring different potential causes and fixes similar to Goanna but with a more concise and intuitive query interface.
+
 \subsection{Support for Other Languages}
 \subsubsection{Motivation}
 While Haskell is useful platform for studying programming languages and type systems, it is not the only one that benefit from static type systems. It is in fact very common for programming languages to suffers from usability issues in the pursuit for advanced and strict type checking. In practice, many programmers find the TypeScript and Rust equally confusing with the amount of type level programming facilited in the language and the lack of proper tools to interpret them. Therefore, it will be an exiting next step to migrate the techniques and concepts in this work to other statically typed programming languages. 

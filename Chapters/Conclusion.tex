@@ -17,10 +17,15 @@ In this thesis, we started by establishing the context of our work in the field 
 
 \subsection{A categorization of type errors based on the structure of the evidence of a type error}
 
-Based on how type errors are perceived by human programmers and the theories in constraint satisfiability research, we put forward a categorization of type errors. This categorization aims to charactorize 3 important features of type errors that help deciding how to best report them. 
+Based on how type errors are perceived by human programmers and the theories in constraint satisfiability research, we put forward a categorization of type errors. This categorization aims to charactorize 3 important features of type errors that help deciding how best to help programmers strategically solve the type error. 
+\begin{itemize}
+    \item {\textbf{Multi-step type errors} involve a chain of inference, programmers need to scan for clues in the source code to connect the logical chain-of-thought. Presenting the clues in the documents and their locational relations in the inference chain is paramount.}
+    \item{\textbf{Multi-witness type errors} involve an imbalance of clues that suggest the two potential causes. Presenting the this imbalance help programmers make more informed decision about likelihood of the potential causes}
+    \item{\textbf{Multi-party type errors} are conflict that involve more than two potential typing possibilities, often they are multiple type errors in disguise. Provide the ability to decompose these errors into simpler forms, and allow programmers to solve them one at a time simplify the debugging process. }
+\end{itemize}
 
 
-With this classification, we explored the three main systems we developed --  Chameleon (Chapter \ref{chap:chameleon}), Goanna (Chapter~\ref{chap:goanna}), and GeckoGraph (Chapter~\ref{chap:gecko-graph}) -- to address the challenges of type error debugging in different error categories.
+With this classification, we explored the three main systems we developed --  Chameleon (Chapter \ref{chap:chameleon}), Goanna (Chapter~\ref{chap:goanna}), and GeckoGraph (Chapter~\ref{chap:gecko-graph}) -- to address the many different challenges of debugging type errors.
 
 \subsection{Explaining Multi-step type erros and the chain of thought visualization}
 
@@ -110,7 +115,7 @@ For system like GeckoGraph, the basic construction rules of GeckoGraph algebraic
 
 \subsubsection{Challenges}
 
-For the systems like Chameleon and Goanna, only two challenges to be solved. First is implementing the constraint generation. Because this is the only part that differs from language to language. Once the typing relations are interpreted in constraint languages, the rest is all language agnositic.  Second is to handle the intricacy of informing programmers where the type constraints are generated from the source code. Traditionally this is always done by highligts. But this takes the assumpiion that 
+For the systems like Chameleon and Goanna, only two challenges to be solved. First is implementing the constraint generation. Because this is the only part that differs from language to language. Once the typing relations are interpreted in constraint languages, the rest of the systems are all language agnostic.  The second is to handle the intricacy of informing programmers where the type constraints are generated from the source code. Traditionally this is always done by highligts. But this takes the assumpiion that 
 
 
 \section{Final words}

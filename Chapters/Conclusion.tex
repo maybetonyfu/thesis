@@ -81,14 +81,14 @@ A fundamental aspect of debugging type errors involves asking questions such as 
 \begin{figure}[hbt]
   \includegraphics[width=\linewidth]{Why}
   \caption{
-      Displaying a type error in level 1 explanation
+      \label{fig:why}
+      The figure shows how \textit{TypeTutor} provide the valid `why' questions to ask for programmers in a type error. When hovering on a locatino that is marked as type error, \textit{TypeTutor} identifies an `expected' type (Top) and an `actual' type (Bottom). \textit{TypeTutor} also prompts programmers to interigate each branch to understand how these conclusions are drawn by hovering on the `Why' buttons. 
     }
 \end{figure}
 
 
 
-\subsubsection{Follow-up questions: who watches the watchers}
-
+\subsubsection{Follow-up questions}
 
 In the context of debugging type errors, particularly multi-step type errors, it proves beneficial to enable programmers to incrementally uncover the underlying inference logic. \textit{TypeTutor} support this process by allowing programmers to ask follow-up questions. Typically, these questions build upon the responses to earlier inquiries. Follow-up questions in \textit{TypeTutor} facilitate tasks akin to the interactive debugging stpes in Chameleon. However, unlike Chameleon, \textit{TypeTutor} does not provide a separate interface for follow-ups. Instead, when a response includes the option for further inquiry, \textit{TypeTutor} provides a follow-up hint at the end of the answer, encouraging programmers to continue tracing the root cause. This integrated approach helps maintain a streamlined user experience while enabling deep exploration of type errors.
 
@@ -96,9 +96,10 @@ In the context of debugging type errors, particularly multi-step type errors, it
 \begin{figure}[hbt]
   \includegraphics[width=\linewidth]{FollowUp}
   \caption{
-      Displaying a type error in level 1 explanation
+     Following the case in Figure \ref{fig:why}, \textit{TypeTutor} propmts progammers to ask follow-up questions. In this case, \textit{TypeTutor} inform the programmer that \texttt{matchFirst} on line 3 has the type \texttt{Int -> (Int, Int) -> Bool} can be inferred from two pieces of clues:  the definition of \texttt{matchFirst} and the \texttt{filter} on line 3 is instanciated as \texttt{((Int, Int) -> Bool) -> [(Int, Int)] -> [(Int, Int)]}.
     }
 \end{figure}
+
 \subsubsection{How questions}
 
 'How' questions in debugging focus on providing prescriptive guidance regarding program error. Such questions do not solely depend on logical precision; rather, they require the understanding of a programmer's knowledge gaps and the ability to deliver clear, followable instructions. \textit{TypeTutor} aids programmers by facilitating questions on how to rectify specific type errors. In Goanna, the analysis of Minimum Sufficient Syntax (MSS) can suggest the expected type for each possible correction. \textit{TypeTutor} advances this concept by offering examples of syntax changes tailored to these recommended types. 
@@ -108,7 +109,7 @@ In the context of debugging type errors, particularly multi-step type errors, it
 \begin{figure}[hbt]
   \includegraphics[width=\linewidth]{How}
   \caption{
-      Displaying a type error in level 1 explanation
+    Following the case in Figure \ref{fig:why}, \textit{TypeTutor} provides instruction of how to fix the type error. In detail,  \textit{TypeTutor} provides various examples of how to change \texttt{'1'} to an Integer type, including changing it to an integer literal, an integer variable, or an expression that evalutates to an integer.
     }
 \end{figure}
 
@@ -118,7 +119,7 @@ Finally, as we have identified, type errors frequently involve multiple potentia
 \begin{figure}[hbt]
   \includegraphics[width=\linewidth]{WhatIf}
   \caption{
-      Displaying a type error in level 1 explanation
+      If programmer disagree that the literal \texttt{'1'} is the cause of the error and should be changed, \textit{TypeTutor} can provide alternative explanations and resolution plans. When hovering on the option `Other ways to fix the error', \textit{TypeTutor} shows three other potential fixes (Top). Choosing any of them, say the first option, will change the type error mark to another set of locations, and differnt explanations are provided when asking the `why' question at the new type error.
     }
 \end{figure}
 
@@ -129,15 +130,17 @@ At the time of writing this thesis, LLMs have been actively experiented to perfo
 \begin{figure}[hbt]
   \includegraphics[width=\linewidth]{LLM}
   \caption{\label{fig:llm}
+  Figure shows user prompted LLM to explain type error in a Haskell function definition \texttt{mapList}. LLM at first showed profound understanding of the subject matter, clearly explain the intention of the function and accurately identified the error location. In the last sentence, LLM claimed the definition will results in an infinite type, because trying to unify \texttt{a} with \texttt{(a -> b) -> [a] -> [b]}. In reality, unify two function with differrent number of arguments will not cause infinity types. 
     }
 \end{figure}
 
-While LLMs have shown capability in recognizing basic errors, they often display a limited understanding of type theories and multi-step reasoning ability. On the error in Figure 3,although provided a correct fix, ChatGPT 3.5 claimed “The type error occurs because the matchFirst function expects a tuple (k, v) as its second argument, but when using it with filter, the second argument of filter should be a list. You're trying to apply filter to a function (matchFirst '1') and a list (students), but matchFirst '1' expects a tuple, not a list”, illustrating a fundamental lack of understanding of higher order types, and certainly not a correct explanation.
+While LLMs have shown capability in recognizing basic errors, they often display a limited understanding of type theories and multi-step reasoning ability. On the error in Figure \ref{fig:llm},although provided a correct fix, GPT 4 claimed “This results in an infinite type situation because Haskell tries to unify the type \texttt{a} with the type \texttt{(a -> b) -> [a] -> [b]}, which results in an infinite loop of types, and Haskell cannot resolve this”, illustrating a fundamental lack of understanding of higher order types, and certainly not a correct explanation.
 
 \begin{figure}[hbt]
   \includegraphics[width=\linewidth]{LLM2}
   \caption{\label{fig:llm2}
-    }
+  Figure shows a user ask an LLM whether the provided Haskell source code has an type error. While the provided code is infact well-typed, LLM haulucinated an type error and ignored how polymorphic functions work in Haskell. In the example, the function \texttt{f},  defined the same way as the \texttt{id} function, can be applied with a value of any type.
+    } 
 \end{figure}
 
 When tested with the prompt "is there a type error in the Haskell code: v = let f x = x in (f 3, f '3')", most LLMs incorrectly reported yes. LLMs can give wrong explanations, find type errors that don't exist, unlike tools like GHC, Helium and Goanna. While there is clearly a role for their usage in programming assistance, they do not “reason” about types and hence are not trustworthy.
@@ -150,18 +153,22 @@ While LLMs are getting more and more accurate everyday, some doubt whether they 
 }
 
 \subsection{Support for Other Languages}
-\subsubsection{Motivation}
-While Haskell is the ideal platform for studying programming languages and type systems, we strongly believe a vital course of development of our research is to extend our tools to other languages. In recent years, we have observed the type system issues have infiltrated into many mainstream language like Rust and TypeScript. If we can successfully support these language with debugging features provided in our tools, it will help us reach a much broader audience. It will also help testing our tools in more different projects in terms of style and scale.   This would also help us gather broader feedback.   
+Haskell serves as an exemplary platform for the exploration of programming languages and type systems. We firmly believe that the next critical phase in our research involves expanding our tools to encompass other languages. Recently, we overserved that challenge of overcoming complex type errors have permeated several mainstream languages, including Rust and TypeScript. By integrating our debugging tools into these languages, we aim to engage a broader audience and subject our tools to a diverse range of projects varying in style and scale. This will not only increase our tool's applicability but also provide us with extensive insights into how to improve our design.
 
-Many of  our work are already designed with other languages in mind. For instance, GeckoGraph, as a design is not limited one language, different languages can provide their own implemntations. It is a bit complicated with Chameleon and Goanna. The analysis of unsatisfiable constraints is universal across all languages, so is the theories and implemntations for enumeraing MUSes and MCSes.
-That is to say, the underlying theories of Chameleon and Goanna are already supporting different languages. However, two challenges arrise from adopting these tools. First is the constraint generation. It is necessary to create constraint generation rules for each language, and this may require non-trivial changes based on the type-level features are present in the language. One example is that Haskell's functions are all curried, a feature not found in languages like TypeScript. In TypeScript, functions are defined with a fixed arity, with the option to overload. This differnce means that we can detect a type error if a function is applied to fewer arguments that it is defined, which is not the case in Haskell.   Second, the display of type error may need subtle adjustments for different languags. Special visualization techniques may need to be invented for ideas not found in Haskell, such as subtyping (TypeScript) and lifetime(Rust). 
+Much of our work has already been conceived with adaptability to multiple languages in mind. For example, GeckoGraph is designed to be language-agnostic, allowing for implementations in different programming languages. However, adapting tools like Chameleon and Goanna presents certain complexities. Although the analysis of unsatisfiable constraints and the theories and implementations concerning the enumeration of Minimal Unsatisfiable Subsets (MUSes) and Minimal Correction Subsets (MCSes) are universally applicable across all languages, specific challenges arise when taking into account of the nuances of individual language.
 
+The first challenge involves constraint generation. Each language requires the development of specific rules for generating constraints, conforming to its own typing rules, which could necessitate substantial modifications depending on the type-level features each language possesses. For instance, all functions in Haskell are curried, a characteristic absent in TypeScript, where functions are defined with fixed arity and can be overloaded. This discrepancy means that in TypeScript, a type error can occur if a function is applied to fewer arguments than it is defined for, an error that would not typically arise in Haskell.
 
-
-\section{Final words}
-
-Programming languages is a fascinating topic. It certainly is my favorourte in computer science for it combines ideas from vastly diffent schools. Among them, functional programming and static typing has been some of the brilliant ideas in programming languages. My research is centered on exploring why are type errors hard and how to make them paletable. The approaches we use are largely based on constrint satisfiability theoris. This including analysing MUS (Chameleon) and MCS (Goanna). We also use a lot of human-centerd research methods, formative studies, user studies, rapid prototyping, among others. We firmly believe it is a useful direction for programming language research. We hope the our study will be useful reference for brilliant future studies to come.
+The second challenge concerns the presentation of type errors, which may need nuanced adjustments for different languages. Innovative visualization techniques may be required to effectively convey concepts absent in Haskell, such as subtyping in TypeScript or lifetime constraints in Rust. By addressing these challenges, we can truly leverage the potential of our tools across various programming environments.
 
 
+\section{Conclusion}
+
+
+The field of programming languages is truly captivating, representing a confluence of ideas from various disciplines and schools of thought. Among the myriad concepts, functional programming and static typing are particularly important for their profound impact on the domain. My research aims to highlight the benefits of functional programming and static typing, while also addressing the challenges they pose. By refining how types and type errors are presented and explained, I strive to make functional programming and static typing accessible and user-friendly for programmers at all levels of expertise.
+
+Our methodologies are largely grounded in theories of constraint satisfiability. These include analyzing Minimal Unsatisfiable Subsets (MUS) through tools like Chameleon, and Minimal Correction Subsets (MCS) via Goanna. In addition, we employ various human-centered research techniques such as formative studies, user studies, and rapid prototyping. These approaches not only enhance the practicality of our research but also its relevance to real-world programming.
+
+We are convinced that type error enhancement and explanation is a valuable trajectory for research in programming languages. It is our hope that our work will serve as a useful reference, inspiring future studies that continue to augment and expand our asenals of type error debugging tools.
 
 

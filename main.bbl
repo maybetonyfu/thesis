@@ -1067,6 +1067,73 @@
     \field{year}{1987}
   \endentry
 
+  \entry{Cass2023-fa}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=CS}{%
+         family={Cass},
+         familyi={C\bibinitperiod},
+         given={Stephen},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \list{language}{1}{%
+      {en}%
+    }
+    \strng{namehash}{CS1}
+    \strng{fullhash}{CS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2023}
+    \field{labeldatesource}{}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{booktitle}{{IEEE} Spectrum}
+    \field{howpublished}{\url{https://spectrum.ieee.org/the-top-programming-languages-2023}}
+    \field{note}{Accessed: 2024-5-3}
+    \field{title}{The Top Programming Languages 2023}
+    \field{month}{08}
+    \field{year}{2023}
+  \endentry
+
+  \entry{Chakravarty2004-ux}{article}{}
+    \name{author}{2}{}{%
+      {{hash=CMMT}{%
+         family={Chakravarty},
+         familyi={C\bibinitperiod},
+         given={Manuel M\bibnamedelima T},
+         giveni={M\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim T\bibinitperiod},
+      }}%
+      {{hash=KG}{%
+         family={Keller},
+         familyi={K\bibinitperiod},
+         given={Gabriele},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Cambridge University Press}%
+    }
+    \strng{namehash}{CMMTKG1}
+    \strng{fullhash}{CMMTKG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2004}
+    \field{labeldatesource}{}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \verb{doi}
+    \verb 10.1017/S0956796803004805
+    \endverb
+    \field{issn}{0956-7968, 1469-7653}
+    \field{number}{1}
+    \field{pages}{113\bibrangedash 123}
+    \field{title}{The risks and benefits of teaching purely functional programming in first year}
+    \field{volume}{14}
+    \field{journaltitle}{J. Funct. Programming}
+    \field{month}{01}
+    \field{year}{2004}
+  \endentry
+
   \entry{Chatley2019-uq}{incollection}{}
     \name{author}{3}{}{%
       {{hash=CR}{%
@@ -1417,6 +1484,66 @@
     \field{title}{Student opinions of Alice in {CS1}}
     \field{month}{10}
     \field{year}{2008}
+  \endentry
+
+  \entry{Conway2000-nn}{inproceedings}{}
+    \name{author}{5}{}{%
+      {{hash=CM}{%
+         family={Conway},
+         familyi={C\bibinitperiod},
+         given={Matthew},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=AS}{%
+         family={Audia},
+         familyi={A\bibinitperiod},
+         given={Steve},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=BT}{%
+         family={Burnette},
+         familyi={B\bibinitperiod},
+         given={Tommy},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=CD}{%
+         family={Cosgrove},
+         familyi={C\bibinitperiod},
+         given={Dennis},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=CK}{%
+         family={Christiansen},
+         familyi={C\bibinitperiod},
+         given={Kevin},
+         giveni={K\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Association for Computing Machinery}%
+    }
+    \strng{namehash}{CM+1}
+    \strng{fullhash}{CMASBTCDCK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2000}
+    \field{labeldatesource}{}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{booktitle}{Proceedings of the {SIGCHI} conference on Human Factors in Computing Systems}
+    \verb{doi}
+    \verb 10.1145/332040.332481
+    \endverb
+    \field{isbn}{9781581132168}
+    \field{pages}{486\bibrangedash 493}
+    \field{series}{CHI '00}
+    \field{title}{Alice: lessons learned from building a {3D} system for novices}
+    \list{location}{1}{%
+      {The Hague, The Netherlands}%
+    }
+    \field{month}{04}
+    \field{year}{2000}
+    \warn{\item Can't use 'location' + 'address'}
   \endentry
 
   \entry{Crichton2021-ru}{inproceedings}{}
@@ -2285,6 +2412,49 @@
     \field{year}{2023}
   \endentry
 
+  \entry{Hu2015-ch}{article}{}
+    \name{author}{3}{}{%
+      {{hash=HZ}{%
+         family={Hu},
+         familyi={H\bibinitperiod},
+         given={Zhenjiang},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=HJ}{%
+         family={Hughes},
+         familyi={H\bibinitperiod},
+         given={John},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=WM}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Meng},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {academic.oup.com}%
+    }
+    \strng{namehash}{HZHJWM1}
+    \strng{fullhash}{HZHJWM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2015}
+    \field{labeldatesource}{}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \verb{doi}
+    \verb 10.1093/NSR/NWV042
+    \endverb
+    \field{pages}{349\bibrangedash 370}
+    \field{title}{How functional programming mattered}
+    \field{volume}{2}
+    \field{journaltitle}{National Science Review}
+    \field{month}{07}
+    \field{year}{2015}
+  \endentry
+
   \entry{Hudak2007-kn}{inproceedings}{}
     \name{author}{4}{}{%
       {{hash=HP}{%
@@ -2436,6 +2606,51 @@
     \field{title}{How Programmers Read Regular Code: A Controlled Experiment Using Eye Tracking}
     \field{month}{05}
     \field{year}{2015}
+  \endentry
+
+  \entry{Joosten1993-be}{article}{}
+    \name{author}{3}{}{%
+      {{hash=JS}{%
+         family={Joosten},
+         familyi={J\bibinitperiod},
+         given={Stef},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=VDBK}{%
+         family={Van Den\bibnamedelima Berg},
+         familyi={V\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim B\bibinitperiod},
+         given={Klaas},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=VDHG}{%
+         family={Van Der\bibnamedelima Hoeven},
+         familyi={V\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim H\bibinitperiod},
+         given={Gerrit},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Cambridge University Press}%
+    }
+    \strng{namehash}{JSVDBKVDHG1}
+    \strng{fullhash}{JSVDBKVDHG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1993}
+    \field{labeldatesource}{}
+    \field{sortinit}{J}
+    \field{sortinithash}{J}
+    \verb{doi}
+    \verb 10.1017/S0956796800000599
+    \endverb
+    \field{issn}{0956-7968, 1469-7653}
+    \field{number}{1}
+    \field{pages}{49\bibrangedash 65}
+    \field{title}{Teaching functional programming to first-year students}
+    \field{volume}{3}
+    \field{journaltitle}{J. Funct. Programming}
+    \field{month}{01}
+    \field{year}{1993}
   \endentry
 
   \entry{Jun2000-yu}{inproceedings}{}
@@ -4344,6 +4559,31 @@
     \field{note}{Accessed: 2022-11-30}
     \field{title}{Stack Overflow Developer Survey 2022}
     \field{year}{2022}
+  \endentry
+
+  \entry{StackOverflow2023-cp}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=S}{%
+         family={{StackOverflow}},
+         familyi={S\bibinitperiod},
+      }}%
+    }
+    \list{language}{1}{%
+      {en}%
+    }
+    \strng{namehash}{S2}
+    \strng{fullhash}{S2}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2023}
+    \field{labeldatesource}{}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{booktitle}{Stack Overflow}
+    \field{howpublished}{\url{https://survey.stackoverflow.co/2023/}}
+    \field{note}{Accessed: 2024-5-3}
+    \field{title}{Stack Overflow Developer Survey 2023}
+    \field{year}{2023}
   \endentry
 
   \entry{Stuckey2003-pz}{inproceedings}{}

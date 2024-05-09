@@ -768,6 +768,70 @@
     \field{year}{2020}
   \endentry
 
+  \entry{Berglund2023-ig}{article}{}
+    \name{author}{7}{}{%
+      {{hash=BL}{%
+         family={Berglund},
+         familyi={B\bibinitperiod},
+         given={Lukas},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=TM}{%
+         family={Tong},
+         familyi={T\bibinitperiod},
+         given={Meg},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=KM}{%
+         family={Kaufmann},
+         familyi={K\bibinitperiod},
+         given={Max},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=BM}{%
+         family={Balesni},
+         familyi={B\bibinitperiod},
+         given={Mikita},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=SAC}{%
+         family={Stickland},
+         familyi={S\bibinitperiod},
+         given={Asa\bibnamedelima Cooper},
+         giveni={A\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=KT}{%
+         family={Korbak},
+         familyi={K\bibinitperiod},
+         given={Tomasz},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=EO}{%
+         family={Evans},
+         familyi={E\bibinitperiod},
+         given={Owain},
+         giveni={O\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BL+1}
+    \strng{fullhash}{BLTMKMBMSACKTEO1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \verb{doi}
+    \verb 10.48550/arXiv.2309.12288
+    \endverb
+    \verb{eprint}
+    \verb 2309.12288
+    \endverb
+    \field{title}{The Reversal Curse: {LLMs} trained on ``A is B'' fail to learn ``B is A''}
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{cs.CL}
+    \field{month}{09}
+    \field{year}{2023}
+  \endentry
+
   \entry{Bhargavan2021-no}{inproceedings}{}
     \name{author}{7}{}{%
       {{hash=BK}{%
@@ -2947,6 +3011,47 @@
     \field{year}{1998}
   \endentry
 
+  \entry{Lee2024-hs}{article}{}
+    \name{author}{3}{}{%
+      {{hash=LY}{%
+         family={Lee},
+         familyi={L\bibinitperiod},
+         given={Yanggyu},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=JS}{%
+         family={Jeong},
+         familyi={J\bibinitperiod},
+         given={Suchae},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=KJ}{%
+         family={Kim},
+         familyi={K\bibinitperiod},
+         given={Jihie},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{LYJSKJ1}
+    \strng{fullhash}{LYJSKJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \verb{doi}
+    \verb 10.48550/arXiv.2404.19336
+    \endverb
+    \verb{eprint}
+    \verb 2404.19336
+    \endverb
+    \field{title}{Improving {LLM} Classification of Logical Errors by Integrating Error Relationship into Prompts}
+    \field{journaltitle}{arXiv [cs.AI]}
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{cs.AI}
+    \field{month}{04}
+    \field{year}{2024}
+  \endentry
+
   \entry{Lerner2007-mu}{inproceedings}{}
     \name{author}{4}{}{%
       {{hash=LBS}{%
@@ -4119,6 +4224,46 @@
     \field{year}{1978}
   \endentry
 
+  \entry{Scarsbrook2023-uq}{article}{}
+    \name{author}{3}{}{%
+      {{hash=SJD}{%
+         family={Scarsbrook},
+         familyi={S\bibinitperiod},
+         given={Joshua\bibnamedelima D},
+         giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+      {{hash=UM}{%
+         family={Utting},
+         familyi={U\bibinitperiod},
+         given={Mark},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=KRKL}{%
+         family={Ko},
+         familyi={K\bibinitperiod},
+         given={Ryan K\bibnamedelima L},
+         giveni={R\bibinitperiod\bibinitdelim K\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SJDUMKRKL1}
+    \strng{fullhash}{SJDUMKRKL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \verb{doi}
+    \verb 10.48550/arXiv.2303.09802
+    \endverb
+    \verb{eprint}
+    \verb 2303.09802
+    \endverb
+    \field{title}{{TypeScript's} Evolution: An Analysis of Feature Adoption Over Time}
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{cs.SE}
+    \field{month}{03}
+    \field{year}{2023}
+  \endentry
+
   \entry{Schilling2012-iq}{inproceedings}{}
     \name{author}{1}{}{%
       {{hash=ST}{%
@@ -4241,6 +4386,53 @@
     \field{title}{An analysis of variance test for normality}
     \field{journaltitle}{Biometrika}
     \field{year}{1965}
+  \endentry
+
+  \entry{Shi2024-bj}{article}{}
+    \name{author}{4}{}{%
+      {{hash=SQ}{%
+         family={Shi},
+         familyi={S\bibinitperiod},
+         given={Quan},
+         giveni={Q\bibinitperiod},
+      }}%
+      {{hash=TM}{%
+         family={Tang},
+         familyi={T\bibinitperiod},
+         given={Michael},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=NK}{%
+         family={Narasimhan},
+         familyi={N\bibinitperiod},
+         given={Karthik},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=YS}{%
+         family={Yao},
+         familyi={Y\bibinitperiod},
+         given={Shunyu},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SQ+1}
+    \strng{fullhash}{SQTMNKYS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \verb{doi}
+    \verb 10.48550/arXiv.2404.10952
+    \endverb
+    \verb{eprint}
+    \verb 2404.10952
+    \endverb
+    \field{title}{Can Language Models Solve Olympiad Programming?}
+    \field{journaltitle}{arXiv [cs.CL]}
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{cs.CL}
+    \field{month}{04}
+    \field{year}{2024}
   \endentry
 
   \entry{Da_Silva_Ribeiro2014-tm}{inproceedings}{}

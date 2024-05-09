@@ -16,7 +16,7 @@
   {}
 \endgroup
 
-\datalist[entry]{nyt/global//global/global}
+\datalist[entry]{nty/global//global/global}
   \entry{Almeida2022-bv}{inproceedings}{}
     \name{author}{11}{}{%
       {{hash=AM}{%
@@ -93,8 +93,6 @@
     \strng{fullhash}{AMCGDKLGPSPYQKRVZHZYOC1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2022}
-    \field{labeldatesource}{}
     \field{sortinit}{A}
     \field{sortinithash}{A}
     \field{booktitle}{2022 {IEEE} Symposium on Visual Languages and {Human-Centric} Computing ({{VL}/{HCC}})}
@@ -151,8 +149,6 @@
     \strng{fullhash}{ABKSMFMCAA1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2015}
-    \field{labeldatesource}{}
     \field{sortinit}{A}
     \field{sortinithash}{A}
     \field{booktitle}{Proceedings of the Workshop in Primary and Secondary Computing Education}
@@ -168,30 +164,6 @@
     }
     \field{month}{11}
     \field{year}{2015}
-    \warn{\item Can't use 'location' + 'address'}
-  \endentry
-
-  \entry{Anonymous_undated-ne}{misc}{}
-    \name{author}{1}{}{%
-      {{hash=A}{%
-         family={{Anonymous}},
-         familyi={A\bibinitperiod},
-      }}%
-    }
-    \list{language}{1}{%
-      {en}%
-    }
-    \strng{namehash}{A1}
-    \strng{fullhash}{A1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{labeldatesource}{nodate}
-    \field{sortinit}{A}
-    \field{sortinithash}{A}
-    \field{booktitle}{Zero to Hero}
-    \field{howpublished}{\url{https://zerotohero.fly.dev}}
-    \field{note}{Accessed: 2024-2-22}
-    \field{title}{Zero to Hero: A Haskell Puzzle Game}
   \endentry
 
   \entry{Anonymous2022-xp}{misc}{}
@@ -205,8 +177,6 @@
     \strng{fullhash}{A1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2022}
-    \field{labeldatesource}{}
     \field{sortinit}{A}
     \field{sortinithash}{A}
     \field{howpublished}{\url{https://chameleon.typecheck.me/}}
@@ -226,9 +196,6 @@
     \strng{fullhash}{A1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2023}
-    \field{extradate}{1}
-    \field{labeldatesource}{}
     \field{sortinit}{A}
     \field{sortinithash}{A}
     \field{howpublished}{\url{https://goanna.fly.dev/demo}}
@@ -249,9 +216,6 @@
     \strng{fullhash}{A1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2023}
-    \field{extradate}{2}
-    \field{labeldatesource}{}
     \field{sortinit}{A}
     \field{sortinithash}{A}
     \field{howpublished}{\url{https://goanna.fly.dev/coverage.html}}
@@ -259,6 +223,28 @@
     \field{title}{Goanna's Haskell Language Coverage}
     \field{month}{10}
     \field{year}{2023}
+  \endentry
+
+  \entry{Anonymous_undated-ne}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=A}{%
+         family={{Anonymous}},
+         familyi={A\bibinitperiod},
+      }}%
+    }
+    \list{language}{1}{%
+      {en}%
+    }
+    \strng{namehash}{A1}
+    \strng{fullhash}{A1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{booktitle}{Zero to Hero}
+    \field{howpublished}{\url{https://zerotohero.fly.dev}}
+    \field{note}{Accessed: 2024-2-22}
+    \field{title}{Zero to Hero: A Haskell Puzzle Game}
   \endentry
 
   \entry{Bacchus2015-of}{inproceedings}{}
@@ -283,8 +269,6 @@
     \strng{fullhash}{BFKG1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2015}
-    \field{labeldatesource}{}
     \field{sortinit}{B}
     \field{sortinithash}{B}
     \field{booktitle}{Computer Aided Verification}
@@ -315,8 +299,6 @@
     \strng{fullhash}{BJ1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{1978}
-    \field{labeldatesource}{}
     \field{sortinit}{B}
     \field{sortinithash}{B}
     \verb{doi}
@@ -354,8 +336,6 @@
     \strng{fullhash}{BJSPJ1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2005}
-    \field{labeldatesource}{}
     \field{sortinit}{B}
     \field{sortinithash}{B}
     \field{booktitle}{Practical Aspects of Declarative Languages}
@@ -365,55 +345,6 @@
     \field{pages}{174\bibrangedash 186}
     \field{title}{Discovery of Minimal Unsatisfiable Subsets of Constraints Using Hitting Set Dualization}
     \field{year}{2005}
-  \endentry
-
-  \entry{Barik2014-ib}{inproceedings}{}
-    \name{author}{4}{}{%
-      {{hash=BT}{%
-         family={Barik},
-         familyi={B\bibinitperiod},
-         given={Titus},
-         giveni={T\bibinitperiod},
-      }}%
-      {{hash=LK}{%
-         family={Lubick},
-         familyi={L\bibinitperiod},
-         given={Kevin},
-         giveni={K\bibinitperiod},
-      }}%
-      {{hash=CS}{%
-         family={Christie},
-         familyi={C\bibinitperiod},
-         given={Samuel},
-         giveni={S\bibinitperiod},
-      }}%
-      {{hash=MHE}{%
-         family={Murphy-Hill},
-         familyi={M\bibinithyphendelim H\bibinitperiod},
-         given={Emerson},
-         giveni={E\bibinitperiod},
-      }}%
-    }
-    \list{publisher}{1}{%
-      {IEEE}%
-    }
-    \strng{namehash}{BT+1}
-    \strng{fullhash}{BTLKCSMHE1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{labelyear}{2014}
-    \field{labeldatesource}{}
-    \field{sortinit}{B}
-    \field{sortinithash}{B}
-    \field{booktitle}{2014 Second {IEEE} Working Conference on Software Visualization}
-    \verb{doi}
-    \verb 10.1109/VISSOFT.2014.24
-    \endverb
-    \field{isbn}{9781479961504}
-    \field{pages}{87\bibrangedash 96}
-    \field{title}{How Developers Visualize Compiler Messages: A Foundational Approach to Notification Construction}
-    \field{month}{09}
-    \field{year}{2014}
   \endentry
 
   \entry{Barik2017-gy}{inproceedings}{}
@@ -468,8 +399,6 @@
     \strng{fullhash}{BTSJLKHEFJMHEPC1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2017}
-    \field{labeldatesource}{}
     \field{sortinit}{B}
     \field{sortinithash}{B}
     \field{booktitle}{2017 {IEEE}/{ACM} 39th International Conference on Software Engineering ({{ICSE}})}
@@ -485,6 +414,53 @@
     }
     \field{month}{05}
     \field{year}{2017}
+  \endentry
+
+  \entry{Barik2014-ib}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=BT}{%
+         family={Barik},
+         familyi={B\bibinitperiod},
+         given={Titus},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=LK}{%
+         family={Lubick},
+         familyi={L\bibinitperiod},
+         given={Kevin},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=CS}{%
+         family={Christie},
+         familyi={C\bibinitperiod},
+         given={Samuel},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=MHE}{%
+         family={Murphy-Hill},
+         familyi={M\bibinithyphendelim H\bibinitperiod},
+         given={Emerson},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{BT+1}
+    \strng{fullhash}{BTLKCSMHE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{booktitle}{2014 Second {IEEE} Working Conference on Software Visualization}
+    \verb{doi}
+    \verb 10.1109/VISSOFT.2014.24
+    \endverb
+    \field{isbn}{9781479961504}
+    \field{pages}{87\bibrangedash 96}
+    \field{title}{How Developers Visualize Compiler Messages: A Foundational Approach to Notification Construction}
+    \field{month}{09}
+    \field{year}{2014}
   \endentry
 
   \entry{Barik2018-xs}{inproceedings}{}
@@ -518,8 +494,6 @@
     \strng{fullhash}{BTFDMHEPC1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2018}
-    \field{labeldatesource}{}
     \field{sortinit}{B}
     \field{sortinithash}{B}
     \field{booktitle}{Proceedings of the 2018 26th {ACM} Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering}
@@ -568,8 +542,6 @@
     \strng{fullhash}{BFDBVMJWDPD1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2015}
-    \field{labeldatesource}{}
     \field{sortinit}{B}
     \field{sortinithash}{B}
     \field{booktitle}{2015 {IEEE} 23rd International Conference on Program Comprehension}
@@ -600,8 +572,6 @@
     \strng{fullhash}{BBA1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2016}
-    \field{labeldatesource}{}
     \field{sortinit}{B}
     \field{sortinithash}{B}
     \field{booktitle}{Proceedings of the 47th {ACM} Technical Symposium on Computing Science Education}
@@ -700,8 +670,6 @@
     \strng{fullhash}{BBADPPRBDBDJHBKAKAMCOPMPJLPJ1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2019}
-    \field{labeldatesource}{}
     \field{sortinit}{B}
     \field{sortinithash}{B}
     \field{booktitle}{Proceedings of the Working Group Reports on Innovation and Technology in Computer Science Education}
@@ -734,10 +702,11 @@
     \strng{fullhash}{BM1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2015}
-    \field{labeldatesource}{}
     \field{sortinit}{B}
     \field{sortinithash}{B}
+    \verb{doi}
+    \verb 10.48550/arXiv.1503.05508
+    \endverb
     \verb{eprint}
     \verb 1503.05508 [cs]
     \endverb
@@ -783,8 +752,6 @@
     \strng{fullhash}{BJCI1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2020}
-    \field{labeldatesource}{}
     \field{sortinit}{B}
     \field{sortinithash}{B}
     \field{booktitle}{Tools and Algorithms for the Construction and Analysis of Systems}
@@ -853,8 +820,6 @@
     \strng{fullhash}{BKBADQHHPKRSGWT1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2021}
-    \field{labeldatesource}{}
     \field{sortinit}{B}
     \field{sortinithash}{B}
     \field{booktitle}{Proceedings of the 2021 {ACM} {SIGSAC} Conference on Computer and Communications Security}
@@ -870,7 +835,6 @@
     }
     \field{month}{11}
     \field{year}{2021}
-    \warn{\item Can't use 'location' + 'address'}
   \endentry
 
   \entry{Bill_Wagner2022-sq}{misc}{}
@@ -884,14 +848,52 @@
     \strng{fullhash}{B1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2022}
-    \field{labeldatesource}{}
     \field{sortinit}{B}
     \field{sortinithash}{B}
     \field{howpublished}{\url{https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/generics/constraints-on-type-parameters}}
     \field{note}{Accessed: 2022-12-1}
     \field{title}{Constraints on type parameters - C\# Programming Guide}
     \field{year}{2022}
+  \endentry
+
+  \entry{Binkley2007-ev}{article}{}
+    \name{author}{3}{}{%
+      {{hash=BD}{%
+         family={Binkley},
+         familyi={B\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=GN}{%
+         family={Gold},
+         familyi={G\bibinitperiod},
+         given={Nicolas},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=HM}{%
+         family={Harman},
+         familyi={H\bibinitperiod},
+         given={Mark},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BDGNHM1}
+    \strng{fullhash}{BDGNHM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \verb{doi}
+    \verb 10.1145/1217295.1217297
+    \endverb
+    \field{issn}{1049-331X, 1557-7392}
+    \field{number}{2}
+    \field{pages}{8}
+    \field{title}{An empirical study of static program slice size}
+    \field{volume}{16}
+    \field{journaltitle}{ACM Trans. Softw. Eng. Methodol.}
+    \field{month}{04}
+    \field{year}{2007}
   \endentry
 
   \entry{Bird1998-kv}{book}{}
@@ -913,8 +915,6 @@
     \strng{fullhash}{BR1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{1998}
-    \field{labeldatesource}{}
     \field{sortinit}{B}
     \field{sortinithash}{B}
     \field{isbn}{9788483221761}
@@ -944,10 +944,11 @@
     \strng{fullhash}{BJMM1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2022}
-    \field{labeldatesource}{}
     \field{sortinit}{B}
     \field{sortinithash}{B}
+    \verb{doi}
+    \verb 10.48550/arXiv.2203.11115
+    \endverb
     \verb{eprint}
     \verb 2203.11115 [cs]
     \endverb
@@ -973,8 +974,6 @@
     \strng{fullhash}{CKM1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{1992}
-    \field{labeldatesource}{}
     \field{sortinit}{C}
     \field{sortinithash}{C}
     \verb{doi}
@@ -1014,8 +1013,6 @@
     \strng{fullhash}{CATPFM1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2000}
-    \field{labeldatesource}{}
     \field{sortinit}{C}
     \field{sortinithash}{C}
     \verb{doi}
@@ -1050,8 +1047,6 @@
     \strng{fullhash}{CL1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{1987}
-    \field{labeldatesource}{}
     \field{sortinit}{C}
     \field{sortinithash}{C}
     \verb{doi}
@@ -1083,8 +1078,6 @@
     \strng{fullhash}{CS1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2023}
-    \field{labeldatesource}{}
     \field{sortinit}{C}
     \field{sortinithash}{C}
     \field{booktitle}{{IEEE} Spectrum}
@@ -1117,8 +1110,6 @@
     \strng{fullhash}{CMMTKG1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2004}
-    \field{labeldatesource}{}
     \field{sortinit}{C}
     \field{sortinithash}{C}
     \verb{doi}
@@ -1176,8 +1167,6 @@
     \strng{fullhash}{CRDAMA1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2019}
-    \field{labeldatesource}{}
     \field{sortinit}{C}
     \field{sortinithash}{C}
     \field{booktitle}{Computing and Software Science: State of the Art and Perspectives}
@@ -1213,8 +1202,6 @@
     \strng{fullhash}{CSEM1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2014}
-    \field{labeldatesource}{}
     \field{sortinit}{C}
     \field{sortinithash}{C}
     \verb{doi}
@@ -1258,8 +1245,6 @@
     \strng{fullhash}{CSEMSK1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2014}
-    \field{labeldatesource}{}
     \field{sortinit}{C}
     \field{sortinithash}{C}
     \field{booktitle}{2014 {IEEE} Symposium on Visual Languages and {Human-Centric} Computing ({{VL}/{HCC}})}
@@ -1295,8 +1280,6 @@
     \strng{fullhash}{CSWB1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2020}
-    \field{labeldatesource}{}
     \field{sortinit}{C}
     \field{sortinithash}{C}
     \verb{doi}
@@ -1357,8 +1340,6 @@
     \strng{fullhash}{CZLYCBMWCLXB1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2020}
-    \field{labeldatesource}{}
     \field{sortinit}{C}
     \field{sortinithash}{C}
     \field{booktitle}{Proceedings of the 28th International Conference on Program Comprehension}
@@ -1395,8 +1376,6 @@
     \strng{fullhash}{CA1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{1985}
-    \field{labeldatesource}{}
     \field{sortinit}{C}
     \field{sortinithash}{C}
     \field{isbn}{9780691083940}
@@ -1437,8 +1416,6 @@
     \strng{fullhash}{CSZCPG1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2013}
-    \field{labeldatesource}{}
     \field{sortinit}{C}
     \field{sortinithash}{C}
     \verb{doi}
@@ -1470,8 +1447,6 @@
     \strng{fullhash}{CDC1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2008}
-    \field{labeldatesource}{}
     \field{sortinit}{C}
     \field{sortinithash}{C}
     \field{booktitle}{2008 38th Annual Frontiers in Education Conference}
@@ -1526,8 +1501,6 @@
     \strng{fullhash}{CMASBTCDCK1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2000}
-    \field{labeldatesource}{}
     \field{sortinit}{C}
     \field{sortinithash}{C}
     \field{booktitle}{Proceedings of the {SIGCHI} conference on Human Factors in Computing Systems}
@@ -1543,7 +1516,6 @@
     }
     \field{month}{04}
     \field{year}{2000}
-    \warn{\item Can't use 'location' + 'address'}
   \endentry
 
   \entry{Crichton2021-ru}{inproceedings}{}
@@ -1574,8 +1546,6 @@
     \strng{fullhash}{CWAMHP1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2021}
-    \field{labeldatesource}{}
     \field{sortinit}{C}
     \field{sortinithash}{C}
     \field{booktitle}{Proceedings of the 2021 {CHI} Conference on Human Factors in Computing Systems}
@@ -1592,7 +1562,6 @@
     }
     \field{month}{05}
     \field{year}{2021}
-    \warn{\item Can't use 'location' + 'address'}
   \endentry
 
   \entry{Daly2011-is}{article}{}
@@ -1611,8 +1580,6 @@
     \strng{fullhash}{DT1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2011}
-    \field{labeldatesource}{}
     \field{sortinit}{D}
     \field{sortinithash}{D}
     \field{issn}{1937-4771}
@@ -1623,46 +1590,6 @@
     \field{journaltitle}{Journal of Computing Sciences in Colleges}
     \field{month}{01}
     \field{year}{2011}
-  \endentry
-
-  \entry{Damas1982-sc}{inproceedings}{}
-    \name{author}{2}{}{%
-      {{hash=DL}{%
-         family={Damas},
-         familyi={D\bibinitperiod},
-         given={Luis},
-         giveni={L\bibinitperiod},
-      }}%
-      {{hash=MR}{%
-         family={Milner},
-         familyi={M\bibinitperiod},
-         given={Robin},
-         giveni={R\bibinitperiod},
-      }}%
-    }
-    \list{publisher}{1}{%
-      {ACM Press}%
-    }
-    \strng{namehash}{DLMR1}
-    \strng{fullhash}{DLMR1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{labelyear}{1982}
-    \field{extradate}{1}
-    \field{labeldatesource}{}
-    \field{sortinit}{D}
-    \field{sortinithash}{D}
-    \field{booktitle}{Proceedings of the 9th {ACM} {SIGPLAN}-{SIGACT} symposium on Principles of programming languages - {POPL} '82}
-    \verb{doi}
-    \verb 10.1145/582153.582176
-    \endverb
-    \field{isbn}{9780897910651}
-    \field{pages}{207\bibrangedash 212}
-    \field{title}{Principal type-schemes for functional programs}
-    \list{location}{1}{%
-      {Albuquerque, Mexico}%
-    }
-    \field{year}{1982}
   \endentry
 
   \entry{Damas1982-zw}{inproceedings}{}
@@ -1687,9 +1614,6 @@
     \strng{fullhash}{DLMR1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{1982}
-    \field{extradate}{2}
-    \field{labeldatesource}{}
     \field{sortinit}{D}
     \field{sortinithash}{D}
     \field{booktitle}{Proceedings of the 9th {ACM} {SIGPLAN-SIGACT} symposium on Principles of programming languages}
@@ -1705,7 +1629,6 @@
     }
     \field{month}{01}
     \field{year}{1982}
-    \warn{\item Can't use 'location' + 'address'}
   \endentry
 
   \entry{Davie1992-xv}{book}{}
@@ -1727,8 +1650,6 @@
     \strng{fullhash}{DAJT1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{1992}
-    \field{labeldatesource}{}
     \field{sortinit}{D}
     \field{sortinithash}{D}
     \field{isbn}{9780521277242}
@@ -1750,8 +1671,6 @@
     \strng{fullhash}{DB1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{1970}
-    \field{labeldatesource}{}
     \field{sortinit}{D}
     \field{sortinithash}{D}
     \field{pages}{1\bibrangedash 38}
@@ -1795,8 +1714,6 @@
     \strng{fullhash}{ESHSRRSA1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2014}
-    \field{labeldatesource}{}
     \field{sortinit}{E}
     \field{sortinithash}{E}
     \field{booktitle}{Proceedings of the 36th International Conference on Software Engineering}
@@ -1812,7 +1729,6 @@
     }
     \field{month}{05}
     \field{year}{2014}
-    \warn{\item Can't use 'location' + 'address'}
   \endentry
 
   \entry{Fausak2022-zf}{misc}{}
@@ -1828,8 +1744,6 @@
     \strng{fullhash}{FT1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2022}
-    \field{labeldatesource}{}
     \field{sortinit}{F}
     \field{sortinithash}{F}
     \field{howpublished}{\url{https://taylor.fausak.me/2022/11/18/haskell-survey-results/}}
@@ -1858,10 +1772,11 @@
     \strng{fullhash}{FKF1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2002}
-    \field{labeldatesource}{}
     \field{sortinit}{F}
     \field{sortinithash}{F}
+    \verb{doi}
+    \verb 10.1017/S0956796802004380
+    \endverb
     \field{issn}{0956-7968}
     \field{number}{4-5}
     \field{pages}{295\bibrangedash 357}
@@ -1891,8 +1806,6 @@
     \strng{fullhash}{FK1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2023}
-    \field{labeldatesource}{}
     \field{sortinit}{F}
     \field{sortinithash}{F}
     \verb{eprint}
@@ -1929,8 +1842,6 @@
     \strng{fullhash}{FSDTSP1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2021}
-    \field{labeldatesource}{}
     \field{sortinit}{F}
     \field{sortinithash}{F}
     \field{title}{Interactive Haskell Type Inference Exploration (Extended Abstract)}
@@ -1980,8 +1891,6 @@
     \strng{fullhash}{GLHAIMHMMMMM1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2022}
-    \field{labeldatesource}{}
     \field{sortinit}{G}
     \field{sortinithash}{G}
     \verb{doi}
@@ -2010,7 +1919,6 @@
     \strng{fullhash}{GB1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labeldatesource}{nodate}
     \field{sortinit}{G}
     \field{sortinithash}{G}
     \field{howpublished}{\url{https://www.haskell.org/ghc/}}
@@ -2043,8 +1951,6 @@
     \strng{fullhash}{GZBCBET1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2017}
-    \field{labeldatesource}{}
     \field{sortinit}{G}
     \field{sortinithash}{G}
     \field{booktitle}{2017 {IEEE}/{ACM} 39th International Conference on Software Engineering ({{ICSE}})}
@@ -2068,13 +1974,12 @@
     \strng{fullhash}{G1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2022}
-    \field{labeldatesource}{}
     \field{sortinit}{G}
     \field{sortinithash}{G}
+    \field{booktitle}{{GitHub}}
     \field{howpublished}{\url{https://github.com/topics/haskell}}
     \field{note}{Accessed: 2022-12-1}
-    \field{title}{{GitHub} Topic: Haskell}
+    \field{title}{{GitHub}: Top Ranking Haskell Projects By Popularity}
     \field{year}{2022}
   \endentry
 
@@ -2089,7 +1994,6 @@
     \strng{fullhash}{G2}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labeldatesource}{nodate}
     \field{sortinit}{G}
     \field{sortinithash}{G}
     \field{title}{{OR-Tools}}
@@ -2117,7 +2021,6 @@
     \strng{fullhash}{GRTIL1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labeldatesource}{nodate}
     \field{sortinit}{G}
     \field{sortinithash}{G}
     \field{howpublished}{\url{https://go.dev/blog/intro-generics}}
@@ -2144,8 +2047,6 @@
     \strng{fullhash}{HCWJB1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2004}
-    \field{labeldatesource}{}
     \field{sortinit}{H}
     \field{sortinithash}{H}
     \verb{doi}
@@ -2181,8 +2082,6 @@
     \strng{fullhash}{HJ1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2020}
-    \field{labeldatesource}{}
     \field{sortinit}{H}
     \field{sortinithash}{H}
     \field{issn}{1613-0073}
@@ -2192,6 +2091,33 @@
     \field{journaltitle}{CEUR Workshop Proc.}
     \field{month}{10}
     \field{year}{2020}
+  \endentry
+
+  \entry{Hage2023-kk}{misc}{}
+    \name{author}{2}{}{%
+      {{hash=HJ}{%
+         family={Hage},
+         familyi={H\bibinitperiod},
+         given={Jurriaan},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=H}{%
+         family={{Helium Contributors}},
+         familyi={H\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Helium4Haskell}%
+    }
+    \strng{namehash}{HJH1}
+    \strng{fullhash}{HJH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{title}{Haskell Helium - A Haskell Compiler}
+    \field{month}{05}
+    \field{year}{2023}
   \endentry
 
   \entry{Hamari2014-mc}{inproceedings}{}
@@ -2222,8 +2148,6 @@
     \strng{fullhash}{HJKJSH1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2014}
-    \field{labeldatesource}{}
     \field{sortinit}{H}
     \field{sortinithash}{H}
     \field{booktitle}{2014 47th Hawaii International Conference on System Sciences}
@@ -2236,16 +2160,6 @@
     \field{title}{Does Gamification Work? -- A Literature Review of Empirical Studies on Gamification}
     \field{month}{01}
     \field{year}{2014}
-  \endentry
-
-  \entry{noauthor_2023-ot}{misc}{}
-    \field{labeltitlesource}{title}
-    \field{labelyear}{2023}
-    \field{labeldatesource}{}
-    \field{sortinit}{H}
-    \field{sortinithash}{H}
-    \field{title}{Haskell Language Server}
-    \field{year}{2023}
   \endentry
 
   \entry{He2014-vp}{inproceedings}{}
@@ -2284,8 +2198,6 @@
     \strng{fullhash}{HJBMALVAd1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2014}
-    \field{labeldatesource}{}
     \field{sortinit}{H}
     \field{sortinithash}{H}
     \field{booktitle}{Proceedings of the First International Workshop on Gamification for Information Retrieval}
@@ -2301,46 +2213,6 @@
     }
     \field{month}{04}
     \field{year}{2014}
-    \warn{\item Can't use 'location' + 'address'}
-  \endentry
-
-  \entry{Heeren2003-mz}{article}{}
-    \name{author}{3}{}{%
-      {{hash=HB}{%
-         family={Heeren},
-         familyi={H\bibinitperiod},
-         given={B},
-         giveni={B},
-      }}%
-      {{hash=LD}{%
-         family={Leijen},
-         familyi={L\bibinitperiod},
-         given={D},
-         giveni={D},
-      }}%
-      {{hash=vIA}{%
-         prefix={van},
-         prefixi={v\bibinitperiod},
-         family={IJzendoorn},
-         familyi={I\bibinitperiod},
-         given={A},
-         giveni={A},
-      }}%
-    }
-    \list{publisher}{1}{%
-      {dl.acm.org}%
-    }
-    \strng{namehash}{HBLDIAv1}
-    \strng{fullhash}{HBLDIAv1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{labelyear}{2003}
-    \field{labeldatesource}{}
-    \field{sortinit}{H}
-    \field{sortinithash}{H}
-    \field{title}{Helium, for learning Haskell}
-    \field{journaltitle}{SIGPLAN workshop on Haskell}
-    \field{year}{2003}
   \endentry
 
   \entry{Heeren2003-kd}{inproceedings}{}
@@ -2371,8 +2243,6 @@
     \strng{fullhash}{HBLDVIA1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2003}
-    \field{labeldatesource}{}
     \field{sortinit}{H}
     \field{sortinithash}{H}
     \field{booktitle}{Proceedings of the 2003 {ACM} {SIGPLAN} workshop on Haskell}
@@ -2389,26 +2259,20 @@
     \field{year}{2003}
   \endentry
 
-  \entry{Helium4Haskell2023-kk}{misc}{}
+  \entry{HLS-Developers2023-ot}{misc}{}
     \name{author}{1}{}{%
       {{hash=H}{%
-         family={{Helium4Haskell}},
+         family={{HLS-Developers}},
          familyi={H\bibinitperiod},
       }}%
-    }
-    \list{publisher}{1}{%
-      {Helium4Haskell}%
     }
     \strng{namehash}{H1}
     \strng{fullhash}{H1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2023}
-    \field{labeldatesource}{}
     \field{sortinit}{H}
     \field{sortinithash}{H}
-    \field{title}{Haskell Helium}
-    \field{month}{05}
+    \field{title}{Haskell Language Server - {IDE} support for Haskell via language server}
     \field{year}{2023}
   \endentry
 
@@ -2440,8 +2304,6 @@
     \strng{fullhash}{HZHJWM1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2015}
-    \field{labeldatesource}{}
     \field{sortinit}{H}
     \field{sortinithash}{H}
     \verb{doi}
@@ -2489,8 +2351,6 @@
     \strng{fullhash}{HPHJPJSWP1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2007}
-    \field{labeldatesource}{}
     \field{sortinit}{H}
     \field{sortinithash}{H}
     \field{booktitle}{Proceedings of the third {ACM} {SIGPLAN} conference on History of programming languages}
@@ -2539,8 +2399,6 @@
     \strng{fullhash}{IANNANMSJ1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2020}
-    \field{labeldatesource}{}
     \field{sortinit}{I}
     \field{sortinithash}{I}
     \verb{eprint}
@@ -2567,12 +2425,33 @@
     \strng{fullhash}{J1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{1994}
-    \field{labeldatesource}{}
     \field{sortinit}{J}
     \field{sortinithash}{J}
     \field{title}{Usability Engineering}
     \field{year}{1994}
+  \endentry
+
+  \entry{Java_Developers2023-an}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=J}{%
+         family={{Java Developers}},
+         familyi={J\bibinitperiod},
+      }}%
+    }
+    \list{language}{1}{%
+      {en}%
+    }
+    \strng{namehash}{J2}
+    \strng{fullhash}{J2}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{J}
+    \field{sortinithash}{J}
+    \field{booktitle}{Java Language Documentation}
+    \field{howpublished}{\url{https://docs.oracle.com/en/java/javase/22/language/local-variable-type-inference.html}}
+    \field{note}{Accessed: 2024-4-16}
+    \field{title}{Java - Local Variable Type Inference}
+    \field{year}{2023}
   \endentry
 
   \entry{Jbara2015-gr}{inproceedings}{}
@@ -2594,8 +2473,6 @@
     \strng{fullhash}{JAFDG1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2015}
-    \field{labeldatesource}{}
     \field{sortinit}{J}
     \field{sortinithash}{J}
     \field{booktitle}{2015 {IEEE} 23rd International Conference on Program Comprehension}
@@ -2636,8 +2513,6 @@
     \strng{fullhash}{JSVDBKVDHG1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{1993}
-    \field{labeldatesource}{}
     \field{sortinit}{J}
     \field{sortinithash}{J}
     \verb{doi}
@@ -2651,6 +2526,46 @@
     \field{journaltitle}{J. Funct. Programming}
     \field{month}{01}
     \field{year}{1993}
+  \endentry
+
+  \entry{Jun2002-xp}{article}{}
+    \name{author}{3}{}{%
+      {{hash=JY}{%
+         family={Jun},
+         familyi={J\bibinitperiod},
+         given={Yang},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=MG}{%
+         family={Michaelson},
+         familyi={M\bibinitperiod},
+         given={Greg},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=TP}{%
+         family={Trinder},
+         familyi={T\bibinitperiod},
+         given={Phil},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{JYMGTP1}
+    \strng{fullhash}{JYMGTP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{J}
+    \field{sortinithash}{J}
+    \verb{doi}
+    \verb 10.1093/comjnl/45.4.436
+    \endverb
+    \field{issn}{0010-4620, 1460-2067}
+    \field{number}{4}
+    \field{pages}{436\bibrangedash 452}
+    \field{title}{Explaining Polymorphic Types}
+    \field{volume}{45}
+    \field{journaltitle}{Comput. J.}
+    \field{month}{04}
+    \field{year}{2002}
   \endentry
 
   \entry{Jun2000-yu}{inproceedings}{}
@@ -2678,9 +2593,6 @@
     \strng{fullhash}{JYMGTP1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2000}
-    \field{extradate}{1}
-    \field{labeldatesource}{}
     \field{sortinit}{J}
     \field{sortinithash}{J}
     \field{booktitle}{8th Annual Conference on the Teaching of Computing}
@@ -2716,9 +2628,6 @@
     \strng{fullhash}{JYMGTP1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2000}
-    \field{extradate}{2}
-    \field{labeldatesource}{}
     \field{sortinit}{J}
     \field{sortinithash}{J}
     \field{booktitle}{{PPIG}}
@@ -2728,48 +2637,6 @@
       {Cozenza Italy}%
     }
     \field{year}{2000}
-  \endentry
-
-  \entry{Jun2002-xp}{article}{}
-    \name{author}{3}{}{%
-      {{hash=JY}{%
-         family={Jun},
-         familyi={J\bibinitperiod},
-         given={Yang},
-         giveni={Y\bibinitperiod},
-      }}%
-      {{hash=MG}{%
-         family={Michaelson},
-         familyi={M\bibinitperiod},
-         given={Greg},
-         giveni={G\bibinitperiod},
-      }}%
-      {{hash=TP}{%
-         family={Trinder},
-         familyi={T\bibinitperiod},
-         given={Phil},
-         giveni={P\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{JYMGTP1}
-    \strng{fullhash}{JYMGTP1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{labelyear}{2002}
-    \field{labeldatesource}{}
-    \field{sortinit}{J}
-    \field{sortinithash}{J}
-    \verb{doi}
-    \verb 10.1093/comjnl/45.4.436
-    \endverb
-    \field{issn}{0010-4620, 1460-2067}
-    \field{number}{4}
-    \field{pages}{436\bibrangedash 452}
-    \field{title}{Explaining Polymorphic Types}
-    \field{volume}{45}
-    \field{journaltitle}{Comput. J.}
-    \field{month}{04}
-    \field{year}{2002}
   \endentry
 
   \entry{Jung2000-oc}{article}{}
@@ -2791,8 +2658,6 @@
     \strng{fullhash}{JYMG1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2000}
-    \field{labeldatesource}{}
     \field{sortinit}{J}
     \field{sortinithash}{J}
     \verb{doi}
@@ -2818,12 +2683,10 @@
     \list{publisher}{1}{%
       {Association for Computing Machinery}%
     }
-    \strng{namehash}{J2}
-    \strng{fullhash}{J2}
+    \strng{namehash}{J3}
+    \strng{fullhash}{J3}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2021}
-    \field{labeldatesource}{}
     \field{sortinit}{J}
     \field{sortinithash}{J}
     \field{booktitle}{Extended Abstracts of the 2021 {CHI} Conference on Human Factors in Computing Systems}
@@ -2856,8 +2719,6 @@
     \strng{fullhash}{KBW1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{1978}
-    \field{labeldatesource}{}
     \field{sortinit}{K}
     \field{sortinithash}{K}
     \field{title}{{UNIX} for Beginners}
@@ -2887,8 +2748,6 @@
     \strng{fullhash}{KSNC1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{extradate}{1}
-    \field{labeldatesource}{nodate}
     \field{sortinit}{K}
     \field{sortinithash}{K}
     \field{booktitle}{The Rust Programming Language}
@@ -2919,8 +2778,6 @@
     \strng{fullhash}{KSNC1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{extradate}{2}
-    \field{labeldatesource}{nodate}
     \field{sortinit}{K}
     \field{sortinithash}{K}
     \field{booktitle}{The Rust Programming Language}
@@ -2966,8 +2823,6 @@
     \strng{fullhash}{KSRRSAHSTE1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2012}
-    \field{labeldatesource}{}
     \field{sortinit}{K}
     \field{sortinithash}{K}
     \field{booktitle}{2012 20th {IEEE} International Conference on Program Comprehension ({{ICPC}})}
@@ -3002,8 +2857,6 @@
     \strng{fullhash}{KAJMBA1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2009}
-    \field{labeldatesource}{}
     \field{sortinit}{K}
     \field{sortinithash}{K}
     \field{booktitle}{Proceedings of the {SIGCHI} Conference on Human Factors in Computing Systems}
@@ -3040,8 +2893,6 @@
     \strng{fullhash}{LSMNS1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2016}
-    \field{labeldatesource}{}
     \field{sortinit}{L}
     \field{sortinithash}{L}
     \verb{doi}
@@ -3078,8 +2929,6 @@
     \strng{fullhash}{LOYK1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{1998}
-    \field{labeldatesource}{}
     \field{sortinit}{L}
     \field{sortinithash}{L}
     \verb{doi}
@@ -3132,8 +2981,6 @@
     \strng{fullhash}{LBSFMGDCC1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2007}
-    \field{labeldatesource}{}
     \field{sortinit}{L}
     \field{sortinithash}{L}
     \field{booktitle}{Proceedings of the 28th {ACM} {SIGPLAN} Conference on Programming Language Design and Implementation}
@@ -3173,8 +3020,6 @@
     \strng{fullhash}{LHFC1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{1995}
-    \field{labeldatesource}{}
     \field{sortinit}{L}
     \field{sortinithash}{L}
     \field{booktitle}{Proceedings of the {SIGCHI} Conference on Human Factors in Computing Systems}
@@ -3190,7 +3035,6 @@
     }
     \field{month}{05}
     \field{year}{1995}
-    \warn{\item Can't use 'location' + 'address'}
   \endentry
 
   \entry{Liffiton2008-mx}{article}{}
@@ -3215,8 +3059,6 @@
     \strng{fullhash}{LMHSKA1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2008}
-    \field{labeldatesource}{}
     \field{sortinit}{L}
     \field{sortinithash}{L}
     \verb{doi}
@@ -3263,8 +3105,6 @@
     \strng{fullhash}{LMHPAMAMSJ1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2016}
-    \field{labeldatesource}{}
     \field{sortinit}{L}
     \field{sortinithash}{L}
     \verb{doi}
@@ -3278,20 +3118,6 @@
     \field{journaltitle}{Constraints}
     \field{month}{04}
     \field{year}{2016}
-  \endentry
-
-  \entry{noauthor_undated-an}{article}{}
-    \list{language}{1}{%
-      {en}%
-    }
-    \list{publisher}{1}{%
-      {March2024}%
-    }
-    \field{labeltitlesource}{title}
-    \field{labeldatesource}{nodate}
-    \field{sortinit}{L}
-    \field{sortinithash}{L}
-    \field{title}{Local Variable Type Inference}
   \endentry
 
   \entry{Marques-Silva2023-nk}{incollection}{}
@@ -3324,8 +3150,6 @@
     \strng{fullhash}{MSJ1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2023}
-    \field{labeldatesource}{}
     \field{sortinit}{M}
     \field{sortinithash}{M}
     \field{booktitle}{Reasoning Web. Causality, Explanations and Declarative Knowledge: 18th International Summer School 2022, Berlin, Germany, September 27--30, 2022, Tutorial Lectures}
@@ -3378,12 +3202,9 @@
       {Association for Computing Machinery}%
     }
     \strng{namehash}{MC+1}
-    \strng{fullhash}{MCHSRRTESA1}
+    \strng{fullhash}{MCHSRRTESA2}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2012}
-    \field{extradate}{1}
-    \field{labeldatesource}{}
     \field{sortinit}{M}
     \field{sortinithash}{M}
     \field{booktitle}{Proceedings of the {ACM} international conference on Object oriented programming systems languages and applications}
@@ -3401,7 +3222,7 @@
     \field{year}{2012}
   \endentry
 
-  \entry{Mayer2012-qc}{report}{}
+  \entry{Mayer2012-ko}{article}{}
     \name{author}{5}{}{%
       {{hash=MC}{%
          family={Mayer},
@@ -3418,41 +3239,33 @@
       {{hash=RR}{%
          family={Robbes},
          familyi={R\bibinitperiod},
-         given={Romain},
-         giveni={R\bibinitperiod},
+         given={R},
+         giveni={R},
       }}%
       {{hash=TE}{%
          family={Tanter},
          familyi={T\bibinitperiod},
-         given={{\'E}ric},
-         giveni={{\'E}\bibinitperiod},
+         given={{\'E}},
+         giveni={{\'E}},
       }}%
       {{hash=SA}{%
          family={Stefik},
          familyi={S\bibinitperiod},
-         given={Andreas},
-         giveni={A\bibinitperiod},
+         given={A},
+         giveni={A},
       }}%
     }
     \strng{namehash}{MC+1}
     \strng{fullhash}{MCHSRRTESA1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2012}
-    \field{extradate}{2}
-    \field{labeldatesource}{}
     \field{sortinit}{M}
     \field{sortinithash}{M}
-    \field{pages}{20}
-    \field{title}{Static type systems (sometimes) have a positive impact on the usability of undocumented software: An empirical evaluation}
-    \list{institution}{1}{%
-      {Citeseer}%
-    }
-    \field{type}{techreport}
+    \field{title}{Static type systems ( sometimes ) have a positive impact on the usability of undocumented software : An empirical evaluation}
     \field{year}{2012}
   \endentry
 
-  \entry{McAdam2002-vb}{article}{}
+  \entry{McAdam2002-vb}{thesis}{}
     \name{author}{1}{}{%
       {{hash=MB}{%
          family={McAdam},
@@ -3461,15 +3274,25 @@
          giveni={B},
       }}%
     }
+    \name{editor}{1}{}{%
+      {{hash=GS}{%
+         family={Gilmore},
+         familyi={G\bibinitperiod},
+         given={Stephen},
+         giveni={S\bibinitperiod},
+      }}%
+    }
     \strng{namehash}{MB1}
     \strng{fullhash}{MB1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2002}
-    \field{labeldatesource}{}
     \field{sortinit}{M}
     \field{sortinithash}{M}
     \field{title}{Repairing type errors in functional programs}
+    \list{institution}{1}{%
+      {University of Edinburgh}%
+    }
+    \field{type}{phdthesis}
     \field{month}{07}
     \field{year}{2002}
   \endentry
@@ -3496,8 +3319,6 @@
     \strng{fullhash}{MLARAS1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2013}
-    \field{labeldatesource}{}
     \field{sortinit}{M}
     \field{sortinithash}{M}
     \field{booktitle}{Proceedings of the 2013 {ACM} {SIGPLAN} international conference on Object oriented programming systems languages \& applications}
@@ -3515,6 +3336,25 @@
     \field{year}{2013}
   \endentry
 
+  \entry{Microsoft2022-tl}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=M}{%
+         family={{Microsoft}},
+         familyi={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{M1}
+    \strng{fullhash}{M1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{howpublished}{\url{https://www.typescriptlang.org/docs/handbook/2/generics.html}}
+    \field{note}{Accessed: 2022-12-1}
+    \field{title}{Documentation - Generics}
+    \field{year}{2022}
+  \endentry
+
   \entry{Microsoft_undated-ts}{misc}{}
     \name{author}{1}{}{%
       {{hash=M}{%
@@ -3526,8 +3366,6 @@
     \strng{fullhash}{M1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{extradate}{1}
-    \field{labeldatesource}{nodate}
     \field{sortinit}{M}
     \field{sortinithash}{M}
     \field{howpublished}{\url{https://www.typescriptlang.org/}}
@@ -3546,34 +3384,11 @@
     \strng{fullhash}{M1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{extradate}{2}
-    \field{labeldatesource}{nodate}
     \field{sortinit}{M}
     \field{sortinithash}{M}
     \field{howpublished}{\url{https://code.visualstudio.com/}}
     \field{note}{Accessed: 2022-12-12}
     \field{title}{Visual Studio Code - Code Editing. Redefined}
-  \endentry
-
-  \entry{Microsoft2022-tl}{misc}{}
-    \name{author}{1}{}{%
-      {{hash=M}{%
-         family={{Microsoft}},
-         familyi={M\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{M1}
-    \strng{fullhash}{M1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{labelyear}{2022}
-    \field{labeldatesource}{}
-    \field{sortinit}{M}
-    \field{sortinithash}{M}
-    \field{howpublished}{\url{https://www.typescriptlang.org/docs/handbook/2/generics.html}}
-    \field{note}{Accessed: 2022-12-1}
-    \field{title}{Documentation - Generics}
-    \field{year}{2022}
   \endentry
 
   \entry{Mitchell_undated-fb}{misc}{}
@@ -3589,7 +3404,6 @@
     \strng{fullhash}{MN1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labeldatesource}{nodate}
     \field{sortinit}{M}
     \field{sortinithash}{M}
     \field{booktitle}{Hoogle}
@@ -3626,8 +3440,6 @@
     \strng{fullhash}{MALGLJ1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2019}
-    \field{labeldatesource}{}
     \field{sortinit}{M}
     \field{sortinithash}{M}
     \field{booktitle}{Proceedings of the 12th {ACM} {SIGPLAN} International Symposium on Haskell}
@@ -3643,7 +3455,6 @@
     }
     \field{month}{08}
     \field{year}{2019}
-    \warn{\item Can't use 'location' + 'address'}
   \endentry
 
   \entry{Montero2010-uh}{inproceedings}{}
@@ -3680,8 +3491,6 @@
     \strng{fullhash}{MSDPDDAI1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2010}
-    \field{labeldatesource}{}
     \field{sortinit}{M}
     \field{sortinithash}{M}
     \field{booktitle}{{IEEE} {EDUCON} 2010 Conference}
@@ -3724,8 +3533,6 @@
     \strng{fullhash}{MBAPJFKAJ1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2004}
-    \field{labeldatesource}{}
     \field{sortinit}{M}
     \field{sortinithash}{M}
     \verb{doi}
@@ -3755,7 +3562,6 @@
     \strng{fullhash}{m1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labeldatesource}{nodate}
     \field{sortinit}{M}
     \field{sortinithash}{M}
     \field{howpublished}{\url{http://mypy-lang.org/}}
@@ -3797,8 +3603,6 @@
     \strng{fullhash}{NTDNDDJKS1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2017}
-    \field{labeldatesource}{}
     \field{sortinit}{N}
     \field{sortinithash}{N}
     \field{booktitle}{Proceedings of the 2017 11th Joint Meeting on Foundations of Software Engineering}
@@ -3812,7 +3616,6 @@
     }
     \field{month}{08}
     \field{year}{2017}
-    \warn{\item Can't use 'location' + 'address'}
   \endentry
 
   \entry{Noone2018-wl}{article}{}
@@ -3834,8 +3637,6 @@
     \strng{fullhash}{NMMA1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2018}
-    \field{labeldatesource}{}
     \field{sortinit}{N}
     \field{sortinithash}{N}
     \verb{doi}
@@ -3862,8 +3663,6 @@
     \strng{fullhash}{O1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2022}
-    \field{labeldatesource}{}
     \field{sortinit}{O}
     \field{sortinithash}{O}
     \field{howpublished}{\url{https://openreplay.com/}}
@@ -3883,8 +3682,6 @@
     \strng{fullhash}{O2}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2022}
-    \field{labeldatesource}{}
     \field{sortinit}{O}
     \field{sortinithash}{O}
     \field{howpublished}{\url{https://docs.oracle.com/javase/tutorial/java/generics/boundedTypeParams.html}}
@@ -3921,8 +3718,6 @@
     \strng{fullhash}{OJVMHO1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2015}
-    \field{labeldatesource}{}
     \field{sortinit}{O}
     \field{sortinithash}{O}
     \field{booktitle}{Proceedings of the 33rd Annual {ACM} Conference on Human Factors in Computing Systems}
@@ -3938,7 +3733,6 @@
     }
     \field{month}{04}
     \field{year}{2015}
-    \warn{\item Can't use 'location' + 'address'}
   \endentry
 
   \entry{Pavlinovic2015-ke}{inproceedings}{}
@@ -3969,8 +3763,6 @@
     \strng{fullhash}{PZKTWT1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2015}
-    \field{labeldatesource}{}
     \field{sortinit}{P}
     \field{sortinithash}{P}
     \field{booktitle}{Proceedings of the 20th {ACM} {SIGPLAN} International Conference on Functional Programming}
@@ -4016,8 +3808,6 @@
     \strng{fullhash}{PNSJAS1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2020}
-    \field{labeldatesource}{}
     \field{sortinit}{P}
     \field{sortinithash}{P}
     \field{booktitle}{Proceedings of the 28th International Conference on Program Comprehension}
@@ -4049,16 +3839,21 @@
          giveni={C\bibinitperiod},
       }}%
     }
+    \list{publisher}{1}{%
+      {ACM}%
+    }
     \strng{namehash}{PHOC1}
     \strng{fullhash}{PHOC1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2020}
-    \field{labeldatesource}{}
     \field{sortinit}{P}
     \field{sortinithash}{P}
+    \field{booktitle}{Human Aspects of Types and Reasoning Assistants 2020}
     \field{pages}{10}
     \field{title}{Hazel Tutor: Guiding Novices Through {Type-Driven} Development Strategies}
+    \list{location}{1}{%
+      {Online}%
+    }
     \field{year}{2020}
   \endentry
 
@@ -4114,8 +3909,6 @@
     \strng{fullhash}{PJPRMKHPAHJSNCM1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2017}
-    \field{labeldatesource}{}
     \field{sortinit}{P}
     \field{sortinithash}{P}
     \field{booktitle}{Proceedings of the 2017 {ACM} Conference on International Computing Education Research}
@@ -4155,8 +3948,6 @@
     \strng{fullhash}{PLTWF1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{1998}
-    \field{labeldatesource}{}
     \field{sortinit}{P}
     \field{sortinithash}{P}
     \verb{doi}
@@ -4188,8 +3979,6 @@
     \strng{fullhash}{PL1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2000}
-    \field{labeldatesource}{}
     \field{sortinit}{P}
     \field{sortinithash}{P}
     \field{number}{10}
@@ -4219,8 +4008,6 @@
     \strng{fullhash}{PAMSJ1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2013}
-    \field{labeldatesource}{}
     \field{sortinit}{P}
     \field{sortinithash}{P}
     \verb{doi}
@@ -4267,8 +4054,6 @@
     \strng{fullhash}{RBPDDPFV1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2017}
-    \field{labeldatesource}{}
     \field{sortinit}{R}
     \field{sortinithash}{R}
     \verb{doi}
@@ -4319,8 +4104,6 @@
     \strng{fullhash}{RDMJSCLMEKBW1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{1978}
-    \field{labeldatesource}{}
     \field{sortinit}{R}
     \field{sortinithash}{R}
     \verb{doi}
@@ -4366,8 +4149,6 @@
     \strng{fullhash}{ST1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2012}
-    \field{labeldatesource}{}
     \field{sortinit}{S}
     \field{sortinithash}{S}
     \field{booktitle}{Trends in Functional Programming}
@@ -4421,8 +4202,6 @@
     \strng{fullhash}{SELSHCKWWJR1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2017}
-    \field{labeldatesource}{}
     \field{sortinit}{S}
     \field{sortinithash}{S}
     \verb{doi}
@@ -4456,8 +4235,6 @@
     \strng{fullhash}{SSWM1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{1965}
-    \field{labeldatesource}{}
     \field{sortinit}{S}
     \field{sortinithash}{S}
     \field{issn}{0006-3444, 1464-3510}
@@ -4504,8 +4281,6 @@
     \strng{fullhash}{SRRdOBLdFTVMBAAF1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2014}
-    \field{labeldatesource}{}
     \field{sortinit}{S}
     \field{sortinithash}{S}
     \field{booktitle}{2014 {IEEE} Frontiers in Education Conference ({FIE}) Proceedings}
@@ -4531,8 +4306,6 @@
     \strng{fullhash}{S1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2010}
-    \field{labeldatesource}{}
     \field{sortinit}{S}
     \field{sortinithash}{S}
     \field{title}{Haskell 2010 Language Report}
@@ -4551,8 +4324,6 @@
     \strng{fullhash}{S2}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2022}
-    \field{labeldatesource}{}
     \field{sortinit}{S}
     \field{sortinithash}{S}
     \field{howpublished}{\url{https://survey.stackoverflow.co/2022/}}
@@ -4575,8 +4346,6 @@
     \strng{fullhash}{S2}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2023}
-    \field{labeldatesource}{}
     \field{sortinit}{S}
     \field{sortinithash}{S}
     \field{booktitle}{Stack Overflow}
@@ -4614,8 +4383,6 @@
     \strng{fullhash}{SPJSMWJ1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2003}
-    \field{labeldatesource}{}
     \field{sortinit}{S}
     \field{sortinithash}{S}
     \field{booktitle}{Proceedings of the {ACM} {SIGPLAN} workshop on Haskell - Haskell '03}
@@ -4659,8 +4426,6 @@
     \strng{fullhash}{SKKTKK1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2019}
-    \field{labeldatesource}{}
     \field{sortinit}{S}
     \field{sortinithash}{S}
     \field{booktitle}{2019 {IEEE} 24th Pacific Rim International Symposium on Dependable Computing ({PRDC})}
@@ -4697,8 +4462,6 @@
     \strng{fullhash}{TFDTB1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2001}
-    \field{labeldatesource}{}
     \field{sortinit}{T}
     \field{sortinithash}{T}
     \verb{doi}
@@ -4742,8 +4505,6 @@
     \strng{fullhash}{TVUMSIV1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2015}
-    \field{labeldatesource}{}
     \field{sortinit}{T}
     \field{sortinithash}{T}
     \verb{doi}
@@ -4771,7 +4532,6 @@
     \strng{fullhash}{T1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labeldatesource}{nodate}
     \field{sortinit}{T}
     \field{sortinithash}{T}
     \field{booktitle}{The {TypeScript} Handbook}
@@ -4793,8 +4553,6 @@
     \strng{fullhash}{WJ1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2018}
-    \field{labeldatesource}{}
     \field{sortinit}{W}
     \field{sortinithash}{W}
     \verb{eprint}
@@ -4823,8 +4581,6 @@
     \strng{fullhash}{WM1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{1986}
-    \field{labeldatesource}{}
     \field{sortinit}{W}
     \field{sortinithash}{W}
     \field{booktitle}{Proceedings of the 13th {ACM} {SIGACT-SIGPLAN} symposium on Principles of programming languages}
@@ -4840,7 +4596,6 @@
     }
     \field{month}{01}
     \field{year}{1986}
-    \warn{\item Can't use 'location' + 'address'}
   \endentry
 
   \entry{Wang2015-rs}{inproceedings}{}
@@ -4880,8 +4635,6 @@
     \strng{fullhash}{WBCLMWCZXB1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2015}
-    \field{labeldatesource}{}
     \field{sortinit}{W}
     \field{sortinithash}{W}
     \verb{doi}
@@ -4906,8 +4659,6 @@
     \strng{fullhash}{WJB1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{1999}
-    \field{labeldatesource}{}
     \field{sortinit}{W}
     \field{sortinithash}{W}
     \verb{doi}
@@ -4945,8 +4696,6 @@
     \strng{fullhash}{WJCVS1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2011}
-    \field{labeldatesource}{}
     \field{sortinit}{W}
     \field{sortinithash}{W}
     \field{booktitle}{Practical Aspects of Declarative Languages}
@@ -4977,8 +4726,6 @@
     \strng{fullhash}{WBCS1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2017}
-    \field{labeldatesource}{}
     \field{sortinit}{W}
     \field{sortinithash}{W}
     \verb{doi}
@@ -5026,8 +4773,6 @@
     \strng{fullhash}{XZLPZXXB1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2016}
-    \field{labeldatesource}{}
     \field{sortinit}{X}
     \field{sortinithash}{X}
     \field{booktitle}{Proceedings of the 2016 24th {ACM} {SIGSOFT} International Symposium on Foundations of Software Engineering}
@@ -5079,8 +4824,6 @@
     \strng{fullhash}{YJMGTPWJB1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2000}
-    \field{labeldatesource}{}
     \field{sortinit}{Y}
     \field{sortinithash}{Y}
     \field{booktitle}{In Proceedings of 12th International Workshop on Implementation of Functional Languages}
@@ -5110,10 +4853,11 @@
     \strng{fullhash}{ZACW1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2019}
-    \field{labeldatesource}{}
     \field{sortinit}{Z}
     \field{sortinithash}{Z}
+    \verb{doi}
+    \verb 10.48550/arXiv.1901.01001
+    \endverb
     \verb{eprint}
     \verb 1901.01001 [cs]
     \endverb
@@ -5145,8 +4889,6 @@
     \strng{fullhash}{ZZBL1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2023}
-    \field{labeldatesource}{}
     \field{sortinit}{Z}
     \field{sortinithash}{Z}
     \field{booktitle}{Proceedings of the 2023 {CHI} Conference on Human Factors in Computing Systems}
@@ -5163,7 +4905,6 @@
     }
     \field{month}{04}
     \field{year}{2023}
-    \warn{\item Can't use 'location' + 'address'}
   \endentry
 
   \entry{Zhang2015-xy}{article}{}
@@ -5203,8 +4944,6 @@
     \strng{fullhash}{ZDMACVDPJS1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2015}
-    \field{labeldatesource}{}
     \field{sortinit}{Z}
     \field{sortinithash}{Z}
     \verb{doi}
@@ -5251,8 +4990,6 @@
     \strng{fullhash}{ZDMACVDPJS1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2017}
-    \field{labeldatesource}{}
     \field{sortinit}{Z}
     \field{sortinithash}{Z}
     \verb{doi}
@@ -5290,8 +5027,6 @@
     \strng{fullhash}{ZWLMH1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2016}
-    \field{labeldatesource}{}
     \field{sortinit}{Z}
     \field{sortinithash}{Z}
     \field{booktitle}{2016 {IEEE} 28th International Conference on Tools with Artificial Intelligence ({{ICTAI}})}

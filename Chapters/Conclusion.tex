@@ -6,9 +6,9 @@
 \newcommand{\typetutor}{TypeTutor}
 
 \graphicspath{{Figures/Conclusion}}
-We began the thesis by reviewing the landscape of programming languages, with a special interest on functional programming and static typing. We emphasized the critical role of type errors, noting how problematic type errors can hinder both the learning and effective use of statically typed languages. An exploration of the evolution of type-checking methods and techniques set the stage for an in-depth discussion of our interventions --- Chameleon, Goanna, and GeckoGraph --- which are designed to deliver accurate and user-friendly error messages.
+At the start of this thesis, we took an overview of the landscape of programming languages, with a special interest on functional programming and static typing. We emphasized the critical role of type errors, noting how problematic type errors can hinder both the learning and effective use of statically typed languages. Then, we explored various Haskell type-checking methods and their evolution, setting the stage for an in-depth discussion of our interventions --- Chameleon, Goanna, and GeckoGraph --- which are designed to deliver accurate and user-friendly error messages.
 
-In this chapter, we will review our contributions and discuss the future work that builds upon these initiatives. Our planned future work is categorized into three main areas: tool design, integration with Large Language Models (LLMs), and increasing language availability. We will conclude our discussion by reaffirming our commitment to enhancing type errors—a core objective of this thesis—and reiterating the importance of this work within the broader field of programming language research.
+In this chapter, we will review our contributions and discuss the future work that builds upon these initiatives. The planned future work is categorized into three main areas: tool design, integration with large language models (LLMs), and increasing language availability. We will conclude our discussion by reaffirming our commitment to enhancing type errors—a core objective of this thesis—and reiterating the importance of this work within the broader field of programming language research.
 
 
 \section{Contributions}
@@ -17,13 +17,13 @@ In this chapter, we will review our contributions and discuss the future work th
 \subsection{A categorization of type errors based on the structure of the evidence of a type error}
 
 
-Drawing on insights from how human programmers perceive type errors and theories from constraint satisfiability research, we have developed a categorization framework for type errors. This framework helps identify three critical attributes of type errors, enhancing our understanding of strategic interventions to assist programmers in resolving these errors effectively.
+We have developed a categorization framework for type errors based on insights from how human programmers perceive type errors and theories from constraint satisfiability research. This framework helps identify three critical attributes of type errors, enhancing our understanding of strategic interventions to assist programmers in resolving these errors effectively.
 
 \begin{itemize}
-    \item {\textbf{Multi-step type errors} These errors involve a sequence of logical deductions, requiring programmers to probe multiple segments of the source code to forge a coherent reasoning chain. It is crucial to clearly present these clues and their interconnected relationships within the source code to support this reasoning process.}
+    \item {\textbf{Multi-step type errors} These errors involve a sequence of logical deductions, requiring programmers to look for multiple locations of the source code to forge a coherent reasoning chain. It is crucial to clearly present these locations and their interconnected relationships within the source code to streamline this reasoning process.}
     \item 
     \item{\textbf{Multi-witness type errors}  These errors present an imbalance in the evidence, leading to two possible causes. Highlighting this discrepancy can guide programmers toward a more informed evaluation of the likely root causes, aiding in quicker resolution.}
-    \item{\textbf{Multi-party type errors} These errors involve conflicts that present more than two potential possible types. They often indicate the co-existence of multiple underlying errors. Providing tools that can segment a multi-party type error into multiple type errors in simpler form allows programmers to tackle each error sequentially, simplifying the debugging journey.}
+    \item{\textbf{Multi-party type errors} These errors involve conflicts that present more than two potential possible types. They often indicate the co-existence of multiple underlying errors. Providing tools that can break down these errors into multiple type errors of simpler form allows programmers to tackle each error sequentially, leading to a simpler debugging workflow.}
 \end{itemize}
 
 
@@ -36,19 +36,19 @@ We introduce Chameleon, an interactive Haskell type error debugging tool. Chamel
 
 
 \subsubsection{How programmers use type error slicing and chain of thought visualization to understand type errors}
-We conducted three user studies to investigate the impacts of using debugging tools that support type error slicing and interactive exploration, such as Chameleon. Our findings reveal a notable improvement in debugging speed when employing type error-slicing tools, particularly for complex tasks. Additionally, we observed a significant enhancement in debugging speed when programmers engaged with the interactive features of the tool, suggesting that active exploration of type errors can positively impact the debugging process.
+We conducted three user studies to investigate the impacts of using debugging tools that support type error slicing and interactive type error exploration, some key features provided in Chameleon. Our findings reveal a notable improvement in debugging speed when employing type error-slicing technique, particularly for complex tasks. Additionally, we observed a significant enhancement in debugging speed when programmers engaged with the interactive debugging features, suggesting that active exploration of type errors can positively impact the debugging process.
 
 \subsection{Iterate potential causes of multi-witness and multi-party errors}
 
 \subsubsection{Technical Contribution -- Goanna}
 
-We contribute Goanna, a Haskell type error debugging tool that, like Chameleon, utilizes type error slicing to achieve comprehensive error localization.
+We contribute Goanna, a Haskell type error debugging tool that, like Chameleon, utilizes type error slicing to achieve comprehensive  and user-friendly error localization.
 
 Goanna sets itself apart by employing Minimal Correction Sets (MCS) to identify potential causes of type errors. It conducts an exhaustive analysis of all potential causes and corresponding actions required to resolve the type error. Goanna employs a set of heuristics to avoid an overwhelming list of suggestions. These heuristics filter out less useful suggestions and prioritize potential causes based on their likelihood, ensuring a more focused and effective debugging experience.
 
 
 \subsubsection{An evaluation of the effectiveness of MCS-based type debugging tools}
-To assess the efficacy of MCS-based type error debugging strategies, we compiled a dataset of 86 Haskell programs sourced from various online discussions, embodying a wide range of type error scenarios. We evaluated Goanna's accuracy in identifying and resolving type errors in comparison to traditional compiler tools. Our findings affirm that Goanna consistently provides more accurate error-cause identification compared to other tools. Goanna's heuristics not only effectively narrow down the list of possible causes but also consistently include the real cause in its top recommendations. Furthermore, although Goanna's processing speed is slower than that of conventional tools, it remains well within a range suitable for providing real-time feedback to programmers. 
+To assess the efficacy of MCS-based type error debugging strategies, we compiled a dataset of 86 Haskell programs sourced from various online discussions, embodying a wide range of type error scenarios. We evaluated Goanna's accuracy in identifying and resolving type errors in comparison to traditional compiler tools. Our findings affirm that Goanna consistently provides more accurate error-cause identification compared to other tools. Further, Goanna's heuristics not only effectively narrow down the list of possible causes but also consistently include the real cause in its top recommendations. Lastly, although Goanna's processing speed is slower than that of conventional tools, it remains well within a range suitable for providing real-time feedback to programmers. 
 
 \subsection{Visualizing Types}
 
@@ -62,9 +62,9 @@ We conducted a large-scale user study to evaluate the effectiveness of GeckoGrap
 
 \section{Future Work}
 
-In this section, we present three promising directions stemming from our existing work. Firstly, drawing upon our prior experience of researching type debugging tools, we have introduced a novel debugging tool: \textit{TypeTutor}. We  envision the interfaces and interactions within \textit{TypeTutor}, which have been shaped by insights from our existing tools and feedback from various user studies.
+In this section, we present three promising directions stemming from our existing work. Firstly, drawing upon our prior experience of researching type debugging tools, we have introduced a novel debugging tool: \textit{TypeTutor}. We envision the interfaces and interactions within \textit{TypeTutor}, which have been shaped by insights from our existing tools and feedback from various user studies.
 
-Secondly, we delve into the realm of rapid advancements in large language models (LLMs) and their evolving role in programming assistance, distinguishing them from conventional theory-based tools like Chameleon and Goanna. We explore the possibility of integrating traditional tools with LLMs to capitalize on their unique strengths and address their respective weaknesses effectively.
+Secondly, we delve into the realm of rapid advancements in large language models (LLMs) and their evolving role in programming assistance, distinguishing them from conventional theory-based tools like Chameleon and Goanna. We explore the possibility of integrating traditional tools with LLMs to effectively capitalize on their unique strengths and address their weaknesses.
 
 Lastly, we outline our plans to adapt our debugging tools for use in other programming languages, underscoring the potential advantages and challenges associated with this endeavor.
 
@@ -130,7 +130,7 @@ Finally, as we have identified, type errors frequently involve multiple potentia
 
 
 \subsection{Integration with Large Language Models}
-At the time of writing this thesis, LLMs were actively experimented with performing all kinds of tasks that require human creativity, including programming. Many attempts have been made to use LLMs in programming tasks \todo{Citation needed}, intending to free programmers for higher-level thinking. This development is tangential to our objective of explaining type errors and reasoning about the logic of type inference. 
+At the time of writing this thesis, LLMs were actively experimented with performing all kinds of tasks that require human creativity, including programming. Many attempts have been made to use LLMs in programming tasks \cite{Shi2024-bj}, intending to free programmers for higher-level thinking. This development is tangential to our objective of explaining type errors and reasoning about the logic of type inference. 
 
 \begin{figure}[hbt]
   \includegraphics[width=\linewidth]{LLM}
@@ -139,7 +139,7 @@ At the time of writing this thesis, LLMs were actively experimented with perform
     }
 \end{figure}
 
-While LLMs have shown capability in recognizing basic errors, they often display a limited understanding of type theories and multi-step reasoning ability. On the error in Figure \ref{fig:llm}, although provided a correct fix, GPT 4 claimed, “This results in an infinite type situation because Haskell tries to unify the type \texttt{a} with the type \texttt{(a -> b) -> [a] -> [b]}, which results in an infinite loop of types, and Haskell cannot resolve this”, illustrating a fundamental lack of understanding of higher order types, and certainly not a correct explanation.
+While LLMs have shown capability in recognizing basic errors, they often display a limited understanding of type theories and multi-step reasoning ability. Figure \ref{fig:llm} depicts a type error caused by mismatching numbers of arguments in the function \texttt{mapList}; although provided a correct error identification at the start, GPT 4 proceeded to claim, “This results in an infinite type situation because Haskell tries to unify the type \texttt{a} with the type \texttt{(a -> b) -> [a] -> [b]}, which results in an infinite loop of types, and Haskell cannot resolve this,” illustrating a fundamental lack of understanding of type theory.
 
 \begin{figure}[hbt]
   \includegraphics[width=\linewidth]{LLM2}
@@ -148,17 +148,17 @@ While LLMs have shown capability in recognizing basic errors, they often display
     } 
 \end{figure}
 
-When tested with the prompt "Is there a type error in the Haskell code: v = let f x = x in (f 3, f '3')", most LLMs incorrectly reported yes (Fig. \ref{fig:llm2}). LLMs can give wrong explanations and find type errors that don't exist, unlike tools like GHC, Helium, and Goanna. While there is clearly a role for their usage in programming assistance, they do not “reason” about types and, hence, are not trustworthy.
+When tested with the prompt "Is there a type error in the Haskell code: v = let f x = x in (f 3, f '3')", most LLMs incorrectly reported yes (Fig. \ref{fig:llm2}). However, this Haskell code is indeed well-typed. LLMs can give wrong explanations and find type errors that don't exist, unlike tools like GHC, Helium, and Goanna. While there is clearly a role for their usage in programming assistance \cite{Lee2024-hs}, they do not “reason” about types and, hence, are not trustworthy.
 
-While LLMs are getting more and more accurate every day, some doubt whether they will ever become as reliable as theory-based tools. We believe in the great potential of integrating LLMs with existing theory-based tools, such as Chameleon and Goanna. This integration could enhance the LLMs' performance by aligning their operation with accurate theoretical guides or by utilizing their strengths in areas where traditional tools fall short, like suggesting syntactical improvements. This synergy could lead to more robust programming assistance using both types of tools.
+While LLMs are getting more and more accurate every iteration, some doubt whether they will ever become as reliable as theory-based tools \cite{Berglund2023-ig}. We believe in the great potential of integrating LLMs with existing theory-based tools, such as Chameleon and Goanna. This integration could enhance the LLMs' performance by aligning their operation with accurate theoretical guides or by utilizing their strengths in areas where traditional tools fall short, like suggesting syntactical improvements. This synergy could lead to more robust programming assistance using both types of tools. We propose two candidate workflows:
 
 \itemize{
-  \item{Code Generation and Validation: LLMs could generate code, which theory-based tools, such as Chameleon, then check for errors. Detected errors could be fed back to the LLMs for corrections, enhancing both the efficiency and accuracy of code development.}
+  \item{Code Generation and Validation: LLMs could generate code, which theory-based tools, such as Chameleon and Goanna, then check for errors. Detected errors could be fed back to the LLMs for corrections, enhancing both the efficiency and accuracy of code development.}
   \item {Error Tutoring and Resolution: Theory-based Tools could identify errors in manually written code, with LLMs suggesting syntax corrections. This combines the precise error detection from traditional theory-based tools with the LLMs' ability to generate effective syntax changes, surpassing traditional tools in this domain.}
 }
 
 \subsection{Support for Other Languages}
-Haskell serves as an exemplary platform for the exploration of programming languages and type systems. We firmly believe that the next critical phase in our research involves expanding our tools to encompass other languages. Recently, we observed that the challenge of overcoming complex type errors has permeated several mainstream languages, including Rust \todo{citation needed} and TypeScript. By integrating our debugging tools into these languages, we aim to engage a broader audience and subject our tools to a diverse range of projects varying in style and scale. This will not only increase our tool's applicability but also provide us with extensive insights into how to improve our design.
+Haskell serves as a vital platform for the experiments of programming languages and type systems. We firmly believe that the next critical phase in our research involves expanding our tools to encompass other languages. Recently, we observed that the challenges of overcoming complex type errors have permeated several mainstream languages, including Rust \cite{Zeng2019-ou} and TypeScript \cite{Scarsbrook2023-uq}. By integrating our debugging tools into these languages, we aim to engage a broader audience and subject our tools to a diverse range of software projects varying in style and scale. This will not only increase our tool's applicability but also provide us with extensive insights into how to further improve our design.
 
 Much of our work has already been conceived with adaptability to multiple languages in mind. For example, GeckoGraph is designed to be language-agnostic, allowing for implementations in different programming languages. However, adapting tools like Chameleon and Goanna presents certain complexities. Although the analysis of unsatisfiable constraints and the theories and implementations concerning the enumeration of Minimal Unsatisfiable Subsets (MUSes) and Minimal Correction Subsets (MCSes) are universally applicable across all languages, specific challenges arise when taking into account the nuances of individual languages.
 

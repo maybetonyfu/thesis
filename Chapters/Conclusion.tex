@@ -6,8 +6,10 @@
 \newcommand{\typetutor}{TypeTutor}
 
 \graphicspath{{Figures/Conclusion}}
+This thesis began with an overview of the landscape of programming languages, with a special interest on functional programming and static typing. We emphasized the critical role of type errors, noting how problematic type errors can hinder both the learning and effective use of statically typed languages. An exploration of the evolution of type-checking methods and techniques set the stage for an in-depth discussion of our interventions, which are designed to deliver accurate and user-friendly error messages.
 
-This thesis begins by establishing the context of our work within the field of programming languages, particularly emphasizing the significance of well-designed error messages. We explore the evolution of type-checking methods and techniques, followed by an in-depth discussion on utilizing Minimal Unsatisfiable Subsets (MUS) to report type errors and enhancing this with interactive features to handle multi-step type errors. Additionally, we examine the application of Minimal Correction Sets (MCS) to type error reporting, alongside strategies for debugging that involve multi-witness or multi-party type errors. Lastly, we discussed our design of a visual language for types, aimed at enhancing the programming experience and enriching the educational resources available for teaching and learning about types.
+In this chapter, we will review our contributions and discuss the future work that builds upon these initiatives. Our planned future work is categorized into three main areas: tool design, integration with Large Language Models (LLMs), and increasing language availability. We will conclude our discussion by reaffirming our commitment to enhancing type errors—a core objective of this thesis—and reiterating the importance of this work within the broader field of programming language research.
+
 
 \section{Contributions}
 
@@ -42,7 +44,7 @@ We conducted three user studies to investigate the impacts of using debugging to
 
 We contribute Goanna, a Haskell type error debugging tool that, like Chameleon, utilizes type error slicing to achieve comprehensive error localization.
 
-Goanna sets itself apart by employing Minimal Correction Sets (MCS) to identify potential causes of type errors. It conducts an exhaustive analysis of all potential causes and corresponding actions required to resolve the type error. To avoid an overwhelming list of suggestions, Goanna employs a set of heuristics. These heuristics filter out less useful suggestions and prioritize potential causes based on their likelihood, ensuring a more focused and effective debugging experience.
+Goanna sets itself apart by employing Minimal Correction Sets (MCS) to identify potential causes of type errors. It conducts an exhaustive analysis of all potential causes and corresponding actions required to resolve the type error. Goanna employs a set of heuristics to avoid an overwhelming list of suggestions. These heuristics filter out less useful suggestions and prioritize potential causes based on their likelihood, ensuring a more focused and effective debugging experience.
 
 
 \subsubsection{An evaluation of the effectiveness of MCS-based type debugging tools}
@@ -74,7 +76,7 @@ This style of programming is often referred to as ``natural programming environm
 
 \subsubsection{Why questions}
 
-A fundamental aspect of debugging type errors involves asking questions such as "Why does the type error occur?" and "Why is the expected type \texttt{X}?" These "why" questions highlight gaps in a programmer's understanding where a thorough explanation is in demand. \textit{TypeTutor} intelligently addresses this by displaying all relevant "why" questions when a programmer hovers over an expression of interest. Upon selecting a question, \textit{TypeTutor} promptly provides the corresponding detailed answer.
+A fundamental aspect of debugging type errors involves asking questions such as "Why does the type error occur?" and "Why is the expected type \texttt{X}?" These "why" questions highlight gaps in a programmer's understanding where a thorough explanation is in demand. \textit{TypeTutor} intelligently addresses this by displaying all relevant "why" questions when a programmer hovers over an expression of interest. Upon selecting a question, \textit{TypeTutor} promptly provides the corresponding detailed answer (Fig. \ref{fig:why}).
 
 
 
@@ -90,35 +92,38 @@ A fundamental aspect of debugging type errors involves asking questions such as 
 
 \subsubsection{Follow-up questions}
 
-In the context of debugging type errors, particularly multi-step type errors, it proves beneficial to enable programmers to incrementally uncover the underlying inference logic. \textit{TypeTutor} supports this process by allowing programmers to ask follow-up questions. Typically, these questions build upon the responses to earlier inquiries. Follow-up questions in \textit{TypeTutor} facilitate tasks akin to the interactive debugging steps in Chameleon. However, unlike Chameleon, \textit{TypeTutor} does not provide a separate interface for follow-ups. Instead, when a response includes the option for further inquiry, \textit{TypeTutor} provides a follow-up hint at the end of the answer, encouraging programmers to continue tracing the root cause. This integrated approach helps maintain a streamlined user experience while enabling deep exploration of type errors.
+In the context of debugging type errors, particularly multi-step type errors, it proves beneficial to enable programmers to incrementally uncover the underlying inference logic. \textit{TypeTutor} supports this process by allowing programmers to ask follow-up questions. Typically, these questions build upon the responses to earlier inquiries. Follow-up questions in \textit{TypeTutor} facilitate tasks akin to the interactive debugging steps in Chameleon. However, unlike Chameleon, \textit{TypeTutor} does not provide a separate interface for follow-ups. Instead, when a response includes the option for further inquiry, \textit{TypeTutor} provides a follow-up hint at the end of the answer, encouraging programmers to continue tracing the root cause (Fig. \ref{fig:follow-up}). This integrated approach helps maintain a streamlined user experience while enabling deep exploration of type errors.
 
 
 \begin{figure}[hbt]
   \includegraphics[width=\linewidth]{FollowUp}
   \caption{
+    \label{fig:follow-up}
      Following the case in Figure \ref{fig:why}, \textit{TypeTutor} prompts programmers to ask follow-up questions. In this case, \textit{TypeTutor} informs the programmer that \texttt{matchFirst} on line 3 has the type \texttt{Int -> (Int, Int) -> Bool} can be inferred from two pieces of clues:  the definition of \texttt{matchFirst} and the \texttt{filter} on line 3 instantiated as \texttt{((Int, Int) -> Bool) -> [(Int, Int)] -> [(Int, Int)]}. Programmers can trace further by following the hints again in the answer section.
     }
 \end{figure}
 
 \subsubsection{How questions}
 
-'How' questions in debugging focus on providing prescriptive guidance regarding program errors. Such questions do not solely depend on logical precision; rather, they require the understanding of a programmer's knowledge gaps and the ability to deliver clear, followable instructions. \textit{TypeTutor} aids programmers by facilitating questions on how to rectify specific type errors. In Goanna, the analysis of Minimum Sufficient Syntax (MSS) can suggest the expected type for each possible correction. \textit{TypeTutor} advances this concept by offering examples of syntax changes tailored to these recommended types. 
+'How' questions in debugging focus on providing prescriptive guidance regarding program errors. Such questions do not solely depend on logical precision; rather, they require the understanding of a programmer's knowledge gaps and the ability to deliver clear, followable instructions. \textit{TypeTutor} aids programmers by facilitating questions on how to rectify specific type errors. In Goanna, the analysis of Minimum Sufficient Syntax (MSS) can suggest the expected type for each possible correction. \textit{TypeTutor} advances this concept by offering examples of syntax changes tailored to these recommended types. In the example (Fig. \ref{fig:how}), \textit{TypeTutor} provides various examples of how to change \texttt{'1'} to an Integer type, including changing it to an integer literal, an integer variable, or an expression that evaluates to an integer. 
 
 
 
 \begin{figure}[hbt]
   \includegraphics[width=\linewidth]{How}
   \caption{
+    \label{fig:how}
     Following the case in Figure \ref{fig:why}, \textit{TypeTutor} provides instructions on how to fix the type error. In detail,  \textit{TypeTutor} provides various examples of how to change \texttt{'1'} to an Integer type, including changing it to an integer literal, an integer variable, or an expression that evaluates to an integer.
     }
 \end{figure}
 
 \subsubsection{What-if questions}
-Finally, as we have identified, type errors frequently involve multiple potential causes and explanations. When integrated into a question-and-answer interface, the presence of multiple causes naturally prompts counterfactual questions such as "What are other ways that can cause this type error?" Recognizing this, \textit{TypeTutor} provides a natural and user-friendly interface for exploring various potential causes and solutions. This approach, while similar to the functionality offered by Goanna, features a more concise and intuitive interface for programmers to switch between different potential causes.
+Finally, as we have identified, type errors frequently involve multiple potential causes and explanations. When integrated into a question-and-answer interface, the presence of multiple causes naturally prompts counterfactual questions such as "What are other ways that can cause this type error?" Recognizing this, \textit{TypeTutor} provides a natural and user-friendly interface for exploring various potential causes and solutions. This approach, while similar to the functionality offered by Goanna, features a more concise and intuitive interface for programmers to switch between different potential causes. With \textit{TypeTutor}, programmers can find the question `Other ways to fix the error' in every type error,  hovering on the option will present alternative explanations and resolution plans (Fig. \ref{fig:what-if}).
 
 \begin{figure}[hbt]
   \includegraphics[width=\linewidth]{WhatIf}
   \caption{
+      \label{fig:what-if}
       If the programmer disagrees that the literal \texttt{'1'} is the cause of the error and should be changed, \textit{TypeTutor} can provide alternative explanations and resolution plans. When hovering on the option `Other ways to fix the error', \textit{TypeTutor} shows three other potential fixes (Top). Choosing any of them, say the first option, will change the type error mark to another set of locations, and different explanations are provided when asking the `why' question at the new type error.
     }
 \end{figure}
@@ -143,7 +148,7 @@ While LLMs have shown capability in recognizing basic errors, they often display
     } 
 \end{figure}
 
-When tested with the prompt "is there a type error in the Haskell code: v = let f x = x in (f 3, f '3')", most LLMs incorrectly reported yes. LLMs can give wrong explanations, find type errors that don't exist, unlike tools like GHC, Helium and Goanna. While there is clearly a role for their usage in programming assistance, they do not “reason” about types and hence are not trustworthy.
+When tested with the prompt "Is there a type error in the Haskell code: v = let f x = x in (f 3, f '3')", most LLMs incorrectly reported yes (Fig. \ref{fig:llm2}). LLMs can give wrong explanations and find type errors that don't exist, unlike tools like GHC, Helium, and Goanna. While there is clearly a role for their usage in programming assistance, they do not “reason” about types and, hence, are not trustworthy.
 
 While LLMs are getting more and more accurate every day, some doubt whether they will ever become as reliable as theory-based tools. We believe in the great potential of integrating LLMs with existing theory-based tools, such as Chameleon and Goanna. This integration could enhance the LLMs' performance by aligning their operation with accurate theoretical guides or by utilizing their strengths in areas where traditional tools fall short, like suggesting syntactical improvements. This synergy could lead to more robust programming assistance using both types of tools.
 
@@ -160,6 +165,12 @@ Much of our work has already been conceived with adaptability to multiple langua
 The first challenge involves constraint generation. Each language requires the development of specific rules for generating constraints and conforming to its own typing rules, which could necessitate substantial modifications depending on the type-level features each language possesses. For instance, all functions in Haskell are curried, a characteristic absent in TypeScript, where functions are defined with fixed arity and can be overloaded. This discrepancy means that in TypeScript, a type error can occur if a function is applied to fewer arguments than it is defined for, an error that would not typically arise in Haskell.
 
 The second challenge concerns the presentation of type errors, which may need nuanced adjustments for different languages. Innovative visualization techniques may be required to effectively convey concepts absent in Haskell, such as subtyping in TypeScript or lifetime constraints in Rust. By addressing these challenges, we can truly leverage the potential of our tools across various programming environments.
+
+\subsubsection{Supporting Dependently Typed Languages}
+
+As mentioned in previous chapters, dependently typed languages like Idris and Agda represent a rigorous subclass within the realm of statically typed languages. These languages uniquely enable the type-level computation of values and types, allowing programmers to embed fine-grained and precise constraints to ensure program correctness at compile time. Due to their ability to directly encode program behavior into types, programs written in dependently typed languages can often be validated purely through the type-checking process. This makes them ideal candidates for code generation through LLMs, where programmers can perform checks on whether they conform to the provided specifications. 
+
+However, despite their potential, dependently typed languages currently hold a modest position in the mainstream programming landscape. We believe that enhancing our type debugging tools to support dependently typed languages can bring a step forward in improving their learnability and adoption. As type-level computations grow in complexity, our tools, designed to aid in understanding and reasoning, become increasingly valuable. 
 
 
 \section{Conclusion}

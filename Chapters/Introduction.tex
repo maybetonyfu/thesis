@@ -43,7 +43,7 @@ Despite the lack of universal agreement, a general consensus suggests that dynam
 
 \begin{figure}[]
   \includegraphics[width=\linewidth]{TypedVsUntyped.pdf}
-  \caption{
+  \caption[Comparison of the same program dynamically typed in Python and with mypy—a static typing tool for Python]{
     \label{fig:typed-vs-untyped}
     Comparison of the same program dynamically typed in Python (Top) and with mypy—a static typing tool for Python (Bottom).  The dynamic-typing rules of the Python interpreter apply, at run-time, the string concatenating version of the `+' operator -- regardless of the programmer's intention.  By contrast, mypy static-typing checks the type of the values passed to the {\tt plus} function against the intention declared by the programmer through the type annotations on the function parameters (both {\tt int}) and its return type (also {\tt int}).  The type check will fail until the programmer amends the function call with numeric arguments or otherwise explicitly converts the values from {\tt str} to {\tt int}.
     }
@@ -64,7 +64,7 @@ Functional programming is often advocated as an excellent choice for introductor
 
 \begin{figure}[]
   \includegraphics[width=\linewidth]{ImperativeFunctional}
-  \caption{
+  \caption[Comparing two approaches to implementing the same function specification in different programming paradigms: imperative and functional]{
     \label{fig:imperative-vs-functional}
     The figure compares two approaches to implementing the same function specification in different programming paradigms: imperative (top) and functional (bottom). The top section presents Python code, utilizing a loop and a mutable variable to accumulate sums. Conversely, the bottom section illustrates Haskell code, using a composition of two functions: \texttt{sum} and \texttt{filter}, the latter using a specified predicate in the form of an anonymous function. This exemplifies how imperative programming relies on mutable state (the \texttt{sum} variable) to track progress, whereas functional programming leverages high-level abstractions and recursion to achieve similar outcomes.    
     }
@@ -93,7 +93,7 @@ A significant issue in type error messages is their inherent bias. Often, type e
 
  \begin{figure}[]
   \includegraphics[width=\linewidth]{TypeErrorExample}
-  \caption{
+  \caption[Illustrating a programming error in Haskell, featuring a function named \texttt{addTwoNumbers} with a type error and the corresponding compiler output]{
     \label{fig:type-error-example}
     The figure illustrates a programming error scenario, featuring the source code with a type error (Top) and the corresponding compiler output (Bottom). The error likely arises from the inappropriate use of the concatenation operator \texttt{++}, rather than the addition operator \texttt{+}, on line 1, as inferred from the function name \texttt{addTwoNumbers}. Despite this, the compiler erroneously highlights line 3, where the function \texttt{addTwoNumbers} is applied to the integer \texttt{3}, boldly assuming the correctness of the \texttt{addTwoNumbers} definition. This misdirection suggests a less likely source of error, potentially complicating the debugging process.
     }
@@ -109,7 +109,7 @@ Often, type error messages do not fully present all the locations relevant to th
 
 \begin{figure}[]
   \includegraphics[width=\linewidth]{TypeErrorExample2}
-  \caption{
+  \caption[Illustrating a programming error in Haskell, featuring a function named \texttt{joinTwoLists} with a type error and the corresponding compiler output]{
     \label{fig:type-error-example-2}
     This figure depicts the same program as in Figure \ref{fig:type-error-example}, with one modification being the renaming of the function from \texttt{addTwoNumbers} to \texttt{joinTwoLists}. This change shifts the implied intent towards concatenating two \texttt{List} type values. The compiler still identifies an error at the same location—the integer literal \texttt{3}—aligning more closely with the programmer's understanding than in the previous example. However, the error message still misleadingly overlooks the erroneous type of the second argument, \texttt{4}, as it too is an invalid input for a list concatenation operation. Therefore, modifying only the first argument is insufficient to correct the type error.
     }
@@ -123,7 +123,7 @@ One of the most frustrating aspects of type errors is that they do not show the 
 
 \begin{figure}[]
   \includegraphics[width=\linewidth]{TypeErrorExample3}
-  \caption{
+  \caption[A programming error in Haskell, featuring a function named \texttt{trimWhiteSpace} with a type error and the corresponding compiler output]{
     \label{fig:type-error-example-3}
     In Haskell, the \texttt{String} type is an alias for \texttt{[Char]}, meaning the two types are equivalent. The function \texttt{trimWhiteSpace}, as used on line 3, processes a \texttt{String} (or list of \texttt{Char} values) to filter out whitespace characters. However, the function’s filter condition, \texttt{isSpace}, erroneously compares two \texttt{String} values instead of \texttt{Char} types. This is likely a type intending the char literal \texttt{' '} rather than the string literal \texttt{" "}. While the type error message correctly identifies the mismatch, it fails to provide crucial contextual clues that would obscure the nature of this error.
     }
@@ -147,7 +147,7 @@ The advantages of statically typed languages derive from their robust type-check
 
 \begin{figure}[]
   \includegraphics[width=\linewidth]{Conditional}
-  \caption{
+  \caption[An example of encoding propositional logic operators and church numerals in  TypeScript's conditional types]{
     \label{fig:ts-conditional}
     TypeScript includes a type-level feature known as `conditional types,' which enables the declaring of a type based on the outcome of a condition check. This capability is sufficient to construct a Turing-complete language within the TypeScript type system. The figure illustrates a simple language that supports booleans, numbers (using Church encoding), and functions that operate on these values. Since this implementation is implemented entirely at the type level, it does not generate any executable code for runtime evaluation, functioning purely within the compile-time environment. The recreational value aside, these type-level features often lead to elaborated ``essay of types'', hindering understanding and usability.
     }
@@ -162,7 +162,7 @@ Even in programming languages that do not utilize implicit typing, certain typin
 
 \begin{figure}[]
   \includegraphics[width=\linewidth]{RowPolymorphism.pdf}
-  \caption{
+  \caption[An example of a correct usage and a wrong usage of row polymorphism in TypeScript]{
     \label{fig:row-polymophism}
 Row polymorphism is a common type-level feature, allowing record values with optional more fields to be a subtype of the record without these fields. This enhances flexibility in structuring data collections but also introduces complexity in understanding the relations between types. The figure illustrates an example where programmers try to apply the record values \texttt{alice} and \texttt{bob} to the function \texttt{greet}. Because of the rules of row polymorphism and the fact that function arguments are covariant, only one value constitutes a valid input. 
     }
@@ -181,7 +181,7 @@ Despite these advancements in runtime debugging tools, the development of type d
 
 \begin{figure}[]
   \includegraphics[width=\linewidth]{BreakPoint}
-  \caption{
+  \caption[Debugging of a Python program using a breakpoint and expression evaluation in PyCharm]{
     \label{fig:breakpoint}
     The figure shows the debugging of a Python program using a breakpoint and expression evaluation in PyCharm, a widely used interactive programming environment (IDE) for Python. Program execution is paused at the breakpoint set on line 4, and with each pause, the user-defined expression \texttt{i * j} is re-evaluated. This common debugging interface is available in nearly all modern programming editors and integrated development environments.
     }
@@ -190,7 +190,7 @@ Despite these advancements in runtime debugging tools, the development of type d
 
 \begin{figure}[ht]
   \includegraphics[width=\linewidth]{ZStep94}
-  \caption{
+  \caption[Debugging a Lisp program by inspecting all the historical values of an expression in ZStep94]{
     \label{fig:zstep94}
     Debugging a Lisp program by inspecting all the historical values of an expression, navigating through execution history, and reviewing live visualization replay.  All these features are provided in ZStep94.
     }
@@ -240,7 +240,7 @@ A \textbf{multi-step type error} occurs through a chain of logical inferences st
 
 \begin{figure}[]
   \includegraphics[width=\linewidth]{Multi-Step}
-  \caption{
+  \caption[This illustration depicts a multi-step type error in Haskell]{
     \label{fig:multi-step-example}
     This illustration depicts a multi-step type error in Haskell. In the program (left panel), the string literal \texttt{"True"} is assigned to the variable \texttt{a} on line 1, followed by the assignment of \texttt{a}'s value to variable \texttt{b} on line 2. Subsequently, on line 3, the program attempts to use \texttt{b} as a boolean condition in an \texttt{if} expression. The error analysis can be visualized as a "chain" of reasoning, represented by the continuous line (right panel), tracing the propagation of the type mismatch through the sequence of assignments and usage. }
 \end{figure}
@@ -249,7 +249,7 @@ A \textbf{multi-witness type error} entails multiple pieces of evidence supporti
 
 \begin{figure}[]
   \includegraphics[width=\linewidth]{Multi-Witness}
-  \caption{
+  \caption[This illustration depicts a multi-witness type error in Haskell]{
     \label{fig:multi-witness-example}
     This figure presents the analysis of a multi-witness type error in Haskell. In the source code (Left), a type conflict arises from the \texttt{case} expression, which could be interpreted as \texttt{Char} based on the value in line 2, or as a \texttt{String} based on the values in lines 3, 4, and 5. The type conflict is graphically illustrated (Right) with \texttt{String} values marked in pink and the \texttt{Char} value in blue. The majority of \texttt{String} value witnesses suggest the lone \texttt{Char} literal \texttt{'I'} on line 2 might be a typographical error. This discrepancy underscores the significance of witness count in identifying the likely error source.}
 \end{figure}
@@ -259,7 +259,7 @@ A \textbf{multi-party type error} involves several potential type assignments, e
 
 \begin{figure}[]
   \includegraphics[width=\linewidth]{Multi-Party}
-  \caption{
+  \caption[This illustration depicts a multi-party type error in Haskell]{
     \label{fig:multi-party-example}
     This figure analyzes a multi-party type error in the source code (Left), where the list \texttt{d} could potentially be typed as \texttt{[Int]}, \texttt{[String]}, or \texttt{[Char]}. The disagreement is visually represented (Right) by three distinct colors, each corresponding to the cause of one of the possible types. This scenario differs from previous examples as resolving the type error requires adjustments at multiple locations within the code, not just a single change.
        }

@@ -25,7 +25,7 @@ However, Haskell is also known for its steep learning curve and unforgiving type
     \end{enumerate}
 
 
-    \begin{figure}
+    \begin{figure}[ht!]
         \centering
         \includegraphics[width=\linewidth]{images/motivation}
         \caption{Inspecting a type error using the Haskell compiler GHC (Glasgow Haskell Compiler)}
@@ -68,7 +68,7 @@ However, Haskell is also known for its steep learning curve and unforgiving type
     For the type error in the motivating example, Goanna shows 6 possible causes of the error (see top right corner of Fig.~\ref{fig:goanna-example-1}). When focussing on the cause suggested by GHC, instead of highlighting only the literal \texttt{1}, Goanna reports all 3 literals that needed to be changed all at once if the programmer chooses to address this cause. In addition, Goanna also indicates that these integer literals need to be changed to \texttt{Char} type using the inlay type hints on line 1, largely narrowing down the potential ideal fixes. 
     
 
-    \begin{figure}[htb!]
+    \begin{figure}[ht!]
         \centering
         \includegraphics[width=\linewidth]{images/Goanna-Example-1}
         \caption[Goanna's showing possible causes of a type error (1)]{\textbf{Goanna's error diagnosis} Goanna shows that to fix the type error, the literals \texttt{1}, \texttt{2}, and \texttt{3} on line 1 need to be changed to Char type.}
@@ -81,7 +81,7 @@ However, Haskell is also known for its steep learning curve and unforgiving type
     
     By clicking on the most likely cause, Goanna shows different highlights in the editor (e.g. see Fig.~\ref{fig:goanna-example-2}). Goanna reports the error is caused by the literal \texttt{'1'} and suggests changing to an integer. All the type hints are adjusted based on our new assumption. Goanna ranks all possible causes using a series of heuristics. In this case, the preference is largely influenced by how many locations are required to change to fix the error. 
     
-    \begin{figure}[htb!]
+    \begin{figure}[ht!]
         \centering
         \includegraphics[width=\linewidth]{images/goanna-example-2}
         \caption[Goanna's showing possible causes of a type error (2)]{\textbf{Goanna's error diagnosis.} Goanna shows that the type error can be fixed by changing the literal $'1'$ on line 3, which needs an \texttt{Int} type. This, according to Goanna, is the most likely cause of the type error.}
@@ -93,7 +93,7 @@ However, Haskell is also known for its steep learning curve and unforgiving type
     
     A key feature of Goanna is its ability to detect all type errors in the code thanks to its MCS enumeration (Subsection \ref{sub:enumeration}). This is not always the case with other tools, such as GHC, which may only report a subset of the errors present in the code or stop at the first error they encounter. Goanna, however, always thoroughly identifies all type errors in the codebase. In the example of Fig.~\ref{fig:goanna-example-1} and Fig.~\ref{fig:goanna-example-2}, Goanna discovered the two errors included in the file. Clicking on the error selector on the bottom-left will change the content of the debugging panel and text editor highlights to reflect the cause of a different error (Fig.~\ref{fig:multi-error}). 
 
-    \begin{figure}[htb!]
+    \begin{figure}[ht!]
         \centering
         \includegraphics[width=\linewidth]{images/goanna-multi-error}
         \caption[Selecting a different error in Goanna]{\textbf{Selecting a different error in Goanna.} Selecting a different error using Goanna's error selector. The debugging panel will show potential cause locations for the selected error. The highlights and type hints in the editor panel will focus on the selected error.}
@@ -105,14 +105,14 @@ However, Haskell is also known for its steep learning curve and unforgiving type
     \subsection{Type error grouping}  \label{sub:group}
     In addition to reporting multiple errors, Goanna also groups together type errors that might be treated as separate by other tools. Goanna uses a novel approach (section \ref{sub:grouping}) to ensure that type errors that are intuitively connected are grouped together. This means that Goanna does not overwhelm the programmer with an excessive number of redundant type errors. Instead, the programmer is presented with a concise list of errors that all can be assessed separately.
 
-    \begin{figure}[htb!]
+    \begin{figure}[ht!]
         \centering
         \includegraphics[width=\linewidth]{images/variance-ghc}
         \caption[Inspecting a defective Haskell Program in relation to the error messages output by the standard GHC compiler]{\textbf{Inspecting a defective Haskell Program (left) in relation to the error messages output by the standard GHC compiler (right)} -- 3 separate type errors are reported.  The editor (VS Code is used here) underlines the error locations reported in the messages, but all other contextual information must be understood from the error text.}
         \label{fig:grouping-ghc}
     \end{figure}
     
-        \begin{figure}[htb!]
+        \begin{figure}[ht!]
         \centering
         \includegraphics[width=\linewidth]{images/Goanna-Error-Grouping}
         \caption[Goanna's Error Grouping]{\textbf{Goanna's Error Grouping.} This error, although its potential offending parts appear in many declarations, is possible to fix in one place, i.e. by changing the definition of the \texttt{size} function on line 1. Therefore, Goanna reports it as a single error.}
@@ -124,7 +124,7 @@ However, Haskell is also known for its steep learning curve and unforgiving type
     \subsection{Discovering Potential Causes} \label{sub:suggesting}
     When a type error arises, Goanna-IDE shows a list of possible causes in the debugging panel. Each possible cause consists of one or more locations in the code that require modification to rectify the type error. Clicking on a possible cause activates it. The locations are highlighted in the text editor, as well as inlay type hints suggesting the suitable type expected for that code slice. In the debugging panel, the activated cause is outlined with a red icon, while others are marked with a blue icon. 
 
-    The causes identified by Goanna are comprehensive. Goanna will take into account potential causes in expressions, pattern matchings, type annotations, and type class constraints. Consequently, programmers will generally find the real cause by exploring Goanna's diagnosis. Unlike most Hindley-Milner~\cite{Damas1982-sc} based type inference, Goanna does not show a bias towards the unification order, thereby avoiding the left-to-right bias \cite{Chen2014-ev}. 
+    The causes identified by Goanna are comprehensive. Goanna will take into account potential causes in expressions, pattern matchings, type annotations, and type class constraints. Consequently, programmers will generally find the real cause by exploring Goanna's diagnosis. Unlike most Hindley-Milner~\cite{Damas1982-zw} based type inference, Goanna does not show a bias towards the unification order, thereby avoiding the left-to-right bias \cite{Chen2014-ev}. 
     
     Note that Goanna's fixes are sufficient for resolving the type error. Traditional tools often reveal a set of partial locations of a type error, leaving programmers to realize later that additional adjustments are needed for a complete resolution. Goanna, however, offers fixes that encompass a complete set of changes necessary for a resolution.
 
@@ -139,7 +139,7 @@ However, Haskell is also known for its steep learning curve and unforgiving type
     \subsection{Cross-module type error debugging}\label{subsec:cross-module-type-error-debugging}
     When encountering a type error spanning across multiple modules, Goanna-IDE will group the potential causes indicated by their module and declaration block. Clicking on any possible cause location will focus the editor on the corresponding module (Fig.~\ref{fig:goanna-cross-module}). Goanna is the first tool to introduce cross-module type debugging. The way Goanna presents cross-module type errors is analogous to how run-time errors are presented in most programming languages. When encountering a run-time error, most programming environments show a call stack containing multiple file paths, and programmers can choose which file to start investigating. Often, programmers choose to start from the file authored by themselves instead of library files. Goanna uses this mental model to group potential locations that cause a type error by module and definition blocks. 
     
-    \begin{figure}[htb!]
+    \begin{figure}[ht!]
         \centering
         \includegraphics[width=\linewidth]{images/goanna-cross-module}
         \caption[Debugging a cross-module error in Goanna]{\textbf{Debugging a cross-module error in Goanna.} In this error, potential defects may appear in either module \texttt{A} and \texttt{B}. Goanna suggests 3 potential causes and fixes: 1) Change the type annotation of \texttt{x} to \texttt{[Maybe Int]} (Top). 2) Change the y variable on line 4 of module \texttt{A} to an instance of \texttt{Int}. 3) Change both the elements in the list literal in module \texttt{B} (Bottom), hence affecting the type of \texttt{y}. Clicking on each potential cause in the debugging panel results in different highlights and type hints in the editor panel.}
@@ -164,7 +164,7 @@ However, Haskell is also known for its steep learning curve and unforgiving type
     
     Constraints generation rules (Fig.~\ref{fig:translation}.E) take a Haskell expression node or type node and a Prolog variable \texttt{V} as input and output a list of Prolog terms. These terms attempt to unify the inferred type of such node to the provided Prolog variable \texttt{V}.
     
-    \begin{figure}[htb!]
+    \begin{figure}[ht!]
         \centering
         \includegraphics[width=\linewidth]{images/Generation}
         \caption{Goanna's Constraint Translation Rules (Simplified)} 
@@ -173,7 +173,7 @@ However, Haskell is also known for its steep learning curve and unforgiving type
     
 
 
-    \begin{figure}[htb!]
+    \begin{figure}[ht!]
         \centering
         \includegraphics[width=0.8\linewidth]{images/Translation-Example}
         \caption[An example of Goanna constraint generation]{\textbf{An example of Goanna constraint generation.} For the Haskell functions \texttt{f} and \texttt{g}, Goanna generates the predicates \texttt{f/2} and \texttt{g/2}. Each subgoal of \texttt{f/2} and \texttt{g/2} is generated from a corresponding part of the Haskell program. In a predefined predicate \texttt{type\_check/0}, the subgoals \texttt{f(\_,\_)} and \texttt{g(\_,\_)} are added. Running the goal \texttt{type\_check} will return whether the program is well-typed. In this particular example, this will return \texttt{false}. We used standard Prolog notation \texttt{name/arity} here when referring to Prolog predicates, as a Prolog predicate is identified by the combination of both attribute. 
@@ -197,7 +197,7 @@ However, Haskell is also known for its steep learning curve and unforgiving type
 %  MCS enumeration has been previously studied for its application in error detection and fault identifications \cite{bekkouche_exploration_2015,lamraoui_formula-based_2016}. And the techniques of MCS enumeration have been improved through many studies \cite{liffiton_fast_2016,zhao_parallelizing_2016,bendik_must_2020}. Unlike previous tools \cite{stuckey_interactive_2003,haack_type_2004}, which use a single MUS, Goanna is the first to use MCS enumeration -- deriving all MUSes, MSSes, and MCSes -- in type error detection and localization. Goanna uses an implementation of the MARCO \cite{Liffiton2016-xi} algorithm to enumerate all MCSes.
 
  
-     \begin{figure}[htb!]
+     \begin{figure}[ht!]
         \centering
         \includegraphics[width=\linewidth]{images/Enumeration-Example}
         \caption[An example of Goanna MCS Enumeration]{\textbf{An example of Goanna MCS Enumeration.} From the set of constraints (B) generated from the Haskell program(A), Goanna obtained 2 MUSes, 3 MCSes, and 3 MSSes. }
@@ -253,7 +253,7 @@ However, Haskell is also known for its steep learning curve and unforgiving type
     
     
 
-   \begin{figure}[htb!]
+   \begin{figure}[ht!]
         \centering
         \includegraphics[width=0.8\linewidth]{images/Grouping-Example}
         \caption[Goanna's type error grouping]{\textbf{Goanna's type error grouping.} The ill-typed program on the left contains a single type error, because it can be fixed by a minimal set of syntax changes. For example, fixing it by changing the literal \texttt{0} on line 1 to \texttt{True} or \texttt{False}. This edit contains a single location, so there exists no smaller edit that can fix \texttt{x} or \texttt{y} alone. The program on the right contains two type errors because \texttt{x} or \texttt{y} can be fixed separately. For example change \texttt{0} to \texttt{'0'} on line 1 fix \texttt{x} alone. }
@@ -274,7 +274,7 @@ However, Haskell is also known for its steep learning curve and unforgiving type
 
     \paragraph{Number of Error Locations.}
     Causes comprising fewer locations are prioritized and presented earlier in the list. For instance:
-   \begin{figure}[htb!]
+   \begin{figure}[ht!]
         \centering
         \includegraphics[width=0.5\linewidth]{images/Loc-Count}
         \caption[Goanna prefers causes with fewer error locations]{\textbf{Goanna prefers causes with fewer error locations.} In this ill-typed program, Goanna chooses to give the cause \texttt{"C"} on line 4 a higher likelihood because it contains a single location. The other cause contains 2. }
@@ -287,7 +287,7 @@ However, Haskell is also known for its steep learning curve and unforgiving type
 	Another useful heuristic is to encourage the cause whose fix will result in every surrounding term to be as concrete as possible.
 	
 	
-   \begin{figure}[htb!]
+   \begin{figure}[ht!]
         \centering
         \includegraphics[width=0.5\linewidth]{images/Specificity}
         \caption[Goanna prioritize causes whose resolutions lead to more concrete type assignments]{\textbf{Goanna prioritize causes whose resolutions lead to more concrete type assignments.} In this example, change \texttt{3} will result in \texttt{x} to have type \texttt{Bool}. Alternatively, \texttt{x}'s type will be unknown after changing \texttt{not} on line 3. Goanna prefers the former.} 
@@ -307,7 +307,7 @@ However, Haskell is also known for its steep learning curve and unforgiving type
     \paragraph{Minimize Constraint Count.}
     The number of constraints directly influences the time complexity associated with enumerating the Minimum Correction Subset (MCS). By merging multiple constraints into a singular one, we can reduce the total count of constraints and, in turn, improve the performance of enumeration. Yet, this approach requires careful application, as it could potentially lead to unsolvable situations or propose infeasible fixes, as the combined locations in the source code must either all contribute to the type error or none do. An effective application of this technique is to merge all constraints created by sub-expressions in a type signature.
 
-   \begin{figure}[htb!]
+   \begin{figure}[ht!]
         \centering
         \includegraphics[width=\linewidth]{images/Combine-Constraints}
         \caption[Combine constraints in type signature]{\textbf{Combine constraints in type signature.} For a simple Haskell program (top),  without any optimization, Goanna generates 10 constraints (bottom left), indicated by 10 subgoals in the predicate. By combining the constraints in the type signature, Goanna produces 2 constraints (bottom right).}
@@ -323,7 +323,7 @@ However, Haskell is also known for its steep learning curve and unforgiving type
     \paragraph{Elimination of Redundant Causes.}
     Goanna iterates over the possible causes and removes the ones that fail to deliver new insights. If all locations in a cause suggestion have already been covered in preceding suggestions, subsequent suggestions that merely rearrange these locations in different combinations can be omitted.
     
-   \begin{figure}[htb!]
+   \begin{figure}[ht!]
         \centering
         \includegraphics[width=0.9\linewidth]{images/Reduction-Example}
         \caption[The number of potential causes can grow exponentially]{\textbf{The number of potential causes can grow exponentially.} In the ill-typed Haskell program (Top), there are 4 different ways (Bottom) to fix the type error. It is not hard to see this growth is exponential, and showing all the alternatives is not helpful.}
@@ -357,10 +357,10 @@ However, Haskell is also known for its steep learning curve and unforgiving type
  	\subsection{RQ1. Accuracy}\label{sub:eval-accuracy}
  	For each program in our dataset, we compared each tool's error diagnosis with the accepted answer. We consider the diagnosis accurate only if its suggested fix matches the accepted answer. We consider the diagnosis partially accurate if the tool's diagnosis is part of a larger set of locations that make up the intended cause or if the diagnosis addresses one of the multiple errors. Because Goanna provides a comprehensive list of possible causes, it is very likely all sensible fixes are included. In this evaluation, we only consider the top-1 suggestions (Goanna 1) and top-3 suggestions (Goanna 3).  From the graph in Fig.~\ref{fig:accuracy}, GHC's accuracy is the least performant among all tools. Goanna 1's, although lower than Helium (72.1\%) in partial accuracy, is higher than Helium (51.2\%) when considering only diagnoses that fully match the accepted answer. \textbf{Goanna 3 has the best accuracy (84.8\%)}, higher than the partial accuracy of other tools.
   
-     \begin{figure}[htb!]
+     \begin{figure}[ht!]
         \centering
         \includegraphics[width=\linewidth]{images/Accuracy}
-        \caption{\textbf{The percentage of diagnoses that match the accepted answers.} }
+        \caption{The percentage of diagnoses that match the accepted answers.} 
         \label{fig:accuracy}
     \end{figure}
 
@@ -371,10 +371,10 @@ However, Haskell is also known for its steep learning curve and unforgiving type
  	\subsection{RQ2. Conciseness}\label{sub:eval-conciseness}
  Using Goanna requires users to cherry-pick from a list of possible causes. It will severely reduce the usability if the list is too long. To evaluate Goanna's conciseness, we counted the number of suggestions provided by Goanna in all the tasks.  We also indicate where the accepted answer is. Additionally, we included a baseline of Goanna with all the cause reduction features disabled. As shown in Fig.~\ref{fig:conciseness}, \textbf{Goanna manages to effectively condense its suggestion list}, on average providing a short list of suggestions (mean=3.29, median=3.0) for each type error. Additionally, on average, the accurate cause can be found within the top 2 suggestions (mean=1.63, median=1.0) to find the correct cause identification and fix. It also shows in Fig.~\ref{fig:conciseness} that Goanna's cause reduction strategies are effective; on average 51\% of total causes are reduced to gain clarity. One unusual observation is that in 3 tasks, Goanna failed to include the correct solution. The current version of Goanna is ineffective in making the correct suggestions for these type errors. We discuss this in section \ref{sec:edge-case}. 
  
-    \begin{figure}[htb!]
+    \begin{figure}[ht!]
         \centering
         \includegraphics[width=\linewidth]{images/Conciseness}
-        \caption{\textbf{The number of potential causes identified by Goanna.} }
+        \caption{The number of potential causes identified by Goanna.}
         \label{fig:conciseness}
     \end{figure}
 
@@ -384,10 +384,10 @@ However, Haskell is also known for its steep learning curve and unforgiving type
 
     Goanna's performance largely depends on the MCS enumeration phase. Enumerating all MCS is computationally expensive. We experimentally compared the time it takes for Goanna to provide a complete error diagnosis for each task with GHC and Helium. From the data shown in Fig.~\ref{fig:performance}, we can see that \textbf{Goanna is slightly slower than Helium}~(Goanna: mean=0.98 seconds, median=0.83 seconds; Helium: mean=0.63 seconds, median=0.63 seconds). Goanna is about 10 times slower than GHC (mean=0.09 seconds, median=0.09 seconds), but greatly outperforms GHC (see Figure \ref{fig:accuracy}). One important pattern is that Goanna's response time varies more than other tools (Goanna SD = 0.55, GHC SD = 0.00, Helium SD = 0.10). It can be seen from Fig.~\ref{fig:conciseness} and Fig.~\ref{fig:performance} that the tasks Goanna struggles most with are the ones that have significantly more potential causes. Multiple avenues exist to mitigate this delay, and we will discuss them in section \ref{sec:future-work}.
     
-    \begin{figure}[htb!]
+    \begin{figure}[ht!]
         \centering
         \includegraphics[width=\linewidth]{images/Performance}
-        \caption{\textbf{The time it takes to type check and diagnose each program.} }
+        \caption{The time it takes to type check and diagnose each program.}
         \label{fig:performance}
     \end{figure}
 
@@ -432,7 +432,7 @@ However, Haskell is also known for its steep learning curve and unforgiving type
     \paragraph{\textbf{Edge cases}} \label{sec:edge-case}
     Although Goanna's error reporting is, in general, exhaustive, there are situations where Goanna still fails to provide insightful diagnosis. One general theme is that Goanna is very effective when the error requires modifying a syntax node but can be less insightful when the intended fix is to insert, delete, or rearrange syntax nodes. In the example in Fig.~\ref{fig:weakness}, Goanna suggests changing the \texttt{map} function to a function of type \texttt{[Int] -> [Bool]}. But in practice, a human user would very easily identify that an expression defining the function to be mapped is missing between the map and the list being operated on.
     
-        \begin{figure}[htb!]
+        \begin{figure}[ht!]
         \centering
         \includegraphics[width=0.6\linewidth]{images/Weakness}
         \caption[Edge cases in Goanna]{\textbf{} In this type error, Goanna suggests changing \texttt{map} to a function of type \texttt{[Int] -> Bool}. Although this is technically correct, in practice, a human expert user would easily identify that a function expression is missing between the function \texttt{map} and the list literal.}

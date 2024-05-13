@@ -1,10 +1,216 @@
 % Appendix A
 
-\chapter{Glossary} % Main appendix title
+\chapter{Game Levels In User Study ZeroToHero} % Main appendix title
 
-\label{AppendixA} % For referencing this appendix elsewhere, use \ref{AppendixA}
+\label{levels} % For referencing this appendix elsewhere, use \ref{AppendixA}
 
 
-\paragraph{MUS}: Minimal Unsatisfiable Subset
-\paragraph{MSS}: Maximal Satisfiable Subset
-\paragraph{MCS}: Minimal Correction Subset
+We provide all the level settings we used in our user study. The online game is still open source and available for evaluation \cite{Anonymous_undated-ne}. However, this can be attempted locally with a Haskell interpreter or even with a pen and paper. The target type is the desired type signature for the function \texttt{zeroToHero}. The available functions show a list of functions that are allowed to be used in the implementation. It is not required to use all the available functions, and it is not forbidden to use any other functions or variables outside the provided functions; even the Haskell prelude is not available. 
+
+
+\section{Level 1: Trial run}
+
+\subsection{Target Type } 
+\begin{itemize}
+    \item \texttt{zeroToHero :: Zero a -> Hero a}
+\end{itemize}
+
+\subsection{Available Functions} 
+\begin{itemize}
+    \item \texttt{f :: Zero a -> Hero a}
+\end{itemize}
+
+\subsection{Possible Solution} 
+\begin{itemize}
+    \item \texttt{zeroToHero z = f z}
+\end{itemize}
+
+
+\section{Level 2: Assemble required}
+
+\subsection{Target Type} 
+\begin{itemize}
+    \item \texttt{zeroToHero :: Zero a -> Hero a}
+\end{itemize}
+
+\subsection{Available Functions} 
+\begin{itemize}
+    \item \texttt{runZero :: Zero a -> a}
+    \item \texttt{mkHero :: a -> Hero a}
+    \item \texttt{(\$) :: (a -> b) -> a -> b}
+\end{itemize}
+
+\subsection{Possible Solution} 
+\begin{itemize}
+    \item \texttt{zeroToHero z = mkHero (runZero z)}
+\end{itemize}
+
+\section{Level 3: Which path?}
+\subsection{Target Type } 
+\begin{itemize}
+    \item \texttt{zeroToHero :: Zero a -> Hero (a, a)}
+\end{itemize}
+
+\subsection{Available Functions} 
+\begin{itemize}
+    \item \texttt{f1 :: Zero a -> Hero a}
+    \item \texttt{f2 :: Zero a -> (a, a)}
+    \item \texttt{f3 :: Hero a -> Hero (a, a)}
+    \item \texttt{(\$) :: (a -> b) -> a -> b}
+    \item \texttt{(.) :: (b -> c) -> (a -> b) -> a -> c}
+\end{itemize}
+
+\subsection{Possible Solution} 
+\begin{itemize}
+    \item \texttt{zeroToHero z = f3 . f1 \$ z}
+\end{itemize}
+
+
+\section{Level 4: A repeating pattern}
+\subsection{Target Type } 
+\begin{itemize}
+    \item \texttt{zeroToHero :: Zero a b -> Hero b b}
+\end{itemize}
+
+\subsection{Available Functions} 
+\begin{itemize}
+    \item \texttt{f1 :: Zero a b -> Hero b a}
+    \item \texttt{f2 :: Zero a a -> Hero a a}
+    \item \texttt{f3 :: Zero a b -> Zero b a}
+    \item \texttt{f4 :: Zero a b -> Zero b b}
+    \item \texttt{(\$) :: (a -> b) -> a -> b}
+    \item \texttt{(.) :: (b -> c) -> (a -> b) -> a -> c}
+\end{itemize}
+
+\subsection{Possible Solution} 
+\begin{itemize}
+    \item \texttt{zeroToHero z = f2 . f4 \$ z}
+\end{itemize}
+
+
+\section{Level 5: A perfect pair}
+\subsection{Target Type } 
+\begin{itemize}
+    \item \texttt{zeroToHero :: Zero a b -> Hero b b}
+\end{itemize}
+
+\subsection{Available Functions} 
+\begin{itemize}
+    \item \texttt{fst :: (a, b) -> a}
+    \item \texttt{snd :: (a, b) -> b}
+    \item \texttt{f1 :: Zero a b -> Hero b a}
+    \item \texttt{f2 :: Zero a a -> Hero a a}
+    \item \texttt{f3 :: Zero a b -> Zero b a}
+    \item \texttt{f4 :: Zero a b -> Zero b b}
+    \item \texttt{(\$) :: (a -> b) -> a -> b}
+    \item \texttt{(.) :: (b -> c) -> (a -> b) -> a -> c}
+\end{itemize}
+
+\subsection{Possible Solution} 
+\begin{itemize}
+    \item \texttt{zeroToHero z = snd .f3 . f1 \$ z}
+\end{itemize}
+
+
+\section{Level 6: Monty Hall}
+\subsection{Target Type } 
+\begin{itemize}
+    \item \texttt{zeroToHero :: Zero a b c -> Hero c a}
+\end{itemize}
+
+\subsection{Available Functions} 
+\begin{itemize}
+    \item \texttt{f1 :: Zero a b c-> Zero c b a}
+    \item \texttt{f2 :: Zero a b c -> Zero a c c}
+    \item \texttt{f3 :: Zero a b c -> Hero b c}
+    \item \texttt{(\$) :: (a -> b) -> a -> b}
+    \item \texttt{(.) :: (b -> c) -> (a -> b) -> a -> c}
+\end{itemize}
+
+\subsection{Possible Solution} 
+\begin{itemize}
+    \item \texttt{zeroToHero z = f3 . f1 . f2 \$ z}
+\end{itemize}
+
+\section{Level 7: TIE fighter}
+\subsection{Target Type } 
+\begin{itemize}
+    \item \texttt{zeroToHero :: Zero a b c -> Hero c}
+\end{itemize}
+
+\subsection{Available Functions} 
+\begin{itemize}
+    \item \texttt{f1 :: Zero a b c -> Hero (a -> b)}
+    \item \texttt{f2 :: Zero a b c -> Hero (b -> c)}
+    \item \texttt{f3 :: Zero a b c -> Hero a}
+    \item \texttt{(<\$>) :: (a -> b) -> Hero a -> Hero b}
+    \item \texttt{(<*>) :: Hero (a -> c) -> Hero a -> Hero c}
+    \item \texttt{(\$) :: (a -> b) -> a -> b}
+    \item \texttt{(.) :: (b -> c) -> (a -> b) -> a -> c}
+\end{itemize}
+
+\subsection{Possible Solution} 
+\begin{itemize}
+    \item \texttt{zeroToHero z = f2 z <*> (f1 z <*> f3 z)}
+\end{itemize}
+
+\section{Level 8: The middle man}
+\subsection{Target Type } 
+\begin{itemize}
+    \item \texttt{zeroToHero :: (a -> d) -> (b -> d) -> (c -> d) -> Zero a b c ->  Hero a d c}
+\end{itemize}
+
+\subsection{Available Functions} 
+\begin{itemize}
+    \item \texttt{f1 :: Zero a b c -> Zero c a b}
+    \item \texttt{f2 :: Zero a b c -> Hero a b c}
+    \item \texttt{fmap :: (c -> d) -> Zero a b c -> Zero a b d}
+    \item \texttt{(\$) :: (a -> b) -> a -> b}
+    \item \texttt{(.) :: (b -> c) -> (a -> b) -> a -> c}
+\end{itemize}
+
+\subsection{Possible Solution} 
+\begin{itemize}
+    \item \texttt{zeroToHero ad bd cd z = f2  . f1  . f1  . fmap bd  . f1 \$ z}
+\end{itemize}
+
+\section{Level 9: Split the difference}
+\subsection{Target Type } 
+\begin{itemize}
+    \item \texttt{zeroToHero :: Zero a b c d ->  Hero d d d d}
+\end{itemize}
+
+\subsection{Available Functions} 
+\begin{itemize}
+    \item \texttt{f1 :: Zero a b c -> Zero c a b}
+    \item \texttt{f2 :: Zero a b c -> Hero a b c}
+    \item \texttt{fmap :: (c -> d) -> Zero a b c -> Zero a b d}
+    \item \texttt{(\$) :: (a -> b) -> a -> b}
+    \item \texttt{(.) :: (b -> c) -> (a -> b) -> a -> c}
+\end{itemize}
+
+\subsection{Possible Solution} 
+\begin{itemize}
+    \item \texttt{zeroToHero ad bd cd z = f2 \$ f1 \$ f1 \$ f3 \$ z}
+\end{itemize}
+
+
+\section{Level 10: The roller coaster}
+\subsection{Target Type } 
+\begin{itemize}
+    \item \texttt{zeroToHero :: Zero (a -> b -> c -> d) a b c  -> Hero d}
+\end{itemize}
+
+\subsection{Available Functions} 
+\begin{itemize}
+    \item \texttt{f1 :: Zero (a -> b) a c d -> Zero () b c d}
+    \item \texttt{f2 :: Zero a b c d -> Zero b c d a}
+    \item \texttt{f3 :: Zero a b c d -> Hero d}
+    \item \texttt{(\$) :: (a -> b) -> a -> b}
+    \item \texttt{(.) :: (b -> c) -> (a -> b) -> a -> c}
+\end{itemize}
+
+\subsection{Possible Solution} 
+\begin{itemize}
+    \item \texttt{zeroToHero z = f3 . f2 . f2 . f1 . f2 . f1 . f2 . f1 \$ z}
+\end{itemize}

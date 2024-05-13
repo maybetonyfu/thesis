@@ -4,7 +4,7 @@ We conducted three user studies, iteratively refining the \chameleon{} UI and ev
 
 
 
-\begin{figure}
+\begin{figure}[ht]
     \centering
     \includegraphics[width=\columnwidth,trim=30mm 35mm 35mm 5mm]{images/timeline.pdf}
     \caption[The timeline of \chameleon{}  evaluation]{The timeline of \chameleon{}  evaluation.}
@@ -78,7 +78,7 @@ Studies (1a \& 1b) address the research question:
 
 % In total 39 participants finished the study. Among them, 12 participants have over five years of Haskell experience, and 5 participants have three or four years of Haskell experience. And 8 participants have one or two years of experience, and 5 participants used Haskell for under a year. The rest left the question unanswered.
 
-\begin{figure}
+\begin{figure}[ht]
     \centering
     \includegraphics[width=0.8\linewidth,trim=15mm 12mm 15mm 35mm,clip]{images/user-study-1a.pdf}
     \caption{Study 1a task completion time (secs.) with 95\% confidence interval.}
@@ -86,7 +86,7 @@ Studies (1a \& 1b) address the research question:
 \end{figure}
 
 
-\begin{figure}
+\begin{figure}[ht]
     \centering
     \includegraphics[width=0.8\linewidth,trim=12mm 15mm 12mm 35mm,clip]{images/user-study-1b.pdf}
     \caption{Study 1b task completion time (secs.) with 95\% confidence interval.}
@@ -191,7 +191,7 @@ Study 2 is more exploratory in methodology than Study 1. We encouraged programme
 
 As shown in  Fig.~\ref{fig:r4-analysis}, the time to complete each task roughly relates to the interaction level of participants. Participants with higher interaction levels generally performed better, and the lowest interaction level was worse. Tukey’s HSD Test for multiple comparisons found that the completion time was significantly different between the minimal interaction group and the high interaction group ($p \le 0.001$, 95\% C.I. = [18.26, 31.41]), and between the minimal interaction group and the low interaction group ($p \le 0.001$, 95\% C.I. = [11.96, 26.67]). The results from three tasks stand out from the general trend: in Tasks 4 and 6, higher interaction users performed worse, and in task 9, the general trend is exaggerated. As with Study 1a and 1b, this difference is likely related to task difficulty. Tasks 4 and 6 are shorter than other tasks. The ideal fixes for these two tasks are placed relatively early in the source code (both in the first two lines of the source code). Users simply reading top to bottom could quickly identify the error without needing to skip unrelated sections of code using the information provided by \chameleon{}. This reduced the apparent benefit of \chameleon{} in these tasks. On the other hand, task 9 is the lengthiest task of all. It also involves deeply nested type definitions that are harder to follow in mind.
 
-\begin{figure}
+\begin{figure}[ht]
     \centering
     \includegraphics[width=\linewidth,trim=0mm 15mm 0mm 50mm,clip]{images/user-study-2.pdf}
     \caption{Study 2 task completion time (secs.) with 95\% confidence intervals.}
@@ -210,7 +210,8 @@ As shown in  Fig.~\ref{fig:r4-analysis}, the time to complete each task roughly 
 
 
 Another observation is when using the mode switching feature of \chameleon{}, we show this by presenting the starting mode and finishing mode of each task and each participant in a correlation matrix (Fig. \ref{fig:r4-mode-switching}). This observation suggests two characteristics of using multi-mode debugging tools. First, to answer \textbf{RQ2.2} programmers are roughly splitted in this matter: 53\% changing modes vs. 47\% staying in the same mode. Second, to answer \textbf{RQ2.3} when changing modes, programmers generally switch to the more informative modes instead of the more concise ones.
-\begin{figure}
+
+\begin{figure}[ht]
     \centering
     \includegraphics[width=0.7\linewidth,trim=0mm 5mm 0mm 5mm,clip]{images/mode-switching.pdf}
     \caption{Study 2 mode switches by starting mode.  Users overwhelmingly switched to the more sophisticated interface mode.

@@ -3,11 +3,11 @@
 The design requirements of \chameleon{} are motivated by limitations of traditional type errors, as documented in a number of studies (e.g.~\cite{Yang2000-wn, Hage2020-hg}), but which we illustrate here with a few motivating examples. 
 %These limitations are sourced from the authors' frustration in teaching and writing Haskell. This list of shortcomings of traditional type errors is also strengthened by multiple studies pursuing improvement\cite{yang_improved_2000}. 
 
-\begin{figure}
+\begin{figure}[ht]
     \centering
     \includegraphics[width=\linewidth,trim=0mm 35mm 0mm 0mm]{images/add-pair-example.pdf}
     \caption[A type error displayed in Visual Studio Code and the Haskell Vscode extension]{
-    A type error displayed in Visual Studio Code\cite{Microsoft_undated-hs} \todo{Missing citation} and the Haskell Vscode extension\cite{noauthor_2023-ot}.
+    A type error is displayed in Visual Studio Code\cite{Microsoft_undated-hs} with the Haskell Language Server\cite{HLS-Developers2023-ot} support.
 The expression \texttt{addPair} is blamed for causing the type error. This may not match the programmers' intention. 
     }
     \label{fig:motivation-example}
@@ -34,7 +34,7 @@ Based on the limitations of traditional type errors, we give the following desig
 
 
 \section{Chameleon IDE} \label{chameleon}
-\begin{figure*}
+\begin{figure}[ht]
     \centering
     \includegraphics[width=\textwidth, trim=0mm 10mm 0mm 0mm]{images/atonomy.pdf}
     \caption[The anatomy of \chameleon{}]{
@@ -43,7 +43,7 @@ Based on the limitations of traditional type errors, we give the following desig
         color (A). Additionally, an explanation layer (B) displays if deduction steps are enabled. The debugging pane contains three blocks. First, the error statement block contains an error statement (D), optionally, a list of candidate expression cards (E), a list of deduction steps (F), and a control bar (G) to increment/decrement deduction step. Second, the conflicting types block shows two alternative types (H). Third, the relevant type information block shows additional information (I) that may help understand type errors.
     }
     \label{fig:anatomy}
-\end{figure*}
+\end{figure}
 
 
 \chameleon{} comprises two parts: a type inference engine and a novel interactive debugging interface. 
@@ -76,7 +76,7 @@ A hover interaction over one of the possible types facilitates such bisection, c
 %This is a convenient way to put the error \emph{under the spotlight}.
 
 
-\begin{figure}
+\begin{figure}[ht]
     \centering
     \includegraphics[width=\linewidth, trim=0mm 10mm 0mm 0mm]{images/intro-compare-2.pdf}
     \caption[\chameleon{} with type compare tool enabled]{
@@ -85,7 +85,7 @@ A hover interaction over one of the possible types facilitates such bisection, c
     \label{fig:compare}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[ht]
     \centering
     \includegraphics[width=\linewidth, trim=0mm 10mm 0mm 0mm]{images/intro-candidate.pdf}
     \caption[\chameleon{} with candidate expression cards enabled.]{
@@ -96,7 +96,7 @@ A hover interaction over one of the possible types facilitates such bisection, c
 \end{figure}
 
 
-\begin{figure}
+\begin{figure}[ht]
     \centering
     \includegraphics[width=\linewidth, trim=0mm 10mm 0mm 0mm]{images/intro-deduction.pdf}
     \caption[\chameleon{} with deduction steps enabled]{
@@ -139,7 +139,7 @@ Deduction steps allow programmers to explore all the error locations one at a ti
 
 Programmers can use mouse and keyboard shortcuts to increment or decrement the step number or jump to any step. Programmers resolve type errors by navigating through all the deduction steps and verifying whether each explanation aligns with their intention. Eventually, they will find a step that does not match, and the type error can be fixed by modifying one of the two outlined locations.
 
-\begin{figure}
+\begin{figure}[ht]
     \centering
     \includegraphics[width=\linewidth, trim=0mm 0mm 0mm 0mm]{images/step-explain.pdf}
     \caption[Deduction steps if they are shown all at once]{
@@ -195,7 +195,7 @@ Our \chameleon{} implementation extends the original Chameleon approach in a num
 Using only constraints from the MUS is sufficient to locate the type error, but to recover types from type errors we need constraints from parts of the program that are irrelevant to the type error.  For instance, consider an ill-typed 2-tuple where two possible types can be assigned: \texttt{(Int, Int)} and \texttt{(Int, String)}. The types reconstructed from Chameleon may be \texttt{(a, Int)} and \texttt{(a, String)}. Although the recovered types are theoretically correct, they introduce the notation \texttt{a}, which denotes a generic type variable that can be any type, making the error message harder to understand. To solve this issue in \chameleon{}, for each constraint \texttt{c} in the MUS, we find a maximally satisfiable subset (MSS) from all the constraints that contain every other element of MUS but not \texttt{c}. These maximally satisfiable subsets, while not helpful in error localization, will produce the most concrete types, see Fig.~\ref{fig:compare-to-original}. Concrete types, such as \texttt{Int} and \texttt{String},  often provide extra information to programmers. With a type of \texttt{(Float, Float)}, programmers may want to convey a point in 2d space. However, a type of \texttt{(a, Float)} does not preserve such information.
 
 
-\begin{figure}
+\begin{figure}[ht]
     \centering
     \includegraphics[width=\linewidth, trim=0mm 6mm 0mm 0mm]{images/compare-to-original.pdf}
     \caption[Comparison between original Chameleon and \chameleon{}]{
@@ -225,9 +225,9 @@ In addition, \chameleon{} provides support for type explanation. Similar to the 
 % \end{lstlisting}
 
 
-\begin{figure}
+\begin{figure}[ht]
     \centering
-    \includegraphics[width=0.4\linewidth]{images/Listing1.pdf}
+\includegraphics[width=0.4\linewidth]{images/Listing1.pdf}
     \caption[An example to illustrate constraint generation in \chameleon{}]{A simple program that is ill-typed. It generates two constraints from line 1 and one constraint from line 2. }
     \label{fig:listing1}
 \end{figure}

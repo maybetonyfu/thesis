@@ -31,9 +31,9 @@ Type inference, also known as implicit typing, is a technique to reduce the numb
 
 \begin{figure}[hbt]
   \includegraphics[width=\linewidth]{ExampleJava}
-  \caption{
+  \caption[An example of a typical Java program with and without using the \texttt{var} keyword]{
     \label{fig:example-java}
-      An example of a typical Java program before and after introducing the \texttt{var} keyword. Before (Top), programmers have to annotate the type identical to the value initializer. After Java 10, this is solved using the local type inference with the \texttt{var} keyword (Bottom).
+      An example of a typical Java program with and without using the \texttt{var} keyword. Before (Top), programmers have to annotate the type identical to the value initializer. After Java 10, this is solved using the local type inference with the \texttt{var} keyword (Bottom).
     }
 \end{figure}
 
@@ -47,7 +47,7 @@ In simpler type inference systems, such as the one used in the Java example (Fig
 
 \begin{figure}[hbt]
     \includegraphics[width=\linewidth]{HindleyMilner}
-    \caption{
+    \caption[Illustration of Hindley-Milner type checking on a lambda expression]{
       \label{fig:hindley-milner}
       Illustration of Hindley-Milner type checking on a lambda expression. Initially (Step 1), fresh type variables $t_1$  and $ t_2 $ are introduced to assign types to $x :: t_1 \to t_2$ and $y :: t_1$, with $ t_2$ serving as a placeholder for the expression’s right-hand side. It then examines the right-hand side 'if' expression, creating three additional variables: $t_3$ for the condition, and $t_4$ and $t_5$ for the left and right branches, respectively. Unification constraints are then applied, stipulating $t_3$ as a boolean $Bool$, and requiring $t_4$ and $t_5$ to match $t_2$. The process continues traversing the syntax tree until Step 8, where a type mismatch occurs as $t_5$, previously unified with an integer type, is attempted to be unified with a boolean type, leading to a type inference error.
        }
@@ -69,7 +69,7 @@ In response to the usability challenges posed by Algorithm W, an alternative app
 
 \begin{figure}[hbt]
   \includegraphics[width=0.8\linewidth]{AlgorithmWM1.pdf}
-  \caption{
+  \caption[Comparison of error reporting between Algorithms M and W]{
     \label{fig:algorithm-m-1}
     Comparison of error reporting between Algorithms M and W. In this example, Algorithm M identifies a more precise and plausible error location, whereas Algorithm W only provides a general, less specific error location.}
 \end{figure}
@@ -107,7 +107,7 @@ Type error slicing is an advanced technique intending to enhance the meaningfuln
 
 \begin{figure}[hbt]
   \includegraphics[width=0.8\linewidth]{TypeErrorSlicing.pdf}
-  \caption{
+  \caption[Illustration of type error slicing applied to the Haskell function \texttt{fac}]{
     \label{fig:type-error-slicing}
     Illustration of type error slicing applied to the Haskell function \texttt{fac}. The highlighted "slices" indicate conflicting type inferences for the variable \texttt{n}: it is inferred as \texttt{Char} since it is compared against \texttt{'0'}, yet it must be an integer because it is used in arithmetic subtraction. This conflict leads to the identification of a type error.}
 \end{figure}
@@ -123,7 +123,7 @@ Traditional type error slicing methods have been instrumental in localizing type
 
 \begin{figure}[hbt]
   \includegraphics[width=0.5\linewidth]{SlicingCounterExample}
-  \caption{
+  \caption[An example where type error slicing is less useful, highlighting every possible location in the source code]{
     \label{fig:slicing-counter-example}
       In this case, type error slicing is less useful, highlighting every possible location in the source code.}
 \end{figure}
@@ -148,7 +148,7 @@ Interactive type debugging thus represents a significant evolution in the handli
 
 \begin{figure}[hbt]
   \includegraphics[width=0.8\linewidth]{ChameleonInteractive}
-  \caption{
+  \caption[Demonstration of the interactive debugging feature in Chameleon]{
     \label{fig:chameleon-interactive}
     Demonstration of the interactive debugging feature in Chameleon. The source code is highlighted in two distinct styles (solid and outline), suggesting two potential types assignable to the variable \texttt{w} (left). Complementary details about these types are further explored through a command line query interface (right). }
 \end{figure}
@@ -168,7 +168,7 @@ It's important to note that an unsatisfiable constraint system may contain multi
 
 \begin{figure}[hbt]
   \includegraphics[width=0.8\linewidth]{MUS}
-  \caption{
+  \caption[An illustration of Minimal Unsatisfiable Subsets (MUSes)]{
     \label{fig:mus-example}
     An example of a constraint system modeled in propositional logic featuring 7 constraints and 2 logic variables \texttt{a} and \texttt{b}. The system is initially infeasible.  Three potential Minimal Unsatisfiable Subsets (MUSes) can be identified. Each MUS is itself unsatisfiable. More critically, the removal of any single constraint from an MUS yields a satisfiable set of constraints. }
 \end{figure}
@@ -180,7 +180,7 @@ Beyond the MUS, the Minimal Correction Subset (MCS) represents the smallest grou
 
 \begin{figure}[hbt]
   \includegraphics[width=0.8\linewidth]{MCS}
-  \caption{
+  \caption[An illustration of Minimal Satisfiable Subsets (MCSes)]{
     \label{fig:mcs-example}
     Depiction of a constraint system in propositional logic, consisting of 7 constraints and 2 logic variables \texttt{a} and \texttt{b}. Initially, this system is infeasible. Four Minimal Satisfiable Subsets (MCSes) can be identified, where the removal of each individual MCS from the constraint system leads to a maximally feasible system.}
 \end{figure}
@@ -192,7 +192,7 @@ The Maximal Satisfiable Subset (MSS) is the complement of an MCS. A maximal sati
 
 \begin{figure}[hbt]
   \includegraphics[width=0.8\linewidth]{MSS}
-  \caption{
+  \caption[An illustration of Maximal Satisfiable Subsystems (MSSes)]{
     \label{fig:mss-example}
     Depiction of a constraint system in propositional logic with 7 constraints and 2 logic variables \texttt{a} and \texttt{b}. While the full system is infeasible, four Maximal Satisfiable Subsystems (MSSes) are found. Each MSS is satisfiable in itself, but including any additional constraints from the system renders it unsatisfiable. }
 \end{figure}
@@ -213,7 +213,7 @@ Building upon the introduction of the Minimal Unsatisfiable Subset (MUS) discuss
 
 \begin{figure}[hbt]
   \includegraphics[width=\linewidth]{Multi-Step-MUS}
-  \caption{Illustration of a multi-step type error influenced by potential issues in the definition of \texttt{a}, \texttt{b}, or the conditional expression involving \texttt{b}. These elements are logically connected as depicted (Top Right). The analysis of the source code yields 7 constraints (Bottom Left), from which only one Minimal Unsatisfiable Subset (MUS) is identified (Bottom Right).}
+  \caption[Illustration of a multi-step type error in the context of MUSes]{Illustration of a multi-step type error influenced by potential issues in the definition of \texttt{a}, \texttt{b}, or the conditional expression involving \texttt{b}. These elements are logically connected as depicted (Top Right). The analysis of the source code yields 7 constraints (Bottom Left), from which only one Minimal Unsatisfiable Subset (MUS) is identified (Bottom Right).}
   \label{fig:multi-step-2}
   \end{figure}
 
@@ -224,7 +224,7 @@ Multi-step type errors involve a sequence of logical deductions that link one co
 
 \begin{figure}[hbt]
   \includegraphics[width=\linewidth]{Multi-Witness-MUS}
-  \caption{\label{fig:multi-witness-2}
+  \caption[Illustration of a multi-witness type error in the context of MUSes]{\label{fig:multi-witness-2}
   Analysis of a multi-witness type error, where the \texttt{case} expression could be interpreted as type \texttt{Char} or \texttt{String}. This scenario showcases a type disagreement with three witnesses against one witness (Top Right). From the source code, 9 constraints are established (Bottom Left), resulting in 3 identified MUSes. Interestingly, all MUSes include constraint C3, suggesting its pivotal role in favoring the possibility that the \texttt{Char} type is erroneous.}
   \end{figure}
 
@@ -234,7 +234,7 @@ A multi-witness type error occurs when multiple locations (witnesses) on one sid
 
 \begin{figure}[hbt]
   \includegraphics[width=\linewidth]{Multi-Party-MUS}
-  \caption{\label{fig:multi-party-2} Analysis of a multi-party type error regarding the list \texttt{d}, which could alternately be typed as \texttt{[Int]}, \texttt{[String]}, or \texttt{[Char]}. The conflict is depicted as a disagreement among three parties (Top Right). An analysis based on the source code generates 5 constraints (Bottom Left), leading to 3 distinct Minimal Unsatisfiable Subsets (MUSes). Notably, this scenario differs from the multiple witness type error as no single constraint appears across all MUSes.}
+  \caption[Illustration of a multi-party type error in the context of MUSes]{\label{fig:multi-party-2} Analysis of a multi-party type error regarding the list \texttt{d}, which could alternately be typed as \texttt{[Int]}, \texttt{[String]}, or \texttt{[Char]}. The conflict is depicted as a disagreement among three parties (Top Right). An analysis based on the source code generates 5 constraints (Bottom Left), leading to 3 distinct Minimal Unsatisfiable Subsets (MUSes). Notably, this scenario differs from the multiple witness type error as no single constraint appears across all MUSes.}
   \end{figure}
 
 A multi-party type error features several irreconcilable type assignments stemming from different locations within the source code. Like multi-witness errors, multi-party errors contain multiple MUSes. In the example shown in Figure \ref{fig:multi-party-2}, there are three MUSes: {C3, C4}, {C3, C5}, {C4, C5}. Unlike the multi-witness scenario, no single element appears across all MUSes, suggesting a more complex type conflict scenario.

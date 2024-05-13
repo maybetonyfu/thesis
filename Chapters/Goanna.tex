@@ -71,7 +71,7 @@ However, Haskell is also known for its steep learning curve and unforgiving type
     \begin{figure}[htb!]
         \centering
         \includegraphics[width=\linewidth]{images/Goanna-Example-1}
-        \caption{\textbf{Goanna's error diagnosis} Goanna shows that to fix the type error, the literals \texttt{1}, \texttt{2}, and \texttt{3} on line 1 need to be changed to Char type.}
+        \caption[Goanna's showing possible causes of a type error (1)]{\textbf{Goanna's error diagnosis} Goanna shows that to fix the type error, the literals \texttt{1}, \texttt{2}, and \texttt{3} on line 1 need to be changed to Char type.}
         \label{fig:goanna-example-1}
     \end{figure}
 
@@ -84,7 +84,7 @@ However, Haskell is also known for its steep learning curve and unforgiving type
     \begin{figure}[htb!]
         \centering
         \includegraphics[width=\linewidth]{images/goanna-example-2}
-        \caption{\textbf{Goanna's error diagnosis.} Goanna shows that the type error can be fixed by changing the literal $'1'$ on line 3, which needs an \texttt{Int} type. This, according to Goanna, is the most likely cause of the type error.}
+        \caption[Goanna's showing possible causes of a type error (2)]{\textbf{Goanna's error diagnosis.} Goanna shows that the type error can be fixed by changing the literal $'1'$ on line 3, which needs an \texttt{Int} type. This, according to Goanna, is the most likely cause of the type error.}
         \label{fig:goanna-example-2}
     \end{figure}
 
@@ -96,7 +96,7 @@ However, Haskell is also known for its steep learning curve and unforgiving type
     \begin{figure}[htb!]
         \centering
         \includegraphics[width=\linewidth]{images/goanna-multi-error}
-        \caption{\textbf{Selecting a different error in Goanna.} Selecting a different error using Goanna's error selector. The debugging panel will show potential cause locations for the selected error. The highlights and type hints in the editor panel will focus on the selected error.}
+        \caption[Selecting a different error in Goanna]{\textbf{Selecting a different error in Goanna.} Selecting a different error using Goanna's error selector. The debugging panel will show potential cause locations for the selected error. The highlights and type hints in the editor panel will focus on the selected error.}
         \label{fig:multi-error}
     \end{figure}
 
@@ -108,14 +108,14 @@ However, Haskell is also known for its steep learning curve and unforgiving type
     \begin{figure}[htb!]
         \centering
         \includegraphics[width=\linewidth]{images/variance-ghc}
-        \caption{\textbf{Inspecting a defective Haskell Program (left) in relation to the error messages output by the standard GHC compiler (right)} -- 3 separate type errors are reported.  The editor (VS Code is used here) underlines the error locations reported in the messages, but all other contextual information must be understood from the error text.}
+        \caption[Inspecting a defective Haskell Program in relation to the error messages output by the standard GHC compiler]{\textbf{Inspecting a defective Haskell Program (left) in relation to the error messages output by the standard GHC compiler (right)} -- 3 separate type errors are reported.  The editor (VS Code is used here) underlines the error locations reported in the messages, but all other contextual information must be understood from the error text.}
         \label{fig:grouping-ghc}
     \end{figure}
     
         \begin{figure}[htb!]
         \centering
         \includegraphics[width=\linewidth]{images/Goanna-Error-Grouping}
-        \caption{\textbf{Goanna's Error Grouping.} This error, although its potential offending parts appear in many declarations, is possible to fix in one place, i.e. by changing the definition of the \texttt{size} function on line 1. Therefore, Goanna reports it as a single error.}
+        \caption[Goanna's Error Grouping]{\textbf{Goanna's Error Grouping.} This error, although its potential offending parts appear in many declarations, is possible to fix in one place, i.e. by changing the definition of the \texttt{size} function on line 1. Therefore, Goanna reports it as a single error.}
         \label{fig:grouping-goanna}
     \end{figure}
 
@@ -142,7 +142,7 @@ However, Haskell is also known for its steep learning curve and unforgiving type
     \begin{figure}[htb!]
         \centering
         \includegraphics[width=\linewidth]{images/goanna-cross-module}
-        \caption{\textbf{Debugging a cross-module error in Goanna.} In this error, potential defects may appear in either module \texttt{A} and \texttt{B}. Goanna suggests 3 potential causes and fixes: 1) Change the type annotation of \texttt{x} to \texttt{[Maybe Int]} (Top). 2) Change the y variable on line 4 of module \texttt{A} to an instance of \texttt{Int}. 3) Change both the elements in the list literal in module \texttt{B} (Bottom), hence affecting the type of \texttt{y}. Clicking on each potential cause in the debugging panel results in different highlights and type hints in the editor panel.}
+        \caption[Debugging a cross-module error in Goanna]{\textbf{Debugging a cross-module error in Goanna.} In this error, potential defects may appear in either module \texttt{A} and \texttt{B}. Goanna suggests 3 potential causes and fixes: 1) Change the type annotation of \texttt{x} to \texttt{[Maybe Int]} (Top). 2) Change the y variable on line 4 of module \texttt{A} to an instance of \texttt{Int}. 3) Change both the elements in the list literal in module \texttt{B} (Bottom), hence affecting the type of \texttt{y}. Clicking on each potential cause in the debugging panel results in different highlights and type hints in the editor panel.}
         \label{fig:goanna-cross-module}
     \end{figure}
 
@@ -176,7 +176,7 @@ However, Haskell is also known for its steep learning curve and unforgiving type
     \begin{figure}[htb!]
         \centering
         \includegraphics[width=0.8\linewidth]{images/Translation-Example}
-        \caption{\textbf{An example of Goanna constraint generation.} For the Haskell functions \texttt{f} and \texttt{g}, Goanna generates the predicates \texttt{f/2} and \texttt{g/2}. Each subgoal of \texttt{f/2} and \texttt{g/2} is generated from a corresponding part of the Haskell program. In a predefined predicate \texttt{type\_check/0}, the subgoals \texttt{f(\_,\_)} and \texttt{g(\_,\_)} are added. Running the goal \texttt{type\_check} will return whether the program is well-typed. In this particular example, this will return \texttt{false}. We used standard Prolog notation \texttt{name/arity} here when referring to Prolog predicates, as a Prolog predicate is identified by the combination of both attribute. 
+        \caption[An example of Goanna constraint generation]{\textbf{An example of Goanna constraint generation.} For the Haskell functions \texttt{f} and \texttt{g}, Goanna generates the predicates \texttt{f/2} and \texttt{g/2}. Each subgoal of \texttt{f/2} and \texttt{g/2} is generated from a corresponding part of the Haskell program. In a predefined predicate \texttt{type\_check/0}, the subgoals \texttt{f(\_,\_)} and \texttt{g(\_,\_)} are added. Running the goal \texttt{type\_check} will return whether the program is well-typed. In this particular example, this will return \texttt{false}. We used standard Prolog notation \texttt{name/arity} here when referring to Prolog predicates, as a Prolog predicate is identified by the combination of both attribute. 
 }
         \label{fig:translation-example}
     \end{figure}
@@ -200,7 +200,7 @@ However, Haskell is also known for its steep learning curve and unforgiving type
      \begin{figure}[htb!]
         \centering
         \includegraphics[width=\linewidth]{images/Enumeration-Example}
-        \caption{\textbf{An example of Goanna MCS Enumeration.} From the set of constraints (B) generated from the Haskell program(A), Goanna obtained 2 MUSes, 3 MCSes, and 3 MSSes. }
+        \caption[An example of Goanna MCS Enumeration]{\textbf{An example of Goanna MCS Enumeration.} From the set of constraints (B) generated from the Haskell program(A), Goanna obtained 2 MUSes, 3 MCSes, and 3 MSSes. }
         \label{fig:enumeration-example}
     \end{figure}
     
@@ -256,7 +256,7 @@ However, Haskell is also known for its steep learning curve and unforgiving type
    \begin{figure}[htb!]
         \centering
         \includegraphics[width=0.8\linewidth]{images/Grouping-Example}
-        \caption{\textbf{Goanna's type error grouping.} The ill-typed program on the left contains a single type error, because it can be fixed by a minimal set of syntax changes. For example, fixing it by changing the literal \texttt{0} on line 1 to \texttt{True} or \texttt{False}. This edit contains a single location, so there exists no smaller edit that can fix \texttt{x} or \texttt{y} alone. The program on the right contains two type errors because \texttt{x} or \texttt{y} can be fixed separately. For example change \texttt{0} to \texttt{'0'} on line 1 fix \texttt{x} alone. }
+        \caption[Goanna's type error grouping]{\textbf{Goanna's type error grouping.} The ill-typed program on the left contains a single type error, because it can be fixed by a minimal set of syntax changes. For example, fixing it by changing the literal \texttt{0} on line 1 to \texttt{True} or \texttt{False}. This edit contains a single location, so there exists no smaller edit that can fix \texttt{x} or \texttt{y} alone. The program on the right contains two type errors because \texttt{x} or \texttt{y} can be fixed separately. For example change \texttt{0} to \texttt{'0'} on line 1 fix \texttt{x} alone. }
         \label{fig:grouping-example}
     \end{figure}
 
@@ -277,7 +277,7 @@ However, Haskell is also known for its steep learning curve and unforgiving type
    \begin{figure}[htb!]
         \centering
         \includegraphics[width=0.5\linewidth]{images/Loc-Count}
-        \caption{\textbf{Goanna prefers causes with fewer error locations.} In this ill-typed program, Goanna chooses to give the cause \texttt{"C"} on line 4 a higher likelihood because it contains a single location. The other cause contains 2. }
+        \caption[Goanna prefers causes with fewer error locations]{\textbf{Goanna prefers causes with fewer error locations.} In this ill-typed program, Goanna chooses to give the cause \texttt{"C"} on line 4 a higher likelihood because it contains a single location. The other cause contains 2. }
         \label{fig:loc-count}
     \end{figure}
 
@@ -290,7 +290,7 @@ However, Haskell is also known for its steep learning curve and unforgiving type
    \begin{figure}[htb!]
         \centering
         \includegraphics[width=0.5\linewidth]{images/Specificity}
-        \caption{\textbf{Goanna prioritize causes whose resolutions lead to more concrete type assignments.} In this example, change \texttt{3} will result in \texttt{x} to have type \texttt{Bool}. Alternatively, \texttt{x}'s type will be unknown after changing \texttt{not} on line 3. Goanna prefers the former.} 
+        \caption[Goanna prioritize causes whose resolutions lead to more concrete type assignments]{\textbf{Goanna prioritize causes whose resolutions lead to more concrete type assignments.} In this example, change \texttt{3} will result in \texttt{x} to have type \texttt{Bool}. Alternatively, \texttt{x}'s type will be unknown after changing \texttt{not} on line 3. Goanna prefers the former.} 
         \label{fig:specificity}
     \end{figure}
 
@@ -310,7 +310,7 @@ However, Haskell is also known for its steep learning curve and unforgiving type
    \begin{figure}[htb!]
         \centering
         \includegraphics[width=\linewidth]{images/Combine-Constraints}
-        \caption{\textbf{Combine constraints in type signature.} For a simple Haskell program (top),  without any optimization, Goanna generates 10 constraints (bottom left), indicated by 10 subgoals in the predicate. By combining the constraints in the type signature, Goanna produces 2 constraints (bottom right).}
+        \caption[Combine constraints in type signature]{\textbf{Combine constraints in type signature.} For a simple Haskell program (top),  without any optimization, Goanna generates 10 constraints (bottom left), indicated by 10 subgoals in the predicate. By combining the constraints in the type signature, Goanna produces 2 constraints (bottom right).}
         \label{fig:combine-constraints}
     \end{figure}
 
@@ -326,7 +326,7 @@ However, Haskell is also known for its steep learning curve and unforgiving type
    \begin{figure}[htb!]
         \centering
         \includegraphics[width=0.9\linewidth]{images/Reduction-Example}
-        \caption{\textbf{The number of potential causes can grow exponentially.} In the ill-typed Haskell program (Top), there are 4 different ways (Bottom) to fix the type error. It is not hard to see this growth is exponential, and showing all the alternatives is not helpful.}
+        \caption[The number of potential causes can grow exponentially]{\textbf{The number of potential causes can grow exponentially.} In the ill-typed Haskell program (Top), there are 4 different ways (Bottom) to fix the type error. It is not hard to see this growth is exponential, and showing all the alternatives is not helpful.}
         \label{fig:reduction-example}
     \end{figure}
     
@@ -435,7 +435,7 @@ However, Haskell is also known for its steep learning curve and unforgiving type
         \begin{figure}[htb!]
         \centering
         \includegraphics[width=0.6\linewidth]{images/Weakness}
-        \caption{\textbf{} In this type error, Goanna suggests changing \texttt{map} to a function of type \texttt{[Int] -> Bool}. Although this is technically correct, in practice, a human expert user would easily identify that a function expression is missing between the function \texttt{map} and the list literal.}
+        \caption[Edge cases in Goanna]{\textbf{} In this type error, Goanna suggests changing \texttt{map} to a function of type \texttt{[Int] -> Bool}. Although this is technically correct, in practice, a human expert user would easily identify that a function expression is missing between the function \texttt{map} and the list literal.}
         \label{fig:weakness}
     \end{figure}
 

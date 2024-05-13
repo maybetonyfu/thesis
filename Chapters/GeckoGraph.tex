@@ -16,7 +16,7 @@ Although polymorphic typing promises robustness and a high degree of code reusab
 
 \begin{figure}[hbt]
   \includegraphics[width=\linewidth]{figures/Foldable}
-  \caption{\label{fig:example-foldable} An example type error where a programmer mistakingly provided a \texttt{Char} instead of a \texttt{String} literal. \textbf{Left --} The compiler shows an error message comparing the provided Char type to a confusingly named type \texttt{t0 a0}. \textbf{Right --} GeckoGraph shows the exact message with the two types in graphic notation, highlighting the structural difference rather than identifier names.}
+  \caption[Comparison between GeckoGraph and compiler error message]{\label{fig:example-foldable} An example type error where a programmer mistakingly provided a \texttt{Char} instead of a \texttt{String} literal. \textbf{Left --} The compiler shows an error message comparing the provided Char type to a confusingly named type \texttt{t0 a0}. \textbf{Right --} GeckoGraph shows the exact message with the two types in graphic notation, highlighting the structural difference rather than identifier names.}
 \end{figure}
 
 
@@ -46,7 +46,7 @@ Simple types, such as type variables and concrete types, are displayed in a cell
 
 \begin{figure}[hbt]
   \includegraphics[width=\linewidth]{figures/Design}
-  \caption{
+  \caption[Examples of various types as represented in GeckoGraph]{
         \label{fig:design}
         Examples of various types as represented in GeckoGraph, including type variables (A) and concrete types (B). Data types (C, D, E), function types (F, G, H), and type classes (I, J).
   }
@@ -66,7 +66,7 @@ Curried functions (e.g., \texttt{ a -> b -> c}) display as two cells of function
 
 \begin{figure}[hbt]
   \includegraphics[width=\linewidth]{figures/Indicator}
-  \caption{
+  \caption[An example of using the function indicator in GeckoGraph]{
         \label{fig:indicator}
         An example of using the function indicator. The function indicator can be used to easily identify the arity of a function type by counting the connecting function indicators. For high-order functions where functions are arguments of other functions, it is very easy to see the ``order" of functions and how they are arranged. 
   }
@@ -99,7 +99,7 @@ Modern programming environments often allow programmers to mouse over part of th
 \begin{figure}[hbt]
 \label{fig:advanced}
   \includegraphics[width=\linewidth]{figures/Advanced}
-  \caption{
+  \caption[Advanced features of GeckoGrap]{
   \label{fig:advanced}
   Advanced features of GeckoGrap. (A) GeckoGraph supports Kind Visualization if the inferred kind is greater than \texttt{*}. (B) GeckoGraph supports qualified constraints by extending the extended area across multiple type variables. (C) GeckoGraph supports Multiple Parameter Type Classes, using different shapes of the same color to indicate that multiple variables must satisfy certain type classes collectively. (D) GeckoGraph supports the precise selection of its sub-structures. }
 \end{figure}
@@ -115,7 +115,7 @@ GeckoGraph was designed through many different iterations. Many research methods
 
 \begin{figure}[hbt]
   \includegraphics[width=\linewidth]{figures/PreviousVersions}
-  \caption{\label{fig:previous}Previous Versions of GeckoGraph. Different encodings represent named types, type variables, type constructors, and high-order functions.}
+  \caption[Previous Versions of GeckoGraph]{\label{fig:previous}Previous Versions of GeckoGraph. Different encodings represent named types, type variables, type constructors, and high-order functions.}
 \end{figure}
 
  
@@ -139,7 +139,7 @@ We illustrate the task of the user study using level 4 of the game. At this leve
 
 \begin{figure}[hbt]
   \includegraphics[width=\linewidth]{figures/GamePlay}
-  \caption{\label{fig:level-example} An screenshot from  the game ZeroToHero. On this level -- level 4 (Shown at F) -- the players need to implement the function \texttt{ zeroToHero :: Zero a b -> Hero b b} (B). They write their own definitions in the code editor (D) using a set of provided functions (G). The inferred type of their current definition is shown in (C). When ready, they can test their solution by clicking on the \textit{Attempt} button (A). They can also skip a level by clicking on the \textit{Bypass} button next to it. The output from the compiler, if there is any, is shown in a window below (E). The GeckoGraph in the screenshot uses a different color scheme that is optimized for computer screens.}
+  \caption[A screenshot from  the game ZeroToHero]{\label{fig:level-example} A screenshot from  the game ZeroToHero. On this level -- level 4 (Shown at F) -- the players need to implement the function \texttt{ zeroToHero :: Zero a b -> Hero b b} (B). They write their own definitions in the code editor (D) using a set of provided functions (G). The inferred type of their current definition is shown in (C). When ready, they can test their solution by clicking on the \textit{Attempt} button (A). They can also skip a level by clicking on the \textit{Bypass} button next to it. The output from the compiler, if there is any, is shown in a window below (E). The GeckoGraph in the screenshot uses a different color scheme that is optimized for computer screens.}
 \end{figure}
 
 At each level of the game, the programmer must select the right functions to achieve the target result. In particular, for this level, participants must discover that only \texttt{f4} and \texttt{f2} are necessary to produce the desired results. An implement that satisfies the target type is \texttt{zeroTohero z = f2  (f4  z)}. 
@@ -183,7 +183,7 @@ However, when comparing the task time between the two treatments, we were unable
 
 \begin{figure}[hbt]
   \includegraphics[width=\linewidth]{figures/LevelTime}
-  \caption{\label{fig:level-time} Time spent on each level, with 95\% confidence interval. We show that the difficulty steadily increases across the game, but levels 5, 7, and 8 are significantly harder than the authors intended. The overall task time of each group roughly matches experience level.}
+  \caption[Time spent on each level, with 95\% confidence interval]{\label{fig:level-time} Time spent on each level, with 95\% confidence interval. We show that the difficulty steadily increases across the game, but levels 5, 7, and 8 are significantly harder than the authors intended. The overall task time of each group roughly matches experience level.}
 \end{figure}
 
 
@@ -195,7 +195,7 @@ When breaking down the result in each task (Fig. \ref{fig:success-rate}), we wer
 
 \begin{figure}[hbt]
   \includegraphics[width=\linewidth]{figures/SuccessfulRate}
-  \caption{\label{fig:success-rate}Success rate of each task with and without GeckoGraph, grouped by experience level. The figure is cropped from 70\% to 100\% for readability. In most tasks, GeckoGraph provides a small edge. However, significant differences were found in task 10 of the beginner group and task 10 of the familiar group. }
+  \caption[Success rate of each task with and without GeckoGraph, grouped by experience level]{\label{fig:success-rate}Success rate of each task with and without GeckoGraph, grouped by experience level. The figure is cropped from 70\% to 100\% for readability. In most tasks, GeckoGraph provides a small edge. However, significant differences were found in task 10 of the beginner group and task 10 of the familiar group. }
 \end{figure}
 
 \subsection{Qualitative Feedback}
@@ -207,7 +207,7 @@ For the question ``Do you find the GeckoGraph distracting", most of the particip
 
 \begin{figure}[hbt]
   \includegraphics[width=\linewidth]{figures/Qualitative}
-  \caption{\label{fig:qualitative} The users rated scores of how intuitive (left), distracting (middle), and helpful (right) they found GeckoGraph. Overall, programmers consider GeckoGraph to be intuitive and not distrating. However, opinions are split on its helpfulness. }
+  \caption[The users rated scores of how intuitive (left), distracting (middle), and helpful (right) they found GeckoGraph]{\label{fig:qualitative} The users rated scores of how intuitive (left), distracting (middle), and helpful (right) they found GeckoGraph. Overall, programmers consider GeckoGraph to be intuitive and not distrating. However, opinions are split on its helpfulness. }
 \end{figure}
 
 
@@ -234,7 +234,7 @@ One trend that we saw from the qualitative feedback is that programmers find Gec
 
 \begin{figure}[hbt]
   \includegraphics[width=0.6\linewidth]{figures/rotate}
-  \caption{\label{fig:rotate} The `rotate' function in level 8 of the user study. The name given in the game is `f2'. It shuffles the type arguments of a Zero type}
+  \caption[The `rotate' function in level 8 of the user study depicted in GeckoGraph]{\label{fig:rotate} The `rotate' function in level 8 of the user study. The name given in the game is `f2'. It shuffles the type arguments of a Zero type}
 \end{figure}
 
 
@@ -242,7 +242,7 @@ One trend that we saw from the qualitative feedback is that programmers find Gec
 
 \begin{figure}[hbt]
   \includegraphics[width=0.6\linewidth]{figures/Add3}
-  \caption{\label{fig:add3} An implementation of function \texttt{add3} but the author missed an (+) from the correct implementation (.) ((+) .) (+). GeckGraph highlights the difference in arity, and reveals that a binary function is needed on the right-hand side for the arity to match. }
+  \caption[An implementation of function \texttt{add3} depicted in GeckoGraph]{\label{fig:add3} An implementation of function \texttt{add3} but the author missed an (+) from the correct implementation (.) ((+) .) (+). GeckGraph highlights the difference in arity, and reveals that a binary function is needed on the right-hand side for the arity to match. }
 \end{figure}
 
 
@@ -252,7 +252,7 @@ To quote some feedback from participants: ``Types are much easier to understand 
 	
 \begin{figure}[hbt]
   \includegraphics[width=0.6\linewidth]{figures/Maybe}
-  \caption{\label{fig:maybe} The function \texttt{f} is planned to have the type \texttt{Maybe a -> a -> Maybe a}. The programmer mistakingly applied the result to the \texttt{return} function, making the result inside a Monad instance.  GeckoGraph reveals the difference in the ``layers" of types. }
+  \caption[GeckoGraph reveals the difference in the ``layers" of types]{\label{fig:maybe} The function \texttt{f} is planned to have the type \texttt{Maybe a -> a -> Maybe a}. The programmer mistakingly applied the result to the \texttt{return} function, making the result inside a Monad instance.  GeckoGraph reveals the difference in the ``layers" of types. }
 \end{figure}
 
 
@@ -291,7 +291,7 @@ Furthermore, the advanced features of GeckoGraph (Section~\ref{sec:benefits}) ar
 
 \begin{figure}[hbt]
   \includegraphics[width=\linewidth]{figures/assoc}
-  \caption{\label{fig:assoc} The \texttt{assoc} function for day convolution \cite{Day1970-kb} in the Kan extension. Even for people who are not familiar with the exact definitions, it is easy to see that the variables \texttt{f},  \texttt{g}, and \texttt{h} are all high-kinded types.}
+  \caption[The \texttt{assoc} function for day convolution \cite{Day1970-kb} in the Kan extension depicted in GeckoGraph]{\label{fig:assoc} The \texttt{assoc} function for day convolution \cite{Day1970-kb} in the Kan extension. Even for people who are not familiar with the exact definitions, it is easy to see that the variables \texttt{f},  \texttt{g}, and \texttt{h} are all high-kinded types.}
 \end{figure}
 
 
@@ -309,7 +309,7 @@ Compared to functions in Jung's notation,  GeckoGraph shows two major benefits. 
 
 \begin{figure}[hbt]
   \includegraphics[width=\linewidth]{figures/Jung}
-  \caption{
+  \caption[Comparing GeckoGraph with Jung's notation]{
         \label{fig:jung}
         Comparing the map function (\texttt{(a -> b) -> [a] -> [b]}) in text notation, GeckoGraph, and Jung's notation.
   }

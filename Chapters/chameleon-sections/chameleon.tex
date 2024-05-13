@@ -6,8 +6,8 @@ The design requirements of \chameleon{} are motivated by limitations of traditio
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth,trim=0mm 35mm 0mm 0mm]{images/add-pair-example.pdf}
-    \caption{
-    A type error displayed in Visual Studio Code\cite{Microsoft_undated-hs} and the Haskell Vscode extension\cite{noauthor_2023-ot}.
+    \caption[A type error displayed in Visual Studio Code and the Haskell Vscode extension]{
+    A type error displayed in Visual Studio Code\cite{Microsoft_undated-hs} \todo{Missing citation} and the Haskell Vscode extension\cite{noauthor_2023-ot}.
 The expression \texttt{addPair} is blamed for causing the type error. This may not match the programmers' intention. 
     }
     \label{fig:motivation-example}
@@ -37,7 +37,7 @@ Based on the limitations of traditional type errors, we give the following desig
 \begin{figure*}
     \centering
     \includegraphics[width=\textwidth, trim=0mm 10mm 0mm 0mm]{images/atonomy.pdf}
-    \caption{
+    \caption[The anatomy of \chameleon{}]{
         \textbf{The anatomy of \chameleon{}.}
         The editor pane (left) is similar to a traditional code editor. Fragments of source code may have a highlight
         color (A). Additionally, an explanation layer (B) displays if deduction steps are enabled. The debugging pane contains three blocks. First, the error statement block contains an error statement (D), optionally, a list of candidate expression cards (E), a list of deduction steps (F), and a control bar (G) to increment/decrement deduction step. Second, the conflicting types block shows two alternative types (H). Third, the relevant type information block shows additional information (I) that may help understand type errors.
@@ -79,7 +79,7 @@ A hover interaction over one of the possible types facilitates such bisection, c
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth, trim=0mm 10mm 0mm 0mm]{images/intro-compare-2.pdf}
-    \caption{
+    \caption[\chameleon{} with type compare tool enabled]{
         \textbf{\chameleon{} with type compare tool enabled}. \chameleon{} identified the conflicting types for the expression \texttt{u} and associated the relevant locations with each type. Compare the output with the traditional type error message in fig. \ref{fig:motivation-example}.
 }
     \label{fig:compare}
@@ -88,7 +88,7 @@ A hover interaction over one of the possible types facilitates such bisection, c
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth, trim=0mm 10mm 0mm 0mm]{images/intro-candidate.pdf}
-    \caption{
+    \caption[\chameleon{} with candidate expression cards enabled.]{
         \textbf{\chameleon{} with candidate expression cards enabled.}
         Indicates the type error can occur in the definition of \texttt{x} or \texttt{y}.
     }
@@ -99,7 +99,7 @@ A hover interaction over one of the possible types facilitates such bisection, c
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth, trim=0mm 10mm 0mm 0mm]{images/intro-deduction.pdf}
-    \caption{
+    \caption[\chameleon{} with deduction steps enabled]{
         \textbf{\chameleon{} with deduction steps enabled.}
         \chameleon{} explains the type error in four steps. In the screenshot, the active step is step 2, where \chameleon{} shows that the expression \texttt{x} and \texttt{y} should have the same type. 
     }
@@ -142,7 +142,7 @@ Programmers can use mouse and keyboard shortcuts to increment or decrement the s
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth, trim=0mm 0mm 0mm 0mm]{images/step-explain.pdf}
-    \caption{
+    \caption[Deduction steps if they are shown all at once]{
 Deduction steps if they are shown all at once. In practice, steps are shown one at a time. Programmers increment or decrement the step number using the step control bar (Fig. \ref{fig:anatomy}-G) or by directly clicking on a step button (Fig. \ref{fig:anatomy}-F). To increment or decrement the deduction step can be intuitively thought of as moving the position of the \textit{splitting point} (dotted lines) where the blue and orange highlights divide.
         }
     \label{fig:step-interface}
@@ -198,7 +198,7 @@ Using only constraints from the MUS is sufficient to locate the type error, but 
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth, trim=0mm 6mm 0mm 0mm]{images/compare-to-original.pdf}
-    \caption{
+    \caption[Comparison between original Chameleon and \chameleon{}]{
 Reporting the same type error, Chameleon uses more abstract types
 \texttt{Int -> a} and \texttt{Char -> a}, while \chameleon{} uses the 
 concrete types (types that do not contain type variables) \texttt{Int -> Bool} and \texttt{Char -> Bool}.
@@ -227,8 +227,8 @@ In addition, \chameleon{} provides support for type explanation. Similar to the 
 
 \begin{figure}
     \centering
-    \includegraphics[width=\linewidth]{images/Listing1.pdf}
-    \caption{A simple program that is ill-typed. It generates two constraints from line 1 and one constraint from line 2. }
+    \includegraphics[width=0.4\linewidth]{images/Listing1.pdf}
+    \caption[An example to illustrate constraint generation in \chameleon{}]{A simple program that is ill-typed. It generates two constraints from line 1 and one constraint from line 2. }
     \label{fig:listing1}
 \end{figure}
 

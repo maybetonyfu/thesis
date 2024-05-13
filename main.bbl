@@ -1881,6 +1881,34 @@
     \field{year}{2023}
   \endentry
 
+  \entry{Fruhwirth1998-jq}{article}{}
+    \name{author}{1}{}{%
+      {{hash=FT}{%
+         family={Fr{\"u}hwirth},
+         familyi={F\bibinitperiod},
+         given={Thom},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{FT2}
+    \strng{fullhash}{FT2}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \verb{doi}
+    \verb 10.1016/S0743-1066(98)10005-5
+    \endverb
+    \field{issn}{1567-8326, 0743-1066}
+    \field{number}{1}
+    \field{pages}{95\bibrangedash 138}
+    \field{title}{Theory and practice of constraint handling rules}
+    \field{volume}{37}
+    \field{journaltitle}{J. Log. Algebr. Program.}
+    \field{month}{10}
+    \field{year}{1998}
+  \endentry
+
   \entry{Fu2021-xd}{inproceedings}{}
     \name{author}{3}{}{%
       {{hash=FS}{%
@@ -4836,6 +4864,33 @@
     \field{title}{An empirical study on the impact of Python dynamic features on change-proneness}
     \field{month}{07}
     \field{year}{2015}
+  \endentry
+
+  \entry{Wazny2006-ll}{thesis}{}
+    \name{author}{1}{}{%
+      {{hash=WJR}{%
+         family={Wazny},
+         familyi={W\bibinitperiod},
+         given={Jeremy\bibnamedelima Richard},
+         giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{WJR1}
+    \strng{fullhash}{WJR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \field{title}{Type inference and type error diagnosis for {Hindley/Milner} with extensions}
+    \list{location}{1}{%
+      {Parkville, Melbourne}%
+    }
+    \list{institution}{1}{%
+      {University of Melbourne}%
+    }
+    \field{type}{phdthesis}
+    \field{month}{01}
+    \field{year}{2006}
   \endentry
 
   \entry{Wells1999-ob}{article}{}

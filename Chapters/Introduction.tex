@@ -12,7 +12,7 @@ In this chapter, we will delve into two critical aspects of programming language
 
 We will discuss the nature of these compiler errors, their characteristics, and the inherent complexities associated with improving them. Furthermore, this chapter will review the evolution of tools designed to aid programmers in deciphering and resolving program errors, addressing the notable gap between the tools to support compile-time errors and runtime errors. Through these discussions, we seek to illuminate both the challenges and the ongoing efforts to enhance programming error diagnostics.
 
-My interventions -- most notably, \chameleon{} (Chapter \ref{chap:chameleon}), Goanna (Chapter~\ref{chap:goanna}), and GeckoGraph (Chapter~\ref{chap:gecko-graph}) -- aim to transform the traditional, often terse, error feedback into a dynamic and clear diagnostic system enhanced by interactive user interfaces. Our goals are to provide programmers with clarity, intuition, and confidence. In this:
+Our interventions -- most notably, \chameleon{} (Chapter \ref{chap:chameleon}), Goanna (Chapter~\ref{chap:goanna}), and GeckoGraph (Chapter~\ref{chap:gecko-graph}) -- aim to transform the traditional, often terse, error feedback into a dynamic and clear diagnostic system enhanced by interactive user interfaces. Our goals are to provide programmers with clarity, intuition, and confidence. In this:
 
 \begin{itemize}
   \item \textbf{Clarity}: We aim to provide succinct and accurate explanations of errors, cutting through unfamiliar terminologies, awkwardly phrased sentences, and excessive amounts of unhelpful information that often obscure the underlying issues.
@@ -206,10 +206,10 @@ My research is driven by the acknowledged difficulties in debugging type errors 
 
 \section{Research Aim}
 
-\subsection{Aim 1. Provide Programmers With The Comprehensive Knowledge Needed to Understand and Resolve Type Errors.}
+\subsection{Aim 1. Provide programmers with the comprehensive knowledge needed to understand and resolve type errors.}
 \label{subsec:aim1}
 
-Current representations of type errors in most compiler tools are often insufficient, typically providing only the location of the type check failure, the expected type, and the actual type encountered. This conventional approach, as discussed in the previous sections (\ref{sec:symptoms}), lacks practicality and clarity. This aim addresses the need for a richer, more informative explanation of type errors by evaluating the limitations of existing systems and analyzing how programmers tackle type errors in practice.
+Current representations of type errors in most compiler tools are often insufficient for straightforward resolution without further investigation by the programmer. They typically provide only the location of the type check failure, the expected type, and the actual type encountered. This conventional approach, as discussed in the previous sections (\ref{sec:symptoms}), lacks practicality and clarity. This aim addresses the need for a richer, more informative explanation of type errors by evaluating the limitations of existing systems and analyzing how programmers tackle type errors in practice.
 
 \subsubsection{Objective 1.1 To Encompass Multiple Potential Causes Of A Type Error}
 An essential aspect of this research is to challenge and expand beyond the bias found in traditional type error reporting (Section \ref{subsec:bias}). It's crucial to inform programmers that multiple potential causes and resolutions are almost certain to be present in every type error. A key goal is to communicate the dimension of multiple potential causes effectively. In addition, for each potential cause, programmers need a clear explanation of where the offending code is, which typing rules are violated, and most importantly, how the meaning of the program will change after the error is resolved.

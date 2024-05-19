@@ -8,7 +8,7 @@
 
 Programming languages are the media through which we communicate our ideas with machines, be it mathematical formulae or video games. Like human languages, programming languages consist of words, grammar, and meaning. Unlike conversing with humans, machines tolerate very little ambiguity and are not skillful at navigating confusion. Furthermore, sometimes inconsistencies glossed over by humans can indicate bigger oversights; for example, mismatched expression types can indicate an ill-defined mapping. 
 
-In this thesis, we investigate the problem of type errors, a specific subclass of programming errors that have been a fear for beginner programmers and a constant annoyance for even expert programmers. We will identify what causes them, why they are hard to deal with, and why our existing tools fall short to help programmers combat type errors. We introduce our interventions, most notably, \chameleon{} (Chapter \ref{chap:chameleon}), Goanna (Chapter~\ref{chap:goanna}), and GeckoGraph (Chapter~\ref{chap:gecko-graph}), aimed to transform the traditional, often terse, type error feedback into a dynamic and clear diagnostic system enhanced by interactive user interfaces. 
+In this thesis, we investigate the problem of type errors, a specific subclass of programming errors that have been a fear for beginner programmers and a constant annoyance for even expert programmers. We identify what causes them, why they are hard to deal with, and why our existing tools fall short to help programmers combat type errors. We introduce our interventions, most notably, \chameleon{} (Chapter \ref{chap:chameleon}), Goanna (Chapter~\ref{chap:goanna}), and GeckoGraph (Chapter~\ref{chap:gecko-graph}), aimed to transform the traditional, often terse, type error feedback into a dynamic and clear diagnostic system enhanced by interactive user interfaces. 
 % Our goals are to provide programmers with clarity, intuition, and confidence. In this:
 
 
@@ -96,7 +96,7 @@ Despite these safety benefits, these languages' presence in the mainstream progr
  \subsection{Bias in Type Errors} 
  \label{subsec:bias}
  
-A significant issue in type error messages is their inherent bias. Often, type errors can arise from multiple causes, but the error message might only highlight one. This issue is known as left-to-right bias in traditional type-checking algorithms—a notable shortcoming that limits the usability of error messages \cite{McAdam2002-vb, Lee1998-fx, Chen2014-ev}.  For instance, as shown in Figure \ref{fig:type-error-example}, a programmer likely intended to add two numbers using the \texttt{+} operator instead of mistakenly using the concatenation operator \texttt{++}. However, the type error reported by the compiler mistakenly points to the application of the integer literal \texttt{3}, failing to suggest the more probable cause. We will explore left-to-right bias further in Chapter \ref{chap:haskell-type-checking}.
+A significant issue in type error messages is their inherent bias. Often, type errors can arise from multiple causes, but the error message might only highlight one. This issue is known as left-to-right bias in traditional type-checking algorithms—a notable shortcoming that limits the usability of error messages \cite{McAdam2002-vb, Lee1998-fx, Chen2014-ev}.  For instance, as shown in Figure \ref{fig:type-error-example}, a programmer likely intended to add two numbers using the \texttt{+} operator instead of mistakenly using the concatenation operator \texttt{++}. However, the type error reported by the compiler mistakenly points to the application of the integer literal \texttt{3}, failing to suggest the more probable cause. We explore left-to-right bias further in Chapter \ref{chap:haskell-type-checking}.
 
  \begin{figure}[htbp]
   \centering
@@ -146,7 +146,7 @@ Error messages are frequently plagued by technical jargon and convoluted phrasin
 
 \section{The Challenges Of Making Good Type Errors}
 \label{sec:challenges}
-After introducing some typical symptoms of bad type error messages, we will now explore some fundamental challenges to improve type error messages.
+After introducing some typical symptoms of bad type error messages, we now explore some fundamental challenges to improve type error messages.
 
 \subsection{Types Are Complex}
 
@@ -220,7 +220,7 @@ This research is driven by the acknowledged difficulties in debugging type error
 Current representations of type errors in most compiler tools are often insufficient for straightforward resolution without further investigation by the programmer. They typically provide only the location of the type check failure, the expected type, and the actual type encountered. This conventional approach, as discussed in the previous sections (\ref{sec:symptoms}), lacks practicality and clarity. This objective addresses the need for a richer, more informative explanation of type errors by evaluating the limitations of existing systems and analyzing how programmers tackle type errors in practice.
 
 \subsubsection{Objective 1.1 To Encompass Multiple Potential Causes Of A Type Error}
-An essential aspect of this research is to challenge and expand beyond the bias found in traditional type error reporting (Section \ref{subsec:bias}). It's crucial to inform programmers that multiple potential causes and resolutions are almost certain to be present in every type error. A key goal is to communicate the dimension of multiple potential causes effectively. In addition, for each potential cause, programmers need a clear explanation of where the offending code is, which typing rules are violated, and, most importantly, how the meaning of the program will change after the error is resolved.
+An essential aspect of this research is to challenge and expand beyond the bias found in traditional type error reporting (Section \ref{subsec:bias}). It is crucial to inform programmers that multiple potential causes and resolutions are almost certain to be present in every type error. A key goal is to communicate the dimension of multiple potential causes effectively. In addition, for each potential cause, programmers need a clear explanation of where the offending code is, which typing rules are violated, and, most importantly, how the meaning of the program will change after the error is resolved.
 
 
 \subsubsection{Objective 1.2 To Accurately Report Relevant Locations Contributing to Type Errors.}

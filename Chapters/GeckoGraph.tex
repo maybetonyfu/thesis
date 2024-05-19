@@ -7,6 +7,9 @@
 \label{chap:gecko-graph} 
 \graphicspath{{Figures/GeckoGraph}}
 
+This chapter introduces GeckoGraph, a visual language designed to describe polymorphic types. We begin by highlighting the challenges associated with understanding and using polymorphic types. Next, we introduce GeckoGraph, demonstrating how it addresses these challenges and outlining the process of transforming text-based type signatures into GeckoGraph. We then present our experiment evaluating the effectiveness of GeckoGraph in assisting with program tasks involving polymorphic types. Finally, we discuss the strengths, limitations, and potential applications of GeckoGraph.  
+
+ This chapter uses the contents from our paper \textit{GeckoGraph: A Visual Language for Polymorphic Types}, with slight modifications to ensure coherence within this thesis. This work was under review for the International Conference on Function Programming (ICFP) 2024 at the time of submitting this thesis.
 
 \section{Introduction} \label{sec:intro}
 In programming languages, a polymorphic type \cite{Cardelli1987-fp} can represent values of different types while providing a common interface or behavior for those values. Polymorphic types are central to the succinctness of contemporary statically-typed functional languages, enabling a considerable degree of type-safe abstraction and hence component reuse. Parametric polymorphism is available in many programming languages, from functional languages such as Haskell and ML to imperative and multi-paradigm languages such as Rust\cite{Klabnik_undated-wx} and Go\cite{Griesemer_undated-ff}. Polymorphism allows programs to be written in a way that is more generic and adaptable to different data types, enabling greater flexibility and code reuse. Polymorphic types are ideal for modeling abstractions, such as properties of mathematical objects and laws that hold on these objects. 
@@ -82,6 +85,8 @@ The GeckoGraph type class's design promotes the type class placements rather tha
 
 
 \subsection{Benefits of Using GeckoGraph}\label{sec:benefits}
+Based on our design principles of GeckoGraph and our proposed glyphs, we outlined a few potential benefits of GeckoGraph over text-based type annotations. 
+
 \paragraph{Generalization patterns in type classes}
 A frequently cited confusion among novices is the symmetry of \texttt{Foldable a} and \texttt{[a]}. The subtle differences are often not important for beginners. However, when encountering type errors in working with lists, Haskell often explains the error with the \texttt{Foldable} instance. For the example in Fig. \ref{fig:example-foldable} where a programmer mistakingly provided a Char instead of a String literal, the compiler shows an error message comparing the provided \texttt{Char} type with a confusingly named type \texttt{t0 a0}. Although any \texttt{Foldable} instance is perfectly suited for the list \cite{Waldmann2018-hu}, this generalization may reduce programmers' confidence in their understanding of the language and the ability to navigate out of a type error. In GeckoGraph, a list type and a type with a Foldable instance have the same shape. This allows the generic type \texttt{t0 a0} in the error message to assume the same shape as \texttt{[a]}. This generalization of concrete types and abstraction of type-class instances aims to allow for teaching fundamental functional programming concepts without hiding high-level abstractions. The same benefits apply to polymorphic numbers and strings.
 
@@ -222,7 +227,11 @@ Although we justified the use of skips in Section \ref{subsection:task}, the ava
 
 
 
-\section{Discussion} \label{sec:gecko-discussion}
+\section{Discussion} 
+Based on the results of our user study, we analyze the strengths and weaknesses of GeckoGraph, highlighting both the positive and negative aspects of our findings. We offer insights into potential applications for type visualization tools such as GeckoGraph, suggesting future directions for their development and use.
+
+
+\label{sec:gecko-discussion}
 \subsection{Strengths}
 From the results of our experiment, we see that using GeckoGraph has a significant effect on the success rate of our participants, especially on less experienced programmers. We also see that with the data we collected, we did not find a significant time difference between programming with and without GeckoGraph. To extrapolate the observed expressiveness, we speculate on the practical benefits of programming with GeckoGraph.
 
@@ -262,19 +271,24 @@ One important class of feedback from the open section is that many programmers m
 ``It is similar enough to traditional types that it is intuitive." ``This was how I parse the textual representation of types" was pointed out by multiple participants.
 
 \subsection{Weaknesses}
+GeckoGraph is not without its limitations. These limitations might contribute to the ineffectiveness of providing more efficient task-solving and the limited effect on the success rate in more experienced programmers. 
+
 \subsubsection{Space Usage}\label{subsec:space}
 GeckoGraph uses horizontal space in proportion to the size of the type signature syntax tree, and GeckoGraph uses vertical space in proportion to the depth of the syntax tree. Compared to the traditional text-based language, GeckoGraph has the limitation of requiring vertical space. We have identified some approaches to minimize space usage while retaining most of the advantages of using GeckoGraph, such as displaying only the color blocks without the secondary encoding of identifier names.
 
 
 \subsubsection{Color Encoding}
-GeckoGraph highly relies on color hue as a main encoding. It provides a strong visual grouping  \cite{Zeng2023-jz}  for programmers to identify subtle patterns in types, such as the order and placement of substructures. However, the perception of color is different from person to person. This becomes an even bigger issue for color-blind or visually impaired programmers. Although GeckoGraph uses color-blind friendly schemes, it is only a method to avoid indistinguishable types and is not a strong guarantee of effectiveness. For this, we are exploring different encodings, such as patterns and shapes, to maximize the accessibility of GeckoGraph. 
+GeckoGraph relies highly on color hue as the main encoding. It provides a strong visual grouping  \cite{Zeng2023-jz}  for programmers to identify subtle patterns in types, such as the order and placement of substructures. However, the perception of color is different from person to person. This becomes an even bigger issue for color-blind or visually impaired programmers. Although GeckoGraph uses color-blind friendly schemes, it is only a method to avoid indistinguishable types and is not a strong guarantee of effectiveness. For this, we are exploring different encodings, such as patterns and shapes, to maximize the accessibility of GeckoGraph. 
 
 
 \subsection{Gamified Human Study}
 
-It is important to recognize that the human study is designed to be a series of puzzles. The tasks are meant to contain entertaining values. We practiced multiple gamification techniques: levels, story/theme, and goals/rewards. \cite{Hamari2014-mc} This not only allowed us to have confidence that participants are motivated to complete the tasks, it also lent us popularity in the Haskell community and led to a historically high participation rate. Gamification has been shown to improve engagement and motivation. This has been harnessed by many research projects to improve participation in human studies \cite{He2014-vp}. We identify that studies on functional programming are often technical and intimidating; our use of gamification not only attracted historically high participation, but also attracted a wide distribution of experience levels. 
+It is important to recognize that the human study is designed to be a series of puzzles. The tasks are meant to contain entertaining values. We practiced multiple gamification techniques: levels, story/theme, and goals/rewards. \cite{Hamari2014-mc} This not only allowed us to have confidence that participants are motivated to complete the tasks, it also lent us popularity in the Haskell community and led to a historically high participation rate. Gamification has been shown to improve engagement and motivation. This has been harnessed by many research projects to improve participation in human studies \cite{He2014-vp}. We identify that studies on functional programming are often technical and intimidating; our use of gamification not only attracted historically high participation but also attracted a wide distribution of experience levels. 
 
 \subsection{Potential Applications}
+
+Drawing on our findings from the user study, particularly the qualitative feedback, we identify several potential applications for GeckoGraph in programming practice as well as in the teaching and learning of programming.
+
 \subsubsection{Programming Assistance}
 We envision many ways GeckoGraph can be integrated into programming tools. GeckoGraph can visualize and inspect types in tooltips and pop-ups. It can be used to discover the mismatching parts of two conflicting types in type errors. It can be used to generate type expressions and edit type expressions structurally. In our post-study survey, the potential integration of text editors and programming assistance were the most requested use cases proposed by the participants. 
 
@@ -301,6 +315,8 @@ Furthermore, the advanced features of GeckoGraph (Section~\ref{sec:benefits}) ar
 
 
 \section{Related work}
+The concept of using visualization in programming languages is not new, but there has been limited research on type-level visualization specifically. In this section, we will explore the topic of type visualization and place our research within the broader context of programming visualization. Finally, we will examine different approaches to integrating visualization into programming tasks, including visualization as an augmentation to text-based representation and visualization as a replacement for it.
+
 \subsection{Visualizing polymorphic types}
 A similar half-enclosing structure was proposed in the visualization of types by Jung \cite{Jung2000-oc}. In Jung's notation, the type constructor half encloses its arguments, but the figure for the type constructor is placed on the bottom right (Fig. \ref{fig:jung}).  In contrast, GeckoGraph follows the natural reading order, allowing larger structures in a type signature to take precedence over smaller ones. 
 

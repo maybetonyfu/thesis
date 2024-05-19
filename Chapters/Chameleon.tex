@@ -5,8 +5,11 @@
 
 \label{chap:chameleon} 
 
-In this chapter, we discuss the challenge of traditional tools for debugging type errors, in localization, language and bias-adverting. We introduce Chameleon, a type error debugging tool based on type error slicing and MUS. We discuss the design of Chameleon and its usage in the example and show that 1) Chameleon is able to address the challenges in traditional debugging tools, and 2) Chameleon's improvement over other slicing-based tools.
+In this chapter, we explore the challenges associated with traditional tools for debugging type errors. We focus on their limitations in identifying all relevant locations, explaining errors in user-friendly language, and avoiding bias. We introduce Chameleon, a type error debugging tool for Haskell designed to address these challenges and present type errors in an optimized, comprehensible manner. We delve into the design of Chameleon and demonstrate its usage through examples of resolving type errors. Finally, we present our user studies, which are designed to evaluate the effectiveness of type error visualization and interactive debugging tools.
 
+
+ This chapter uses the contents from our paper \textit{ChameleonIDE: Untangling Type Errors Through Interactive Visualization and
+Exploration}, with slight modifications to ensure coherence within this thesis. This work was published and presented at the International Conference on Program Comprehension (ICPC) 2023.
 
 \input{Chapters/chameleon-sections/introduction.tex}
 \input{Chapters/chameleon-sections/chameleon.tex}

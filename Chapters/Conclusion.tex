@@ -6,7 +6,7 @@
 \newcommand{\typetutor}{TypeTutor}
 
 \graphicspath{{Figures/Conclusion}}
-At the start of this thesis, we gave an overview of the landscape of programming languages, with a special interest on functional programming and static typing. We emphasized the critical role of type errors, noting how problematic type errors can hinder both the learning and effective use of statically typed languages. Then, we explored various Haskell type-checking methods and their evolution, setting the stage for an in-depth discussion of our interventions --- \chameleon{}, Goanna, and GeckoGraph --- which are designed to deliver accurate and user-friendly error messages.
+At the start of this thesis, we gave an overview of the landscape of programming languages, with a special interest in functional programming and static typing. We emphasized the critical role of type errors, noting how problematic type errors can hinder both the learning and effective use of statically typed languages. Then, we explored various Haskell type-checking methods and their evolution, setting the stage for an in-depth discussion of our interventions --- \chameleon{}, Goanna, and GeckoGraph --- which are designed to deliver accurate and user-friendly error messages.
 
 In this chapter, we will review our contributions and discuss the future work that builds upon these initiatives. The planned future work is categorized into three main areas: tool design, integration with large language models (LLMs), and increasing language availability. We will conclude our discussion by reaffirming our commitment to enhancing type errors—a core objective of this thesis—and reiterating the importance of this work within the broader field of programming language research.
 
@@ -26,37 +26,28 @@ We have developed a categorization framework for type errors based on insights f
 \end{itemize}
 
 
-Following this classification, we delved into the three main systems we developed in our research—\chameleon{} (see Chapter \ref{chap:chameleon}), Goanna (see Chapter \ref{chap:goanna}), and GeckoGraph (see Chapter \ref{chap:gecko-graph}). Each system is designed to tackle some unique challenges associated with debugging type errors.
+Following this classification, we delved into the three main systems we developed in our research—\chameleon{} (see Chapter \ref{chap:chameleon}), Goanna (see Chapter \ref{chap:goanna}), and GeckoGraph (see Chapter \ref{chap:gecko-graph}). Each system is designed to tackle some different challenges associated with debugging type errors.
 
 \subsection{Explain Multi-step type errors and the chain of thought visualization}
 
-\subsubsection{Technical Contribution - \chameleon{}}
 
-We introduce \chameleon{}, an interactive Haskell type error debugging tool. \chameleon{} uses Minimal Unsatisfiable Subsets (MUS) as its core type error representation. Our work on \chameleon{} is based on the existing work on Chameleon \cite{Stuckey2003-pz, Wazny2006-ll}. The original Chameleon was developed as a command-line tool; its innovative approach of interactive debugging allows programmers to view different possible type error explanations and type assignments by issuing console commands.  We took the idea of a MUS-based Haskell debugging tool and interactive debugging techniques and provided a modern implementation with many advanced features. Notably, \chameleon{} enables programmers to explore the chain of reasoning behind type errors in step-by-step order. Additionally, \chameleon{} features an adaptive user interface, allowing programmers to tailor the information density of type errors according to their experience level.
+We introduce \textbf{\chameleon{}}, an interactive Haskell type error debugging tool. \chameleon{} uses Minimal Unsatisfiable Subsets (MUS) as its core type error representation. Our work on \chameleon{} is based on the existing work on Chameleon \cite{Stuckey2003-pz, Wazny2006-ll}. The original Chameleon was developed as a command-line tool; its innovative approach of interactive debugging allows programmers to view different possible type error explanations and type assignments by issuing console commands.  We took the idea of a MUS-based Haskell debugging tool and interactive debugging techniques and provided a modern implementation with many advanced features. Notably, \chameleon{} enables programmers to explore the chain of reasoning behind type errors in step-by-step order. Additionally, \chameleon{} features an adaptive user interface, allowing programmers to tailor the information density of type errors according to their experience level.
 
 
-\subsubsection{How programmers use type error slicing and chain of thought visualization to understand type errors}
-We conducted three user studies to investigate the impacts of using debugging tools that support type error slicing and interactive type error exploration, some key features provided in \chameleon{}. Our findings reveal a notable improvement in debugging speed when employing type error-slicing technique, particularly for complex tasks. Additionally, we observed a significant enhancement in debugging speed when programmers engaged with the interactive debugging features, suggesting that active exploration of type errors can positively impact the debugging process.
+We conducted three user studies to investigate the impacts of using debugging tools that support type error slicing and interactive type error exploration, some key features provided in \chameleon{}. Our findings reveal a notable improvement in debugging speed when employing the type error-slicing technique, particularly for complex tasks. Additionally, we observed a significant enhancement in debugging speed when programmers engaged with the interactive debugging features, suggesting that active exploration of type errors can positively impact the debugging process.
 
 \subsection{Resolve multi-witness and multi-party errors with Minimal Correction Subsets}
 
-\subsubsection{Technical Contribution -- Goanna}
-
-We contribute Goanna, a Haskell type error debugging tool that, like \chameleon{}, utilizes type error slicing to achieve comprehensive and user-friendly error localization.
+We contribute \textbf{Goanna}, a Haskell type error debugging tool that, like \chameleon{}, utilizes type error slicing to achieve comprehensive and user-friendly error localization.
 
 Goanna sets itself apart by employing Minimal Correction Sets (MCS) to identify potential causes of type errors. It conducts an exhaustive analysis of all potential causes and corresponding actions required to resolve the type error. Goanna employs a set of heuristics to avoid an overwhelming list of suggestions. These heuristics filter out less useful suggestions and prioritize potential causes based on their likelihood, ensuring a more focused and effective debugging experience.
 
 
-\subsubsection{An evaluation of the effectiveness of MCS-based type debugging tools}
 To assess the efficacy of MCS-based type error debugging strategies, we compiled a dataset of 86 Haskell programs sourced from various online discussions, embodying a wide range of type error scenarios. We evaluated Goanna's accuracy in identifying and resolving type errors in comparison to traditional compiler tools. Our findings affirm that Goanna consistently provides more accurate error-cause identification compared to other tools. Further, Goanna's heuristics not only effectively narrow down the list of possible causes but also consistently include the real cause in its top recommendations. Lastly, although Goanna's processing speed is slower than that of conventional tools, it remains well within a range suitable for providing real-time feedback to programmers. 
 
 \subsection{Visualizing Types}
 
-\subsubsection{Technical Contribution -- GeckoGraph: A Visual Language for Polymorphic Types}
-
-We introduce GeckoGraph, an innovative graphic notation system designed specifically for Haskell types. Unlike traditional type signatures, GeckoGraph utilizes a combination of colors, shapes, and symbols to highlight distinct type structures. GeckoGraph provides a clear visual representation for type-level features such as type classes, parametric type variables, and high-rank types. When programmers need to compare two types — a frequent requirement in resolving type errors — GeckoGraph's visual grouping is often able to underscore subtle differences, providing clear graphical distinctions.
-
-\subsubsection{An evaluation on how programmers use diagrammatic type notation}
+We introduce \textbf{GeckoGraph}, an innovative graphic notation system designed specifically for Haskell types. Unlike traditional type signatures, GeckoGraph utilizes a combination of colors, shapes, and symbols to highlight distinct type structures. GeckoGraph provides a clear visual representation for type-level features such as type classes, parametric type variables, and high-rank types. When programmers need to compare two types — a frequent requirement in resolving type errors — GeckoGraph's visual grouping is often able to underscore subtle differences, providing clear graphical distinctions.
 
 We conducted a large-scale user study to evaluate the effectiveness of GeckoGraph in enhancing the traditional text-based approach to type signatures. The study was designed as an interactive puzzle game incorporating gamification elements to stimulate participation and engagement. In total,  721 programmers of all experience levels participated in the study. While the results showed that the use of GeckoGraph did not significantly impact the speed or overall success rate of solving problems, it proved significant in supporting beginners in solving harder tasks more successfully. Additionally, feedback collected through a qualitative post-study survey was positive, suggesting GeckoGraph is intuitive, non-intrusive, and helpful.
 

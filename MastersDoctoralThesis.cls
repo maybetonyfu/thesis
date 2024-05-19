@@ -432,6 +432,24 @@ KOMA-script documentation for details.}]{fancyhdr}
 	}
 }
 
+\ifbool{consistentlayout}{
+	\DeclareDocumentEnvironment{publications}{}{%
+		\tttypeout{Publications during enrolment}
+		\addchap*{Publications during enrolment}
+	}
+}
+{
+	\DeclareDocumentEnvironment{publications}{}{%
+		\checktoopen
+		\tttypeout{Publications during enrolment}
+		\thispagestyle{plain}
+		\begin{center}{\huge\textit{Publications during enrolment}\par}\end{center}
+	}
+	{
+		\vfil\vfil\null
+	}
+}
+
 %----------------------------------------------------------------------------------------
 %	COPYRIGHT PAGE DESIGN
 %----------------------------------------------------------------------------------------

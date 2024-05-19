@@ -163,7 +163,7 @@ Professor Peter James \textsc{Stuckey}
 	
 	© \authorname  (2024)
 	
-	I certify that I have made all reasonable efforts to secure copyright permissions for thirdparty content included in this thesis and have not knowingly added copyright content
+	I certify that I have made all reasonable efforts to secure copyright permissions for third-party content included in this thesis and have not knowingly added copyright content
 to my work without the owner’s permission.
 	
 \end{copyright}
@@ -211,22 +211,68 @@ to my work without the owner’s permission.
 \begin{abstract}
 \addchaptertocentry{\abstractname} 
 % 
-Static typing, a fundamental feature embedded in the origins of programming languages, is recognized for its numerous advantages, such as bug prevention, improved code quality, and decreased maintenance costs. Nevertheless, it presents considerable challenges, including a steep learning curve and slowed development pace, leading to a preference in recent years for lightweight dynamic languages like Python and JavaScript over strict languages such as Java and C++. The distinction between relaxed and strict type systems is more prominent in programming languages that utilize more powerful type systems like Haskell.  While the Haskell type system can eliminate many errors, paradoxically, the more bugs a type system can prevent, the more confusing the type errors are and the larger the barrier to their use by non-expert programmers. This issue often leaves developers facing a ``42 moment \footnote{In Douglas Adams' science fiction series "The Hitchhiker's Guide to the Galaxy," the number 42 is famously given as the ultimate answer to the meaning of life, the universe, and everything. This occurs after a supercomputer named Deep Thought, designed by hyper-intelligent pan-dimensional beings, computes the answer over 7.5 million years. However, the beings and Deep Thought itself point out that while 42 is the answer, nobody knows what the actual question is.}''—a state of confusion when they encounter type errors without clear explanations. Over the years, significant efforts, including my own, have been made towards augmenting the usability of static types and type errors.
+Static typing, a fundamental feature embedded in the origins of programming languages, is recognized for its numerous advantages, such as bug prevention, improved code quality, and decreased maintenance costs. Nevertheless, it presents considerable challenges, including a steep learning curve and slowed development pace, leading to a preference in recent years for lightweight dynamic languages like Python and JavaScript over strict languages such as Java and C++. The distinction between relaxed and strict type systems is more prominent in programming languages that utilize more powerful type systems like Haskell.  While the Haskell type system can eliminate many errors, paradoxically, the more bugs a type system can prevent, the more confusing the type errors are and the larger the barrier to their use by non-expert programmers. This issue often leaves developers facing confusion when they encounter type errors without clear explanations. Over the years, significant efforts, including my own, have been made towards augmenting the usability of static types and type errors.
 
-In this inquiry, I explore two principal questions—what the specific tasks are when engaging with type errors, and how can we refine our interaction with them? My study proposes a new categorization of type errors based on the evidence in the source code and how its pieces are interrelated. This categorization reveals some unique challenges associated with each category. This, in turn, gave rise to three key interventions: First, the exploration of a typical task of reasoning about a type error. Herein, we propose a system (Chameleon) that presents type errors in a ``chain-of-thought'' visualization, which allows users to interactively inspect the evidence of interest. Second, we explore the task of resolving type errors. In this, we propose a system (Goanna) that automatically identifies all potential causes of a type error and presents them in logical order.  Third, we explore the task of using type annotations. We propose a graphic notation of types (GeckoGraph) to support various tasks involving type annotations: reading, understanding, comparing, and searching. In the end, we generalize the tasks of debugging type errors and our proposed debugging techniques in a few idiomatic interactions supported by common user interface design patterns. From this, we envision a programming system that integrates these interactions for practical use.
+In our research, we inquire what tasks are involved when tackling type errors and how we can refine our interaction with them. Our study proposes a new categorization of type errors based on the evidence in the source code and how its pieces are interrelated. This categorization reveals some unique challenges associated with each category. This, in turn, gave rise to three key interventions: First, the exploration of a typical task of reasoning about a type error. Herein, we propose a system (Chameleon) that presents type errors in a ``chain-of-thought'' visualization, which allows users to interactively inspect the evidence of interest. Second, we explore the task of resolving type errors. In this, we propose a system (Goanna) that automatically identifies all potential causes of a type error and presents them in logical order.  Third, we explore the task of using type annotations. We propose a graphic notation of types (GeckoGraph) to support various tasks involving type annotations: reading, understanding, comparing, and searching. In the end, we generalize the tasks of debugging type errors and our proposed debugging techniques in a few idiomatic interactions supported by common user interface design patterns. From this, we envision a programming system that integrates these interactions for practical use.
 
-Adopting multiple human-centered design methods, my research identifies promising avenues for enhancing our interaction with static-type systems in modern programming environments. I hope these findings will shed more light on future studies to improve type error debugging. I also hope that this work will spur the development of next-generation programming tools, aiming to effectively eliminate the challenges of resolving type errors with a suite of usability-centered features.
+Adopting multiple human-centered design methods, our research identifies promising avenues for enhancing our interaction with static-type systems in modern programming environments. I hope these findings will shed more light on future studies to improve type error debugging. We also hope that this work will spur the development of next-generation programming tools, aiming to effectively eliminate the challenges of resolving type errors with a suite of usability-centered features.
 
 \end{abstract}
+
+\begin{publications}
+\addchaptertocentry{Publications during enrolment}
+
+This thesis uses contents from the following publications:
+\vspace{20px}
+
+\noindent
+\textbf{ChameleonIDE: Untangling Type Errors Through Interactive
+  Visualization and Exploration}
+
+\noindent
+Authors: \textbf{Shuai Fu}, Tim Dwyer, Peter J. Stuckey, Jackson Wain, Jesse Linossier
+\vspace{10px}
+
+This paper was published and presented at the International Conference on Program Comprehension (ICPC) 2023. Chapter \ref{chap:chameleon} incorporates content from this paper, with slight modifications to ensure coherence within this thesis. As the first author, I contributed 65\% of the work, including development, experimentation, analysis, and writing the paper.
+ 
+
+\vspace{30px}
+
+\noindent
+\textbf{Goanna: Resolving Haskell Type Errors With Minimal Correction Subsets}
+
+\noindent
+Authors: \textbf{Shuai Fu}, Tim Dwyer, Peter J. Stuckey, John Grundy
+\vspace{10px}
+
+At the time of submitting this thesis, this paper was under review for the International Conference on Functional Programming (ICFP) 2024. Chapter \ref{chap:goanna} incorporates content from this paper, with slight modifications to ensure coherence within this thesis. As the first author, I contributed 65\% of the work, including development, experimentation, analysis, and writing the paper.
+
+
+
+\vspace{30px}
+
+
+\noindent
+\textbf{GeckoGraph: A Visual Language for Polymorphic Types}
+
+\noindent
+Authors: \textbf{Shuai Fu}, Tim Dwyer, Peter J. Stuckey
+\vspace{10px}
+
+At the time of submitting this thesis, this paper was under review for the International Conference on Functional Programming (ICFP) 2024. Chapter \ref{chap:gecko-graph} incorporates content from this paper, with slight modifications to ensure coherence within this thesis. As the first author, I contributed 65\% of the work, including development, experimentation, analysis, and writing the paper.
+
+\end{publications}
+
 
 %----------------------------------------------------------------------------------------
 %	ACKNOWLEDGEMENTS
 %----------------------------------------------------------------------------------------
 
-%\begin{acknowledgements}
-%\addchaptertocentry{\acknowledgementname} % Add the acknowledgements to the table of contents
-%The acknowledgments and the people to thank go here, don't forget to include your project advisor\ldots
-%\end{acknowledgements}
+
+\begin{acknowledgements}
+\addchaptertocentry{\acknowledgementname} % Add the acknowledgements to the table of contents
+I acknowledge the use of OpenAI ChatGPT 4 to generate responses for program tasks. The output from these was used in an evaluation of the limitations of tools based on large language models in programming assistance. The specific prompts are shown in Chapter \ref{chap:conclusion}.
+\end{acknowledgements}
 
 %----------------------------------------------------------------------------------------
 %	LIST OF CONTENTS/FIGURES/TABLES PAGES
@@ -242,18 +288,18 @@ Adopting multiple human-centered design methods, my research identifies promisin
 %	ABBREVIATIONS
 %----------------------------------------------------------------------------------------
 
-\begin{abbreviations}{ll} % Include a list of abbreviations (a table of two columns)
+% \begin{abbreviations}{ll} % Include a list of abbreviations (a table of two columns)
 
-\textbf{MUS} & \textbf{M}inimal \textbf{U}nsatisfiable \textbf{S}ubset\\
-\textbf{MSS} & \textbf{M}aximal \textbf{S}atisfiable \textbf{S}ubset\\
-\textbf{MCS} & \textbf{M}inimal \textbf{C}orrection \textbf{S}ubset\\
-\textbf{GHC} & \textbf{G}lasgow \textbf{H}askell \textbf{C}ompiler\\
-\textbf{IDE} & \textbf{I}nteractive \textbf{D}evelopment \textbf{E}nvironment\\
-\textbf{CHR} & \textbf{C}onstraint \textbf{H}andling \textbf{R}ules\\
-\textbf{CLI} & \textbf{C}ommand \textbf{L}ine \textbf{I}nterface\\
-\textbf{GUI} & \textbf{G}raphical \textbf{U}ser \textbf{I}nterface\\
-\textbf{ECEM} & \textbf{E}nhanced \textbf{C}ompiler \textbf{E}rror \textbf{M}essage\\
-\end{abbreviations}
+% \textbf{MUS} & \textbf{M}inimal \textbf{U}nsatisfiable \textbf{S}ubset\\
+% \textbf{MSS} & \textbf{M}aximal \textbf{S}atisfiable \textbf{S}ubset\\
+% \textbf{MCS} & \textbf{M}inimal \textbf{C}orrection \textbf{S}ubset\\
+% \textbf{GHC} & \textbf{G}lasgow \textbf{H}askell \textbf{C}ompiler\\
+% \textbf{IDE} & \textbf{I}nteractive \textbf{D}evelopment \textbf{E}nvironment\\
+% \textbf{CHR} & \textbf{C}onstraint \textbf{H}andling \textbf{R}ules\\
+% \textbf{CLI} & \textbf{C}ommand \textbf{L}ine \textbf{I}nterface\\
+% \textbf{GUI} & \textbf{G}raphical \textbf{U}ser \textbf{I}nterface\\
+% \textbf{ECEM} & \textbf{E}nhanced \textbf{C}ompiler \textbf{E}rror \textbf{M}essage\\
+% \end{abbreviations}
 
 
 %----------------------------------------------------------------------------------------

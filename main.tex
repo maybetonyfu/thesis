@@ -142,8 +142,7 @@ Professor Peter James \textsc{Stuckey}
  
 \vfill
 
-\large \textit{A thesis submitted in fulfillment of the requirements\\ for the degree of \degreename}\\[0.3cm] % University requirement text
-\textit{in the}\\[0.4cm]
+\large \textit{A thesis submitted for the degree  \degreename{ at Monash University}}\\[0.4cm] % University requirement text
 \groupname\\\deptname\\ % Research group name and department name
 \href{http://abc.com}{Faculty of Information Technology}\\[2cm]
  
@@ -163,8 +162,7 @@ Professor Peter James \textsc{Stuckey}
 	
 	© \authorname  (2024)
 	
-	I certify that I have made all reasonable efforts to secure copyright permissions for third-party content included in this thesis and have not knowingly added copyright content
-to my work without the owner’s permission.
+I certify that I have made all reasonable efforts to secure copyright permissions for third-party content included in this thesis and have not knowingly added copyright content to my work without the owner's permission.
 	
 \end{copyright}
 
@@ -176,18 +174,16 @@ to my work without the owner’s permission.
 \addchaptertocentry{\authorshipname} % Add the declaration to the table of contents
 \noindent I, \authorname, declare that this thesis titled, \enquote{\ttitle} and the work presented in it are my own. I confirm that:
 
-\begin{itemize} 
-\item This work was done wholly or mainly while in candidature for a research degree at this University.
-\item Where any part of this thesis has previously been submitted for a degree or any other qualification at this University or any other institution, this has been clearly stated.
-\item Where I have consulted the published work of others, this is always clearly attributed.
-\item Where I have quoted from the work of others, the source is always given. With the exception of such quotations, this thesis is entirely my own work.
-\item I have acknowledged all main sources of help.
-\item Where the thesis is based on work done by myself jointly with others, I have made clear exactly what was done by others and what I have contributed myself.\\
-\end{itemize}
- 
-\noindent Signed:\\
+This thesis is an original work of my research and contains no material which has been accepted for the award of any other degree or diploma at any university or equivalent institution and that, to the best of my knowledge and belief, this thesis contains no material previously published or written by another person, or any use of generative artificial intelligence technologies, except where due reference is made in the text of the thesis.
+
+\vspace{1cm}
+
+\noindent Signature:\\
 \rule[0.5em]{25em}{0.5pt} % This prints a line for the signature
- 
+
+ \noindent Print Name: Shuai Fu\\
+\rule[0.5em]{25em}{0.5pt} % This prints a line for the signature
+
 \noindent Date:\\
 \rule[0.5em]{25em}{0.5pt} % This prints a line to write the date
 \end{declaration}
@@ -211,11 +207,11 @@ to my work without the owner’s permission.
 \begin{abstract}
 \addchaptertocentry{\abstractname} 
 % 
-Static typing, a fundamental feature embedded in the origins of programming languages, is recognized for its numerous advantages, such as bug prevention, improved code quality, and decreased maintenance costs. Nevertheless, it presents considerable challenges, including a steep learning curve and slowed development pace, leading to a preference in recent years for lightweight dynamic languages like Python and JavaScript over strict languages such as Java and C++. The distinction between relaxed and strict type systems is more prominent in programming languages that utilize more powerful type systems like Haskell.  While the Haskell type system can eliminate many errors, paradoxically, the more bugs a type system can prevent, the more confusing the type errors are and the larger the barrier to their use by non-expert programmers. This issue often leaves developers facing confusion when they encounter type errors without clear explanations. Over the years, significant efforts, including our contributions, have been made toward augmenting the usability of static types and type errors.
+Static typing, a fundamental feature embedded in the origins of programming languages, is recognized for its numerous advantages, such as bug prevention, improved code quality, and decreased maintenance costs. Nevertheless, it presents considerable challenges, including a steep learning curve and slowed development pace, leading to a preference in recent years for lightweight dynamic languages like Python and JavaScript over strict languages such as Java and C++.  Paradoxically, while stronger and more advanced type systems prevent a greater number of bugs, they also make resolving type errors more difficult and pose a larger barrier for non-expert programmers. Over the years, significant efforts, including contributions of our own, have been made toward augmenting the usability of static types and type errors.
 
-In our research, we inquire what tasks are involved when tackling type errors and how we can refine our interaction with them. Our study proposes a new categorization of type errors based on the evidence in the source code and how its pieces are interrelated. This categorization reveals some unique challenges associated with each category. This, in turn, gave rise to three key interventions: First, the exploration of a typical task of reasoning about a type error. Herein, we propose a system (Chameleon) that presents type errors in a ``chain-of-thought'' visualization, which allows users to interactively inspect the evidence of interest. Second, we explore the task of resolving type errors. In this, we propose a system (Goanna) that automatically identifies all potential causes of a type error and presents them in logical order.  Third, we explore the task of using type annotations. We propose a graphic notation of types (GeckoGraph) to support various tasks involving type annotations: reading, understanding, comparing, and searching. In the end, we generalize the tasks of debugging type errors and our proposed debugging techniques in a few idiomatic interactions supported by common user interface design patterns. From this, we envision a programming system that integrates these interactions for practical use.
+Our research investigates the tasks involved in addressing type errors and how interactions with them can be refined. We begin by proposing a categorization of type errors based on evidence from the source code and the interrelationships between its components. This categorization reveals various challenges associated with different types of errors. This understanding led to the development of three key interventions: \chameleon{}, Goanna, and GeckoGraph. \chameleon{} is a type error debugger that visualizes conflicting locations of type errors and provides a step-by-step interactive exploration of their occurrences. Goanna focuses on presenting all possible causes of a type error and, for each cause, offers a minimal yet comprehensive set of changes to fix it. GeckoGraph, a graphical notation for types, offers a more concise language for representing type signatures in source code, documentation, and type errors. Ultimately, we generalize the tasks of debugging type errors and techniques in our interventions into several idiomatic interactions supported by common user interface design patterns. From this, we envision a debugging system called \textit{TypeTutor} that integrates these idioms for natural and human-friendly type error resolution.
 
-Adopting multiple human-centered design methods, our research identifies promising avenues for enhancing our interaction with static-type systems in modern programming environments. I hope these findings will shed more light on future studies to improve type error debugging. We also hope that this work will spur the development of next-generation programming tools, aiming to effectively eliminate the challenges of resolving type errors with a suite of usability-centered features.
+Adopting multiple human-centered design methods, our research identifies promising avenues for enhancing our interaction with static-type systems in modern programming environments. We hope these findings will inform future studies aimed at improving type error debugging and inspire the development of next-generation programming tools designed to effectively overcome the challenges of resolving type errors through usability-centered features.
 
 \end{abstract}
 
@@ -245,7 +241,7 @@ This paper was published and presented at the International Conference on Progra
 Authors: \textbf{Shuai Fu}, Tim Dwyer, Peter J. Stuckey, John Grundy
 \vspace{10px}
 
-At the time of submitting this thesis, this paper was under review for the International Conference on Functional Programming (ICFP) 2024. Chapter \ref{chap:goanna} incorporates content from this paper, with slight modifications to ensure coherence within this thesis. As the first author, I contributed 65\% of the work, including development, experimentation, analysis, and writing the paper.
+When submitting this thesis, this paper was under review for the International Conference on Functional Programming (ICFP) 2024. Chapter \ref{chap:goanna} incorporates content from this paper, with slight modifications to ensure coherence within this thesis. As the first author, I contributed 65\% of the work, including development, experimentation, analysis, and writing the paper.
 
 
 
@@ -259,7 +255,7 @@ At the time of submitting this thesis, this paper was under review for the Inter
 Authors: \textbf{Shuai Fu}, Tim Dwyer, Peter J. Stuckey
 \vspace{10px}
 
-At the time of submitting this thesis, this paper was under review for the International Conference on Functional Programming (ICFP) 2024. Chapter \ref{chap:gecko-graph} incorporates content from this paper, with slight modifications to ensure coherence within this thesis. As the first author, I contributed 65\% of the work, including development, experimentation, analysis, and writing the paper.
+When submitting this thesis, this paper was under review for the International Conference on Functional Programming (ICFP) 2024. Chapter \ref{chap:gecko-graph} incorporates content from this paper, with slight modifications to ensure coherence within this thesis. As the first author, I contributed 65\% of the work, including development, experimentation, analysis, and writing the paper.
 
 \end{publications}
 

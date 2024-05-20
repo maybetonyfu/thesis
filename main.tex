@@ -54,7 +54,7 @@ headsepline, % Uncomment to get a line under the header
 \usepackage{tabularx}
 % \usepackage{minted}
 \usepackage{listings}
-
+\usepackage{ragged2e}
 
 \newcommand{\todo}[1]{\colorbox{yellow}{#1}}
 \newcommand{\pjs}[1]{\marginpar{\textcolor{blue}{\textsc{Pjs}}}\textcolor{blue}{#1}}
@@ -74,6 +74,12 @@ headsepline, % Uncomment to get a line under the header
 	bottom=1.5cm, % Bottom margin
 	%showframe, % Uncomment to show how the type block is set on the page
 }
+
+
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
 
 %----------------------------------------------------------------------------------------
 %	THESIS INFORMATION
@@ -101,7 +107,7 @@ headsepline, % Uncomment to get a line under the header
 }
 
 \begin{document}
-
+% \RaggedRight
 \frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
 
 \pagestyle{plain} % Default to the plain heading style until the thesis style is called for the body content

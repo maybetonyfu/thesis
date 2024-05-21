@@ -6,15 +6,16 @@
 \newcommand{\typetutor}{TypeTutor}
 
 \graphicspath{{Figures/Conclusion}}
-At the start of this thesis, we gave an overview of the landscape of programming languages, with a special interest in functional programming and static typing. We emphasized the critical role of type errors, noting how problematic type errors can hinder both the learning and effective use of statically typed languages. Then, we explored various Haskell type-checking methods and their evolution, setting the stage for an in-depth discussion of our interventions --- \chameleon{}, Goanna, and GeckoGraph --- which are designed to deliver accurate and user-friendly error messages.
+At the start of this thesis, we gave an overview of the landscape of programming languages, with a special interest in functional programming and static typing. We emphasized the critical role of type errors, noting how problematic type errors can hinder both the learning and effective use of statically typed languages. Then, we explored various Haskell type-checking methods and their evolution, setting the stage for an in-depth discussion of our interventions, \chameleon{}, Goanna, and GeckoGraph, which are designed to deliver accurate and user-friendly error messages.
 
-In this chapter, we review our contributions and discuss the future work that builds upon these initiatives. The planned future work is categorized into three main areas: tool design, integration with large language models (LLMs), and increasing language availability. We conclude our discussion by reaffirming our commitment to enhancing type errors—a core objective of this thesis—and reiterating the importance of this work within the broader field of programming language research.
+In this chapter, we review our contributions and discuss the future work that builds upon these initiatives. The planned future work encompasses what we consider a natural next step in tool design, integration with large language models (LLMs), and language availability. We provide detailed visions for how debugging type errors can be further improved using our acquired knowledge. We conclude our discussion by reaffirming our commitment to enhancing type errors—a core objective of this thesis—and reiterating the importance of this work within the broader field of programming language research.
 
 
 \section{Contributions}
 
+In this thesis, we present four key areas of contribution: a categorization of type errors, \chameleon{}, Goanna, and GeckoGraph. 
 
-\subsection{A categorization of type errors based on the structure of the evidence of a type error}
+\subsection*{A categorization of type errors based on the structure of the evidence of a type error}
 
 
 We have developed a categorization framework for type errors based on insights from how human programmers perceive type errors and theories from constraint satisfiability research. This framework helps identify three critical attributes of type errors, enhancing our understanding of strategic interventions to assist programmers in resolving these errors effectively.
@@ -28,7 +29,7 @@ We have developed a categorization framework for type errors based on insights f
 
 Following this classification, we delved into the three main systems we developed in our research—\chameleon{} (see Chapter \ref{chap:chameleon}), Goanna (see Chapter \ref{chap:goanna}), and GeckoGraph (see Chapter \ref{chap:gecko-graph}). Each system is designed to tackle some different challenges associated with debugging type errors.
 
-\subsection{Explain Multi-step type errors and the chain of thought visualization}
+\subsection*{Explain Multi-step type errors and the chain of thought visualization}
 
 
 We introduce \textbf{\chameleon{}}, an interactive Haskell type error debugging tool. \chameleon{} uses Minimal Unsatisfiable Subsets (MUS) as its core type error representation. Our work on \chameleon{} is based on the existing work on Chameleon \cite{Stuckey2003-pz, Wazny2006-ll}. The original Chameleon was developed as a command-line tool; its innovative approach of interactive debugging allows programmers to view different possible type error explanations and type assignments by issuing console commands.  We took the idea of a MUS-based Haskell debugging tool and interactive debugging techniques and provided a modern implementation with many advanced features. Notably, \chameleon{} enables programmers to explore the chain of reasoning behind type errors in step-by-step order. Additionally, \chameleon{} features an adaptive user interface, allowing programmers to tailor the information density of type errors according to their experience level.
@@ -36,7 +37,7 @@ We introduce \textbf{\chameleon{}}, an interactive Haskell type error debugging 
 
 We conducted three user studies to investigate the impacts of using debugging tools that support type error slicing and interactive type error exploration, some key features provided in \chameleon{}. Our findings reveal a notable improvement in debugging speed when employing the type error-slicing technique, particularly for complex tasks. Additionally, across the experience level, we observed a significant enhancement in debugging speed when programmers engaged with the interactive debugging features, suggesting that active exploration of type errors can positively impact the debugging process.
 
-\subsection{Resolve multi-witness and multi-party errors with Minimal Correction Subsets}
+\subsection*{Resolve multi-witness and multi-party errors with Minimal Correction Subsets}
 
 We contribute \textbf{Goanna}, a Haskell type error debugging tool that, like \chameleon{}, utilizes type error slicing to achieve comprehensive and user-friendly error localization.
 
@@ -45,7 +46,7 @@ Goanna sets itself apart by employing Minimal Correction Sets (MCS) to identify 
 
 To assess the efficacy of MCS-based type error debugging strategies, we compiled a dataset of 86 Haskell programs sourced from various online discussions, embodying a wide range of type error scenarios. We evaluated Goanna's accuracy in identifying and resolving type errors in comparison to traditional compiler tools. Our findings affirm that Goanna consistently provides more accurate error-cause identification compared to other tools. Further, Goanna's heuristics not only effectively narrow down the list of possible causes but also consistently include the real cause in its top recommendations. Lastly, although Goanna's processing speed is slower than that of conventional tools, it remains well within a range suitable for providing real-time feedback. 
 
-\subsection{Visualizing Types}
+\subsection*{Visualizing Types}
 
 We introduce \textbf{GeckoGraph}, an innovative graphic notation system designed specifically for Haskell types. Unlike traditional type signatures, GeckoGraph utilizes a combination of colors, shapes, and symbols to highlight distinct type structures. GeckoGraph provides a clear visual representation for type-level features such as type classes, parametric type variables, and high-rank types. When programmers need to compare two types — a frequent requirement in resolving type errors — GeckoGraph's visual grouping is often able to underscore subtle differences, providing clear graphical distinctions.
 
@@ -59,14 +60,14 @@ Secondly, we delve into the realm of rapid advancements in large language models
 
 Lastly, we outline our plans to adapt our debugging tools for use in other programming languages, underscoring the potential advantages and challenges associated with this endeavor.
 
-\subsection{\typetutor: Question-based Type Debugging}
+\subsection*{\typetutor: Question-based Type Debugging}
 
 By observing programmers tackle type error challenges in a series of user studies, we gained valuable insights into Haskell programmers' debugging habits and approaches toward challenging type errors. Armed with this understanding, we are inspired to envision a novel debugging tool named \textit{TypeTutor}. The core concept of \textit{TypeTutor} would be to map debugging tasks into a series of questions that programmers would naturally ask, while also to help programmers break down high-level debugging questions into actionable, granular queries.
 
 This style of programming is often referred to as ``natural programming environment'' \cite{Myers2004-fy}. Previous studies have underscored the benefits of employing a natural debugging interface, exemplified by tools like Alice~\cite{Conway2000-nn} and WhyLine~\cite{Ko2009-uf}. However, existing research predominantly concentrates on debugging runtime errors, neglecting exploration into type-level debugging.  Leveraging our experience with \chameleon{}, Goanna, and GeckoGraph, we envision meaningful progress in this domain.
 
 
-\subsubsection{Why questions}
+\subsubsection*{Why questions}
 
 A fundamental aspect of debugging type errors involves asking questions such as "Why does the type error occur?" and "Why is the expected type \texttt{X}?" These "why" questions highlight gaps in a programmer's understanding where a thorough explanation is in demand. \textit{TypeTutor} will intelligently address this by displaying all relevant "why" questions when a programmer hovers over an expression of interest. Upon selecting a question, \textit{TypeTutor} will promptly provide the corresponding detailed answer (Fig. \ref{fig:why}).
 
@@ -82,7 +83,7 @@ A fundamental aspect of debugging type errors involves asking questions such as 
 
 
 
-\subsubsection{Follow-up questions}
+\subsubsection*{Follow-up questions}
 
 In the context of debugging type errors, particularly multi-step type errors, it proves beneficial to enable programmers to incrementally uncover the underlying inference logic. \textit{TypeTutor} will support this process by allowing programmers to ask follow-up questions. Typically, these questions build upon the responses to earlier inquiries. Follow-up questions in \textit{TypeTutor} would facilitate tasks akin to the interactive debugging steps in \chameleon{}. However, unlike \chameleon{}, \textit{TypeTutor} would not need a separate interface for such a task. Instead, when a response includes the option for further inquiry, \textit{TypeTutor} would provide a follow-up hint at the end of the answer, encouraging programmers to continue tracing the root cause (Fig. \ref{fig:follow-up}). This integrated approach would help maintain a streamlined user experience while enabling deep exploration of type errors.
 
@@ -95,7 +96,7 @@ In the context of debugging type errors, particularly multi-step type errors, it
     }
 \end{figure}
 
-\subsubsection{How questions}
+\subsubsection*{How questions}
 
 'How' questions in debugging focus on providing prescriptive guidance regarding program errors. Such questions do not solely depend on logical precision; rather, they require the understanding of a programmer's knowledge gaps and the ability to deliver clear, followable instructions. \textit{TypeTutor} would aid programmers by facilitating questions on how to rectify specific type errors. In Goanna, the analysis of Maximal Satisfiable Subsets (MSS) can suggest the recommanded type for each possible correction. \textit{TypeTutor} would advance this concept by offering examples of syntax changes tailored to these recommended types. In the example (Fig. \ref{fig:how}), \textit{TypeTutor} would provide various examples of how to change \texttt{'1'} to an Integer type, including changing it to an integer literal, an integer variable, or an expression that evaluates to an integer. 
 
@@ -109,7 +110,7 @@ In the context of debugging type errors, particularly multi-step type errors, it
     }
 \end{figure}
 
-\subsubsection{What-if questions}
+\subsubsection*{What-if questions}
 Finally, as we have identified, type errors frequently involve multiple potential causes and explanations. When integrated into a question-and-answer interface, the presence of multiple causes naturally prompts counterfactual questions such as "What are other ways that can cause this type error?" Recognizing this, \textit{TypeTutor} will provide a natural and user-friendly interface for exploring various potential causes and solutions. This approach, while similar to the functionality offered by Goanna, features a more concise and intuitive interface for programmers to switch between different potential causes. With \textit{TypeTutor}, programmers will find the option: `Other ways to fix the error' in every type error question list; hovering over the option will present alternative explanations and resolution plans (Fig. \ref{fig:what-if}).
 
 \begin{figure}[hbt]
@@ -121,7 +122,7 @@ Finally, as we have identified, type errors frequently involve multiple potentia
 \end{figure}
 
 
-\subsection{Integration with Large Language Models}
+\subsection*{Integration with Large Language Models}
 At the time of writing this thesis, LLMs were actively experimented with performing all kinds of tasks that require human creativity, including programming. Many attempts have been made to use LLMs in programming tasks \cite{Shi2024-bj}, intending to free programmers for higher-level thinking. This development is tangential to our objective of explaining type errors and reasoning about the logic of type inference. 
 
 \begin{figure}[hbt]
@@ -149,7 +150,7 @@ While LLMs are getting more and more accurate with each iteration, some doubt wh
   \item {Error Tutoring and Resolution: Theory-based Tools could identify errors in manually written code, with LLMs suggesting syntax corrections. This combines the precise error detection from traditional theory-based tools with the LLMs' ability to generate effective syntax changes, surpassing traditional tools in this domain.}
 }
 
-\subsection{Support for Other Languages}
+\subsection*{Support for Other Languages}
 Haskell serves as a vital platform for the experiments of programming languages and type systems. We firmly believe that the next critical phase in our research involves expanding our tools to encompass other languages. Recently, we observed that the challenges of overcoming complex type errors have permeated several mainstream languages, including Rust \cite{Zeng2019-ou} and TypeScript \cite{Scarsbrook2023-uq}. By integrating our debugging tools into these languages, we would be able to engage a broader audience and subject our tools to a diverse range of software projects varying in style and scale. This will not only increase our tool's applicability but also provide us with extensive insights into how to further improve our design.
 
 Much of our work has already been conceived with adaptability to multiple languages in mind. For example, GeckoGraph is designed to be language-agnostic, allowing for implementations in different programming languages. However, adapting tools like \chameleon{} and Goanna presents certain complexities. Although the analysis of unsatisfiable constraints and the theories and implementations concerning the enumeration of Minimal Unsatisfiable Subsets (MUSes) and Minimal Correction Subsets (MCSes) are universally applicable across all languages, specific challenges arise when taking into account the nuances of individual languages.
@@ -158,7 +159,7 @@ The first challenge involves constraint generation. Each language requires the d
 
 The second challenge concerns the presentation of type errors, which may need nuanced adjustments for different languages. For example, novel visualization techniques may be required to effectively convey concepts absent in Haskell, such as row polymorphism in TypeScript or lifetime constraints in Rust. By addressing these challenges, we can truly leverage the potential of our tools across various programming environments.
 
-\subsubsection{Supporting Dependently Typed Languages}
+\subsubsection*{Supporting Dependently Typed Languages}
 
 As mentioned in previous chapters, dependently typed languages like Idris and Agda represent a rigorous subclass within the realm of statically typed languages. These languages uniquely enable the type-level computation of values and types, allowing programmers to embed fine-grained and precise constraints to ensure program correctness at compile time. Due to their ability to directly encode program behavior into types, programs written in dependently typed languages can often be validated purely through the type-checking process. This makes them ideal candidates for code generation through LLMs, where programmers can perform checks on whether they conform to the provided specifications. 
 

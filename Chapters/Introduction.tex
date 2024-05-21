@@ -92,7 +92,7 @@ Despite these safety benefits, the presence of these languages in the mainstream
  The compiler is the medium through which programmers transform human intention into machine instructions. When encountering errors, compilers often act like Oracles in ancient history, revealing to programmers obscure messages that can lead to confusion and the wrong course of action. Many studies have investigated the ineffectiveness of compiler error messages \cite{Barik2017-gy, Becker2019-cs, Becker2016-kc}.  Our exploration is centered around type error messages (a subclass of compiler error messages) in the Haskell programming language and its leading compiler, Glasgow Haskell Compiler (GHC). It is vital to mention that the challenges discussed here concerning error messages are common across compilers for various statically typed languages. Below, we delve into specific issues often observed in type error messages.
 
 
- \subsection{Bias in Type Errors} 
+ \subsection*{Bias in Type Errors} 
  \label{subsec:bias}
  
 A significant issue in type error messages is their inherent bias. Often, type errors can arise from multiple causes, but the error message might only highlight one. This issue is known as left-to-right bias in traditional type-checking algorithms—a notable shortcoming that limits the usability of error messages \cite{McAdam2002-vb, Lee1998-fx, Chen2014-ev}.  For instance, as shown in Figure \ref{fig:type-error-example}, a programmer likely intended to add two numbers using the \texttt{+} operator instead of mistakenly using the concatenation operator \texttt{++}. However, the type error reported by the compiler mistakenly points to the application of the integer literal \texttt{3}, failing to suggest the more probable cause. We explore left-to-right bias further in Chapter \ref{chap:haskell-type-checking}.
@@ -107,7 +107,7 @@ A significant issue in type error messages is their inherent bias. Often, type e
 \end{figure}
 
 
-\subsection{Type Error Suggests Incomplete Cause}
+\subsection*{Type Error Suggests Incomplete Cause}
 \label{subsec:imcomplete}
 
 Often, type error messages do not fully present all the locations relevant to the type error. Addressing the error at the recommended location might not suffice to resolve the underlying problem. Consider the scenario in Figure \ref{fig:type-error-example-2}, where a function intended for list concatenation is erroneously applied to integer values. Here, the error message only reports the first argument \texttt{3}, neglecting the second. This partial reporting leads to a situation where correcting the first argument to a list format, say \texttt{[3]}, doesn't rectify the error entirely; rather, it only updates to a slightly different error message. 
@@ -123,7 +123,7 @@ Often, type error messages do not fully present all the locations relevant to th
     }
 \end{figure}
 
-\subsection{Missing Links In Type Errors}
+\subsection*{Missing Links In Type Errors}
 \label{subsec:missing-link}
 
 One of the most frustrating aspects of type errors is that they do not show the complete pathway of how the compiler decided on the type error. In the example in Fig \ref{fig:type-error-example-3}, the programmer may intend to compare to a char literal \texttt{' '} instead of string literal \texttt{" "} on line 1 in the function \texttt{isSpace}. However, multiple clues contribute to this conclusion. The definition of the function \texttt{trimWhiteSpace}, the application of \texttt{filter isSpace a}, the definition of \texttt{isSpace}, and even the type signature of \texttt{filter} all contribute to the logical reasoning. However, none of these are included in the actual error message.
@@ -138,7 +138,7 @@ One of the most frustrating aspects of type errors is that they do not show the 
 \end{figure}
 
 
-\subsection{The Use of Obscure Language}
+\subsection*{The Use of Obscure Language}
 
 Error messages are frequently plagued by technical jargon and convoluted phrasing, which can be particularly off-putting for novices. An example is the error message, \texttt{No instance for (Num a) arising from the literal `3'}, which is an inept way of suggesting a type mismatch involving character and numeric types. In fact, this is often the common behavior across many programming languages and has been shown in many studies \cite{Barik2017-gy, Tirronen2015-nr, Prather2017-dg}. Thus, concerted efforts \cite{Becker2016-kc, Barik2014-ib}  show that rephrasing the error message to be clearer and more structured positively affects programmers' ability to solve these errors.
 
@@ -147,7 +147,7 @@ Error messages are frequently plagued by technical jargon and convoluted phrasin
 \label{sec:challenges}
 After introducing some typical symptoms of unhelpful type error messages, we now explore some fundamental challenges to improve type error messages.
 
-\subsection{Types Are Complex}
+\subsection*{Types Are Complex}
 
 The advantages of statically typed languages derive from their robust type-checking systems, which, ironically, also introduce significant complexities. Language and tool designers frequently overlook the intrinsic complexity of type systems.  Type checking in these languages can exhibit Turing-complete characteristics, which might lead to non-terminating processes~\cite{Wells1999-ob}. TypeScript introduces `conditional types', a feature that allows sophisticated computations at the type level (Fig. \ref{fig:ts-conditional}), posing challenges in explaining errors when these type-level computations fail due to a lack of adequate debugging tools.
 
@@ -162,7 +162,7 @@ The advantages of statically typed languages derive from their robust type-check
     }
 \end{figure}
 
-\subsection{Clues For Type Checking May Be Implicit}
+\subsection*{Clues For Type Checking May Be Implicit}
 
 The task of understanding how types are assigned in a program grows notably more complex when the programming language employs type inference. Type inference \cite{Damas1982-zw} is a technique that allows programmers to forgo the task of writing type annotations. Instead, the type checker automatically deduces the appropriate types for each expression based on the context. Although it succeeded in providing rigorous type checking without the hassle of manually writing type annotations, type inference has been shown to bring many usability issues \cite{Jun2002-xp, Wand1986-lu} for its implicitness.  
 
@@ -213,39 +213,41 @@ Despite these advancements in runtime debugging tools, the development of type d
 
 This research is driven by the acknowledged difficulties in debugging type errors and the lack of significant advancement in the tools and techniques used for presenting and resolving these errors. \textbf{We aim to improve both the usability and accessibility of type error diagnostics, making statically typed languages more approachable for developers at all levels of expertise}. To achieve this, we have established two main objectives in order to tackle the inherent complexity of type errors and provide the support tools to manage them.
 
-\subsection{Objective 1. Provide programmers with the comprehensive knowledge needed to understand and resolve type errors.}
+\subsection*{Objective 1. Provide programmers with the comprehensive knowledge needed to understand and resolve type errors.}
 \label{subsec:aim1}
 
 Current representations of type errors in most compiler tools are often insufficient for straightforward resolution without further investigation by the programmer. They typically provide only the location of the type check failure, the expected type, and the actual type encountered. This conventional approach, as discussed in the previous sections (\ref{sec:symptoms}), lacks practicality and clarity. We intend to address the need for a richer, more informative explanation of type errors by evaluating the limitations of existing systems and analyzing how programmers tackle type errors in practice.
 
-\subsubsection{Objective 1.1 To Encompass Multiple Potential Causes Of A Type Error}
+\subsubsection*{Objective 1.1 To Encompass Multiple Potential Causes Of A Type Error}
 An essential aspect of this research is to challenge and expand beyond the bias found in traditional type error reporting (Section \ref{subsec:bias}). It is crucial to inform programmers that multiple potential causes and resolutions are almost certain to be present in every type error. A key goal is to communicate the dimension of multiple potential causes effectively. In addition, for each potential cause, programmers need a clear explanation of where the offending code is, which typing rules are violated, and, most importantly, how the meaning of the program will change after the error is resolved.
 
 
-\subsubsection{Objective 1.2 To Accurately Report Relevant Locations Contributing to Type Errors.}
+\subsubsection*{Objective 1.2 To Accurately Report Relevant Locations Contributing to Type Errors.}
 Current tools often pinpoint a single location for a type error, a method that has attracted considerable criticism for its inefficiency. Programmers frequently need to scan beyond the initially reported location. We propose to enhance type error reporting by identifying and detailing all relevant error-contributing locations across the codebase.
 
-\subsubsection{Objective 1.3 To Give Reasons And Support Human Understanding}
+\subsubsection*{Objective 1.3 To Give Reasons And Support Human Understanding}
 Understanding type errors goes beyond pinpointing the location in the code. Internally, type errors can be caused by mismatched types, unmatched type class constraints, and trying to construct infinite types, among other reasons. Externally, type errors can be caused by typos, outdated type annotation, incomplete implementation, etc. Our goal is not only to locate these errors but to explain them in a way that logically supports the programmer's understanding and troubleshooting process, covering both internal causes and external causes.
 
 
 
-\subsection{Objective 2. Support Programmers To Type Errors Through Interactive Modern Programming Environments.}
+\subsection*{Objective 2. Support Programmers To Type Errors Through Interactive Modern Programming Environments.}
 
-We focus on integrating comprehensive type error encoding (Section \ref{subsec:aim1}) within an interactive programming environment to streamline workflows in statically typed languages. Although objective 1 focuses on enriching the information of type error,  we acknowledge that an increase in information does not necessarily correlate with enhanced understanding. Thus, we also attempt to present the details of type errors intelligently to optimally support comprehension and resolution.
+We focus on integrating comprehensive type error encoding within an interactive programming environment to streamline workflows in statically typed languages. Although objective 1 focuses on enriching the information of type error,  we acknowledge that an increase in information does not necessarily correlate with enhanced understanding. Thus, we also attempt to present the details of type errors intelligently to optimally support comprehension and resolution.
 
-\subsubsection{Objective 2.1 Visualize The Key Concepts Of Type Errors Effectively}
+\subsubsection*{Objective 2.1 Visualize The Key Concepts Of Type Errors Effectively}
 
 Traditional text-based error reports can be difficult to navigate and understand. We explore innovative methods to present what used to be displayed as plain text (type signatures, locations in source code, call stacks, dependency graphs) in graphic user interfaces. Examples include in-line highlighting within the code editor and graph-based reasoning steps.  
 
-\subsubsection{Objective 2.2 Use Interactive Tools for Investigating and Resolving Type Errors.}
+\subsubsection*{Objective 2.2 Use Interactive Tools for Investigating and Resolving Type Errors.}
 
-This objective focuses on using interactive techniques to improve the usability of type errors.  This includes using interface elements that allowing user input (hover, click, drag and drop, etc) to trigger common debugging tasks. In addition, we attempt to provide context-sensitive debugging aids that adjust the interactive response based on the current performing task, error type, and individual user preferences.
+This objective focuses on using interactive techniques to improve the usability of type errors.  This includes using interface elements that allow user input (hover, click, drag and drop, etc) to trigger common debugging tasks. In addition, we attempt to provide context-sensitive debugging aids that adjust the interactive response based on the current performing task, error type, and individual user preferences.
 
 
 \section{Contributions}
 
-\subsection{A categorization of type errors based on the structure of the evidence of a type error}
+This thesis presents four key areas of contribution. First, it introduces a categorization of type errors, which has informed the development of two distinct systems: \chameleon{} and Goanna. Each system is tailored to address specific challenges within one or more categories of type errors. Finally, we introduce GeckoGraph, a visual language designed to enhance the understanding and use of polymorphic types in programming.
+
+\subsection*{A categorization of type errors based on the structure of the evidence of a type error}
 
 To address the complexities in explaining type errors comprehensively, we have classified type errors into three categories based on how human programmers perceive type errors. Formal definitions and a detailed discussion of these categories appear in Chapter \ref{chap:haskell-type-checking}. It is crucial to understand that these categories are not mutually exclusive; for example, a multi-witness type error may also be a multi-step type error.
 
@@ -278,31 +280,32 @@ A \textbf{multi-party type error} involves several potential type assignments, e
        }
 \end{figure}
 
-These classifications have led to the development of three distinct systems—\chameleon{}, Goanna, and GeckoGraph—each designed to tackle unique challenges within the domain of type error debugging.
 
-\subsection{Explain Multi-Step Type Errors Through Chain-Of-Thought Visualization}
+
+\subsection*{Explain Multi-Step Type Errors Through Chain-Of-Thought Visualization}
 
 
 We contribute \textbf{\chameleon{}}, an interactive Haskell debugging tool that identifies all relevant error-contributing locations and illustrates the logical relationships between these locations. 
 
 
-Our contribution in \chameleon{} benefits from the existing work on Chameleon \cite{Stuckey2003-pz, Wazny2006-ll}. Originally,  Chameleon was developed as a command-line tool. Its novel ideal of interactive debugging allows programmers to view different possible type error explanations and type assignments by issuing console commands. Besides, Chameleon successfully encoded the Haskell type system, with the addition of functional dependency, entirely in constraint handling rules \cite{Fruhwirth1998-jq}. \chameleon{} shares the theoretical foundation with the original Chameleon, providing a modern implementation with many advanced features. Notably, \chameleon{} provides a novel debugging interface to interactively explore the chain of reasoning in a multiple-step type error, allowing programmers to interactively develop a panorama view of the type error. In addition, \chameleon{} uses an adaptive interface design; programmers can switch between different granularity of information based on their personal preferences. 
+Our contribution in \chameleon{} benefits from the existing work on Chameleon \cite{Stuckey2003-pz, Wazny2006-ll}. Originally,  Chameleon was developed as a command-line tool. Its novel ideal of interactive debugging allows programmers to view different possible type error explanations and type assignments by issuing console commands. In addition, Chameleon successfully encoded the Haskell type system, with the addition of functional dependency, entirely in constraint handling rules \cite{Fruhwirth1998-jq}. \chameleon{} shares the theoretical foundation with the original Chameleon, providing a modern implementation with many advanced features. Notably, \chameleon{} provides a novel debugging interface to interactively explore the chain of reasoning in a multiple-step type error, allowing programmers to interactively develop a panorama view of the type error. In addition, \chameleon{} uses an adaptive interface design; programmers can switch between different granularity of information based on their personal preferences. \chameleon{} is evaluated in a series of user studies with Haskell programmers.
 
 
-We conducted a series of three user studies to investigate the effect of type error slicing and interactive type error exploration. We compared how programmers solve type errors with \chameleon{} and with traditional compiler tools. Our findings show a notable improvement in debugging speed when using type error-slicing, particularly for complex tasks. Additionally, we observed a significant enhancement in debugging speed when programmers actively use the interactive debugging features, suggesting that interactive exploration of type errors can positively impact the debugging process.
 
-\subsection{Resolve multi-witness and multi-party errors with Minimal Correction Subsets}
+% We conducted a series of three user studies to investigate the effect of type error slicing and interactive type error exploration. We compared how programmers solve type errors with \chameleon{} and with traditional compiler tools. Our findings show a notable improvement in debugging speed when using type error-slicing, particularly for complex tasks. Additionally, we observed a significant enhancement in debugging speed when programmers actively use the interactive debugging features, suggesting that interactive exploration of type errors can positively impact the debugging process.
 
-We provide \textbf{Goanna}, a Haskell type error debugging tool. Goanna enhances type error debugging in Haskell by identifying all relevant error-contributing locations and presenting all possible causes and their respective resolutions. It ranks the potential causes of type errors based on their likelihood, helping programmers identify the root causes with minimal interactions with the tool.
+\subsection*{Resolve multi-witness and multi-party errors with Minimal Correction Subsets}
+
+We provide \textbf{Goanna}, a Haskell type error debugging tool. Goanna enhances type error debugging in Haskell by identifying all relevant error-contributing locations and presenting all possible causes and their respective resolutions. It ranks the potential causes of type errors based on their likelihood, helping programmers identify the root causes with minimal interactions with the tool. Goanna is evaluated by benchmarking its accuracy, conciseness and performance against the state-of-art type-checking tools.
 
 
-To evaluate the effectiveness of the MCS-based type error debugging approach, we compiled a dataset of 86 Haskell programs from various online discussion platforms, covering a broad spectrum of type error themes. We tested the accuracy of Goanna in identifying and resolving type errors, comparing it to traditional compiler tools. Our research confirms that Goanna consistently outperforms other tools in pinpointing the correct cause of errors. Moreover, Goanna's heuristics effectively narrow down potential causes and consistently include the real cause among its top suggestions. Although Goanna operates moderately slower than standard tools, its processing time remains sufficiently quick to offer real-time feedback to developers. 
+% To evaluate the effectiveness of the MCS-based type error debugging approach, we compiled a dataset of 86 Haskell programs from various online discussion platforms, covering a broad spectrum of type error themes. We tested the accuracy of Goanna in identifying and resolving type errors, comparing it to traditional compiler tools. Our research confirms that Goanna consistently outperforms other tools in pinpointing the correct cause of errors. Moreover, Goanna's heuristics effectively narrow down potential causes and consistently include the real cause among its top suggestions. Although Goanna operates moderately slower than standard tools, its processing time remains sufficiently quick to offer real-time feedback to developers. 
 
-\subsection{Visualizing Polymorphic Types}
+\subsection*{Visualizing Polymorphic Types}
 
-We contribute \textbf{GeckoGraph}, a graphic notation for Haskell types. GeckoGraph encodes the same information as type signatures but uses colors, shapes, and symbols to make certain structures easy to identify at a glance. GeckoGraph uses visual elements to improve the understanding of complex type concepts, such as type classes and qualified constraints. GeckoGraph offers clarity when reading complex type signatures and comparing multiple types.
+We contribute \textbf{GeckoGraph}, a graphic notation for Haskell types. GeckoGraph encodes the same information as type signatures but uses colors, shapes, and symbols to make certain structures easy to identify at a glance. GeckoGraph uses visual elements to improve the understanding of complex type concepts, such as type classes and qualified constraints. GeckoGraph offers clarity when reading complex type signatures and comparing multiple types. The effectiveness of using GeckoGraph in programming is evaluated in a large-scale user study, consisting of programmers of all experience levels.
 
-We conducted a large-scale user study to assess the effectiveness of GeckoGraph in improving upon the traditional text-based approach to type signatures. The user study was designed as an interactive puzzle game with gamification elements to boost participation and engagement. A total of 721 programmers, ranging in experience levels, took part in the study. The findings indicated that while GeckoGraph did not enhance the speed or overall success rate of problem-solving significantly, it was notably beneficial in aiding beginners with more challenging tasks. Feedback gathered through a qualitative post-study survey was positively inclined, highlighting that GeckoGraph is intuitive, non-intrusive, and helpful.
+% We conducted a large-scale user study to assess the effectiveness of GeckoGraph in improving upon the traditional text-based approach to type signatures. The user study was designed as an interactive puzzle game with gamification elements to boost participation and engagement. A total of 721 programmers, ranging in experience levels, took part in the study. The findings indicated that while GeckoGraph did not enhance the speed or overall success rate of problem-solving significantly, it was notably beneficial in aiding beginners with more challenging tasks. Feedback gathered through a qualitative post-study survey was positively inclined, highlighting that GeckoGraph is intuitive, non-intrusive, and helpful.
 
 % \section{Research Method}
 
@@ -324,20 +327,20 @@ We conducted a large-scale user study to assess the effectiveness of GeckoGraph 
 
  This thesis is structured into two main parts. The initial chapters (Chapters \ref{chap:introduction}, \ref{chap:haskell-type-checking}) build a comprehensive foundation on type systems and programming languages, setting the stage for our research contribution in subsequent chapters. The latter chapters focus on distinct contributions that tackle various challenges in type error debugging.
 
-\subsection{Chapter 1: Introduction}
+\subsection*{Chapter 1: Introduction}
 Chapter 1 sets the stage by discussing the fundamental concepts of programming languages and type systems. It explores the trade-off between enhancing program safety and optimizing usability, a central dilemma in programming language research and software engineering practice. The chapter highlights common issues and technical challenges associated with type errors, establishing the motivation for this research. It also outlines the specific aim and contributions of the study, providing a roadmap for the thesis.
 
-\subsection{Chapter 2: Haskell Type Checking}
+\subsection*{Chapter 2: Haskell Type Checking}
 This chapter delves into the fundamental concepts underlying type systems and programming languages. It outlines traditional methods employed in Haskell type checking, error slicing, and interactive debugging. Additionally, this chapter discusses tools and techniques used in constraint satisfiability analysis that are integral to later developments in the thesis. The categorization of type errors is revisited and redefined, building on the definitions introduced in this chapter.
     
-\subsection{Chapter 3: \chameleon{} -- Interactive Type Error Visualization and Exploration}
+\subsection*{Chapter 3: \chameleon{} -- Interactive Type Error Visualization and Exploration}
 Chapter 3 presents \chameleon{}, a system designed to enhance the debugging of type errors through interactive visualizations. It begins with a discussion on the typical pitfalls of existing error messages and outlines the motivation behind \chameleon{}. We then detail the system's design, features, and development process, including iterative prototyping. A series of empirical studies were conducted to assess \chameleon{}'s effectiveness compared to traditional compiler tools.
     
-\subsection{Chapter 4: Goanna -- Finding All Type Errors Using Minimal Correction Subsets}
+\subsection*{Chapter 4: Goanna -- Finding All Type Errors Using Minimal Correction Subsets}
 Chapter 4 introduces Goanna, a Haskell type error debugging tool that incorporates novel features such as suggesting fixes for type errors and cross-module debugging capabilities. It starts with highlighting the limitations of conventional compiler error messages and progresses to describe Goanna's capabilities in identifying all causes and ranking potential causes by their likelihood. The implementation tactics and heuristic methods used in Goanna are discussed, followed by an empirical evaluation of the system's accuracy, conciseness, and performance based on real-world Haskell code examples.
     
-\subsection{Chapter 5: GeckoGraph — A Graphic Notation For Haskell Types}
+\subsection*{Chapter 5: GeckoGraph — A Graphic Notation For Haskell Types}
 Chapter 5 introduces our design of GeckoGraph. GechoGraph is a graphic notation for Haskell types. This chapter starts by underscoring the challenges of understanding and using polymorphic types. It then introduces GeckoGraph, how it addresses these challenges, and how to constructively transform text-based type signatures to GeckoGraph. We then showed our experiment on evaluating the effect of using GeckoGraph to help solve program tasks. Lastly, we discussed the strengths, limitations, and potential applications of GeckoGraph and type visualizations in general.   
     
-\subsection{Chapter 6: Conclusion}
-The final chapter reiterates the thesis's contributions. It discusses potential avenues for future tool development and research opportunities, forecasting the future landscape of programming language research. The chapter concludes with reflections on the importance of improving type error diagnositics, encouraging ongoing investigation and innovation.
+\subsection*{Chapter 6: Conclusion}
+The final chapter reiterates the thesis's contributions. It discusses potential avenues for future tool development and research opportunities, forecasting the future landscape of programming language research. The chapter concludes with reflections on the importance of improving type error diagnostics, and encouraging ongoing investigation and innovation.

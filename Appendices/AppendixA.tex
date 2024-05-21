@@ -10,17 +10,17 @@ We provide all the level settings we used in our user study. The online game is 
 
 \section{Level 1: Trial run}
 
-\subsection{Target Type } 
+\subsection*{Target Type } 
 \begin{itemize}
     \item \texttt{zeroToHero :: Zero a -> Hero a}
 \end{itemize}
 
-\subsection{Available Functions} 
+\subsection*{Available Functions} 
 \begin{itemize}
     \item \texttt{f :: Zero a -> Hero a}
 \end{itemize}
 
-\subsection{Possible Solution} 
+\subsection*{Possible Solution} 
 \begin{itemize}
     \item \texttt{zeroToHero z = f z}
 \end{itemize}
@@ -28,30 +28,30 @@ We provide all the level settings we used in our user study. The online game is 
 
 \section{Level 2: Assemble required}
 
-\subsection{Target Type} 
+\subsection*{Target Type} 
 \begin{itemize}
     \item \texttt{zeroToHero :: Zero a -> Hero a}
 \end{itemize}
 
-\subsection{Available Functions} 
+\subsection*{Available Functions} 
 \begin{itemize}
     \item \texttt{runZero :: Zero a -> a}
     \item \texttt{mkHero :: a -> Hero a}
     \item \texttt{(\$) :: (a -> b) -> a -> b}
 \end{itemize}
 
-\subsection{Possible Solution} 
+\subsection*{Possible Solution} 
 \begin{itemize}
     \item \texttt{zeroToHero z = mkHero (runZero z)}
 \end{itemize}
 
 \section{Level 3: Which path?}
-\subsection{Target Type } 
+\subsection*{Target Type } 
 \begin{itemize}
     \item \texttt{zeroToHero :: Zero a -> Hero (a, a)}
 \end{itemize}
 
-\subsection{Available Functions} 
+\subsection*{Available Functions} 
 \begin{itemize}
     \item \texttt{f1 :: Zero a -> Hero a}
     \item \texttt{f2 :: Zero a -> (a, a)}
@@ -60,19 +60,19 @@ We provide all the level settings we used in our user study. The online game is 
     \item \texttt{(.) :: (b -> c) -> (a -> b) -> a -> c}
 \end{itemize}
 
-\subsection{Possible Solution} 
+\subsection*{Possible Solution} 
 \begin{itemize}
     \item \texttt{zeroToHero z = f3 . f1 \$ z}
 \end{itemize}
 
 
 \section{Level 4: A repeating pattern}
-\subsection{Target Type } 
+\subsection*{Target Type } 
 \begin{itemize}
     \item \texttt{zeroToHero :: Zero a b -> Hero b b}
 \end{itemize}
 
-\subsection{Available Functions} 
+\subsection*{Available Functions} 
 \begin{itemize}
     \item \texttt{f1 :: Zero a b -> Hero b a}
     \item \texttt{f2 :: Zero a a -> Hero a a}
@@ -82,19 +82,19 @@ We provide all the level settings we used in our user study. The online game is 
     \item \texttt{(.) :: (b -> c) -> (a -> b) -> a -> c}
 \end{itemize}
 
-\subsection{Possible Solution} 
+\subsection*{Possible Solution} 
 \begin{itemize}
     \item \texttt{zeroToHero z = f2 . f4 \$ z}
 \end{itemize}
 
 
 \section{Level 5: A perfect pair}
-\subsection{Target Type } 
+\subsection*{Target Type } 
 \begin{itemize}
     \item \texttt{zeroToHero :: Zero a b -> Hero b b}
 \end{itemize}
 
-\subsection{Available Functions} 
+\subsection*{Available Functions} 
 \begin{itemize}
     \item \texttt{fst :: (a, b) -> a}
     \item \texttt{snd :: (a, b) -> b}
@@ -106,19 +106,19 @@ We provide all the level settings we used in our user study. The online game is 
     \item \texttt{(.) :: (b -> c) -> (a -> b) -> a -> c}
 \end{itemize}
 
-\subsection{Possible Solution} 
+\subsection*{Possible Solution} 
 \begin{itemize}
     \item \texttt{zeroToHero z = snd .f3 . f1 \$ z}
 \end{itemize}
 
 
 \section{Level 6: Monty Hall}
-\subsection{Target Type } 
+\subsection*{Target Type } 
 \begin{itemize}
     \item \texttt{zeroToHero :: Zero a b c -> Hero c a}
 \end{itemize}
 
-\subsection{Available Functions} 
+\subsection*{Available Functions} 
 \begin{itemize}
     \item \texttt{f1 :: Zero a b c-> Zero c b a}
     \item \texttt{f2 :: Zero a b c -> Zero a c c}
@@ -127,18 +127,18 @@ We provide all the level settings we used in our user study. The online game is 
     \item \texttt{(.) :: (b -> c) -> (a -> b) -> a -> c}
 \end{itemize}
 
-\subsection{Possible Solution} 
+\subsection*{Possible Solution} 
 \begin{itemize}
     \item \texttt{zeroToHero z = f3 . f1 . f2 \$ z}
 \end{itemize}
 
 \section{Level 7: TIE fighter}
-\subsection{Target Type } 
+\subsection*{Target Type } 
 \begin{itemize}
     \item \texttt{zeroToHero :: Zero a b c -> Hero c}
 \end{itemize}
 
-\subsection{Available Functions} 
+\subsection*{Available Functions} 
 \begin{itemize}
     \item \texttt{f1 :: Zero a b c -> Hero (a -> b)}
     \item \texttt{f2 :: Zero a b c -> Hero (b -> c)}
@@ -149,18 +149,18 @@ We provide all the level settings we used in our user study. The online game is 
     \item \texttt{(.) :: (b -> c) -> (a -> b) -> a -> c}
 \end{itemize}
 
-\subsection{Possible Solution} 
+\subsection*{Possible Solution} 
 \begin{itemize}
     \item \texttt{zeroToHero z = f2 z <*> (f1 z <*> f3 z)}
 \end{itemize}
 
 \section{Level 8: The middle man}
-\subsection{Target Type } 
+\subsection*{Target Type } 
 \begin{itemize}
     \item \texttt{zeroToHero :: (a -> d) -> (b -> d) -> (c -> d) -> Zero a b c ->  Hero a d c}
 \end{itemize}
 
-\subsection{Available Functions} 
+\subsection*{Available Functions} 
 \begin{itemize}
     \item \texttt{f1 :: Zero a b c -> Zero c a b}
     \item \texttt{f2 :: Zero a b c -> Hero a b c}
@@ -169,18 +169,18 @@ We provide all the level settings we used in our user study. The online game is 
     \item \texttt{(.) :: (b -> c) -> (a -> b) -> a -> c}
 \end{itemize}
 
-\subsection{Possible Solution} 
+\subsection*{Possible Solution} 
 \begin{itemize}
     \item \texttt{zeroToHero ad bd cd z = f2  . f1  . f1  . fmap bd  . f1 \$ z}
 \end{itemize}
 
 \section{Level 9: Split the difference}
-\subsection{Target Type } 
+\subsection*{Target Type } 
 \begin{itemize}
     \item \texttt{zeroToHero :: Zero a b c d ->  Hero d d d d}
 \end{itemize}
 
-\subsection{Available Functions} 
+\subsection*{Available Functions} 
 \begin{itemize}
     \item \texttt{f1 :: Zero a b c -> Zero c a b}
     \item \texttt{f2 :: Zero a b c -> Hero a b c}
@@ -189,19 +189,19 @@ We provide all the level settings we used in our user study. The online game is 
     \item \texttt{(.) :: (b -> c) -> (a -> b) -> a -> c}
 \end{itemize}
 
-\subsection{Possible Solution} 
+\subsection*{Possible Solution} 
 \begin{itemize}
     \item \texttt{zeroToHero ad bd cd z = f2 \$ f1 \$ f1 \$ f3 \$ z}
 \end{itemize}
 
 
 \section{Level 10: The roller coaster}
-\subsection{Target Type } 
+\subsection*{Target Type } 
 \begin{itemize}
     \item \texttt{zeroToHero :: Zero (a -> b -> c -> d) a b c  -> Hero d}
 \end{itemize}
 
-\subsection{Available Functions} 
+\subsection*{Available Functions} 
 \begin{itemize}
     \item \texttt{f1 :: Zero (a -> b) a c d -> Zero () b c d}
     \item \texttt{f2 :: Zero a b c d -> Zero b c d a}
@@ -210,7 +210,7 @@ We provide all the level settings we used in our user study. The online game is 
     \item \texttt{(.) :: (b -> c) -> (a -> b) -> a -> c}
 \end{itemize}
 
-\subsection{Possible Solution} 
+\subsection*{Possible Solution} 
 \begin{itemize}
     \item \texttt{zeroToHero z = f3 . f2 . f2 . f1 . f2 . f1 . f2 . f1 \$ z}
 \end{itemize}

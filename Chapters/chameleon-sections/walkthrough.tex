@@ -11,7 +11,7 @@ numbers, but \chameleon{} shows there is a type error (Fig.~\ref{fig:basic-mode-
 After reading the error reports, Maxine realizes that the error revolves 
 around the expression \texttt{xs}. That is: \texttt{xs} can be
 either \texttt{[a]} or \texttt{Int}. By matching the color in the
-conflicting type block (Fig. \ref{fig:anatomy}-H) and the highlighted error locations 
+conflicting type block (Fig.~\ref{fig:anatomy}-H) and the highlighted error locations 
 Maxine knows that the \texttt{[a]} results from the pattern matching of the
 \texttt{:} operator, while \texttt{Int} results from using \texttt{+} to
  add two expressions. 
@@ -40,7 +40,7 @@ Maxine knows that the \texttt{[a]} results from the pattern matching of the
 %         \centering
 %         \includegraphics[width=\linewidth]{images/basic-mode-3.pdf}
 %         \caption{
-%             Hovering on possible type 2 (Fig. \ref{fig:basic-mode-2}-3) will limit the highlights 
+%             Hovering on possible type 2 (Fig.~\ref{fig:basic-mode-2}-3) will limit the highlights 
 %             in the editor to only the ones (in blue) that support \texttt{x::Int}.
 %         }
 %         \label{fig:basic-mode-3}
@@ -84,7 +84,7 @@ Maxine writes additional code to add only even numbers in a list of integers, re
 
 Maxine therefore clicks on the \texttt{evens} card and \chameleon{} reports two
 possible types for the expression \texttt{[Int]} and \texttt{[Int] -> [Int]}
-(Fig. \ref{fig:balance-mode-2}). Knowing the expression \texttt{evens} holds
+(Fig.~\ref{fig:balance-mode-2}). Knowing the expression \texttt{evens} holds
 a temporary list of even integers (hence it is of \texttt{[Int]} types), Maxine
 concludes that the Possible type 2 is unintended. The locations with blue highlights must
 contain the cause. It does not take long for Maxine to realize the list 
@@ -139,15 +139,15 @@ contain the cause. It does not take long for Maxine to realize the list
 % the options provided by \chameleon{}, by switching to advanced
 % mode, she has access to the debugging steps. 
 
-To illustrate the deduction steps with the task shown in section \ref{sub:balanced},  first, Maxine clicks on step 5 (Fig. \ref{fig:advanced-mode-step5}) and verifies
+To illustrate the deduction steps with the task shown in Section~\ref{sub:balanced},  first, Maxine clicks on step 5 (Fig.~\ref{fig:advanced-mode-step5}) and verifies
 that the two occurrences of \texttt{evens} are supposed to be identical, and the
 second use means \texttt{evens} is a list of integers. Second, she
-clicks on step 6 (Fig. \ref{fig:advanced-mode-step6}) and verifies that
+clicks on step 6 (Fig.~\ref{fig:advanced-mode-step6}) and verifies that
 \texttt{evens} should be the same type as the declaration on the right-hand
 side. 
 
 
-Lastly, Maxine clicks on step 7 (Fig. \ref{fig:advanced-mode-step7}), and
+Lastly, Maxine clicks on step 7 (Fig.~\ref{fig:advanced-mode-step7}), and
 it shows that the \texttt{filter} function is applied to one argument
 \texttt{isEven}. By consulting the relevant type information, Maxine identifies
 that \texttt{filter} is expecting two arguments while only one is provided. 

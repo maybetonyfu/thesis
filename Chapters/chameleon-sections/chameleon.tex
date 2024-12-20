@@ -21,7 +21,8 @@ A common form of bias happens when a type error is reported in one expression, b
 Another form of bias is that traditional type errors are often framed as conflicts between \texttt{Expected type} and \texttt{Actual type}. This framing is standard practice in most typed languages. However, what is \texttt{expected} and what is \texttt{actual} are a side effect of different unification orders rather than the intention of the programmer. In both forms, the error message may lead programmers to falsely believe the validity of parts of code and wrongly accuse others.
 
 \textbf{Traditional type errors give poor explanations}
-When the compiler rejects a program, the internal state of type checking is the result of a complex computation. But the details of this process are hard to explain to users and are usually not reported by compilers. For the typical type error shown in Fig.~\ref{fig:motivation-example}, the evidence for the type error is gathered from the previous declarations. These have to be rediscovered by programmers using less rigorous methods. 
+
+When the compiler typechecks a program, it generates a series constraints from the source code and search for a satisfiable model for these constraints. But the details of this process are hard to explain to users and are usually not reported by compilers. For the typical type error shown in Fig.~\ref{fig:motivation-example}, the evidence for the type error is gathered from the previous declarations. These have to be rediscovered by programmers using less rigorous methods. 
 
 \subsection{Design Goals of \chameleon{}}
 Based on the limitations of traditional type errors, we give the following design requirements for \chameleon{}:
@@ -48,7 +49,7 @@ Based on the limitations of traditional type errors, we give the following desig
 
 \chameleon{} comprises two parts: a type inference engine and a novel interactive debugging interface. 
 % This separation of concerns allows us to (1) adapt \chameleon{} into multiple front ends, such as IDE extensions, desktop applications, and web applications; and (2) reuse the debugging interface for different programming languages by replacing the back-end type inference engine. 
-The debugging interface is designed from the ground up; the type inference engine is a re-implementation of the original Chameleon with several novel improvements, as described in Section \ref{sec:typeinferenceengine}.
+The debugging interface is designed from the ground up; the type inference engine is a re-implementation of the original Chameleon with several novel improvements, as described in Section~\ref{sec:typeinferenceengine}.
 
 % \todo{I wonder about a high level overview diagram of tool / usage of tool, then the details of each component?}
 
@@ -80,7 +81,7 @@ A hover interaction over one of the possible types facilitates such bisection, c
     \centering
     \includegraphics[width=\linewidth, trim=0mm 10mm 0mm 0mm]{images/intro-compare-2.pdf}
     \caption[\chameleon{} with type compare tool enabled]{
-        \textbf{\chameleon{} with type compare tool enabled}. \chameleon{} identified the conflicting types for the expression \texttt{u} and associated the relevant locations with each type. Compare the output with the traditional type error message in fig. \ref{fig:motivation-example}.
+        \textbf{\chameleon{} with type compare tool enabled}. \chameleon{} identified the conflicting types for the expression \texttt{u} and associated the relevant locations with each type. Compare the output with the traditional type error message in Fig.~\ref{fig:motivation-example}.
 }
     \label{fig:compare}
 \end{figure}
@@ -111,9 +112,9 @@ A hover interaction over one of the possible types facilitates such bisection, c
 \paragraph{Candidate Expression Cards}  \label{sub:candidate-expression}
 
 
-% We propose candidate expression cards to make it clear to the user that there are multiple ways to resolve a type conflict. By contrast,  standard compiler error messages such as those of GHC arbitrarily focus the users' attention on only one candidate expression, e.g.\ ``\textit{Couldn't match expected type ‘Char’ with actual type ‘Bool’ in expression x}" where x is the candidate expression. In practice, this candidate expression often does not match programmers' intention (Fig. \ref{fig:single-candidate}).  
+% We propose candidate expression cards to make it clear to the user that there are multiple ways to resolve a type conflict. By contrast,  standard compiler error messages such as those of GHC arbitrarily focus the users' attention on only one candidate expression, e.g.\ ``\textit{Couldn't match expected type ‘Char’ with actual type ‘Bool’ in expression x}" where x is the candidate expression. In practice, this candidate expression often does not match programmers' intention (Fig.~\ref{fig:single-candidate}).  
 A candidate expression is an expression that can be inferred to have two conflicting types. 
-When a type error is detected, \chameleon{} provides a list of all candidate expressions, and programmers are free to choose the problem to resolve by clicking on one candidate expression card. In the example shown in Fig. \ref{fig:expression}, \texttt{x} and \texttt{y} are both candidate expressions. Fixing either type error can make both expressions well-typed.
+When a type error is detected, \chameleon{} provides a list of all candidate expressions, and programmers are free to choose the problem to resolve by clicking on one candidate expression card. In the example shown in Fig.~\ref{fig:expression}, \texttt{x} and \texttt{y} are both candidate expressions. Fixing either type error can make both expressions well-typed.
 
 
 % This feature can be effective in resolving the problem that traditional tools tend to report errors that happened in source code from third-party libraries. With candidate expression cards, a programmer can freely change the context of the type error to the user-defined variables and functions to gain a better understanding of why their own code does not match the library code instead of the other direction.
@@ -124,7 +125,7 @@ Programmers select a candidate expression card by clicking on one card. Once a c
 
 \paragraph{Deduction steps}  \label{sub:deduction-steps}
 
-% Deduction steps are motivated by the lack of explaining why the program has type errors. When the compiler rejects a program, it dumps the internal state of type checking.  This information may be a result of complex computing but this process is not reported by compilers. For a typical type error shown in Fig. \ref{fig:ghc-error-example}, clearly, the evidence for the type error is gathered from the previous two declarations. These have to be rediscovered by the programmers again, using harder and less-sound methods. 
+% Deduction steps are motivated by the lack of explaining why the program has type errors. When the compiler rejects a program, it dumps the internal state of type checking.  This information may be a result of complex computing but this process is not reported by compilers. For a typical type error shown in Fig.~\ref{fig:ghc-error-example}, clearly, the evidence for the type error is gathered from the previous two declarations. These have to be rediscovered by the programmers again, using harder and less-sound methods. 
 
 % \begin{figure}
 %     \centering
@@ -134,7 +135,7 @@ Programmers select a candidate expression card by clicking on one card. Once a c
 %     \label{fig:ghc-error-example}
 % \end{figure}
 
-Deduction steps allow programmers to explore all the error locations one at a time (Fig. \ref{fig:deduction}). Steps are shown as a list of sequentially  numbered circular buttons (step buttons) and an explanation layer in the editor window. In the explanation layer, the two locations under examination are outlined, and a line is drawn to connect these two locations. This line is accompanied by a human-readable text explanation of their semantic connection. Programmers are free to activate any step. The active step is shown in green. When activating a step, some highlights switch color. The message in the explanation layer changes accordingly. A program in Fig. \ref{fig:deduction} generates a list of steps shown in Fig. \ref{fig:step-interface} left.
+Deduction steps allow programmers to explore all the error locations one at a time (Fig.~\ref{fig:deduction}). Steps are shown as a list of sequentially  numbered circular buttons (step buttons) and an explanation layer in the editor window. In the explanation layer, the two locations under examination are outlined, and a line is drawn to connect these two locations. This line is accompanied by a human-readable text explanation of their semantic connection. Programmers are free to activate any step. The active step is shown in green. When activating a step, some highlights switch color. The message in the explanation layer changes accordingly. A program in Fig.~\ref{fig:deduction} generates a list of steps shown in Fig.~\ref{fig:step-interface} left.
 
 
 Programmers can use mouse and keyboard shortcuts to increment or decrement the step number or jump to any step. Programmers resolve type errors by navigating through all the deduction steps and verifying whether each explanation aligns with their intention. Eventually, they will find a step that does not match, and the type error can be fixed by modifying one of the two outlined locations.
@@ -143,31 +144,31 @@ Programmers can use mouse and keyboard shortcuts to increment or decrement the s
     \centering
     \includegraphics[width=\linewidth, trim=0mm 0mm 0mm 0mm]{images/step-explain.pdf}
     \caption[Deduction steps if they are shown all at once]{
-Deduction steps if they are shown all at once. In practice, steps are shown one at a time. Programmers increment or decrement the step number using the step control bar (Fig. \ref{fig:anatomy}-G) or by directly clicking on a step button (Fig. \ref{fig:anatomy}-F). To increment or decrement the deduction step can be intuitively thought of as moving the position of the \textit{splitting point} (dotted lines) where the blue and orange highlights divide.
+Deduction steps if they are shown all at once. In practice, steps are shown one at a time. Programmers increment or decrement the step number using the step control bar (Fig.~\ref{fig:anatomy}-G) or by directly clicking on a step button (Fig.~\ref{fig:anatomy}-F). To increment or decrement the deduction step can be intuitively thought of as moving the position of the \textit{splitting point} (dotted lines) where the blue and orange highlights divide.
         }
     \label{fig:step-interface}
 \end{figure}
 
-Internally, deduction steps are different ways to divide the error locations into two  groups, denoted by the two colors. Each color infers a different type of the candidate expression. Each increment/decrement of the step changes the splitting point (dotted lines in Fig.~\ref{fig:step-interface}) of the two colors.
+Internally, deduction steps are different ways to divide the error locations into two  groups, denoted by the two colors. Each color infers a different type of the candidate expression. Each increment/decrement of the step changes the splitting point (dotted lines in Fig.~\ref{fig:step-interface}) of the two colors. Deduction steps are an interactive view of multi-step type errors.
 
 
 \paragraph{Multiple Modes}
 
-Nielson pointed out  that the two most important issues in designing for usability are understanding the users' tasks and the differences in users \cite{Jakob_Nielsen1994-gd}. From analyzing how users use \chameleon{}, we realized that the ideal debugging interface should adapt to the specific programmer and programming task. There are cases where a programmer wants the debugger to simply ``show the answer", and others to dive deeper into the problem domain and search for the optimal solution. To accommodate the need to customize the level of information density and granularity of control, \chameleon{} provides three modes: basic, balanced, and advanced. Programmers can switch between modes by clicking on the mode switching toggles (Fig. \ref{fig:anatomy}-C). The features accessible from different modes are summarized in table~\ref{tab:chameleon-features}.%shown in table~\ref{tab:chameleon-features}.
+Nielson pointed out  that the two most important issues in designing for usability are understanding the users' tasks and the differences in users \cite{Jakob_Nielsen1994-gd}. From analyzing how users use \chameleon{}, we realized that the ideal debugging interface should adapt to the specific programmer and programming task. There are cases where a programmer wants the debugger to simply ``show the answer", and others to dive deeper into the problem domain and search for the optimal solution. To accommodate the need to customize the level of information density and granularity of control, \chameleon{} provides three modes: basic, balanced, and advanced. Programmers can switch between modes by clicking on the mode switching toggles (Fig.~\ref{fig:anatomy}-C). The features accessible from different modes are summarized in Table~\ref{tab:chameleon-features}.%shown in table~\ref{tab:chameleon-features}.
 
 \begin{table}
     \centering
 \begin{scriptsize}
 \begin{center}
 
-    \begin{tabular}{ l l  }
-     \textit{Mode} & \textit{Features} \\ \hline
-     Basic Mode & Type Compare Tool \\ \hline
-     Balanced mode & Type Compare Tool \\
-     & Candidate Expression Cards \\  \hline
-     Advanced mode & Type Compare Tool \\
-     & Candidate Expression Cards \\
-     & Deduction Steps \\
+    \begin{tabular}{ l l l }
+     \textit{Mode} & \textit{Features} & \textit{Section} \\ \hline
+     Basic Mode & Type Compare Tool & Section~\ref{sub:type-compare} \\ \hline
+     Balanced mode & Type Compare Tool & Section~\ref{sub:type-compare} \\
+     & Candidate Expression Cards & Section~\ref{sub:candidate-expression} \\  \hline
+     Advanced mode & Type Compare Tool & Section~\ref{sub:type-compare} \\
+     & Candidate Expression Cards & Section~\ref{sub:candidate-expression} \\
+     & Deduction Steps & Section~\ref{sub:deduction-steps} \\
     \end{tabular}
     \end{center}
 \end{scriptsize}
@@ -181,10 +182,10 @@ Nielson pointed out  that the two most important issues in designing for usabili
 
 Chameleon was originally a command-line tool developed in the early 2000s to improve type error reporting %and introduced a design for interactive type debugging 
 for the Haskell programming language.
-Unlike traditional type errors produced by the Glasgow Haskell Compiler (GHC)~\cite{Gamari_undated-zu}, which uses a Hindley–Milner type inference system, Chameleon infers types using constraint solving. In Chameleon, constraints are generated from the source code based on typing rules. In addition, each constraint is labeled with the location where it is generated. This set of constraints is consistent if the program is well-typed and inconsistent otherwise. When a type error occurs, an efficient algorithm is used to derive a minimal subset of the constraints that still contain inconsistencies. This subset is called a Minimal Unsatisfiable Subset (MUS). From this, Chameleon can report a list of locations, using the labels of constraints that are in the MUS. Stuckey et al.~\cite{Stuckey2003-pz} showed that program locations linked to the constraints from an MUS are all relevant to the type error and must include the cause of the error.
+Unlike traditional type errors produced by the Glasgow Haskell Compiler (GHC)~\cite{Gamari_undated-zu}, which uses a Hindley–Milner type inference system, Chameleon infers types using constraint solving. In Chameleon, constraints are generated from the source code based on typing rules. In addition, each constraint is labeled with the location where it is generated. This set of constraints is consistent if the program is well-typed and inconsistent otherwise. When a type error occurs, an efficient algorithm is used to derive a minimal subset of the constraints that still contain inconsistencies. This subset is called a Minimal Unsatisfiable Subset (MUS). From this, Chameleon can report a list of locations, using the labels of constraints that are in the MUS. Stuckey, Sulzmann and Wazny showed that program locations linked to the constraints from an MUS are all relevant to the type error and must include the cause of the error~\cite{Stuckey2003-pz}.
 
 Despite successfully borrowing the underlying ideas, we could not reuse the original implementation of Chameleon since the project language standard and libraries used were out of date. 
-Our \chameleon{} implementation extends the original Chameleon approach in a number of ways.
+\chameleon{} implementation extends the original Chameleon approach in a number of ways. \chameleon{} supports the base language of Haskell2010~\cite{Simon_Marlow2010-lg}. However, \chameleon{} does not support any advanced language extensions, such as GADTs.
 %In addition to what Chameleon can do, a few new type inference features were added in the \chameleon{} implementation.
 
 
@@ -192,7 +193,7 @@ Our \chameleon{} implementation extends the original Chameleon approach in a num
 \paragraph{Recovering concrete types from type errors}
 
 
-Using only constraints from the MUS is sufficient to locate the type error, but to recover types from type errors we need constraints from parts of the program that are irrelevant to the type error.  For instance, consider an ill-typed 2-tuple where two possible types can be assigned: \texttt{(Int, Int)} and \texttt{(Int, String)}. The types reconstructed from Chameleon may be \texttt{(a, Int)} and \texttt{(a, String)}. Although the recovered types are theoretically correct, they introduce the notation \texttt{a}, which denotes a generic type variable that can be any type, making the error message harder to understand. To solve this issue in \chameleon{}, for each constraint \texttt{c} in the MUS, we find a maximally satisfiable subset (MSS) from all the constraints that contain every other element of MUS but not \texttt{c}. These maximally satisfiable subsets, while not helpful in error localization, will produce the most concrete types, see Fig.~\ref{fig:compare-to-original}. Concrete types, such as \texttt{Int} and \texttt{String},  often provide extra information to programmers. With a type of \texttt{(Float, Float)}, programmers may want to convey a point in 2d space. However, a type of \texttt{(a, Float)} does not preserve such information.
+Using only constraints from the MUS is sufficient to locate the type error, but to recover types from type errors we need constraints from parts of the program that are irrelevant to the type error.  For instance, consider an ill-typed 2-tuple where two possible types can be assigned: \texttt{(Int, Int)} and \texttt{(Int, String)}. The types reconstructed from Chameleon may be \texttt{(a, Int)} and \texttt{(a, String)}. Although the recovered types are theoretically correct, they introduce the notation \texttt{a}, which denotes a generic type variable that can be any type, making the error message harder to understand. To solve this issue in \chameleon{}, for each constraint \texttt{c} in the MUS, we find a maximally satisfiable subset (MSS) from all the constraints that contain every other element of MUS but not \texttt{c}. These maximally satisfiable subsets, while not helpful in error localization, will produce the most concrete types, see Fig.~\ref{fig:compare-to-original}. Concrete types, such as \texttt{Int} and \texttt{String},  often provide extra information to programmers. With a type of \texttt{(Float, Float)}, programmers may want to convey a point in 2D space. However, a type of \texttt{(a, Float)} does not preserve such information.
 
 
 \begin{figure}[ht]
@@ -232,7 +233,7 @@ In addition, \chameleon{} provides support for type explanation. Similar to the 
     \label{fig:listing1}
 \end{figure}
 
-For instance, for the program in Fig.~\ref{fig:listing1}, \chameleon{}  generates the following constraints and labels (in brackets) $T_a = Bool$ (if condition), $T_b = T_c$ (if branches), $T_a= String$  (definition). Clearly, as $T_a$ can not unify with both \textit{Bool} and \textit{String}, this program is not well typed. \chameleon{} can construct a human-readable explanation from the MUS. An example output for Fig.~\ref{fig:listing1} can be: \texttt{a} has type \texttt{Bool} because \texttt{a} is the condition of an if statement; however, \texttt{a} has type \texttt{String} because \texttt{a} is defined as the string literal \texttt{"True"}. This explanation facilitates the deduction steps (Section \ref{sub:deduction-steps}). \looseness=-1
+For instance, for the program in Fig.~\ref{fig:listing1}, \chameleon{}  generates the following constraints and labels (in brackets) $T_a = Bool$ (if condition), $T_b = T_c$ (if branches), $T_a= String$  (definition). Clearly, as $T_a$ can not unify with both \textit{Bool} and \textit{String}, this program is not well typed. \chameleon{} can construct a human-readable explanation from the MUS. An example output for Fig.~\ref{fig:listing1} can be: \texttt{a} has type \texttt{Bool} because \texttt{a} is the condition of an if statement; however, \texttt{a} has type \texttt{String} because \texttt{a} is defined as the string literal \texttt{"True"}. This explanation facilitates the deduction steps (Section~\ref{sub:deduction-steps}). 
 
 
 

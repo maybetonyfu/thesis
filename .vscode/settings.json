@@ -1,4 +1,7 @@
 {
     "editor.wordWrap": "on",
-    "grammarly.files.include": ["**/*.tex"]
+    "grammarly.files.include": [
+        "**/*.tex"
+    ],
+    "explorer.excludeGitIgnore": true
 }

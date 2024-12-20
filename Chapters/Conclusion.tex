@@ -69,7 +69,7 @@ This style of programming is often referred to as ``natural programming environm
 
 \subsubsection*{Why questions}
 
-A fundamental aspect of debugging type errors involves asking questions such as "Why does the type error occur?" and "Why is the expected type \texttt{X}?" These "why" questions highlight gaps in understanding where a thorough explanation is in demand. \textit{TypeTutor} will intelligently address this by displaying all relevant "why" questions when a programmer hovers over an expression of interest. Upon selecting a question, \textit{TypeTutor} will promptly provide the corresponding detailed answer (Fig. \ref{fig:why}).
+A fundamental aspect of debugging type errors involves asking questions such as "Why does the type error occur?" and "Why is the expected type \texttt{X}?" These "why" questions highlight gaps in understanding where a thorough explanation is in demand. \textit{TypeTutor} will intelligently address this by displaying all relevant "why" questions when a programmer hovers over an expression of interest. Upon selecting a question, \textit{TypeTutor} will promptly provide the corresponding detailed answer (Fig.~\ref{fig:why}).
 
 
 
@@ -85,20 +85,20 @@ A fundamental aspect of debugging type errors involves asking questions such as 
 
 \subsubsection*{Follow-up questions}
 
-In the context of debugging type errors, particularly multi-step type errors, it proves beneficial to enable programmers to incrementally uncover the underlying inference logic. \textit{TypeTutor} will support this process by allowing programmers to ask follow-up questions. Typically, these questions build upon the responses to earlier inquiries. Follow-up questions in \textit{TypeTutor} would facilitate tasks akin to the interactive debugging steps in \chameleon{}. However, unlike \chameleon{}, \textit{TypeTutor} would not need a separate interface for such a task. Instead, when a response includes the option for further inquiry, \textit{TypeTutor} would provide a follow-up hint at the end of the answer, encouraging programmers to continue tracing the root cause (Fig. \ref{fig:follow-up}). This integrated approach would help maintain a streamlined user experience while enabling deep exploration of type errors.
+In the context of debugging type errors, particularly multi-step type errors, it proves beneficial to enable programmers to incrementally uncover the underlying inference logic. \textit{TypeTutor} will support this process by allowing programmers to ask follow-up questions. Typically, these questions build upon the responses to earlier inquiries. Follow-up questions in \textit{TypeTutor} would facilitate tasks akin to the interactive debugging steps in \chameleon{}. However, unlike \chameleon{}, \textit{TypeTutor} would not need a separate interface for such a task. Instead, when a response includes the option for further inquiry, \textit{TypeTutor} would provide a follow-up hint at the end of the answer, encouraging programmers to continue tracing the root cause (Fig.~\ref{fig:follow-up}). This integrated approach would help maintain a streamlined user experience while enabling deep exploration of type errors.
 
 
 \begin{figure}[hbt]
   \includegraphics[width=\linewidth]{FollowUp}
   \caption[An example of \textit{TypeTutor} providing further explanation based on previous response (follow-up questions)]{
     \label{fig:follow-up}
-     Following the case in Figure \ref{fig:why}, \textit{TypeTutor} will prompt programmers to ask follow-up questions. In this case, \textit{TypeTutor} will inform the programmer that \texttt{matchFirst} on line 3 has the type \texttt{Int -> (Int, Int) -> Bool} can be inferred from two pieces of clues:  the definition of \texttt{matchFirst} and the \texttt{filter} on line 3 instantiated as \texttt{((Int, Int) -> Bool) -> [(Int, Int)] -> [(Int, Int)]}. Programmers can trace further by following the hints again in the answer section.
+     Following the case in Fig.~\ref{fig:why}, \textit{TypeTutor} will prompt programmers to ask follow-up questions. In this case, \textit{TypeTutor} will inform the programmer that \texttt{matchFirst} on line 3 has the type \texttt{Int -> (Int, Int) -> Bool} can be inferred from two pieces of clues:  the definition of \texttt{matchFirst} and the \texttt{filter} on line 3 instantiated as \texttt{((Int, Int) -> Bool) -> [(Int, Int)] -> [(Int, Int)]}. Programmers can trace further by following the hints again in the answer section.
     }
 \end{figure}
 
 \subsubsection*{How questions}
 
-'How' questions in debugging focus on providing prescriptive guidance regarding program errors. Such questions do not solely depend on logical precision; they require understanding the knowledge gaps and delivering clear, followable instructions. \textit{TypeTutor} would aid programmers by facilitating questions on how to rectify specific type errors. In Goanna, the Maximal Satisfiable Subsets (MSS) analysis can suggest the recommended type for each possible correction. \textit{TypeTutor} would advance this concept by offering examples of syntax changes tailored to these recommended types. In the example (Fig. \ref{fig:how}), \textit{TypeTutor} would provide various examples of how to change \texttt{'1'} to an Integer type, including changing it to an integer literal, an integer variable, or an expression that evaluates to an integer. 
+'How' questions in debugging focus on providing prescriptive guidance regarding program errors. Such questions do not solely depend on logical precision; they require understanding the knowledge gaps and delivering clear, followable instructions. \textit{TypeTutor} would aid programmers by facilitating questions on how to rectify specific type errors. In Goanna, the Maximal Satisfiable Subsets (MSS) analysis can suggest the recommended type for each possible correction. \textit{TypeTutor} would advance this concept by offering examples of syntax changes tailored to these recommended types. In the example (Fig.~\ref{fig:how}), \textit{TypeTutor} would provide various examples of how to change \texttt{'1'} to an Integer type, including changing it to an integer literal, an integer variable, or an expression that evaluates to an integer. 
 
 
 
@@ -106,12 +106,12 @@ In the context of debugging type errors, particularly multi-step type errors, it
   \includegraphics[width=\linewidth]{How}
   \caption[An example of \textit{TypeTutor} providing change suggestion (`how' questions)]{
     \label{fig:how}
-    Following the case in Figure \ref{fig:why}, \textit{TypeTutor} will provide instructions on how to fix the type error. In detail,  \textit{TypeTutor} will provide various examples of how to change \texttt{'1'} to an Integer type, including changing it to an integer literal, an integer variable, or an expression that evaluates to an integer.
+    Following the case in Fig.~\ref{fig:why}, \textit{TypeTutor} will provide instructions on how to fix the type error. In detail,  \textit{TypeTutor} will provide various examples of how to change \texttt{'1'} to an Integer type, including changing it to an integer literal, an integer variable, or an expression that evaluates to an integer.
     }
 \end{figure}
 
 \subsubsection*{What-if questions}
-Finally, as we have identified, type errors frequently involve multiple potential causes and explanations. When integrated into a question-and-answer interface, the presence of multiple causes naturally prompts counterfactual questions such as "What are other ways that can cause this type error?" Recognizing this, \textit{TypeTutor} will provide a natural and user-friendly interface for exploring various potential causes and solutions. This approach, while similar to the functionality offered by Goanna, features a more concise and intuitive interface for programmers to switch between different potential causes. With \textit{TypeTutor}, programmers will find the option: `Other ways to fix the error' in every type error question list; hovering over the option will present alternative explanations and resolution plans (Fig. \ref{fig:what-if}).
+Finally, as we have identified, type errors frequently involve multiple potential causes and explanations. When integrated into a question-and-answer interface, the presence of multiple causes naturally prompts counterfactual questions such as "What are other ways that can cause this type error?" Recognizing this, \textit{TypeTutor} will provide a natural and user-friendly interface for exploring various potential causes and solutions. This approach, while similar to the functionality offered by Goanna, features a more concise and intuitive interface for programmers to switch between different potential causes. With \textit{TypeTutor}, programmers will find the option: `Other ways to fix the error' in every type error question list; hovering over the option will present alternative explanations and resolution plans (Fig.~\ref{fig:what-if}).
 
 \begin{figure}[hbt]
   \includegraphics[width=\linewidth]{WhatIf}
@@ -132,7 +132,7 @@ At the time of writing this thesis, LLMs were actively experimented with perform
     }
 \end{figure}
 
-While LLMs have shown capability in recognizing basic errors, they often display a limited understanding of type theories and multi-step reasoning ability. Figure \ref{fig:llm} depicts a type error caused by mismatching numbers of arguments in the function \texttt{mapList}; although provided a correct error identification at the start, GPT 4 proceeded to claim, “This results in an infinite type situation because Haskell tries to unify the type \texttt{a} with the type \texttt{(a -> b) -> [a] -> [b]}, which results in an infinite loop of types, and Haskell cannot resolve this,” illustrating a fundamental lack of understanding of type theory.
+While LLMs have shown capability in recognizing basic errors, they often display a limited understanding of type theories and multi-step reasoning ability. Fig.~\ref{fig:llm} depicts a type error caused by mismatching numbers of arguments in the function \texttt{mapList}; although provided a correct error identification at the start, GPT 4 proceeded to claim, “This results in an infinite type situation because Haskell tries to unify the type \texttt{a} with the type \texttt{(a -> b) -> [a] -> [b]}, which results in an infinite loop of types, and Haskell cannot resolve this,” illustrating a fundamental lack of understanding of type theory.
 
 \begin{figure}[hbt]
   \includegraphics[width=\linewidth]{LLM2}
@@ -141,7 +141,7 @@ While LLMs have shown capability in recognizing basic errors, they often display
     } 
 \end{figure}
 
-When tested with the prompt "Is there a type error in the Haskell code: v = let f x = x in (f 3, f '3')", most LLMs incorrectly reported yes (Fig. \ref{fig:llm2}). However, this Haskell code is indeed well-typed. LLMs can give wrong explanations and find type errors that do not exist, unlike tools like GHC, Helium, and Goanna. While there is clearly a role for their usage in programming assistance \cite{Lee2024-hs}, they do not “reason” about types and, hence, are not trustworthy.
+When tested with the prompt "Is there a type error in the Haskell code: v = let f x = x in (f 3, f '3')", most LLMs incorrectly reported yes (Fig.~\ref{fig:llm2}). However, this Haskell code is indeed well-typed. LLMs can give wrong explanations and find type errors that do not exist, unlike tools like GHC, Helium, and Goanna. While there is clearly a role for their usage in programming assistance \cite{Lee2024-hs}, they do not “reason” about types and, hence, are not trustworthy.
 
 While LLMs are getting more and more accurate with each iteration, some doubt whether they will never become as reliable as theory-based tools \cite{Berglund2023-ig}. We believe in the great potential of integrating LLMs with existing theory-based tools, such as \chameleon{} and Goanna. This integration could enhance the performance of LLMs by aligning their operations with accurate theoretical guides or utilizing their strengths in areas where traditional tools fall short, such as suggesting syntactical improvements. This synergy could lead to more robust programming assistance using both types of tools. We propose two candidate workflows:
 

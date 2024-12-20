@@ -25,9 +25,9 @@ Although the full semantics of Haskell have never been formally defined \cite{Hu
 
 Our research in Haskell benefits from the language's relatively small and well-studied specification, enabling rapid implementation of new ideas and swift feedback. We also enjoy support from Haskell's welcoming and active community, which helps guide our efforts towards improved correctness and usability.
 
-\section{Hindley-Milner Type Inference and Algorithm W}
+\section{Hindley-Milner Type Inference and Algorithm W} \label{sec:hm-inference}
 
-Type inference, also known as implicit typing, is a technique to reduce the number of occurrences of manually ascribing types. Almost all languages today employ a certain level of type inference. For instance, Java versions prior to 10 required users to explicitly declare variable types, which often led to verbosity and redundancy, as shown in Figure \ref{fig:example-java}. Java later introduced the var keyword (from version 10 onwards), allowing the type of a variable to be inferred at compile-time based on the assigned value \cite{Java_Developers2023-an}.  
+Type inference, also known as implicit typing, is a technique to reduce the number of occurrences of manually ascribing types. Almost all languages today employ a certain level of type inference. For instance, Java versions prior to 10 required users to explicitly declare variable types, which often led to verbosity and redundancy, as shown in Fig.~\ref{fig:example-java}. Java later introduced the var keyword (from version 10 onwards), allowing the type of a variable to be inferred at compile-time based on the assigned value \cite{Java_Developers2023-an}.  
 
 \begin{figure}[hbt]
 \centering  \includegraphics[width=\linewidth]{ExampleJava}
@@ -40,7 +40,7 @@ Type inference, also known as implicit typing, is a technique to reduce the numb
 In language like Haskell and ML, not only is type inference applied, but its power to detect type error is hugely amplified by the use of the Hindley-Milner type inference  \cite{Damas1982-zw}. The Hindley-Milner Type System, named after its inventors Roger Hindley and Robin Milner, is a type system that can automatically infer the types of expressions in a language with no annotations required. It is a foundational part of the type system in many functional programming languages, including ML, Haskell, and Elm. The system provides polymorphic typing, meaning that a variable can be assigned multiple different types automatically based on its usage context, making it easier to write flexible, reusable code without compromising type safety. In many languages that use this system, it is proven that every expression will be assigned a most general type (principal type) based on its usage. 
 
 
-In simpler type inference systems, such as the one used in the Java example (Fig. \ref{fig:example-java}), type inference is local; it occurs within individual assignments, and the compiler may raise errors if it cannot infer types from a single statement. In contrast, the Hindley-Milner system employs a more global approach. It defers type constraint resolution and continues to assess the rest of the program, thereby increasing flexibility and reducing the immediateness of type errors.
+In simpler type inference systems, such as the one used in the Java example (Fig.~\ref{fig:example-java}), type inference is local; it occurs within individual assignments, and the compiler may raise errors if it cannot infer types from a single statement. In contrast, the Hindley-Milner system employs a more global approach. It defers type constraint resolution and continues to assess the rest of the program, thereby increasing flexibility and reducing the immediateness of type errors.
 
 
 
@@ -55,17 +55,16 @@ In simpler type inference systems, such as the one used in the Java example (Fig
 
 This sophisticated type inference mechanism found in the Hindley-Milner system underpins its wide adoption in the realm of functional programming. It exemplifies a shift towards more intelligent compilers that enhance developer productivity and code maintainability by abstracting the complexities of explicit type management.
 
-\textbf{Algorithm W}  The foundational mechanism of the Hindley-Milner type system is Algorithm W, a method designed to deduce the most general types for each expression in a program. This algorithm starts by assigning a unique type variable to each expression. It then recursively analyzes the structure of the program, generating a set of type constraints by inspecting each syntax node—as shown in Figure \ref{fig:hindley-milner}. This process involves the creation of new type variables and the unification of these variables with others or with specific types.
+\textbf{Algorithm W}  The foundational mechanism of the Hindley-Milner type system is Algorithm W, a method to deduce the most general types for each expression in programming languages that support polymorphic types. This algorithm starts by assigning a unique type variable to each expression. It then recursively analyzes the structure of the program, generating a set of type constraints by inspecting each syntax node—as shown in Fig.~\ref{fig:hindley-milner}. This process involves the creation of new type variables and the unification of these variables with others or with specific types.
 
 Unification is a critical step: It attempts to make different type variables agree by finding a common type that satisfies all constraints. If unification is unsuccessful at any point, the type-checking process halts immediately, indicating a type error. The algorithm reports the expression where the last constraint was produced, but this is often reported as the sole source of the error.
-
 
 Despite the seismic influence of type theory and the conciseness of the programming style it helps achieve,  the Hindley-Milner type system can be challenging in terms of usability. One notable drawback is how it handles error reporting. When type inference fails, the error messages can be cryptic and difficult to interpret. This is because the algorithm typically reports only the final constraint that led to the failure, omitting earlier but potentially relevant constraints. Unlike simpler cases in languages like Java, where a type error might be isolated to a single line, in a Hindley-Milner-based system, the underlying issue could be located anywhere in the program. This often leaves programmers scanning extensive sections of code to identify the root cause of the error. 
 
 This aspect of Algorithm W highlights a trade-off between the power of the type inference offered by the Hindley-Milner system and usability, notably in terms of error diagnostics and clarity. This has prompted ongoing research into improving error reporting in systems based on this algorithm, seeking to make them more accessible and easier to use for programmers.
 
 \textbf{Algorithm M} 
-In response to the usability challenges posed by Algorithm W, an alternative approach known as Algorithm M was proposed \cite{Lee1998-fx}. This method modifies the direction of type inference from a bottom-up to a top-down process. By carrying constraints from the outer structure of the program to the substructures, Algorithm M allows for more contextual analysis, resulting in more intuitive error messages in certain scenarios, as illustrated in Figure \ref{fig:algorithm-m-1}. 
+In response to the usability challenges posed by Algorithm W, an alternative approach known as Algorithm M was proposed \cite{Lee1998-fx}. This method modifies the direction of type inference from a bottom-up to a top-down process. By carrying constraints from the outer structure of the program to the substructures, Algorithm M allows for more contextual analysis, resulting in more intuitive error messages in certain scenarios, as illustrated in Fig.~\ref{fig:algorithm-m-1}. 
 
 \begin{figure}[hbt]
   \centering
@@ -84,14 +83,14 @@ In response to the usability challenges posed by Algorithm W, an alternative app
 \end{figure}
 
 
-Despite its improvements in some cases, Algorithm M does not consistently outperform Algorithm W in terms of error clarity and can still produce misleading results, as shown in Figure \ref{fig:algorithm-m-2}. Both algorithms essentially face the same fundamental limitation: type inference is conducted step-by-step through unification, and once constraints are unified, they are discarded and unretrievable. Consequently, errors detected by these algorithms may not accurately reflect the root issues if multiple possible causes of types exist.
+Despite its improvements in some cases, Algorithm M does not consistently outperform Algorithm W in terms of error clarity and can still produce misleading results, as shown in Fig.~\ref{fig:algorithm-m-2}. Both algorithms essentially face the same fundamental limitation: type inference is conducted step-by-step through unification, and once constraints are unified, they are discarded and unretrievable. Consequently, errors detected by these algorithms may not accurately reflect the root issues if multiple possible causes of types exist.
 
 A lesson that can be learned from both Algorithm W and M is the recognition that no inference method ensures that it will perfectly align with the programmer’s intentions. Rather than ambitiously pinpointing where the root cause may lie, a more realistic goal might be to represent type errors succinctly without making assumptions.
 
 
 \section{Type Error Slicing}
 
-Type error slicing is an advanced technique intending to enhance the meaningfulness of type error messages provided to programmers. This approach, referenced in works by Tip et al. \cite{Tip2001-qn} and Haack et al. \cite{Haack2004-fr}, improves upon traditional type inference methods by postponing the unification process until all relevant constraints have been established. Type error slicing incorporates two principal innovations:
+Type error slicing is an advanced technique intending to enhance the meaningfulness of type error messages provided to programmers. This approach, referenced in works by Tip and Dinesh~\cite{Tip2001-qn} and Haack and Wells~\cite{Haack2004-fr}, improves upon traditional type inference methods by postponing the unification process until all relevant constraints have been established. Type error slicing incorporates two principal innovations:
 
 
 \begin{enumerate}
@@ -113,7 +112,7 @@ Type error slicing is an advanced technique intending to enhance the meaningfuln
     Illustration of type error slicing applied to the Haskell function \texttt{fac}. The highlighted "slices" indicate conflicting type inferences for the variable \texttt{n}: it is inferred as \texttt{Char} since it is compared against \texttt{'0'}, yet it must be an integer because it is used in arithmetic subtraction. This conflict leads to the identification of a type error.}
 \end{figure}
 
-In contrast to conventional methods, type error slicing provides a comprehensive view of error locations, as demonstrated in Figure \ref{fig:type-error-slicing}. It allows programmers to understand type errors more thoroughly by presenting both sides of typing conflicts. It has less chance of missing critical clues, thus facilitating a more informed debugging process.
+In contrast to conventional methods, type error slicing provides a comprehensive view of error locations, as demonstrated in Fig.~\ref{fig:type-error-slicing}. It allows programmers to understand type errors more thoroughly by presenting both sides of typing conflicts. It has less chance of missing critical clues, thus facilitating a more informed debugging process.
 
 Over time, type error slicing has become a preferred method for optimizing type errors in research. Innovations in this area include more efficient methods of finding minimal unsatisfiable subsets \cite{Liffiton2008-mx, Bailey2005-hi, Bacchus2015-of}. Type error slicing has also been enriched by exploring various underlying constraint languages to encode more complex type system features, such as those using SMT (Satisfiability Modulo Theories) \cite{Pavlinovic2015-ke} and Constraint Handling Rules \cite{Stuckey2003-pz}. These advancements have broadened the scope and applicability of type error slicing, making it a valuable tool for programming language development and error diagnosis.
 
@@ -132,7 +131,7 @@ Traditional type error slicing methods have been instrumental in localizing type
 
 \begin{enumerate}
   \item {
-    \textbf{Limited Code Reduction:} Although MUS-based error slicing can effectively narrow down the potentially defective code areas, studies such as Binkley's empirical analysis on program slicing \cite{Binkley2007-ev} suggest that this method only reduces about 30\% of the code that needs to be examined to understand a type error. The minimal nature of MUS often prevents further reduction, which can be insufficient for complex errors, as demonstrated in Figure \ref{fig:slicing-counter-example}, where virtually every location in the program could be implicated in the error.
+    \textbf{Limited Code Reduction:} Although MUS-based error slicing can effectively narrow down the potentially defective code areas, studies such as Binkley's empirical analysis on program slicing \cite{Binkley2007-ev} suggest that this method only reduces about 30\% of the code that needs to be examined to understand a type error. The minimal nature of MUS often prevents further reduction, which can be insufficient for complex errors, as demonstrated in Fig.~\ref{fig:slicing-counter-example}, where virtually every location in the program could be implicated in the error.
   }
 
   \item{
@@ -167,7 +166,7 @@ The MUS is a widely used tool in programming error analysis; it is used in vario
 
 Formally, a minimal unsatisfiable subset (MUS) $M$ of a constraint system $C$ is a subset $M \subseteq C$ such that $M$ is unsatisfiable and $ \forall{c} \in M : M \setminus \{c\}$ is satisfiable.  An MUS provides a concise explanation for the infeasibility of a system, highlighting a logical pathway from one conflicting location to another. Thereby, MUS is often associated with addressing the "Why not" question \cite{Ignatiev2020-xu, Nelson2017-ar}, in other words, finding the minimal contributors that prevent the system from emitting a certain behavior (in our case, such behavior is to become well-typed).
 
-It is important to note that an unsatisfiable constraint system may contain multiple MUSes. For instance, consider a system with 5 propositional constraints depicted in Fig. \ref{fig:mus-example} - the system is infeasible as a whole. Within it, three MUSes can be identified. Each MUS is minimal, since removing any single constraint results in a satisfiable system. Typically, an incremental algorithm is employed to discover a single MUS. This algorithm starts from an empty set and adds one constraint at a time until the set is no longer satisfiable, indicating that the last added constraint must be an element of the MUS. 
+It is important to note that an unsatisfiable constraint system may contain multiple MUSes. For instance, consider a system with 5 propositional constraints depicted in Fig.~\ref{fig:mus-example} - the system is infeasible as a whole. Within it, three MUSes can be identified. Each MUS is minimal, since removing any single constraint results in a satisfiable system. Typically, an incremental algorithm is employed to discover a single MUS. This algorithm starts from an empty set and adds one constraint at a time until the set is no longer satisfiable, indicating that the last added constraint must be an element of the MUS. 
 
 \begin{figure}[hbt]
   \centering
@@ -179,7 +178,7 @@ It is important to note that an unsatisfiable constraint system may contain mult
 
 \subsection*{Minimal Correction Subset and Maximal Satisfiable Subset}
 
-Beyond the MUS, the Minimal Correction Subset (MCS) represents the smallest group of constraints that, when removed, resolves the infeasibility (defect) of the system. Formally, a minimal correction set (MCS) $M$ of a constraint system $C$ is a subset $M \subseteq C$ such that $C \setminus M$ is satisfiable and $\forall{S} \subset M : C \setminus S$ is unsatisfiable. This "correction" subset is crucial for identifying the minimal changes needed to rectify errors in a program. Thus, MCS is often associated with addressing the ``Why" question \cite{Ignatiev2020-xu, Nelson2017-ar}, in other words, finding the minimal reasons that trigger a certain behaviour. In the example (Fig. \ref{fig:mcs-example}), 4 MCSes can be found. Removing each of these will result in a satisfiable set of constraints. Note that the satisfiability of MCSes themselves is not important.  
+Beyond the MUS, the Minimal Correction Subset (MCS) represents the smallest group of constraints that, when removed, resolves the infeasibility (defect) of the system. Formally, a minimal correction set (MCS) $M$ of a constraint system $C$ is a subset $M \subseteq C$ such that $C \setminus M$ is satisfiable and $\forall{S} \subset M : C \setminus S$ is unsatisfiable. This "correction" subset is crucial for identifying the minimal changes needed to rectify errors in a program. Thus, MCS is often associated with addressing the ``Why" question \cite{Ignatiev2020-xu, Nelson2017-ar}, in other words, finding the minimal reasons that trigger a certain behaviour. In the example (Fig.~\ref{fig:mcs-example}), 4 MCSes can be found. Removing each of these will result in a satisfiable set of constraints. Note that the satisfiability of MCSes themselves is not important.  
 
 
 \begin{figure}[hbt]
@@ -190,7 +189,7 @@ Beyond the MUS, the Minimal Correction Subset (MCS) represents the smallest grou
     Depiction of a constraint system in propositional logic, consisting of 7 constraints and 2 logic variables \texttt{a} and \texttt{b}. Initially, this system is infeasible. Four Minimal Satisfiable Subsets (MCSes) can be identified, where the removal of each individual MCS from the constraint system leads to a maximally feasible system.}
 \end{figure}
 
-The Maximal Satisfiable Subset (MSS) is the complement of an MCS. A maximal satisfiable subset (MSS) $M$ of a constraint system $C$ is a subset $M \subseteq C$ such that M is satisfiable and $\forall{c}\ in\ C \setminus M:M\cup\{c\}$ is unsatisfiable. In practical terms, an MSS represents the largest portion of the constraint system that does not contribute to the type error, offering insights into the potential outcome of a working system after removing the defect. An example of MSSes in a constraint system can be seen in Fig. \ref{fig:mss-example}.
+The Maximal Satisfiable Subset (MSS) is the complement of an MCS. A maximal satisfiable subset (MSS) $M$ of a constraint system $C$ is a subset $M \subseteq C$ such that M is satisfiable and $\forall{c}\ in\ C \setminus M:M\cup\{c\}$ is unsatisfiable. In practical terms, an MSS represents the largest portion of the constraint system that does not contribute to the type error, offering insights into the potential outcome of a working system after removing the defect. An example of MSSes in a constraint system can be seen in Fig.~\ref{fig:mss-example}.
 
 
 
@@ -223,7 +222,7 @@ Building upon the introduction of the Minimal Unsatisfiable Subset (MUS) discuss
   \end{figure}
 
 
-Multi-step type errors involve a sequence of logical deductions that link one conflicting location to another. In a constraint system, a multi-step type error typically contains a single MUS. Relaxing any constraint within this MUS leads to a satisfiable system, implying that each location tied to a constraint in the MUS could potentially cause the type error. For instance, in Figure \ref{fig:multi-step-2}, the MUS consists of the constraints $\{C1, C2, C4, C5\}$. Removing any one of the elements would allow the program to type-check successfully.
+Multi-step type errors involve a sequence of logical deductions that link one conflicting location to another. When viewed as constraint system, a multi-step type error is a type error contains a single MUS. Relaxing any constraint within the MUS leads to a satisfiable system, implying that each location correlated to a constraint in the MUS could potentially cause the type error. For instance, in Fig.~\ref{fig:multi-step-2}, the MUS consists of the constraints $\{C1, C2, C4, C5\}$. Removing any one of the elements would allow the program to type-check successfully.
 
 \subsection*{Multi-witness Type Error}
 
@@ -234,7 +233,7 @@ Multi-step type errors involve a sequence of logical deductions that link one co
   Analysis of a multi-witness type error, where the \texttt{case} expression could be interpreted as type \texttt{Char} or \texttt{String}. This scenario showcases a type disagreement with three witnesses against one witness (Top Right). From the source code, 9 constraints are established (Bottom Left), resulting in 3 identified MUSes. Interestingly, all MUSes include constraint C3, suggesting its pivotal role in favoring the possibility that the \texttt{Char} type is erroneous.}
   \end{figure}
 
-A multi-witness type error occurs when multiple locations (witnesses) on one side of a conflict suggest the same type assignment. This kind of error typically contains multiple MUSes, depending on the number of witnesses at each endpoint. If a type error involves $m$ witnesses on one side and $n$ on the other, there will be a total of $m \times n$ MUSes. For example, in Figure \ref{fig:multi-witness-2}, there are three MUSes: $\{C3, C5\}, \{C3, C7\}, \{C3, C9\}$. It is crucial to note that the constraint C3 appears in every MUS, signaling a likely root cause.
+A multi-witness type error occurs when multiple locations (witnesses) on one side of a conflict suggest the same type assignment. When viewed as a constraint system, a multi-witness type error contains multiple MUSes. The precise number of MUSes depends on the number of witnesses at each endpoint. If a type error involves $m$ witnesses on one side and $n$ on the other, there will be a total of $m \times n$ MUSes. For example, in Fig.~\ref{fig:multi-witness-2}, there are three MUSes: $\{C3, C5\}, \{C3, C7\}, \{C3, C9\}$. It is crucial to note that the constraint C3 appears in every MUS, signaling a likely root cause.
 
 \subsection*{Multi-party Type Error}
 
@@ -244,7 +243,7 @@ A multi-witness type error occurs when multiple locations (witnesses) on one sid
   \caption[Illustration of a multi-party type error in the context of MUSes]{\label{fig:multi-party-2} Analysis of a multi-party type error regarding the list \texttt{d}, which could alternately be typed as \texttt{[Int]}, \texttt{[String]}, or \texttt{[Char]}. The conflict is depicted as a disagreement among three parties (Top Right). An analysis based on the source code generates 5 constraints (Bottom Left), leading to 3 distinct Minimal Unsatisfiable Subsets (MUSes). Notably, this scenario differs from the multiple witness type error as no single constraint appears across all MUSes.}
   \end{figure}
 
-A multi-party type error features several irreconcilable type assignments stemming from different locations within the source code. Like multi-witness errors, multi-party errors contain multiple MUSes. In the example shown in Figure \ref{fig:multi-party-2}, there are three MUSes: $\{C3, C4\}, \{C3, C5\}, \{C4, C5\}$. Unlike the multi-witness scenario, no single element appears across all MUSes, suggesting a more complex type conflict scenario.
+A multi-party type error features several irreconcilable type assignments stemming from different locations within the source code. Like multi-witness errors, multi-party errors contain multiple MUSes. In the example shown in Fig.~\ref{fig:multi-party-2}, there are three MUSes: $\{C3, C4\}, \{C3, C5\}, \{C4, C5\}$. Unlike the multi-witness scenario, no single element appears across all MUSes, suggesting a more complex type conflict scenario.
 
 These categories of type errors illustrate the main challenges in explaining type errors effectively:
 \begin{enumerate}
@@ -267,4 +266,4 @@ This chapter began by establishing a historical context for Haskell, highlightin
 
 Further, we delved into type error slicing, a technique that identifies all relevant locations of a type error through the use of minimal unsatisfiable subsets. We also introduced interactive type debugging, which builds on the foundations of type error slicing, offering more advanced post-hoc analysis using MUS and allowing programmers to interactively query and explore type errors, thus providing a more engaging and dynamic debugging experience.
 
-We highlighted the fundamental tools and frameworks that underpin type error slicing and interactive debugging, setting the stage for the exploration of our debugging systems (Chameleon and Goanna) in subsequent chapters. Finally, we revisited and refined our categorization of type errors, now defined in terms of minimal unsatisfiable subsets, providing a clearer and more structured framework for understanding and addressing these errors.
+We highlighted the fundamental tools and frameworks that underpin type error slicing and interactive debugging, setting the stage for the exploration of my contribution (ChameleonIDE and Goanna) following this line of research in subsequent chapters. Finally, we revisited and refined our categorization of type errors, now defined in terms of minimal unsatisfiable subsets, providing a clearer and more structured framework for understanding and addressing these errors.

@@ -9,7 +9,7 @@
 In this chapter, we introduce Goanna, another Haskell type error debugging tool.  Goanna aims to provide a set of debugging utilities to support resolving multi-witness type errors and multi-party type errors. Goanna sets itself apart from both traditional tools and \chameleon{} through its unique features, such as identifying all potential causes of type errors, suggesting fixes, and supporting cross-module debugging. This chapter begins by highlighting the limitations of conventional compiler error messages and then details Goanna's capabilities in identifying and ranking potential causes by their likelihood. We then discuss the implementation strategies and heuristic methods employed in Goanna. Finally, we present an empirical evaluation of the system's accuracy, conciseness, and performance using real-world Haskell code examples.
 
 
- This chapter uses the content from our paper \textit{Goanna: Resolving Haskell Type Errors With Minimal Correction Subsets} \cite{Fu2024-rw}, with slight modifications to ensure coherence within this thesis. This work was under review for the International Conference on Function Programming (ICFP) 2024 at the time of submitting this thesis.
+ This chapter uses the content from our paper \textit{Goanna: Resolving Haskell Type Errors With Minimal Correction Subsets} \cite{Fu2024-rw}, with slight modifications to ensure coherence within this thesis. This work was publicly available as a preprint when submitting this thesis.
 
 
 
@@ -33,7 +33,7 @@ However, Haskell is also known for its steep learning curve and unforgiving type
     \begin{figure}[ht!]
         \centering
         \includegraphics[width=\linewidth]{images/motivation}
-        \caption{Inspecting a type error using the Haskell compiler GHC (Glasgow Haskell Compiler)}
+        \caption{Inspecting a type error using the Haskell compiler GHC (Glasgow Haskell Compiler) version 9.0.2}
         \label{fig:motivation}
     \end{figure}
 
@@ -44,7 +44,7 @@ However, Haskell is also known for its steep learning curve and unforgiving type
 
 	To further enhance Goanna's support for type-error resolution, we provide optimization strategies (Section~\ref{sub:optimization}) to identify and reduce the unhelpful suggestions, as well as ranking heuristics (Section~\ref{sub:ranking}) to suggest more likely fixes first. Additionally, we provide Goanna-IDE, an interactive debugging front-end designed to efficiently navigate and interpret Goanna's type error diagnosis.
 
-    We conducted empirical studies that evaluated Goanna's accuracy (Section~\ref{sub:eval-accuracy}), conciseness (Section~\ref{sub:eval-conciseness}), and performance (Section~\ref{sub:eval-performacne}). Our evaluation shows that compared to other type-checking tools, Goanna consistently provides accurate error diagnostics and correct fixes in its top suggestions. We also demonstrate that Goanna generally offers a concise list of possible causes, thanks to its cause optimization process. While Goanna may not consistently provide instantaneous results for real-time feedback, it can deliver on-demand diagnoses when programmers require additional assistance.
+    We conducted empirical studies that evaluated Goanna's accuracy (Section~\ref{sub:eval-accuracy}), conciseness (Section~\ref{sub:eval-conciseness}), and performance (Section~\ref{sub:eval-performacne}). Our evaluation shows that compared to other type-checking tools, Goanna consistently provides accurate error diagnostics and correct fixes in its top suggestions. We also demonstrate that Goanna generally offers a concise list of possible causes, thanks to its cause optimization process. Although Goanna may not consistently provide instantaneous results for real-time feedback, it can deliver on-demand diagnoses when programmers require additional assistance.
     
 
     The key contributions of this research include:
@@ -55,7 +55,7 @@ However, Haskell is also known for its steep learning curve and unforgiving type
         \item An evaluation of Goanna's accuracy, conciseness, and performance.
     \end{itemize}
 
-  The techniques we used in Goanna, such as MCS enumeration and heuristics for ranking possible causes, are not exclusive to Haskell. Rather, they are applicable to statically typed programming languages in general. We intentionally designed Goanna to use a modular architecture that can be easily extended to support other programming languages with similar typing disciplines.
+  The techniques we used in Goanna, such as MCS enumeration and heuristics for ranking possible causes, are not exclusive to Haskell but apply to statically typed programming languages in general. We intentionally designed Goanna with a modular architecture that can be easily extended to support other programming languages with similar typing disciplines.
 
 
     \section{Goanna-IDE Walkthrough} \label{walkthrough}
@@ -113,7 +113,7 @@ However, Haskell is also known for its steep learning curve and unforgiving type
     \begin{figure}[ht]
         \centering
         \includegraphics[width=\linewidth]{images/variance-ghc2}
-        \caption[Inspecting a defective Haskell Program in relation to the error messages output by the standard GHC compiler]{\textbf{Inspecting a defective Haskell Program (left) in relation to the error messages output by the standard GHC compiler (right)} -- 3 separate type errors are reported.  The editor (VS Code is used here) underlines the error locations reported in the messages, but all other contextual information must be understood from the error text.}
+        \caption[Inspecting a defective Haskell Program in relation to the error messages output by the standard GHC compiler 9.0.2]{\textbf{Inspecting a defective Haskell Program (left) in relation to the error messages output by the standard GHC compiler (right)} -- 3 separate type errors are reported.  The editor (VS Code is used here) underlines the error locations reported in the messages, but all other contextual information must be understood from the error text.}
         \label{fig:grouping-ghc}
     \end{figure}
     
@@ -163,9 +163,9 @@ However, Haskell is also known for its steep learning curve and unforgiving type
     Goanna uses the abstract syntax tree of the original Haskell program and translates it into a constraint program by modeling how types are defined and used. Goanna does not restrict which constraint language and solver should be used. The only requirement is that Goanna needs to be able to assert whether a subset of the constraints is still feasible by calling a provided \texttt{solve} function during the MCS enumeration phase. In our implementation, we generate portable Prolog predicates \cite{Wielemaker2011-sr}. The \texttt{solve} function executes a predefined predicate \texttt{type\_check/0} that tests all the generated predicates. We used standard Prolog notation \texttt{name/arity} here when referring to Prolog predicates, as a Prolog predicate is identified by the combination of both attributes. 
 
     
-    For a simplified Haskell syntax shown in Fig.~\ref{fig:translation}.A, we generate a list of Prolog predicates in the language shown in Fig.~\ref{fig:translation}.B. We use 3 auxiliary functions during the constraint translation process (Fig.~\ref{fig:translation}.C) to generate Prolog variables for future unification. \texttt{fresh} makes a unique unbound Prolog variable. \texttt{var} takes a Haskell identifier name and returns a Prolog variable. Naively, this can be done by turning it to uppercase. \texttt{atom} takes a Haskell type constant/constructor name and returns a Prolog atom. Naively, this can be achieved by turning it into lowercase. A global variable $\mathcal{P}$ is defined to store the list of predicates being generated. To clarify, all \textcolor{blue}{parsed Haskell syntax} aaare in blue. All \textcolor{red}{generated Prolog syntax} are in red. 
+    For a simplified Haskell syntax shown in Fig.~\ref{fig:translation}.A, we generate a list of Prolog predicates in the language shown in Fig.~\ref{fig:translation}.B. We use 4 auxiliary functions during the constraint translation process (Fig.~\ref{fig:translation}.C) to generate Prolog variables for future unification. \texttt{fresh} makes a unique unbound Prolog variable. \texttt{var} takes a Haskell identifier name and returns a Prolog variable. Naively, this can be done by turning it to uppercase. \texttt{atom} takes a Haskell type constant/constructor name and returns a Prolog atom. Naively, this can be achieved by turning it into lowercase. \texttt{append\_clause} takes a Prolog predicate \textcolor{red}{P} and stores it into the set of all generated Prolog predicates $\mathcal{P}$. To clarify, all \textcolor{blue}{parsed Haskell syntax} are in blue. All \textcolor{red}{generated Prolog syntax} are in red. 
     
-    Let $\Gamma$ be an open-ended list of Prolog atoms, containing names of Haskell local variables. Two sets of generation rule are defined to convert different Haskell syntax nodes to Prolog text. Predicate generation rules (Fig.~\ref{fig:translation}.D) take $\Gamma$ and Haskell declarations as input and output Prolog predicates. For example, a Haskell function \texttt{f = 2}, Goanna may generate a predicate \texttt{\textcolor{red}{f(V, \_) <- V = int.}}
+    Let $\Gamma$ be an open-ended list of Prolog atoms containing the names of Haskell local variables. Two sets of generation rules are defined to convert different Haskell syntax nodes to Prolog text. Predicate generation rules (Fig.~\ref{fig:translation}.D) take $\Gamma$ and Haskell declarations as input and output Prolog predicates. For example, a Haskell function \texttt{f = 2}, Goanna may generate a predicate \texttt{\textcolor{red}{f(V, \_) <- V = int.}}
     
     Constraint generation rules (Fig.~\ref{fig:translation}.E) take $\Gamma$, a Haskell expression node or type node, and a Prolog variable \texttt{V} as input and output a list of Prolog terms. These terms attempt to unify the inferred type of provided node to the provided Prolog variable \texttt{V}.
     
@@ -182,7 +182,7 @@ However, Haskell is also known for its steep learning curve and unforgiving type
   \begin{figure}[htb]
         \centering
     \includegraphics[width=0.7\linewidth]{images/Translation-Example}
-        \caption[An example of Goanna constraint generation]{\textbf{An example of Goanna constraint generation.} For the Haskell functions \texttt{f} and \texttt{g}, Goanna generates the predicates \texttt{f/2} and \texttt{g/2}. Each subgoal of \texttt{f/2} and \texttt{g/2} is generated from a corresponding part of the Haskell program. In a predefined predicate \texttt{type\_check/0}, the subgoals \texttt{f(\_,\_)} and \texttt{g(\_,\_)} are added. Running the goal \texttt{type\_check} will return whether the program is well-typed. In this particular example, this will return \texttt{false}. We used standard Prolog notation \texttt{name/arity} here when referring to Prolog predicates, as a Prolog predicate is identified by the combination of both attribute. 
+        \caption[An example of Goanna constraint generation]{\textbf{An example of Goanna constraint generation.} For the Haskell functions \texttt{f} and \texttt{g}, Goanna generates the predicates \texttt{f/2} and \texttt{g/2}. Each subgoal of \texttt{f/2} and \texttt{g/2} is generated from a corresponding part of the Haskell program. In a predefined predicate \texttt{type\_check/0}, the subgoals \texttt{f(\_,\_)} and \texttt{g(\_,\_)} are added. Running the goal \texttt{type\_check} will return whether the program is well-typed. In this particular example, this will return \texttt{false}. We used standard Prolog notation \texttt{name/arity} here when referring to Prolog predicates, as a Prolog predicate is identified by the combination of both attributes. 
 }
         \label{fig:translation-example}
     \end{figure}
@@ -245,7 +245,7 @@ However, Haskell is also known for its steep learning curve and unforgiving type
 % \end{figure}
 
 	\subsection{Post-Analysis}
-	Three types of post-analyses are performed by Goanna to improve the quality of error diagnoses: type error grouping, cause ranking, and cause reduction. 
+	To improve the quality of error diagnoses, Goanna performs three types of post-analyses: type error grouping, cause ranking, and cause reduction. 
     \subsubsection{Type Error Grouping} \label{sub:grouping}
 
     Type error grouping is a novel feature provided by Goanna. Conventionally, in a type error slicing approach, a type error is represented by a minimal unsatisfiable subset (MUS). With multiple MUSes available, we have the knowledge to be more precise about an ill-typed program. We propose a novel method of representing type errors that aligns more closely with their colloquial meaning.
@@ -301,12 +301,12 @@ However, Haskell is also known for its steep learning curve and unforgiving type
     In the example in Fig.~\ref{fig:specificity}, Goanna can suggest two potential causes and fixes. First, change the integer literal \texttt{3} to a \texttt{Bool} type. Second, change the function \texttt{not} to a different function that accepts an integer as input. The second fix results in variable \texttt{x} having a less concrete type. Indeed, \texttt{x} can have any type if not limit what function to replace \texttt{not} with. Goanna prioritizes the first cause over the second. 
 
     \paragraph{Error span.}
-    Goanna prioritizes the potential causes whose corresponding locations are clustered within fewer function definitions and lowers the likelihood of those whose corresponding locations are spread across multiple definitions or even multiple files.  
+    Goanna prioritizes the potential causes whose corresponding locations are clustered within fewer function definitions and lowers the likelihood of those whose corresponding locations being spread across multiple definitions or even multiple files.  
 
     
     \subsubsection{Cause reduction} \label{sub:optimization}
     
-    We employ three techniques to elevate the clarity of the suggestion list: reduction of constraint count, elimination of over-fitting resolutions (solutions that are technically correct but involve making unnecessary modifications), and elimination of redundant fixes.
+    We employ three techniques to elevate the clarity of the suggestion list: reduction of constraint count, elimination of over-fitting resolutions (solutions that are technically correct but involve unnecessary modifications), and elimination of redundant fixes.
 
     \paragraph{Minimize Constraint Count.}
     The number of constraints directly influences the time complexity associated with enumerating the Minimum Correction Subset (MCS). By merging multiple constraints into a singular one, we can reduce the total count of constraints and, in turn, improve the performance of enumeration. Yet, this approach requires careful application, as it could potentially lead to unsolvable situations or propose infeasible fixes, as the combined locations in the source code must either all contribute to the type error or none do. An effective application of this technique is to merge all constraints created by sub-expressions in a type signature.
@@ -432,7 +432,7 @@ However, Haskell is also known for its steep learning curve and unforgiving type
     The current implementation of Goanna also has a few drawbacks. We provide two: its moderate performance and its tendency to misunderstand the type of error in some edge cases. 
     \paragraph{\textbf{Responsiveness}}
     The trade-off of extensive analysis undertaken in Goanna results in a substantial delay (mean=0.98s).
-    The current performance of Goanna is not yet suited for real-time feedback in programming tasks. Based on Nielsen's suggestion for wait time tolerance \cite{Ferdowsi2023-au}, Goanna should provide responsive answers ($\leq$ 1 second) for real-time programming analysis, where users' flow of thoughts stays uninterrupted. Even in larger and more complex tasks, Goanna's response time ($\leq$ 10 seconds) is still suitable as an on-demand tool when a complex type error occurs. As shown in Wu's study \cite{Wu2017-eb}, in the simplest situation where students fix the type error in a single step, it will usually take about 60 seconds to complete the task. This error resolution time grows in proportion to the number of steps the students take to fix the error. If Goanna is able to shorten the steps to final resolution, then the querying time will easily be offset by the time it saves.
+    Goanna's current performance is not yet suited to real-time feedback in programming tasks. Based on Nielsen's suggestion for wait time tolerance \cite{Ferdowsi2023-au}, Goanna should provide responsive answers ($\leq$ 1 second) for real-time programming analysis, where users' flow of thoughts stays uninterrupted. Even in larger and more complex tasks, Goanna's response time ($\leq$ 10 seconds) is still suitable as an on-demand tool when a complex type error occurs. As shown in Wu's study \cite{Wu2017-eb}, in the simplest situation where students fix the type error in a single step, it will usually take about 60 seconds to complete the task. This error resolution time grows in proportion to the number of steps the students take to fix the error. If Goanna is able to shorten the steps to final resolution, then the querying time will easily be offset by the time it saves.
 
     \paragraph{\textbf{Edge cases}} \label{sec:edge-case}
     Although Goanna's error reporting is, in general, exhaustive, there are situations where Goanna still fails to provide insightful diagnosis. One general theme is that Goanna is very effective when the error requires modifying a syntax node but can be less insightful when the intended fix is to insert, delete, or rearrange syntax nodes. In the example in Fig.~\ref{fig:weakness}, Goanna suggests changing the \texttt{map} function to a function of type \texttt{[Int] -> [Bool]}. But in practice, a human user would very easily identify that an expression defining the function to be mapped is missing between the map and the list being operated on.
@@ -460,21 +460,21 @@ However, Haskell is also known for its steep learning curve and unforgiving type
 % This kind of type error tend to cause Goanna to report a large number of suggestions. This is easy to understand intuitively because in a long chain of reasoning, breaking any one of them will result in a valid program. So the number of solution should be in propotion to the length of the chain.
 
 \subsection{Future Work}\label{sec:future-work}
-  	It is important to evaluate Goanna with human participants and gain qualitative insight into its effectiveness. In one of our workshop preliminary studies, participants show positive reactions after using Goanna. A rigorous human study based on realistic debugging use cases is planned in the near future.   
+  	It is important to evaluate Goanna with human participants and gain qualitative insight into its effectiveness. In one of our preliminary workshop studies, participants showed positive reactions after using Goanna. A rigorous human study based on realistic debugging use cases is planned in the near future.   
   	
   	
     Several areas of potential enhancement could improve Goanna's functionality and efficiency. One exciting path of improvement is to generate suggestions for syntax changes on top of type changes. As pointed out by Chen and Erwig \cite{Chen2014-dz}, syntax changes are much more challenging than type changes. But with the recent improvements of generative models and research advancement in ML-based type error \cite{Seidel2017-uf}, accurate syntax changes may be on the path to becoming feasible.
 
-    Several approaches to achieve higher performance of Goanna show promise. The parallel capability of state of the art MUS enumeration \cite{Zhao2016-bu} algorithms are not explored in this study. With proper implementation, it will be possible to lower the hardware barrier of entry for wide adoption of MCS-based type error suggestion tools. Further, with domain-agnostic MUS enumeration tools \cite{Bendik2020-pz}, it should be possible to consistently achieve high performance while using a more performant constraint system and proper parameterization. Lastly, in a real-world implementation, it is possible to employ partial MUS enumeration \cite{Previti2013-mr,Liffiton2016-xi} to restrict the enumeration process in a sensible time-bound.
+    Several approaches to achieve higher performance of Goanna show promise. The parallel capability of state-of-the-art MUS enumeration \cite{Zhao2016-bu} algorithms are not explored in this study. With proper implementation, it will be possible to lower the hardware barrier of entry for wide adoption of MCS-based type error suggestion tools. Further, with domain-agnostic MUS enumeration tools \cite{Bendik2020-pz}, it should be possible to consistently achieve high performance while using a more performant constraint system and proper parameterization. Lastly, in a real-world implementation, it is possible to employ partial MUS enumeration \cite{Previti2013-mr,Liffiton2016-xi} to restrict the enumeration process in a sensible time-bound.
 
-    Additional future work could include examining Goanna's integration with other tools within the Haskell development ecosystem. For instance, including Goanna in widely used text editors or development environments could offer a more integrated and fluid experience for developers and an important avenue for Goanna to reach a wider audience. 
+    Additional future work could include examining Goanna's integration with other tools within the Haskell development ecosystem. For instance, including Goanna in widely used text editors or development environments could offer developers a more integrated and fluid experience and be an important avenue for Goanna to reach a wider audience. 
 
-    Finally, it may be important to consider extending Goanna's capabilities to support other functional programming languages beyond Haskell. Several other languages, including Scala and OCaml, also support static typing and type inference, and Goanna could be a valuable addition in these contexts. In the future, we also hope to extend these techniques to popular multi-paradigm languages such as TypeScript and Rust.
+    Finally, it may be important to consider extending Goanna's capabilities to support functional programming languages other than Haskell. Several other languages, including Scala and OCaml, also support static typing and type inference, and Goanna could be a valuable addition in these contexts. In the future, we hope to extend these techniques to popular multi-paradigm languages such as TypeScript and Rust.
 
 
     \section{Related Work} 
     \label{sec:related-work}
-    In this section, we survey the corpus of work that Goanna built upon and was inspired by. We first review the work that is built on a theoretical foundation similar to that of Goanna. We then examine studies that share similar aims and offer a comparable debugging experience to Goanna. Finally, we delve into research on program slicing and discuss how Goanna extends the concept of slicing and distinguishing itself from its predecessors.
+    In this section, we survey the corpus of work that Goanna built upon and was inspired by. We first review the work that is built on a theoretical foundation similar to that of Goanna. We then examine studies that share similar aims and offer a debugging experience comparable to Goanna's. Finally, we delve into research on program slicing and discuss how Goanna extends the concept of slicing and distinguishing itself from its predecessors.
 
 
 
@@ -487,7 +487,7 @@ However, Haskell is also known for its steep learning curve and unforgiving type
     \subsection{Suggesting changes to type errors}
    Seminal~\cite{Lerner2007-yq} uses syntax mutation and binary search to find appropriate syntax changes to program errors. The advantage of Seminal is that it's capable of suggesting direct syntax changes to common mistakes (e.g., mistakingly swapping the order of function arguments). However, it is impossible for Seminal to provide the complete set of all potential fixes. Nor does it guarantee a suggested solution is minimal syntax change.
    
-   Counter-factual typing (CFT) \cite{Chen2014-dz,Chen2020-ad} uses a variation-based type system; it is capable of suggesting the correct type for all possible. CFT shares many capabilities with Goanna, CFT is able to suggest multiple-location changes, CFT uses similar ranking heuristics. Goanna is able to produce an in-depth analysis of the ill-type program, such as type error isolation. CFT and Goanna both aim to produce a complete set of potential fixes, Goanna employs a set of effective algorithms to reduce the exponential number of potential fixes without reducing the quality of suggestions. 
+   Counter-factual typing (CFT) \cite{Chen2014-dz,Chen2020-ad} uses a variation-based type system; it is capable of suggesting the correct type for all possible. CFT shares many capabilities with Goanna, CFT is able to suggest multiple-location changes, CFT uses similar ranking heuristics. Goanna is able to produce an in-depth analysis of the ill-type program, such as type error isolation. CFT and Goanna both aim to produce a complete set of potential fixes; Goanna employs a set of effective algorithms to reduce the exponential number of potential fixes without reducing the quality of suggestions. 
    
    SHErrLoc \cite{Zhang2015-xy} uses constraints as the underlying to perform type inference and type error diagnoses. SHErrLoc is able to suggest multiple possible fixes of the type error and rank them based on heuristics. Unlike Goanna's approach of using a general-purpose constraint language, SHErrLoc relies on GHC's internal constraints and then translates them into SCL (a custom-made constraint language). On the technical side, this approach relies heavily on modification of the compiler and does not remain reliable with later GHCs. Most importantly, there is no way to interact directly with the solver. This renders the kind of constraint manipulation in Goanna and SHErrLoc impossible. Goanna is able to perform type reconstruction for ill-typed programs, that is, finding the most concrete types for all expressions for each potential solution using the Maximal Satisfiable Subsets. SHErrLoc focuses on finding the locations only.
 
@@ -501,7 +501,7 @@ Type error slicing \cite{Haack2004-fr} is a technique to identify all necessary 
 
 \subsection{Multi-witness and Multi-party Type Errors}
 
-Although not supporting granular tracing of multi-step type errors as \chameleon{}, Goanna is especially well-equipped for investigating multi-witness and multi-party type errors. This advantage comes from Goanna's ability to enumerate all MUSes. As we discuessed in Chapters~\ref{chap:haskell-type-checking}, multi-witness and multi-party type errors all involve multiple MUSes. For multi-witness type error, Goanna correctly identify all the relevant witnesses. In comparison, tools based on a single MUS, such as \chameleon{}, pick one witnesses from each endpoint, because of the minimality of MUS. In addition, Goanna is also able to divide complex type errors into multiple simpler ones using the type error grouping feature, providing further clarity into the debugging workflows.
+Although not supporting granular tracing of multi-step type errors as \chameleon{}~\ref{chap:chameleon} does, Goanna is especially well-equipped for investigating multi-witness and multi-party type errors. This advantage comes from Goanna's ability to obtain all MUSes. As we discussed in Chapters~\ref{chap:haskell-type-checking}, multi-witness and multi-party type errors all involve more than one MUS. For multi-witness type errors, Goanna correctly identifies all the relevant witnesses. In comparison, tools based on a single MUS, such as \chameleon{}, pick one witness from each endpoint because of the minimality of MUS. In addition, Goanna is also able to divide multi-party type errors into multiple simpler ones using the type error grouping feature, providing further clarity into the debugging workflows.
 
 
 

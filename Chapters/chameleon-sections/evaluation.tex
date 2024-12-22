@@ -27,12 +27,12 @@ All user studies use a web-based debugging environment developed by the authors.
 
 
 \subsubsection*{\textbf{Training and group assignment}}
-After consent, participants received interactive training on the tool interface and interactive features. Participants were also shown a cheat sheet summarizing the key functionality of the interface, and had access to the cheat sheet at all times during the study. Participants were given 4 trial runs (2 for each setting) before the data collection started. 
-All the studies used a within-subject design to evaluate the effectiveness of different tools or feature sets while counterbalancing the difference in programming proficiency between participants. In each study, participants were required to complete a series of programming tasks (8 for studies 1a and 1b, 9 for study 2). At each task, a participant receives a single Haskell file that contains one or more type errors. They were then asked to correct the code with the help of the given tool.
+After consent, participants received interactive training on the tool interface and interactive features. Participants were also shown a cheat sheet summarizing the key functionality of the interface and had access to the cheat sheet at all times during the study. Participants were given 4 trial runs (2 for each setting) before the data collection started. 
+All the studies used a within-subject design to evaluate the effectiveness of different tools or feature sets while counterbalancing the differences in programming proficiency between participants. In each study, participants were required to complete a series of programming tasks (8 for studies 1a and 1b, 9 for study 2). At each task, a participant received a single Haskell file containing one or more type errors. They were then asked to correct the code using the given tool.
 
 
 \subsubsection*{\textbf{Data Collection}}
-Time is measured from the start of each task to the first time the program is successfully type-checked and also passes all the functional tests. Participants are able to skip a task if they are stuck. 
+Time is measured from the start of each task to the first time the program is successfully type-checked and passes all the functional tests. Participants can skip a task if they are stuck. 
 % The data is automatically recorded by the online debugging environment. To not introduce a barrier to completing the study, every task can be skipped if the participant made three failed attempts or is stuck for over 1 minute on the task.
 After completing all tasks, participants are prompted to complete a debriefing survey. The survey questions include their Haskell experience and feedback on the tools.
 
@@ -54,7 +54,7 @@ An earlier version of the UI than that depicted in Figs.~(2-13), it featured the
 %     \label{fig:chameleon-v1}
 % \end{figure}
 
-Two  studies (1a \& 1b) were conducted to compare the effectiveness of solving type errors using \chameleon{} 1 and GHC compiler error messages. We choose GHC compiler error messages as the baseline because it is the canonical tool for working with type errors in Haskell.
+Two studies (1a \& 1b) were conducted to compare the effectiveness of solving type errors using \chameleon{} 1 and GHC compiler error messages. We chose GHC compiler error messages as the baseline because it is the canonical tool for working with type errors in Haskell.
 %Although high-level tools like Haskell Language Server exist, they generally relay the GHC error messages verbatim. 
 % The procedure of these studies is shown in Fig.~\ref{fig:procedure-1}.
 
@@ -99,7 +99,7 @@ The data collected during study 1a, Fig.~\ref{fig:analysis-1a} does not show sig
 From this result, we hypothesized that we might observe a more significant difference using tasks with lengthier and more realistic source code. 
 This hypothesis is also supported by the most common feedback claiming that the tasks were too trivial to invite meaningful evaluation. One participant said, ``Looks nicer than GHC, but without trying it on something more complicated, I cannot conclude whether it would help me in practice." 
 
-Therefore, in study 1b we introduced more difficult challenges and indeed observed that the \chameleon{} group was faster than the GHC group in almost all tasks (Fig.~\ref{fig:analysis-1b}), barring task 1. A two-sample paired t-test was performed to compare the completion time between \chameleon{} and GHC groups. There was a significant difference between the two groups: $t(23) = -3.86, p = 0007$. For task 1, it is suspected that some participants spent more time exploring the interface of \chameleon{} due to its unfamiliarity. For all other tasks, from the video recordings, we saw many \chameleon{} users confidently skip reading unrelated chunks of code, while GHC users generally read through the whole program. In harder problems and messier code, we notice programmers start to report the benefits of \chameleon{}. \textit{``It's most useful feature that I noticed was that it points out the locations of both conflicting uses; GHC often makes it difficult to figure out how it's coming to a conclusion about a type."} reported one participant. \textit{``I think \chameleon{}  does a much better job than GHC's error messages. I like that it shows the sources for the type judgments. This makes it quite easy to figure out how to rectify errors."} reported another participant.
+Therefore, in study 1b, we introduced more difficult challenges and indeed observed that the \chameleon{} group was faster than the GHC group in almost all tasks (Fig.~\ref{fig:analysis-1b}), barring task 1. A two-sample paired t-test was performed to compare the completion time between \chameleon{} and GHC groups. There was a significant difference between the two groups: $t(23) = -3.86, p = 0007$. For task 1, it is suspected that some participants spent more time exploring the interface of \chameleon{} due to its unfamiliarity. For all other tasks, from the video recordings, we saw many \chameleon{} users confidently skip reading unrelated chunks of code, while GHC users generally read through the whole program. In harder problems and messier code, we notice programmers start to report the benefits of \chameleon{}. \textit{``It's most useful feature that I noticed was that it points out the locations of both conflicting uses; GHC often makes it difficult to figure out how it's coming to a conclusion about a type."} reported one participant. \textit{``I think \chameleon{}  does a much better job than GHC's error messages. I like that it shows the sources for the type judgments. This makes it quite easy to figure out how to rectify errors."} reported another participant.
 
 % \begin{itemize}
 %     \item {It has a longer source file than other tasks (only shorter than task 6, but task
@@ -140,7 +140,7 @@ Therefore, in study 1b we introduced more difficult challenges and indeed observ
 
 
 \subsubsection{\chameleon{} 2}  \label{sub:us4}
-Based on observations of Study 1 we introduced several new features to \chameleon{}, eventually resulting in the UI depicted in Figs.~(2-13). Interactive features were available in this iteration, such as deduction steps, candidate expressions, and mode switching. A few other user interfaces \cite{Fu2021-xd} were designed and prototyped between the development of \chameleon{} 1 and \chameleon{} 2. Study 2 addresses the research question: 
+Based on observations of Study 1, we introduced several new features to \chameleon{}, eventually resulting in the UI depicted in Figs.~(2-13). Interactive features were available in this iteration, such as deduction steps, candidate expressions, and mode switching. A few other user interfaces \cite{Fu2021-xd} were designed and prototyped between the development of \chameleon{} 1 and \chameleon{} 2. Study 2 addresses the research question: 
 
 \noindent\textbf{RQ2:} \textit{How do programmers use the interactive features in \chameleon{} 2?}. 
 
@@ -153,7 +153,7 @@ More specifically:
 
 \end{itemize}
 
-During each run, the initial mode of each task alternated through the three different modes and repeated three cycles in nine tasks. The order of the three modes in each cycle is counterbalanced among all participants. However, participants can switch to other modes at any time. 
+During each run, the initial mode of each task alternated between the three different modes, repeating three cycles in nine tasks. The order of the three modes in each cycle was counterbalanced among all participants. However, participants could switch to other modes at any time. 
 
 
 
@@ -166,7 +166,7 @@ During each run, the initial mode of each task alternated through the three diff
 
 \subsubsection*{\textbf{Results}} 
 
-Study 2 is more exploratory in methodology than Study 1. We encouraged programmers  to discover their way of using the tool. In post hoc analysis of the collected log data, we were able to extrapolate some interesting patterns of how the tool was used. 
+Study 2 is more exploratory in methodology than Study 1. We encouraged programmers to discover their way of using the tool. In post hoc analysis of the collected log data, we were able to extrapolate some interesting patterns of how the tool was used. 
 
 
 \textbf{RQ2.1}. The most striking feature of the data is that users tend to vary wildly in their use of the tool. Some users used the features extensively, while others completed the tasks without actively exploring the given information. Based on this discrepancy, we divided the users into three groups in table~\ref{tab:interaction-level}.
@@ -189,7 +189,7 @@ Study 2 is more exploratory in methodology than Study 1. We encouraged programme
     \label {tab:interaction-level}
 \end{table}
 
-As shown in  Fig.~\ref{fig:r4-analysis}, the time to complete each task roughly relates to the interaction level of participants. Participants with higher interaction levels generally performed better, and the lowest interaction level was worse. Tukey’s HSD Test for multiple comparisons found that the completion time was significantly different between the minimal interaction group and the high interaction group ($p \le 0.001$, 95\% C.I. = [18.26, 31.41]), and between the minimal interaction group and the low interaction group ($p \le 0.001$, 95\% C.I. = [11.96, 26.67]). The results from three tasks stand out from the general trend: in Tasks 4 and 6, higher interaction users performed worse, and in task 9, the general trend is exaggerated. As with Study 1a and 1b, this difference is likely related to task difficulty. Tasks 4 and 6 are shorter than other tasks. The ideal fixes for these two tasks are placed relatively early in the source code (both in the first two lines of the source code). Users simply reading top to bottom could quickly identify the error without needing to skip unrelated sections of code using the information provided by \chameleon{}. This reduced the apparent benefit of \chameleon{} in these tasks. On the other hand, task 9 is the lengthiest task of all. It also involves deeply nested type definitions that are harder to follow in mind.
+As shown in  Fig.~\ref{fig:r4-analysis}, the time to complete each task roughly relates to the interaction level of participants. Participants with higher interaction levels generally performed better, and the lowest interaction level was worse. Tukey’s HSD Test for multiple comparisons found that the completion time was significantly different between the minimal interaction group and the high interaction group ($p \le 0.001$, 95\% C.I. = [18.26, 31.41]), and between the minimal interaction group and the low interaction group ($p \le 0.001$, 95\% C.I. = [11.96, 26.67]). The results from three tasks stand out from the general trend: in Tasks 4 and 6, higher interaction users performed worse, and in Task 9, the general trend is exaggerated. As with Study 1a and 1b, this difference is likely related to task difficulty. Tasks 4 and 6 are shorter than other tasks. The ideal fixes for these two tasks are placed relatively early in the source code (both in the first two lines of the source code). Users simply reading top to bottom could quickly identify the error without needing to skip unrelated sections of code using the information provided by \chameleon{}. This reduced the apparent benefit of \chameleon{} in these tasks. On the other hand, task 9 is the lengthiest task of all. It also involves deeply nested type definitions that are harder to follow in mind.
 
 \begin{figure}[ht]
     \centering
@@ -209,7 +209,7 @@ As shown in  Fig.~\ref{fig:r4-analysis}, the time to complete each task roughly 
 % \end{figure}
 
 
-Another observation is when using the mode switching feature of \chameleon{}, we show this by presenting the starting mode and finishing mode of each task and each participant in a correlation matrix (Fig.~\ref{fig:r4-mode-switching}). This observation suggests two characteristics of using multi-mode debugging tools. First, to answer \textbf{RQ2.2} programmers are roughly splitted in this matter: 53\% changing modes vs. 47\% staying in the same mode. Second, to answer \textbf{RQ2.3} when changing modes, programmers generally switch to the more informative modes instead of the more concise ones.
+Another observation is when using the mode switching feature of \chameleon{}, we show this by presenting the starting mode and finishing mode of each task and each participant in a correlation matrix (Fig.~\ref{fig:r4-mode-switching}). This observation suggests two characteristics of using multi-mode debugging tools. First, to answer \textbf{RQ2.2}, programmers are roughly split in this matter: 53\% changing modes vs. 47\% staying in the same mode. Second, to answer \textbf{RQ2.3} when changing modes, programmers generally switch to the more informative modes instead of the more concise ones.
 
 \begin{figure}[ht]
     \centering
@@ -223,7 +223,8 @@ Another observation is when using the mode switching feature of \chameleon{}, we
 
 \subsection{Limitations}
 
-One threat to the validity of the evaluation is the number of participants. Although for each study we received hundreds of online participants, the studies suffered from a high abandonment rate (especially study 1b). This was expected: the programming challenges are difficult, and our volunteer participants are unremunerated. 
+One threat to the validity of the evaluation is the number of participants. Although we received hundreds of online participants for each study, the studies suffered from a high abandonment rate (especially study 1b). This was expected: the programming challenges are difficult, and our volunteer participants are unremunerated. 
+
 Because we recruited participants online and anonymized all the participants, it is possible for participants of a previous study to enter a later one. This creates variation in familiarity. We offset this by using new code challenges in every study and conducting trial runs before data collection to bring new participants up to speed.
 Conducting studies remotely and unsupervised left us no means to intervene when users encounter usability issues. To mitigate this, we conducted cognitive walkthroughs and sandbox pilots before running each study.
 

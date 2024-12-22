@@ -7,9 +7,9 @@
 \label{chap:gecko-graph} 
 \graphicspath{{Figures/GeckoGraph}}
 
-This chapter introduces GeckoGraph, a visual language designed to support easy inspection and comparison of polymorphic types. We begin by highlighting the challenges associated with understanding and using polymorphic types. Next, we introduce GeckoGraph, demonstrating how it addresses these challenges and outlining the process of transforming text-based type signatures into GeckoGraph. We then present our experiment evaluating the effectiveness of GeckoGraph in assisting with program tasks involving polymorphic types. Finally, we discuss the strengths, limitations, and potential applications of GeckoGraph.  
+This chapter introduces GeckoGraph, a visual language designed to support easy inspection and comparison of polymorphic types. We begin by highlighting the challenges associated with understanding and using polymorphic types. Next, we introduce GeckoGraph, demonstrating how it addresses these challenges and outlining the process of transforming text-based type signatures into GeckoGraph. We then present our experiment, evaluating the effectiveness of GeckoGraph in assisting with program tasks involving polymorphic types. Finally, we discuss the strengths, limitations, and potential applications of GeckoGraph.  
 
- This chapter uses the content from our paper \textit{GeckoGraph: A Visual Language for Polymorphic Types} \cite{Fu2024-jq}, with slight modifications to ensure coherence within this thesis. This work was under review for the International Conference on Function Programming (ICFP) 2024 at the time of submitting this thesis.
+ This chapter uses the content from our paper \textit{GeckoGraph: A Visual Language for Polymorphic Types} \cite{Fu2024-jq}, with slight modifications to ensure coherence within this thesis. This work was publicly available as a preprint when submitting this thesis.
 
 \section{Introduction} \label{sec:intro}
 In programming languages, a polymorphic type \cite{Cardelli1987-fp} can represent values of different types while providing a common interface or behavior for those values. Polymorphic types are central to the succinctness of contemporary statically typed functional languages, enabling a considerable degree of type-safe abstraction and, hence, component reuse. Parametric polymorphism is available in many programming languages, from functional languages such as Haskell and ML to imperative and multi-paradigm languages such as Rust~\cite{Klabnik_undated-wx} and Go~\cite{Griesemer_undated-ff}. Polymorphism allows programs to be written in a way that is more generic and adaptable to different data types, enabling greater flexibility and code reuse. Polymorphic types are ideal for modeling abstractions, such as properties of mathematical objects and laws that hold on these objects. 
@@ -19,7 +19,7 @@ Although polymorphic typing promises robustness and a high degree of code reusab
 
 \begin{figure}[hbt]
   \includegraphics[width=\linewidth]{figures/Foldable}
-  \caption[Comparison between GeckoGraph and compiler error message]{\label{fig:example-foldable} An example type error where a programmer mistakingly provided a \texttt{Char} instead of a \texttt{String} literal. \textbf{Left --} The compiler shows an error message comparing the provided Char type to a confusingly named type \texttt{t0 a0}. \textbf{Right --} GeckoGraph shows the exact message with the two types in graphic notation, highlighting the structural difference rather than identifier names.}
+  \caption[Comparison between GeckoGraph and compiler error message]{\label{fig:example-foldable} An example type error where a programmer mistakingly provided a \texttt{Char} instead of a \texttt{String} literal. \textbf{Left --} The compiler (GHC 9.0.2) shows an error message comparing the provided Char type to a confusingly named type \texttt{t0 a0}. \textbf{Right --} GeckoGraph shows the exact message with the two types in graphic notation, highlighting the structural difference rather than identifier names.}
 \end{figure}
 
 
@@ -92,14 +92,14 @@ A frequently cited confusion among novices is the symmetry of \texttt{Foldable a
 
 
 \paragraph{Consistent color scheme}\label{par:color-scheme}
-A common task in programming is to scan for a desired function from a sea of potentially useful functions, such as library documentation. During scanning, programmers often have partial knowledge of the desired function, e.g., the arity, one of the argument types, or the type class it must fulfill.  A typical example is conversion: using a known \texttt{String} type to produce a desired \texttt{Data.Text}  type. Another example is the `lookup' function: using a known \texttt{Data.Map a b} to produce a desired \texttt{b} type. GeckoGraph supports this task by using consistent colors for the same type identifier. Programmers can rely on the color grouping to scan for the desired type in their project or in third-party library documentation.
+A common task in programming is to scan for a desired function from a sea of potentially useful functions, such as library documentation. During scanning, programmers often have partial knowledge of the desired function, e.g., the arity, one of the argument types, or the type class it must fulfill.  A typical example is conversion: using a known \texttt{String} type to produce a desired \texttt{Data.Text}  type. Another example is the `lookup' function: using a known \texttt{Data.Map a b} to produce a desired \texttt{b} type. GeckoGraph supports this task by using consistent colors for the same type identifier. Programmers can rely on the color grouping to scan for the desired type from their own source programs or from third-party library documentation.
 
 \paragraph{Advanced Type Feature Visualization}
 The design of GeckoGraph enables the visualization of many advanced type-level features. \textbf{Kind visualization}: if the \textit{kind} of type variables can be inferred, the \textit{kind} information is consistently displayed in GeckoGraph. For example, in Fig.~\ref{fig:advanced-features} (A), the variable \texttt{a} needs at least the \textit{kind} \texttt{* -> *} because of its use on the right-hand side. GeckoGraph respects this \textit{kind} information and displays it as a constructor type over an empty structure, indicated using a dotted outline.  \textbf{Qualified constraints}: GeckoGraph's type class notation naturally extends to support qualified constraints. In the type \texttt{forall b. A (a b) => a b}, GeckoGraph shows the scope type class requirement on \texttt{a b} (Fig.~\ref{fig:advanced-features} B).
 \textbf{Multiple Parameter Type Class}:  GeckoGraph supports multiple parameter type classes by using multiple shapes with the same color hue to indicate the different parameters of the same type class.  For example, for the type \texttt{A a b => a b},  GeckoGraph shows that the variables a and b both need an A class, but they are the different parameters of A (Fig.~\ref{fig:advanced-features} C).
 
 \paragraph{Precise Interactivity}
-Modern programming environments often allow programmers to mouse over part of the source code to query detailed information, such as definition, references or documentation. However, with text-based source code, it is often hard to distinguish whether programmers want the most specific fragment under the cursor or larger blocks. Because of its graphical layout, GeckoGraph allows programmers to precisely select which part of a type signature they intend to query, that is, in Fig.~\ref{fig:advanced-features} (D) when the user mouses over the type class box (orange square) under the second occurrence of \texttt{a} the type class it represents is revealed in detail. 
+Modern programming environments often allow programmers to mouse over part of the source code to query detailed information, such as definitions, references or documentation. However, with text-based source code, it is often hard to distinguish whether programmers want the most specific fragment under the cursor or larger blocks. Because of its graphical layout, GeckoGraph allows programmers to precisely select which part of a type signature they intend to query, that is, in Fig.~\ref{fig:advanced-features} (D) when the user mouses over the type class box (orange square) under the second occurrence of \texttt{a} the type class it represents is revealed in detail. 
 
 \begin{figure}[hbt]
   \includegraphics[width=\linewidth]{figures/Advanced}
@@ -166,13 +166,13 @@ Participants in both groups receive the same 10 tasks. The tasks start off easy 
 Participants can skip a level during the game if they are stuck. We believe that it is normal for anyone to get stuck on a challenging task, and being stuck on one of the 10 tasks does not discount their qualitative input of the tool. We limit 4 skips that a participant can use throughout the game, so that submitting qualitative feedback without completing at least some levels is impossible. 
 
 \subsection{Measurements}
-During the study, the time spent by participants on each task is recorded. We also record the resulting status of each level, whether it is a success or failure. Before each run, participants nominate their level of Haskell experience on a four-level scale: beginner, familiar,  knowledgeable, and expert.  If a participant has completed all 10 levels (with the help of skipping), we invite the participant to complete a post-study survey. In it, we ask for their opinion on how intuitive the GeckoGraph design is, how distracting they find GeckoGraph, and how helpful GeckoGraph is during the game, using a seven-point scale. In the end, we ask a few open-ended questions, inviting participants to provide their experience using GeckoGraph and their expectations about the potential applications of GeckoGraph.
+During the study, the time spent by participants on each task is recorded. We also record the resulting status of each level, whether it is a success or failure. Before each run, participants nominate their level of Haskell experience on a four-level scale: beginner, familiar,  knowledgeable, and expert.  If a participant has completed all 10 levels (with the help of skipping), we invite the participant to complete a post-study survey. In it, we ask for their opinion on how intuitive the GeckoGraph design is, how distracting they find GeckoGraph, and how helpful GeckoGraph is during the game, using a seven-point scale. In the end, we asked a few open-ended questions, inviting participants to provide their experience using GeckoGraph and their expectations about its potential applications.
 
 Data collection from the human study was stopped after the planned cut-off period of 14 days. After the cut-off date, the ZeroToHero game is open source and available for free evaluation \cite{Fu2023-ne} and repeating our experiment, but no further data was collected. 
 
 \section{Results}
 
-During the data collection period, a total of 714 users participated in the study. Among them, 245 were novice users, 216 were familiar with Haskell, 216 were knowledgeable users, and 88 were expert users. 
+During the data collection period, 714 users participated in the study. Of these, 245 were novice users, 216 were familiar with Haskell, 216 were knowledgeable users, and 88 were expert users. 
 
 
 \subsection{Time to complete levels}
@@ -182,7 +182,7 @@ The 10 levels are designed to gradually increase difficulty. Based on the result
 Levels 5, 7, and 8 are the only three levels that include functions from the standard Haskell library, baring the \texttt{(.)} and \texttt{(\$)} provided for convenience. Level 3 requires programmers to use the \texttt{fst} and \texttt{snd} functions to extract value from a tuple. Level 7 requires programmers to use the \texttt{(<*>)} function of the \texttt{Applicative} class, while level 8 the \texttt{fmap} function of the \texttt{Functor} class. The authors speculate that the more experienced participants are much more familiar with these functions. This explains the strong contrast between these three levels. 
 
 
-However, when comparing the task time between the two treatments, we were unable to reject the null hypothesis. In a two-sample T-test, we could not find any significant differences between the two groups overall (p-value = 0.457). In addition, we could not identify significant difference in each of the four experience groups either (beginner: p-value = 0.845, familiar: p-value = 0.524, Knowledgeable: p-value = 0.712, expert p-value = 0.771), an indicator that GeckoGraph has little impact (positive or negative) on time consumption.
+However, when comparing the task time between the two treatments, we were unable to reject the null hypothesis. In a two-sample T-test, we could not find any significant differences between the two groups overall (p-value = 0.457). In addition, we could not identify a significant difference in each of the four experience groups either (beginner: p-value = 0.845, familiar: p-value = 0.524, Knowledgeable: p-value = 0.712, expert p-value = 0.771), an indicator that GeckoGraph has little impact (positive or negative) on time consumption.
 
 
 \begin{figure}[hbt]
@@ -219,7 +219,7 @@ For the question ``Do you find the GeckoGraph distracting?", most of the partici
 \subsection{Threats to validity}
 
 \paragraph{Task design}
-In the human study, most of the provided functions are very abstract. These functions are created by the authors solely for the gamified study, with a strong consideration of being puzzling and fun. They use more type variables than a typical Haskell function and are given non-descriptive names. These functions may not be representative of real world Haskel programming. 
+In this human study, most of the provided functions are very abstract. These functions are created by the authors solely for the gamified study, with a strong consideration of being puzzling and fun. They use more type variables than a typical Haskell function and are given non-descriptive names. These functions may not be representative of real-world Haskel programming. 
 
 
 \paragraph{The use of skips}
@@ -233,7 +233,7 @@ Based on the results of our user study, we analyze the strengths and weaknesses 
 
 \label{sec:gecko-discussion}
 \subsection{Strengths}
-From the results of our experiment, we see that using GeckoGraph has a significant effect on the success rate of our participants, especially on less experienced programmers. We also see that with the data we collected, we did not find a significant time difference between programming with and without GeckoGraph. To extrapolate the observed expressiveness, we speculate on the practical benefits of programming with GeckoGraph.
+The results of our experiment show that using GeckoGraph significantly affects the success rate of our participants, especially less experienced programmers. We also found no significant time difference between programming with and without GeckoGraph. To extrapolate the observed expressiveness, we speculate on the practical benefits of programming with GeckoGraph.
 
 \subsubsection{Identify the Most Important Features}
 One trend that we saw from the qualitative feedback is that programmers find GeckoGraph helpful for finding patterns and important features of the types. Programmers are very positive about GeckoGraph's ability to reveal the most helpful features of a type in distinctive visual elements such as color, length, and height.
@@ -271,7 +271,7 @@ One important class of feedback from the open section is that many programmers m
 ``It is similar enough to traditional types that it is intuitive." ``This was how I parse the textual representation of types" was pointed out by multiple participants.
 
 \subsection{Weaknesses}
-GeckoGraph is not without its limitations. These limitations might contribute to the ineffectiveness of providing more efficient task-solving and the limited effect on the success rate in more experienced programmers. 
+GeckoGraph is not without its limitations. These limitations might contribute to the ineffectiveness of providing more efficient task-solving and the limited effect on the success rate of more experienced programmers. 
 
 \subsubsection{Space Usage}\label{subsec:space}
 GeckoGraph uses horizontal space in proportion to the size of the type signature syntax tree, and GeckoGraph uses vertical space in proportion to the depth of the syntax tree. Compared to the traditional text-based language, GeckoGraph has the limitation of requiring vertical space. We have identified some approaches to minimize space usage while retaining most of the advantages of using GeckoGraph, such as displaying only the color blocks without the secondary encoding of identifier names.

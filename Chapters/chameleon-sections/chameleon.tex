@@ -22,14 +22,14 @@ Another form of bias is that traditional type errors are often framed as conflic
 
 \textbf{Traditional type errors give poor explanations}
 
-When the compiler typechecks a program, it generates a series constraints from the source code and search for a satisfiable model for these constraints. But the details of this process are hard to explain to users and are usually not reported by compilers. For the typical type error shown in Fig.~\ref{fig:motivation-example}, the evidence for the type error is gathered from the previous declarations. These have to be rediscovered by programmers using less rigorous methods. 
+When the compiler type checks a program, it generates a series of constraints from the source code and searches for a model that satisfies all these constraints. However, the details of this process are hard to explain to users and are usually not reported by compilers. For the typical type error shown in Fig.~\ref{fig:motivation-example}, the evidence for the type error is gathered from the previous declarations. These have to be rediscovered by programmers using less rigorous methods. 
 
 \subsection{Design Goals of \chameleon{}}
 Based on the limitations of traditional type errors, we give the following design requirements for \chameleon{}:
 
 \noindent\textbf{Show} all the possible locations where the type error happened or could have happened.
 
-\noindent\textbf{Explain} type errors avoiding jargon and internal constructs of the type checker.
+\noindent\textbf{Explain} type errors, avoiding jargon and internal constructs of the type checker.
 
 \noindent\textbf{Do not presume} which expression is to blame for the type error based on the order of computation or which possible type for an expression is `actual' or `expected'.
 
@@ -135,7 +135,7 @@ Programmers select a candidate expression card by clicking on one card. Once a c
 %     \label{fig:ghc-error-example}
 % \end{figure}
 
-Deduction steps allow programmers to explore all the error locations one at a time (Fig.~\ref{fig:deduction}). Steps are shown as a list of sequentially  numbered circular buttons (step buttons) and an explanation layer in the editor window. In the explanation layer, the two locations under examination are outlined, and a line is drawn to connect these two locations. This line is accompanied by a human-readable text explanation of their semantic connection. Programmers are free to activate any step. The active step is shown in green. When activating a step, some highlights switch color. The message in the explanation layer changes accordingly. A program in Fig.~\ref{fig:deduction} generates a list of steps shown in Fig.~\ref{fig:step-interface} left.
+Deduction steps allow programmers to explore all the error locations one at a time (Fig.~\ref{fig:deduction}). Steps are shown as a list of sequentially numbered circular buttons (step buttons) and an explanation layer in the editor window. In the explanation layer, the two locations under examination are outlined, and a line is drawn to connect these two locations. This line is accompanied by a human-readable text explanation of their semantic connection. Programmers are free to activate any step. The active step is shown in green. When activating a step, some highlights switch color. The message in the explanation layer changes accordingly. A program in Fig.~\ref{fig:deduction} generates a list of steps shown in Fig.~\ref{fig:step-interface} left.
 
 
 Programmers can use mouse and keyboard shortcuts to increment or decrement the step number or jump to any step. Programmers resolve type errors by navigating through all the deduction steps and verifying whether each explanation aligns with their intention. Eventually, they will find a step that does not match, and the type error can be fixed by modifying one of the two outlined locations.
@@ -149,12 +149,12 @@ Deduction steps if they are shown all at once. In practice, steps are shown one 
     \label{fig:step-interface}
 \end{figure}
 
-Internally, deduction steps are different ways to divide the error locations into two  groups, denoted by the two colors. Each color infers a different type of the candidate expression. Each increment/decrement of the step changes the splitting point (dotted lines in Fig.~\ref{fig:step-interface}) of the two colors. Deduction steps are an interactive view of multi-step type errors.
+Internally, deduction steps are different ways to divide the error locations into two groups, denoted by the two colors. Each color infers a different type of candidate expression. Each increment/decrement of the step changes the splitting point (dotted lines in Fig.~\ref{fig:step-interface}) of the two colors. Deduction steps are an interactive view of multi-step type errors.
 
 
 \paragraph{Multiple Modes}
 
-Nielson pointed out  that the two most important issues in designing for usability are understanding the users' tasks and the differences in users \cite{Jakob_Nielsen1994-gd}. From analyzing how users use \chameleon{}, we realized that the ideal debugging interface should adapt to the specific programmer and programming task. There are cases where a programmer wants the debugger to simply ``show the answer", and others to dive deeper into the problem domain and search for the optimal solution. To accommodate the need to customize the level of information density and granularity of control, \chameleon{} provides three modes: basic, balanced, and advanced. Programmers can switch between modes by clicking on the mode switching toggles (Fig.~\ref{fig:anatomy}-C). The features accessible from different modes are summarized in Table~\ref{tab:chameleon-features}.%shown in table~\ref{tab:chameleon-features}.
+Nielson pointed out that the two most important issues in designing for usability are understanding the users' tasks and the differences in users \cite{Jakob_Nielsen1994-gd}. From analyzing how users use \chameleon{}, we realized that the ideal debugging interface should adapt to the specific programmer and programming task. There are cases where a programmer wants the debugger to simply ``show the answer", and others to dive deeper into the problem domain and search for the optimal solution. To accommodate the need to customize the level of information density and granularity of control, \chameleon{} provides three modes: basic, balanced, and advanced. Programmers can switch between modes by clicking on the mode switching toggles (Fig.~\ref{fig:anatomy}-C). The features accessible from different modes are summarized in Table~\ref{tab:chameleon-features}.%shown in table~\ref{tab:chameleon-features}.
 
 \begin{table}
     \centering
@@ -193,7 +193,7 @@ Despite successfully borrowing the underlying ideas, we could not reuse the orig
 \paragraph{Recovering concrete types from type errors}
 
 
-Using only constraints from the MUS is sufficient to locate the type error, but to recover types from type errors we need constraints from parts of the program that are irrelevant to the type error.  For instance, consider an ill-typed 2-tuple where two possible types can be assigned: \texttt{(Int, Int)} and \texttt{(Int, String)}. The types reconstructed from Chameleon may be \texttt{(a, Int)} and \texttt{(a, String)}. Although the recovered types are theoretically correct, they introduce the notation \texttt{a}, which denotes a generic type variable that can be any type, making the error message harder to understand. To solve this issue in \chameleon{}, for each constraint \texttt{c} in the MUS, we find a maximally satisfiable subset (MSS) from all the constraints that contain every other element of MUS but not \texttt{c}. These maximally satisfiable subsets, while not helpful in error localization, will produce the most concrete types, see Fig.~\ref{fig:compare-to-original}. Concrete types, such as \texttt{Int} and \texttt{String},  often provide extra information to programmers. With a type of \texttt{(Float, Float)}, programmers may want to convey a point in 2D space. However, a type of \texttt{(a, Float)} does not preserve such information.
+Using only constraints from the MUS is sufficient to locate the type error, but to recover types from type errors, we need constraints from parts of the program that are irrelevant to the type error.  For instance, consider an ill-typed 2-tuple where two possible types can be assigned: \texttt{(Int, Int)} and \texttt{(Int, String)}. The types reconstructed from Chameleon may be \texttt{(a, Int)} and \texttt{(a, String)}. Although the recovered types are theoretically correct, they introduce the notation \texttt{a}, which denotes a generic type variable that can be any type, making the error message harder to understand. To solve this issue in \chameleon{}, for each constraint \texttt{c} in the MUS, we find a maximally satisfiable subset (MSS) from all the constraints that contain every other element of MUS but not \texttt{c}. These maximally satisfiable subsets, while not helpful in error localization, will produce the most concrete types, see Fig.~\ref{fig:compare-to-original}. Concrete types, such as \texttt{Int} and \texttt{String},  often provide extra information to programmers. With a type of \texttt{(Float, Float)}, programmers may want to convey a point in 2D space. However, a type of \texttt{(a, Float)} does not preserve such information.
 
 
 \begin{figure}[ht]
@@ -213,7 +213,7 @@ concrete types (types that do not contain type variables) \texttt{Int -> Bool} a
 
 \paragraph{Type error explanation}
 
-In addition, \chameleon{} provides support for type explanation. Similar to the type explanation system  in ~\cite{Jun2002-xp},  \chameleon{} is able to produce a human-readable explanation, but for type errors. This is achieved by annotating nodes in the abstract syntax tree with constraints and the type inference rules used. We generate an inference history from constraints and accompanying annotations. 
+In addition, \chameleon{} provides support for type explanation. Similar to the type explanation system in ~\cite{Jun2002-xp},  \chameleon{} is able to produce a human-readable explanation, but for type errors. This is achieved by annotating nodes in the abstract syntax tree with constraints and the type inference rules used. We generate an inference history from constraints and accompanying annotations. 
 
 
 % \begin{lstlisting} [

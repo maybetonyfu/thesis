@@ -112,7 +112,7 @@ However, Haskell is also known for its steep learning curve and unforgiving type
 
     \begin{figure}[ht]
         \centering
-        \includegraphics[width=\linewidth]{images/variance-ghc}
+        \includegraphics[width=\linewidth]{images/variance-ghc2}
         \caption[Inspecting a defective Haskell Program in relation to the error messages output by the standard GHC compiler]{\textbf{Inspecting a defective Haskell Program (left) in relation to the error messages output by the standard GHC compiler (right)} -- 3 separate type errors are reported.  The editor (VS Code is used here) underlines the error locations reported in the messages, but all other contextual information must be understood from the error text.}
         \label{fig:grouping-ghc}
     \end{figure}
@@ -163,7 +163,7 @@ However, Haskell is also known for its steep learning curve and unforgiving type
     Goanna uses the abstract syntax tree of the original Haskell program and translates it into a constraint program by modeling how types are defined and used. Goanna does not restrict which constraint language and solver should be used. The only requirement is that Goanna needs to be able to assert whether a subset of the constraints is still feasible by calling a provided \texttt{solve} function during the MCS enumeration phase. In our implementation, we generate portable Prolog predicates \cite{Wielemaker2011-sr}. The \texttt{solve} function executes a predefined predicate \texttt{type\_check/0} that tests all the generated predicates. We used standard Prolog notation \texttt{name/arity} here when referring to Prolog predicates, as a Prolog predicate is identified by the combination of both attributes. 
 
     
-    For a simplified Haskell syntax shown in Fig.~\ref{fig:translation}.A, we generate a list of Prolog predicates in the language shown in Fig.~\ref{fig:translation}.B. We use 3 auxiliary functions during the constraint translation process (Fig.~\ref{fig:translation}.C) to generate Prolog variables for future unification. \texttt{fresh} makes a unique unbound Prolog variable. \texttt{var} takes a Haskell identifier name and returns a Prolog variable. Naively, this can be done by turning it to uppercase. \texttt{atom} takes a Haskell type constant/constructor name and returns a Prolog atom. Naively, this can be achieved by turning it into lowercase. A global variable $\mathcal{P}$ is defined to store the list of predicates being generated. To clarify, all \textcolor{blue}{parsed Haskell syntax} are in blue. All \textcolor{red}{generated Prolog syntax} are in red. 
+    For a simplified Haskell syntax shown in Fig.~\ref{fig:translation}.A, we generate a list of Prolog predicates in the language shown in Fig.~\ref{fig:translation}.B. We use 3 auxiliary functions during the constraint translation process (Fig.~\ref{fig:translation}.C) to generate Prolog variables for future unification. \texttt{fresh} makes a unique unbound Prolog variable. \texttt{var} takes a Haskell identifier name and returns a Prolog variable. Naively, this can be done by turning it to uppercase. \texttt{atom} takes a Haskell type constant/constructor name and returns a Prolog atom. Naively, this can be achieved by turning it into lowercase. A global variable $\mathcal{P}$ is defined to store the list of predicates being generated. To clarify, all \textcolor{blue}{parsed Haskell syntax} aaare in blue. All \textcolor{red}{generated Prolog syntax} are in red. 
     
     Let $\Gamma$ be an open-ended list of Prolog atoms, containing names of Haskell local variables. Two sets of generation rule are defined to convert different Haskell syntax nodes to Prolog text. Predicate generation rules (Fig.~\ref{fig:translation}.D) take $\Gamma$ and Haskell declarations as input and output Prolog predicates. For example, a Haskell function \texttt{f = 2}, Goanna may generate a predicate \texttt{\textcolor{red}{f(V, \_) <- V = int.}}
     
@@ -171,7 +171,7 @@ However, Haskell is also known for its steep learning curve and unforgiving type
     
     \begin{figure}[ht!]
         \centering
-        \includegraphics[width=\linewidth,trim={0 6cm 0 0},clip]{images/Generation}
+        \includegraphics[width=\linewidth,trim={0 0.5cm 0 0},clip]{images/Generation2}
         \caption{Goanna's Constraint Translation Rules (Simplified)} 
         \label{fig:translation}
     \end{figure}
